@@ -1,15 +1,12 @@
-import Image from "next/image";
-
 export default function CtaSection() {
   return (
     <section className="cta" id="assessment">
       <div className="cta-grid">
-        <div className="cta-media" style={{ position: "relative" }}>
-          <Image
+        <div className="cta-media">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/cta-strategist.webp"
             alt="Senior revenue cycle strategist conducting a confidential practice assessment"
-            fill
-            style={{ objectFit: "cover", objectPosition: "center" }}
           />
         </div>
         <div className="cta-copy">

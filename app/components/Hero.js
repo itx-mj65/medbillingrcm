@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="hero" id="top">
@@ -15,12 +13,10 @@ export default function Hero() {
           <p className="proof">97% first-pass clean claim rate, measured at the payer. 14-day onboarding. No setup fees. HIPAA compliant. BAA executed on day one.</p>
         </div>
         <div className="hero-media">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/hero-physician.webp"
             alt="Physician and medical practice administrator reviewing an EHR revenue workflow inside a clinic"
-            fill
-            style={{ objectFit: "cover", objectPosition: "52% center" }}
-            priority
           />
         </div>
       </div>

@@ -387,3 +387,25 @@ footer{background:#090e28;color:#bfc2cc;padding:42px 0}
   .system-cloud.compact{display:grid;grid-template-columns:1fr 1fr}
   .specialty-list{grid-template-columns:1fr}
 }
+
+/* ── Image display fixes ── */
+.hero-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+}
+.tech-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% center;
+}
+.cta-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

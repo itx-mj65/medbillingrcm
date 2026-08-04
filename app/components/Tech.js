@@ -1,15 +1,12 @@
-import Image from "next/image";
-
 export default function Tech() {
   return (
     <section className="tech">
       <div className="tech-grid">
         <div className="tech-media">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/tech-specialist.webp"
             alt="Revenue cycle specialist reviewing automated claim analytics"
-            fill
-            style={{ objectFit: "cover", objectPosition: "50% center" }}
           />
         </div>
         <div className="tech-copy">
