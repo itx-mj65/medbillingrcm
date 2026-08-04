@@ -17,9 +17,9 @@ const montserrat = Montserrat({
 
 export const metadata = {
   metadataBase: new URL("https://medbillingrcm.com"),
-  title: "Medical Billing Services & RCM Company | Medbilling RCM",
+  title: "Medbilling RCM | Executive Editorial Homepage",
   description:
-    "Outsource medical billing to a partner who measures clean claim rate at the payer — not the clearinghouse. 97% first-pass yield. 14-day onboarding. Free assessment.",
+    "Medbilling RCM provides medical billing and management services for physician practices, hospitals, and ambulatory surgery centers across all 50 U.S. states.",
   keywords: [
     "medical billing services",
     "revenue cycle management",
@@ -49,13 +49,8 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${poppins.variable} ${montserrat.variable}`}
-    >
-      <body className="min-h-screen flex flex-col antialiased">
-        {children}
-      </body>
+    <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

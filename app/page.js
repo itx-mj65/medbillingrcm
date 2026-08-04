@@ -1,23 +1,50 @@
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Trust from "./components/Trust";
+import Logos from "./components/Logos";
+import Problem from "./components/Problem";
+import Measure from "./components/Measure";
+import Tech from "./components/Tech";
+import Services from "./components/Services";
+import Framework from "./components/Framework";
+import Benchmark from "./components/Benchmark";
+import Cost from "./components/Cost";
+import Systems from "./components/Systems";
+import Specialties from "./components/Specialties";
+import Outcomes from "./components/Outcomes";
+import Standard from "./components/Standard";
+import Fit from "./components/Fit";
+import Faq from "./components/Faq";
+import CtaSection from "./components/CtaSection";
+import Footer from "./components/Footer";
+import Scripts from "./components/Scripts";
+
 export default function Home() {
   return (
-    <main className="flex-1 flex items-center justify-center"
-      style={{ minHeight: "100vh", background: "var(--color-primary)" }}>
-      <div className="text-center px-6">
-        <h1
-          style={{
-            fontFamily: "var(--font-poppins)",
-            fontWeight: 700,
-            fontSize: "clamp(2rem,5vw,3.5rem)",
-            color: "#fff",
-            lineHeight: 1.1,
-          }}
-        >
-          Medbilling RCM
-        </h1>
-        <p style={{ color: "rgba(255,255,255,0.65)", marginTop: 16, fontSize: "1.0625rem" }}>
-          Next.js + Tailwind v4 · Ready for development.
-        </p>
-      </div>
-    </main>
+    <>
+      <a className="skip" href="#main">Skip to content</a>
+      <Header />
+      <main id="main">
+        <Hero />
+        <Trust />
+        <Logos />
+        <Problem />
+        <Measure />
+        <Tech />
+        <Services />
+        <Framework />
+        <Benchmark />
+        <Cost />
+        <Systems />
+        <Specialties />
+        <Outcomes />
+        <Standard />
+        <Fit />
+        <Faq />
+        <CtaSection />
+      </main>
+      <Footer />
+      <Scripts />
+    </>
   );
 }
