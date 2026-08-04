@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* ===================================================
+   MEDBILLING RCM — Brand Design Tokens
+   Source: Brand Book v1.0, August 2026
+   =================================================== */
+
+:root {
+  /* ── Primary Palette ── */
+  --color-primary: #1a214f;       /* Authority Navy */
+  --color-secondary: #528532;     /* Recovery Green */
+  --color-action: #3f6e24;        /* Action Green (buttons/CTAs) */
+  --color-accent: #d49b28;        /* Signal Gold */
+
+  /* ── Neutrals ── */
+  --color-paper: #fffdfa;         /* Page background */
+  --color-ivory: #f7f5ef;         /* Section backgrounds */
+  --color-ink: #20253d;           /* Body text */
+  --color-muted: #6a6d77;         /* Secondary text */
+
+  /* ── Semantic ── */
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+
+  /* ── Spacing (8px scale) ── */
+  --space-1: 0.5rem;    /* 8px */
+  --space-2: 1rem;      /* 16px */
+  --space-3: 1.5rem;    /* 24px */
+  --space-4: 2rem;      /* 32px */
+  --space-6: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+  --space-section: clamp(4rem, 8vw, 9rem);
+
+  /* ── Radii ── */
+  --radius-card: 16px;
+  --radius-media: 20px;
+  --radius-pill: 999px;
+
+  /* ── Layout ── */
+  --max-width: 1180px;
+  --gutter: 24px;
+
+  /* ── Motion ── */
+  --ease-brand: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-micro: 180ms;
+  --duration-component: 300ms;
+  --duration-workflow: 600ms;
+}
+
+/* ── Tailwind v4 Theme Integration ── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-action: var(--color-action);
+  --color-accent: var(--color-accent);
+  --color-paper: var(--color-paper);
+  --color-ivory: var(--color-ivory);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-montserrat);
+
+  --radius-card: 16px;
+  --radius-media: 20px;
+  --radius-pill: 999px;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Base Styles ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-montserrat), 'Montserrat', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), 'Poppins', system-ui, -apple-system, sans-serif;
+  color: var(--color-primary);
+  line-height: 1.15;
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* ── Focus Visible (Accessibility) ── */
+:focus-visible {
+  outline: 2px solid var(--color-action);
+  outline-offset: 2px;
+}
+
+/* ── Smooth Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
