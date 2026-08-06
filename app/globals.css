@@ -437,10 +437,10 @@ footer { background: #090e28; color: #bfc2cc; padding: 42px 0; }
 ──────────────────────────────────────────── */
 
 /* 1180px — nav hide items 4 & 5, hero grid narrower */
-@media (max-width: 1180px) {
+@media (max-width: 1160px) {
   .nav a:nth-child(4), .nav a:nth-child(5) { display: none; }
   .hero-grid { width: min(calc(100% - 40px), 980px); grid-template-columns: minmax(0,1.08fr) minmax(330px,.92fr); gap: 34px; }
-  .hero h1 { font-size: clamp(2.95rem,5.15vw,4.45rem); }
+  .hero h1 { font-size: clamp(3.25rem,6vw,5.6rem); }
   .hero-media { height: clamp(470px,43vw,540px); }
 }
 
@@ -489,7 +489,7 @@ footer { background: #090e28; color: #bfc2cc; padding: 42px 0; }
   .nav a { color: var(--navy); border-color: var(--line); }
   .hero { padding-top: 0; }
   .hero-copy { padding: 62px 0 50px; }
-  .hero h1 { font-size: clamp(3rem,14vw,4.65rem); }
+  .hero h1 { font-size: clamp(2.8rem,7.4vw,4rem); }
   .hero-media { min-height: 430px; border-radius: 76px 0 0 0; box-shadow: -12px 12px 0 var(--gold); margin-bottom: 34px; }
   .trust-inner, .logo-row { grid-template-columns: 1fr 1fr; }
   .trust-item:nth-child(2) { border-right: 0; }
