@@ -6,8 +6,8 @@
 
    TYPOGRAPHY SYSTEM (single source of truth)
    ─────────────────────────────────────────
-   --fs-h1        Hero heading    → 72px @ 1440px, 40px floor
-   --fs-h2        Section heading → 68px @ 1440px, 40px floor
+   --fs-h1        Hero heading    → 68px @ 1440px, 40px floor
+   --fs-h2        Section heading → 60px @ 1440px, 38px floor
    --fs-h3        Card heading    → 19.5px fixed
    --fs-body      Body text       → 15–18px
    --fs-lead      Lead paragraph  → 18px
@@ -44,8 +44,8 @@
 
   /* ── Typography scale (single source of truth) ──
      Change a value here and it updates everywhere.   */
-  --fs-h1:    clamp(2.5rem, 5vw, 4.5rem);    /* 40px → 72px */
-  --fs-h2:    clamp(2.5rem, 4.72vw, 4.25rem);/* 40px → 68px */
+  --fs-h1:    clamp(2.5rem, 4.72vw, 4.25rem); /* 40px → 68px */
+  --fs-h2:    clamp(2.375rem, 4.17vw, 3.75rem);/* 38px → 60px */
   --fs-h3:    1.22rem;                        /* 19.5px fixed */
   --fs-lead:  1.14rem;                        /* 18px */
   --fs-body:  1rem;                           /* 16px */
@@ -311,7 +311,7 @@ section[id] { scroll-margin-top: 94px; }
              box-shadow: var(--shadow); }
 .tech-media { position: relative; overflow: hidden; }
 .tech-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% center; }
-.tech-copy { padding: 86px 70px; display: flex; flex-direction: column; justify-content: center; }
+.tech-copy { padding: 54px 58px; display: flex; flex-direction: column; justify-content: center; }
 .tech h2, .tech h3 { color: #fff; }
 .tech p { color: #d0d4de; }
 .tech .human { margin-top: 24px; border-left: 2px solid var(--gold); padding-left: 24px;
@@ -490,7 +490,7 @@ details p { padding: 0 55px 24px 0; color: #5b5f6b; margin: 0; }
             box-shadow: var(--shadow); }
 .cta-media { min-height: 600px; position: relative; }
 .cta-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.cta-copy { padding: 72px; display: flex; flex-direction: column; justify-content: center; }
+.cta-copy { padding: 48px 58px; display: flex; flex-direction: column; justify-content: center; }
 .cta h2 { color: #fff; }
 .cta p  { color: #d7dae2; }
 .contact-list { display: flex; flex-wrap: wrap; gap: 10px 22px;
@@ -578,7 +578,7 @@ footer { background: #090e28; color: #bfc2cc; padding: 42px 0; }
   .hero-copy { padding: 74px 0 58px; }
   .hero-media { min-height: 570px; height: auto; border-radius: 120px 0 0 0; margin-bottom: 60px; }
   .tech-grid, .cta-grid { grid-template-columns: 1fr; }
-  .tech-copy, .cta-copy { padding: 70px 54px; }
+  .tech-copy, .cta-copy { padding: 48px 46px; }
   .service-grid { grid-template-columns: 1fr 1fr; }
   .step { grid-template-columns: 90px 250px 1fr; }
   .specialty-list { grid-template-columns: repeat(2,1fr); }
@@ -641,7 +641,7 @@ footer { background: #090e28; color: #bfc2cc; padding: 42px 0; }
   .big-result { border-left: 0; border-top: 1px solid rgba(255,255,255,.25); padding: 22px 0 0; }
   .assessment { grid-template-columns: 1fr; }
   .assessment label.full, .assessment .btn { grid-column: auto; }
-  .tech-copy, .cta-copy { padding: 58px 28px; }
+  .tech-copy, .cta-copy { padding: 38px 28px; }
   .cta { padding: 32px 0; }
   .standard-grid { gap: 48px; }
   .foot { flex-direction: column; align-items: flex-start; }
@@ -650,8 +650,8 @@ footer { background: #090e28; color: #bfc2cc; padding: 42px 0; }
 
 /* ── 600px: small mobile ── */
 @media (max-width: 600px) {
-  --fs-h1: clamp(2.2rem, 9.5vw, 2.75rem); /* 35px → 44px on phone */
-  --fs-h2: clamp(2rem,   8.5vw, 2.5rem);  /* 32px → 40px on phone */
+  --fs-h1: clamp(2rem, 8.5vw, 2.5rem);   /* 32px → 40px on phone */
+  --fs-h2: clamp(1.875rem, 7.5vw, 2.25rem); /* 30px → 36px on phone */
 
   .head-inner { width: calc(100% - 28px); }
   .brand { font-size: 1.28rem; }
