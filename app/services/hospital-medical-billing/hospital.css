@@ -1,31 +1,105 @@
 /* ═══════════════════════════════════════════════════
-   HOSPITAL MEDICAL BILLING PAGE — scoped styles
-   Matches the original HTML exactly.
-   Tokens come from globals.css :root.
+   HOSPITAL MEDICAL BILLING PAGE — exact from source
+   All tokens, colors, sizes from original HTML CSS.
 ═══════════════════════════════════════════════════ */
 
-/* ── Local token aliases matching original file ── */
-.hospital-page-scope,
-.level1,
+/* ── Scoped token overrides: use original file's values ── */
+.site-head,
 .hero,
 .proof-strip,
 .level2,
-.site-foot {
-  --deep: #101634;
+.level3,
+.cta-card,
+.proof-grid,
+.rcm-visual,
+.rcm-step,
+.section-photo,
+.workflow-visual,
+.faq-layout,
+#main,
+footer {
+  --navy:   #1a214f;
+  --deep:   #101634;
+  --green:  #528532;
   --green2: #3d6824;
-  --max: 1240px;
+  --gold:   #d49b28;
+  --ivory:  #f4f0e7;
+  --paper:  #fbfaf6;
+  --ink:    #252943;
+  --muted:  #686b78;
+  --line:   #ded8ca;
+  --shadow: 0 26px 72px rgba(26,33,79,.14);
+  --max:    1240px;
 }
 
-/* ── Base overrides for this page ── */
-u { text-decoration-color: var(--gold); text-underline-offset: 4px; }
+/* ── Global resets for this page ── */
+body { font-size: 16px; line-height: 1.72; background: #fbfaf6; color: #252943; }
+u { text-decoration-color: #d49b28; text-underline-offset: 4px; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .level1 { padding: 0; }
 .level1 > h1,
 .level1 > .hero-intro,
 .level1 > .hero-action,
 .level1 > .hero-proof { display: none; }
 
+/* ── HEADER — original design: circle brand mark, specific nav ── */
+.site-head {
+  height: 82px; position: sticky; top: 0; z-index: 100;
+  background: rgba(251,250,246,.97);
+  border-top: 4px solid #d49b28;
+  border-bottom: 1px solid #ded8ca;
+  backdrop-filter: blur(14px);
+}
+.head-inner {
+  height: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 22px;
+}
+/* Original brand: circle mark with "M", not serif "II" */
+.hosp-brand {
+  display: flex; align-items: center; gap: 11px;
+  color: #1a214f; font-weight: 700; font-size: 1.46rem;
+  letter-spacing: -.035em; font-family: var(--font-heading);
+  text-decoration: none;
+}
+.hosp-brand .brand-mark {
+  display: grid; place-items: center;
+  width: 38px; height: 38px;
+  border: 2px solid #d49b28; border-radius: 50%;
+  font-size: .7rem; font-family: var(--font-heading);
+  color: #1a214f; font-weight: 700;
+}
+.hosp-brand small {
+  display: block; font-family: var(--font-body);
+  font-size: .51rem; letter-spacing: .18em;
+  text-transform: uppercase; color: #767a89;
+}
+/* Nav — original: font-weight 700, no border-radius on head-cta */
+.hosp-nav {
+  display: flex; align-items: center;
+  gap: clamp(12px,1.1vw,22px);
+  font-size: clamp(.74rem,.78vw,.86rem); font-weight: 700;
+}
+.hosp-nav a { color: #1a214f; text-decoration: none; }
+.hosp-nav a:hover { color: #3d6824; }
+.hosp-nav .head-cta {
+  padding: 11px 16px; background: #1a214f;
+  color: #fff !important; white-space: nowrap;
+}
+/* Hamburger — original: three-bar style */
+.hosp-menu {
+  display: none; width: 44px; height: 42px;
+  border: 1px solid #1a214f; background: transparent;
+  color: #1a214f; font-size: 0; cursor: pointer;
+}
+.hosp-menu span,
+.hosp-menu::before,
+.hosp-menu::after {
+  content: ''; display: block;
+  width: 20px; border-top: 2px solid currentColor; margin: 5px auto;
+}
+
 /* ── HERO ── */
-.hero { background: var(--navy-deep); color: #fff; overflow: hidden; }
+.hero { background: #101634; color: #fff; overflow: hidden; }
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0,1.12fr) minmax(360px,.88fr);
@@ -36,45 +110,57 @@ u { text-decoration-color: var(--gold); text-underline-offset: 4px; }
 .hero-copy { display: flex; flex-direction: column; }
 .hero h1 {
   font-size: clamp(3rem,4.45vw,4.95rem);
-  line-height: .98;
-  letter-spacing: -.05em;
-  text-wrap: balance;
-  max-width: 760px;
-  margin: 0 0 22px;
-  color: #fff;
+  line-height: .98; letter-spacing: -.05em;
+  text-wrap: balance; max-width: 760px;
+  margin: 0 0 22px; color: #fff;
   font-family: var(--font-heading);
 }
 .hero .eyebrow { color: #c4d7b7; }
 .hero .hero-intro { max-width: 700px; color: #f0f1f5; font-size: 1.03rem; line-height: 1.62; }
 .hero-action { margin: 21px 0 19px; }
-.hero-note { max-width: 680px; color: #c7cad6; font-size: .88rem; }
+.hero-note { max-width: 680px; color: #c7cad6; font-size: .88rem; margin: 0; }
 .hero-media {
-  height: clamp(500px,40vw,570px);
-  overflow: hidden;
+  height: clamp(500px,40vw,570px); overflow: hidden;
   border-radius: 112px 0 22px 0;
-  box-shadow: -14px 14px 0 var(--gold);
-  background: #303857;
-  position: relative;
+  box-shadow: -14px 14px 0 #d49b28;
+  background: #303857; position: relative;
 }
-.hero-media img { object-position: 52% center; width: 100%; height: 100%; object-fit: cover; }
 .hero-media::after {
-  content: 'Institutional billing • 837I';
+  content: 'Institutional billing \2022 837I';
   position: absolute; right: 18px; bottom: 18px;
   padding: 9px 13px;
   background: rgba(16,22,52,.88);
-  border-left: 3px solid var(--gold);
-  font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-  color: #fff;
+  border-left: 3px solid #d49b28;
+  font-size: .65rem; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase; color: #fff;
 }
+.hero-media img { object-position: 52% center; }
 .hero-media.mobile { display: none; }
 
-/* ── PROOF STRIP ── */
-.proof-strip { background: var(--green); color: #fff; }
-.proof-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  min-height: 110px;
+/* ── btn — original: no border-radius ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 54px; padding: 0 24px;
+  background: #528532; color: #fff !important;
+  font-size: .84rem; font-weight: 800;
+  text-decoration: none !important;
+  transition: .25s; border: none; cursor: pointer;
+  font-family: var(--font-body);
 }
+.btn:hover { background: #3d6824; transform: translateY(-2px); }
+.btn.gold { background: #d49b28; color: #101634 !important; }
+
+/* eyebrow — original: uses green2 */
+.eyebrow {
+  display: flex; align-items: center; gap: 12px; margin: 0 0 16px;
+  color: #3d6824; font-size: .74rem; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 36px; border-top: 2px solid #d49b28; }
+
+/* ── PROOF STRIP ── */
+.proof-strip { background: #528532; color: #fff; }
+.proof-grid { display: grid; grid-template-columns: repeat(4,1fr); min-height: 110px; }
 .proof-item {
   display: grid; place-items: center; text-align: center;
   padding: 20px; border-right: 1px solid rgba(255,255,255,.24);
@@ -82,50 +168,57 @@ u { text-decoration-color: var(--gold); text-underline-offset: 4px; }
 }
 .proof-item:last-child { border: 0; }
 
-/* ── LEVEL 2 SECTIONS ── */
+/* ── LEVEL 2 — original padding formula ── */
 .level2 {
   padding: 112px max(32px, calc((100vw - 1240px) / 2));
   position: relative;
 }
 .level2:nth-of-type(even) { background: #fff; }
-.level2 > h2 { max-width: 900px; margin: 0 0 22px; font-family: var(--font-heading); letter-spacing: -.045em; }
+.level2 > h2 {
+  max-width: 900px; margin: 0 0 22px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.35rem,3.8vw,4.15rem);
+  line-height: 1.06; letter-spacing: -.045em;
+  text-wrap: balance; color: #1a214f;
+}
 .level2 > h2::before {
   content: attr(data-eyebrow);
   display: block; margin-bottom: 16px;
-  color: var(--green-dark);
-  font-family: var(--font-body);
-  font-size: .74rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+  color: #3d6824; font-family: var(--font-body);
+  font-size: .74rem; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase;
 }
-.level2 > p { max-width: 930px; }
-.level2 > p:first-of-type { font-size: 1.05rem; color: var(--muted); }
+.level2 > p { max-width: 930px; margin: 0 0 18px; }
+.level2 > p:first-of-type { font-size: 1.05rem; color: #686b78; }
 .level2 a { font-weight: 700; }
 .level2.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
 .level2.reveal.visible { opacity: 1; transform: none; }
 
 /* ── WHERE REVENUE GOES MISSING ── */
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank {
-  background: linear-gradient(120deg,rgba(244,240,231,.98),rgba(244,240,231,.83)),
-              radial-gradient(circle at 90% 10%,rgba(212,155,40,.18),transparent 35%);
+  background:
+    linear-gradient(120deg,rgba(244,240,231,.98),rgba(244,240,231,.83)),
+    radial-gradient(circle at 90% 10%,rgba(212,155,40,.18),transparent 35%);
 }
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p {
   padding: 28px 30px; background: #fff; border-radius: 18px;
   box-shadow: 0 12px 38px rgba(26,33,79,.07);
 }
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) {
-  margin-top: 20px; background: var(--navy); color: #eef0f5; font-size: 1.16rem;
+  margin-top: 20px; background: #1a214f; color: #eef0f5; font-size: 1.16rem;
 }
-#where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) a { color: var(--gold); }
+#where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) a { color: #d49b28; }
 
 /* ── TABLE ── */
 table { width: 100%; min-width: 850px; border-collapse: collapse; background: #fff; }
-.table-wrap { margin: 38px 0; overflow: auto; border-radius: 20px; box-shadow: var(--shadow); }
-th, td { padding: 22px 24px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+.table-wrap { margin: 38px 0; overflow: auto; border-radius: 20px; box-shadow: 0 26px 72px rgba(26,33,79,.14); }
+th, td { padding: 22px 24px; text-align: left; border-bottom: 1px solid #ded8ca; vertical-align: top; }
 th { background: #101634; color: #fff; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-family: var(--font-body); font-weight: 700; }
-td:first-child { font-weight: 800; color: var(--navy); }
+td:first-child { font-weight: 800; color: #1a214f; }
 td:last-child { background: #f2f6ee; }
 #two-payment-systems-under-one-roof > p:nth-last-of-type(-n+2) {
   display: inline-block; width: calc(50% - 14px); vertical-align: top;
-  padding: 28px; background: var(--ivory); border-left: 4px solid var(--gold);
+  padding: 28px; background: #f4f0e7; border-left: 4px solid #d49b28;
 }
 #two-payment-systems-under-one-roof > p:last-child { margin-left: 22px; }
 
@@ -142,12 +235,9 @@ td:last-child { background: #f2f6ee; }
   transform: translateX(-150%);
   animation: sheen 5.8s ease-in-out infinite;
 }
-.rcm-flow {
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
-  position: relative; z-index: 1;
-}
+.rcm-flow { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; position: relative; z-index: 1; }
 .rcm-step {
-  padding: 78px 25px 24px; background: #fff; color: var(--ink);
+  padding: 78px 25px 24px; background: #fff; color: #252943;
   border-radius: 18px; position: relative;
 }
 .rcm-step::before {
@@ -155,16 +245,16 @@ td:last-child { background: #f2f6ee; }
   position: absolute; top: 18px; left: 25px;
   display: grid; place-items: center;
   width: 42px; height: 42px; border-radius: 50%;
-  background: var(--gold); color: var(--navy);
+  background: #d49b28; color: #1a214f;
   font-family: var(--font-heading); font-weight: 700;
 }
 .rcm-step p { font-size: .87rem; margin: 0; }
-.rcm-step strong { display: block; margin-bottom: 10px; color: var(--navy); font-family: var(--font-heading); }
+.rcm-step strong { display: block; margin-bottom: 10px; color: #1a214f; font-family: var(--font-heading); }
 #how-we-hold-a-hospitals-revenue-cycle-together { background: #101634; color: #e9ebf2; }
 #how-we-hold-a-hospitals-revenue-cycle-together h2 { color: #fff; }
 #how-we-hold-a-hospitals-revenue-cycle-together > p:not(:first-of-type) { display: none; }
 
-/* ── FACILITY TYPES blockquote ── */
+/* ── BLOCKQUOTES ── */
 #every-facility-bills-differently-and-were-built-for-that blockquote,
 #what-the-2026-team-model-changes-for-hospital-billing blockquote,
 #the-rules-we-build-every-claim-around blockquote,
@@ -172,30 +262,29 @@ td:last-child { background: #f2f6ee; }
   display: grid; grid-template-columns: repeat(4,1fr);
   gap: 16px; margin: 38px 0; padding: 0; border: 0;
 }
-blockquote p { margin: 0; padding: 26px; background: #fff; border: 1px solid var(--line); border-radius: 18px; }
+blockquote p { margin: 0; padding: 26px; background: #fff; border: 1px solid #ded8ca; border-radius: 18px; }
 #every-facility-bills-differently-and-were-built-for-that blockquote p:nth-child(3) {
-  background: var(--green); color: #fff; border-color: var(--green);
+  background: #528532; color: #fff; border-color: #528532;
 }
 
-/* ── REVENUE SLIPS (level3 cards) ── */
+/* ── REVENUE SLIPS (level3) ── */
 #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one { background: #fff; }
 #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3 {
   display: inline-block; width: calc(50% - 12px); vertical-align: top;
   min-height: 330px; margin: 12px 8px 12px 0; padding: 34px;
-  background: var(--ivory); border-radius: 20px; border-top: 5px solid var(--green);
+  background: #f4f0e7; border-radius: 20px; border-top: 5px solid #528532;
 }
-#the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3:nth-of-type(even) {
-  border-top-color: var(--gold);
-}
-.level3 h3 { font-family: var(--font-heading); color: var(--navy); font-size: 1.2rem; line-height: 1.35; }
+#the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3:nth-of-type(even) { border-top-color: #d49b28; }
+.level3 h3 { font-family: var(--font-heading); color: #1a214f; font-size: 1.2rem; line-height: 1.35; }
+.level3 p { margin: 0 0 18px; }
 
-/* ── SPLIT MEDIA (DRG payment) ── */
+/* ── SPLIT MEDIA ── */
 .split-media { display: grid !important; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
 .split-media .section-copy { min-width: 0; }
 .section-photo {
   height: 610px; overflow: hidden;
   border-radius: 98px 0 22px 0;
-  box-shadow: -14px 14px 0 var(--gold);
+  box-shadow: -14px 14px 0 #d49b28;
   background: #d8ddd4;
 }
 .section-photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -205,17 +294,17 @@ blockquote p { margin: 0; padding: 26px; background: #fff; border: 1px solid var
 #what-the-2026-team-model-changes-for-hospital-billing {
   display: inline-block; width: 50%; vertical-align: top; min-height: 780px;
 }
-#b-split-billing-without-the-audit-exposure { background: var(--ivory); }
-#what-the-2026-team-model-changes-for-hospital-billing { background: var(--navy); color: #eef0f5; }
+#b-split-billing-without-the-audit-exposure { background: #f4f0e7; }
+#what-the-2026-team-model-changes-for-hospital-billing { background: #1a214f; color: #eef0f5; }
 #what-the-2026-team-model-changes-for-hospital-billing h2 { color: #fff; }
 #what-the-2026-team-model-changes-for-hospital-billing blockquote { grid-template-columns: 1fr; }
 #what-the-2026-team-model-changes-for-hospital-billing blockquote p {
   background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14);
 }
 
-/* ── CLEAN CLAIM — 97% large number ── */
+/* ── CLEAN CLAIM 97% ── */
 #and-where-we-measure-it {
-  background: var(--green); color: #fff;
+  background: #528532; color: #fff;
   padding-left: max(32px, calc((100vw - 1240px) / 2 + 34%));
 }
 #and-where-we-measure-it h2 { color: #fff; }
@@ -234,59 +323,58 @@ blockquote p { margin: 0; padding: 26px; background: #fff; border: 1px solid var
 #what-in-house-hospital-billing-costs-to-run h2 { color: #fff; }
 #what-in-house-hospital-billing-costs-to-run p:nth-of-type(n+3) {
   margin-left: 50%; padding: 24px 30px;
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid #d49b28;
   background: rgba(255,255,255,.05);
 }
 
 /* ── CLIENT OUTCOMES ── */
 #what-changed-for-the-practices-we-took-on p:last-child {
-  padding: 34px; background: var(--navy); color: #fff;
+  padding: 34px; background: #1a214f; color: #fff;
   border-radius: 20px; line-height: 2.1;
 }
 #what-changed-for-the-practices-we-took-on p:last-child a {
   display: inline-block; margin: 4px 8px; padding: 6px 10px;
-  border-bottom: 1px solid var(--gold);
+  border-bottom: 1px solid #d49b28;
 }
 
-/* ── COMPLIANCE (8+ large number left) ── */
+/* ── COMPLIANCE 8+ ── */
 #the-rules-we-build-every-claim-around {
-  background: var(--ivory);
+  background: #f4f0e7;
   padding-left: max(32px, calc((100vw - 1240px) / 2 + 26%));
 }
 #the-rules-we-build-every-claim-around::before {
-  content: '8+';
-  position: absolute;
+  content: '8+'; position: absolute;
   left: max(32px, calc((100vw - 1240px) / 2));
   top: 145px;
   font-family: var(--font-heading);
   font-size: clamp(6rem,10vw,9rem);
-  color: var(--gold);
+  color: #d49b28;
 }
 #the-rules-we-build-every-claim-around blockquote { grid-template-columns: 1fr 1fr; }
 #the-rules-we-build-every-claim-around blockquote p {
   border-radius: 0; border: 0;
-  border-left: 3px solid var(--green);
+  border-left: 3px solid #528532;
   padding: 17px 19px; font-size: .87rem;
 }
 
 /* ── SYSTEMS ── */
 .systems-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 62px; align-items: center; }
 .platforms { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0; }
-.platforms span { padding: 11px 15px; border-radius: 999px; background: var(--ivory); font-size: .8rem; font-weight: 700; }
+.platforms span { padding: 11px 15px; border-radius: 999px; background: #f4f0e7; font-size: .8rem; font-weight: 700; }
 .workflow-visual {
   padding: 24px; border-radius: 40px 0 22px 0;
   background: linear-gradient(145deg,#111735,#1a214f);
-  box-shadow: var(--shadow); overflow: hidden;
+  box-shadow: 0 26px 72px rgba(26,33,79,.14); overflow: hidden;
 }
 .workflow-visual svg { display: block; width: 100%; height: auto; }
 .flow-path { stroke-dasharray: 10 12; animation: flow 2.6s linear infinite; }
 .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-in-out infinite; }
 .systems-copy > p:last-child { display: none; }
 
-/* ── PROCESS blockquote ── */
+/* ── PROCESS ── */
 #what-happens-after-you-request-an-assessment { background: #101634; color: #e9ebf2; }
 #what-happens-after-you-request-an-assessment h2 { color: #fff; }
-#what-happens-after-you-request-an-assessment blockquote { border-top: 1px solid var(--gold); }
+#what-happens-after-you-request-an-assessment blockquote { border-top: 1px solid #d49b28; }
 #what-happens-after-you-request-an-assessment blockquote p {
   background: transparent; color: #fff; border: 0;
   border-right: 1px solid rgba(255,255,255,.14); border-radius: 0;
@@ -295,75 +383,80 @@ blockquote p { margin: 0; padding: 26px; background: #fff; border: 1px solid var
 /* ── WHO THIS IS FOR ── */
 #who-this-is-for blockquote {
   display: inline-block; width: calc(50% - 12px); vertical-align: top;
-  margin: 0; padding: 30px; background: var(--navy); color: #fff; border-radius: 18px;
+  margin: 0; padding: 30px; background: #1a214f; color: #fff; border-radius: 18px;
 }
 #who-this-is-for blockquote + p {
   display: inline-block; width: calc(50% - 12px); margin: 0 0 0 20px;
-  padding: 30px 30px 0; background: var(--ivory); vertical-align: top;
+  padding: 30px 30px 0; background: #f4f0e7; vertical-align: top;
   font-family: var(--font-heading); font-weight: 700;
 }
 #who-this-is-for blockquote + p + blockquote {
-  margin-left: 20px; background: var(--ivory); color: var(--ink); border-radius: 0 0 18px 18px;
+  margin-left: 20px; background: #f4f0e7; color: #252943; border-radius: 0 0 18px 18px;
 }
 #who-this-is-for > p:last-child { margin-top: 30px; }
 
 /* ── FAQ ── */
 .faq-layout { display: grid; grid-template-columns: .62fr 1.38fr; gap: 64px; }
 .faq-intro { position: sticky; top: 118px; }
-.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid #ded8ca; }
 summary {
   list-style: none; position: relative; padding: 21px 50px 21px 0;
   font-size: 1.02rem; font-weight: 600; cursor: pointer;
-  font-family: var(--font-heading); color: var(--navy);
+  font-family: var(--font-heading); color: #1a214f;
 }
 summary::-webkit-details-marker { display: none; }
-summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--green); font-size: 1.7rem; }
+summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: #528532; font-size: 1.7rem; }
 details[open] summary::after { content: '−'; }
-.faq-list details p { padding: 0 45px 22px 0; color: var(--muted); }
+.faq-list details p { padding: 0 45px 22px 0; color: #686b78; margin: 0; }
 
 /* ── CTA ── */
 #see-where-your-hospital-revenue-is-leaking {
   padding: 60px max(32px, calc((100vw - 1240px) / 2));
-  background: var(--green);
+  background: #528532;
 }
 .cta-card {
   display: grid; grid-template-columns: 1fr 1fr; min-height: 700px;
-  background: #101634; border-radius: 26px; overflow: hidden; box-shadow: var(--shadow);
+  background: #101634; border-radius: 26px; overflow: hidden;
+  box-shadow: 0 26px 72px rgba(26,33,79,.14);
 }
 .cta-media { min-height: 540px; }
 .cta-media img { width: 100%; height: 100%; object-fit: cover; }
 .cta-copy { padding: 62px; color: #e9ebf2; }
-.cta-copy h2 { color: #fff; }
+.cta-copy h2 { color: #fff; font-family: var(--font-heading); font-size: clamp(2.35rem,3.8vw,4.15rem); }
 .assessment { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 22px; }
-.assessment label { font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #e2e4eb; }
-.assessment label.full, .assessment button { grid-column: span 2; }
-.assessment input, .assessment select {
+.assessment label { font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #e2e4eb; display: block; }
+.assessment label.full,
+.assessment button { grid-column: span 2; }
+.assessment input,
+.assessment select {
   width: 100%; margin-top: 7px; padding: 14px;
   border: 0; border-bottom: 2px solid transparent;
-  background: #fff; color: var(--navy);
+  background: #fff; color: #1a214f;
 }
-.assessment input:focus, .assessment select:focus { outline: 0; border-color: var(--gold); }
-.success { display: none; margin-top: 16px; padding: 14px; border-left: 3px solid var(--gold); background: rgba(82,133,50,.28); }
+.assessment input:focus,
+.assessment select:focus { outline: 0; border-color: #d49b28; }
+.success { display: none; margin-top: 16px; padding: 14px; border-left: 3px solid #d49b28; background: rgba(82,133,50,.28); color: #fff; }
 .success.show { display: block; }
 
 /* ── FOOTER ── */
 .site-foot { padding: 32px 0; background: #090e28; color: #bec2cf; }
 .foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: .74rem; }
+.site-foot .hosp-brand { color: #fff; }
 
 /* ── ANIMATIONS ── */
 @keyframes sheen {
-  0%,14% { transform: translateX(-150%); }
-  58%,100% { transform: translateX(150%); }
+  0%,14%  { transform: translateX(-150%); }
+  58%,100%{ transform: translateX(150%);  }
 }
 @keyframes flow { to { stroke-dashoffset: -88; } }
 @keyframes pulse {
-  0%,100% { transform: scale(.88); opacity: .55; }
-  50% { transform: scale(1.18); opacity: 1; }
+  0%,100%{ transform: scale(.88); opacity: .55; }
+  50%    { transform: scale(1.18); opacity: 1; }
 }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE — exact from original ── */
 @media (max-width: 1080px) {
-  .nav a:nth-child(4), .nav a:nth-child(5) { display: none; }
+  .hosp-nav a:nth-child(4), .hosp-nav a:nth-child(5) { display: none; }
   .hero-grid { grid-template-columns: minmax(0,1.05fr) minmax(330px,.95fr); }
   .level2 { padding-top: 92px; padding-bottom: 92px; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
@@ -372,17 +465,19 @@ details[open] summary::after { content: '−'; }
   .section-photo { height: 520px; }
 }
 @media (max-width: 900px) {
-  .shell { width: min(calc(100% - 40px), 760px); }
+  .shell { width: min(calc(100% - 40px),760px); }
   .site-head { height: 74px; }
-  .nav {
+  .hosp-nav {
     display: none; position: fixed; inset: 74px 0 0;
-    background: var(--paper); padding: 25px 24px;
+    background: #fbfaf6; padding: 25px 24px;
     flex-direction: column; align-items: stretch; gap: 0;
   }
-  .nav.open { display: flex; }
-  .nav a, .nav a:nth-child(4), .nav a:nth-child(5) { display: block; padding: 15px 0; border-bottom: 1px solid var(--line); }
-  .nav .head-cta { margin-top: 16px; text-align: center; }
-  .menu { display: block; }
+  .hosp-nav.open { display: flex; }
+  .hosp-nav a,
+  .hosp-nav a:nth-child(4),
+  .hosp-nav a:nth-child(5) { display: block; padding: 15px 0; border-bottom: 1px solid #ded8ca; }
+  .hosp-nav .head-cta { margin-top: 16px; text-align: center; }
+  .hosp-menu { display: block; }
   .hero-grid { grid-template-columns: 1fr; gap: 30px; padding: 48px 0 30px; }
   .hero-grid > .hero-media:not(.mobile) { display: none; }
   .hero-media.mobile { display: block; height: min(62vw,440px); margin: 8px 0 22px; border-radius: 82px 0 18px 0; }
@@ -401,28 +496,41 @@ details[open] summary::after { content: '−'; }
 @media (min-width: 901px) {
   .hero-media.mobile { display: none; }
 }
+@media (max-width: 900px) {
+  .site-head .hosp-nav {
+    position: absolute; inset: 70px auto auto 0;
+    width: 100vw; height: calc(100vh - 70px);
+    padding: 26px 24px 38px; overflow: auto; z-index: 120;
+  }
+}
 @media (max-width: 620px) {
   .shell { width: calc(100% - 28px); }
-  h1 { font-size: clamp(2.34rem,10.3vw,3.15rem); line-height: 1; }
-  h2 { font-size: clamp(2rem,9vw,2.85rem); }
+  .hosp-brand { font-size: 1.24rem; }
+  .hosp-brand small { display: none; }
+  .hero h1 { font-size: clamp(2.34rem,10.3vw,3.15rem); line-height: 1; }
+  .level2 > h2 { font-size: clamp(2rem,9vw,2.85rem); }
   .hero-grid { padding: 38px 0 22px; }
-  .hero-media.mobile { height: min(78vw,340px); border-radius: 62px 0 16px 0; box-shadow: -9px 9px 0 var(--gold); }
+  .hero-media.mobile { height: min(78vw,340px); border-radius: 62px 0 16px 0; box-shadow: -9px 9px 0 #d49b28; }
   .proof-grid { grid-template-columns: 1fr 1fr; }
   .proof-item:nth-child(2) { border-right: 0; }
   .proof-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.24); }
   .level2 { padding: 74px 14px; }
-  .level2 > h2,.level2 > p,.level2 > blockquote,.level2 > .table-wrap,
-  .level2 > .rcm-visual,.level2 > .systems-layout,.level2 > .faq-layout { width: 100%; }
+  .level2 > h2, .level2 > p, .level2 > blockquote,
+  .level2 > .table-wrap, .level2 > .rcm-visual,
+  .level2 > .systems-layout, .level2 > .faq-layout { width: 100%; }
   #two-payment-systems-under-one-roof > p:nth-last-of-type(-n+2) { display: block; width: 100%; }
   #two-payment-systems-under-one-roof > p:last-child { margin-left: 0; }
   #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3 { display: block; width: 100%; min-height: 0; margin: 12px 0; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
   #what-happens-after-you-request-an-assessment blockquote,
   #the-rules-we-build-every-claim-around blockquote { grid-template-columns: 1fr; }
-  #and-where-we-measure-it, #the-rules-we-build-every-claim-around { padding-left: 14px; padding-top: 190px; }
-  #and-where-we-measure-it::before, #the-rules-we-build-every-claim-around::before { left: 14px; top: 70px; transform: none; }
+  #and-where-we-measure-it,
+  #the-rules-we-build-every-claim-around { padding-left: 14px; padding-top: 190px; }
+  #and-where-we-measure-it::before,
+  #the-rules-we-build-every-claim-around::before { left: 14px; top: 70px; transform: none; }
   #what-in-house-hospital-billing-costs-to-run p:nth-of-type(n+3) { margin-left: 0; }
-  #who-this-is-for blockquote, #who-this-is-for blockquote + p { display: block; width: 100%; margin: 0; }
+  #who-this-is-for blockquote,
+  #who-this-is-for blockquote + p { display: block; width: 100%; margin: 0; }
   #who-this-is-for blockquote + p + blockquote { margin: 0; }
   .section-photo { height: 390px; }
   .workflow-visual { padding: 12px; overflow-x: auto; }
@@ -437,11 +545,4 @@ details[open] summary::after { content: '−'; }
 @media (prefers-reduced-motion: reduce) {
   .level2.reveal { opacity: 1; transform: none; transition: none; }
   .rcm-visual::after, .flow-path, .pulse { animation: none; }
-}
-@media (max-width: 900px) {
-  .site-head .nav {
-    position: absolute; inset: 70px auto auto 0;
-    width: 100vw; height: calc(100vh - 70px);
-    padding: 26px 24px 38px; overflow: auto; z-index: 120;
-  }
 }
