@@ -3,15 +3,17 @@ import { useEffect } from "react";
 
 export default function HospitalScripts() {
   useEffect(() => {
-    // Mobile menu
+    // Mobile menu — shared with header
     const menu = document.getElementById("menu");
     const nav  = document.getElementById("nav");
     if (menu && nav) {
-      menu.addEventListener("click", () => {
+      const toggle = () => {
         const open = nav.classList.toggle("open");
         menu.setAttribute("aria-expanded", String(open));
+        menu.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
         document.body.classList.toggle("menu-open", open);
-      });
+      };
+      menu.addEventListener("click", toggle);
       nav.querySelectorAll("a").forEach((a) =>
         a.addEventListener("click", () => {
           nav.classList.remove("open");
@@ -21,17 +23,19 @@ export default function HospitalScripts() {
       );
     }
 
-    // Scroll reveal
+    // Scroll reveal — uses .visible class like the original
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(
-        (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }),
-        { rootMargin: "0px 0px -48px 0px", threshold: 0.05 }
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
+        }),
+        { threshold: 0.07, rootMargin: "0px 0px -35px" }
       );
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     }
 
-    // Form submit — hospital assessment
-    const form = document.getElementById("hospitalAssessmentForm");
+    // Form submit
+    const form = document.getElementById("hospitalForm");
     if (form) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -42,11 +46,11 @@ export default function HospitalScripts() {
       });
     }
 
-    // Hash scroll
+    // Hash scroll on load
     if (window.location.hash) {
       setTimeout(() => {
         document.querySelector(window.location.hash)?.scrollIntoView({ block: "start" });
-      }, 100);
+      }, 80);
     }
   }, []);
 
