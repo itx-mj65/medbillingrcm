@@ -1,5 +1,3 @@
-import HospitalScripts from "./components/HospitalScripts";
-
 export const metadata = {
   title: "Hospital Medical Billing Services | Inpatient & Outpatient | Medbilling RCM",
   description: "Hospital medical billing services for inpatient and outpatient care. MS-DRG, APC, UB-04, 340B split billing, and TEAM model. 97% clean claim rate measured at the payer.",
@@ -7,10 +5,7 @@ export const metadata = {
 
 export default function HospitalMedicalBillingPage() {
   return (
-    <>
-      <a className="skip" href="#main">Skip to content</a>
-      {/* Header injected by layout */}
-      <main id="main" className="level1">
+    <main id="main" className="level1">
 
         {/* ── HERO ── */}
         <section className="hero" id="top">
@@ -353,9 +348,6 @@ export default function HospitalMedicalBillingPage() {
           </div>
         </section>
 
-      </main>
-
-      <HospitalScripts />
-    </>
+    </main>
   );
 }

@@ -3,26 +3,7 @@ import { useEffect } from "react";
 
 export default function HospitalScripts() {
   useEffect(() => {
-    // Mobile menu — uses hosp-menu / hosp-nav IDs
-    const menu = document.getElementById("hosp-menu");
-    const nav  = document.getElementById("hosp-nav");
-    if (menu && nav) {
-      menu.addEventListener("click", () => {
-        const open = nav.classList.toggle("open");
-        menu.setAttribute("aria-expanded", String(open));
-        menu.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-        document.body.classList.toggle("menu-open", open);
-      });
-      nav.querySelectorAll("a").forEach((a) =>
-        a.addEventListener("click", () => {
-          nav.classList.remove("open");
-          menu.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("menu-open");
-        })
-      );
-    }
-
-    // Scroll reveal — uses .visible class (original)
+    // Scroll reveal — hospital page uses .visible class (not .in)
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(
         (entries) => entries.forEach((e) => {
@@ -30,7 +11,7 @@ export default function HospitalScripts() {
         }),
         { threshold: 0.07, rootMargin: "0px 0px -35px" }
       );
-      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      document.querySelectorAll(".level2.reveal").forEach((el) => io.observe(el));
     }
 
     // Form submit
