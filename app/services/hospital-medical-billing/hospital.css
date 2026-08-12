@@ -138,8 +138,8 @@ footer {
 .level2 > p { max-width: 930px; margin: 0 0 18px; }
 .level2 > p:first-of-type { font-size: 1.05rem; color: #686b78; }
 .level2 a { font-weight: 700; }
-.level2.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
-.level2.reveal.visible { opacity: 1; transform: none; }
+body.js-ready .level2.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.level2.reveal.visible { opacity: 1 !important; transform: none !important; }
 
 /* ── WHERE REVENUE GOES MISSING ── */
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank {
@@ -470,6 +470,6 @@ details[open] summary::after { content: '−'; }
   .foot-inner { flex-direction: column; align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .level2.reveal { opacity: 1; transform: none; transition: none; }
+  body.js-ready .level2.reveal { opacity: 1; transform: none; transition: none; }
   .rcm-visual::after, .flow-path, .pulse { animation: none; }
 }

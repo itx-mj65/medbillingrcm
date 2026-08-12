@@ -725,18 +725,21 @@ footer { background: #090e28; color: #bfc2cc; padding: 40px 0; }
 /* ═══════════════════════════════════════════════════════════
    REVEAL — brand book p.18: opacity + 8-16px movement
 ═══════════════════════════════════════════════════════════ */
-.reveal    {
-  opacity: 0; transform: translateY(14px);  /* 14px within 8-16px spec */
+/* Reveal: only hidden when JS has marked body.js-ready.
+   Prevents invisible content during SSR, hydration, and client nav. */
+body.js-ready .reveal {
+  opacity: 0; transform: translateY(14px);
   transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
 }
-.reveal.in { opacity: 1; transform: none; }
+.reveal.in,
+.reveal.visible { opacity: 1 !important; transform: none !important; }
 
 /* ═══════════════════════════════════════════════════════════
    REDUCED MOTION — brand book p.18: honour prefers-reduced-motion
 ═══════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  body.js-ready .reveal { opacity: 1; transform: none; transition: none; }
   .btn    { transition: none; }
   .workflow-visual.active:after,
   .workflow-visual.active .flow-path,
