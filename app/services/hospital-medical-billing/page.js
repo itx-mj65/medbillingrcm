@@ -140,26 +140,28 @@ export default function HospitalMedicalBillingPage() {
           </div>
         </section>
 
-        {/* ── 340B ── */}
-        <section className="level2 reveal" id="b-split-billing-without-the-audit-exposure">
-          <h2 data-eyebrow="Drug revenue integrity">340B split billing without the audit exposure</h2>
-          <p>Hospitals with 340B status buy covered drugs at up to <a href="https://www.aha.org/fact-sheets/2025-11-24-fact-sheet-340b-drug-pricing-program" target="_blank" rel="noopener">50% below market</a>. The rule that trips them is split billing: separating which doses came from 340B inventory and which did not, then billing each correctly.</p>
-          <p>The stakes are real. HRSA audits about 200 covered entities a year, and in FY2025 roughly 49% of those audits came back with findings. Federal law also bars duplicate discounts on Medicaid.</p>
-          <p>We set up split billing with correct inventory attribution and Medicaid exclusion logic from the first claim, and we keep the documentation an audit will ask for.</p>
-        </section>
-
-        {/* ── TEAM MODEL ── */}
-        <section className="level2 reveal" id="what-the-2026-team-model-changes-for-hospital-billing">
-          <h2 data-eyebrow="Mandatory model">What the 2026 TEAM model changes for hospital billing</h2>
-          <p>On January 1, 2026, CMS replaced the voluntary bundled-payment program with the mandatory <a href="https://www.cms.gov/priorities/innovation/innovation-models/team-model" target="_blank" rel="noopener">Transforming Episode Accountability Model (TEAM)</a>. If you bill for surgical episodes, it changes how you get paid.</p>
-          <blockquote>
-            <p>741 hospitals across 188 regions are enrolled.</p>
-            <p>Each is accountable for the total cost of care for 30 days after discharge from one of five surgical episodes.</p>
-            <p>Beat the spending target and the hospital keeps the difference. Miss it and the hospital repays it.</p>
-            <p>The model runs through 2030.</p>
-          </blockquote>
-          <p>We track episode spending against target as it accrues and flag the post-acute patterns that push an episode over, so the reconciliation is not a surprise at the end.</p>
-        </section>
+        {/* ── 340B + TEAM — card pair inside ivory wrapper ── */}
+        <div className="pair-section reveal">
+          <div className="pair-card">
+            <section id="b-split-billing-without-the-audit-exposure">
+              <h2 data-eyebrow="Drug revenue integrity">340B split billing without the audit exposure</h2>
+              <p>Hospitals with 340B status buy covered drugs at up to <a href="https://www.aha.org/fact-sheets/2025-11-24-fact-sheet-340b-drug-pricing-program" target="_blank" rel="noopener">50% below market</a>. The rule that trips them is split billing: separating which doses came from 340B inventory and which did not, then billing each correctly.</p>
+              <p>The stakes are real. HRSA audits about 200 covered entities a year, and in FY2025 roughly 49% of those audits came back with findings. Federal law also bars duplicate discounts on Medicaid.</p>
+              <p>We set up split billing with correct inventory attribution and Medicaid exclusion logic from the first claim, and we keep the documentation an audit will ask for.</p>
+            </section>
+            <section id="what-the-2026-team-model-changes-for-hospital-billing">
+              <h2 data-eyebrow="Mandatory model">What the 2026 TEAM model changes for hospital billing</h2>
+              <p>On January 1, 2026, CMS replaced the voluntary bundled-payment program with the mandatory <a href="https://www.cms.gov/priorities/innovation/innovation-models/team-model" target="_blank" rel="noopener">Transforming Episode Accountability Model (TEAM)</a>. If you bill for surgical episodes, it changes how you get paid.</p>
+              <blockquote>
+                <p>741 hospitals across 188 regions are enrolled.</p>
+                <p>Each is accountable for the total cost of care for 30 days after discharge from one of five surgical episodes.</p>
+                <p>Beat the spending target and the hospital keeps the difference. Miss it and the hospital repays it.</p>
+                <p>The model runs through 2030.</p>
+              </blockquote>
+              <p>We track episode spending against target as it accrues and flag the post-acute patterns that push an episode over, so the reconciliation is not a surprise at the end.</p>
+            </section>
+          </div>
+        </div>
 
         {/* ── CLEAN CLAIM ── */}
         <section className="level2 reveal" id="and-where-we-measure-it">
