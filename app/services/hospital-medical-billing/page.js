@@ -1,8 +1,4 @@
-export const metadata = {
-  title: "Hospital Medical Billing Services | Inpatient & Outpatient | Medbilling RCM",
-  description: "Hospital medical billing services for inpatient and outpatient care. MS-DRG, APC, UB-04, 340B split billing, and TEAM model. 97% clean claim rate measured at the payer.",
-};
-
+import Image from "next/image";
 export default function HospitalMedicalBillingPage() {
   return (
     <main id="main" className="level1">
@@ -15,8 +11,7 @@ export default function HospitalMedicalBillingPage() {
               <h1>Hospital medical billing services for inpatient and outpatient care</h1>
               {/* mobile image */}
               <div className="hero-media mobile">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/hospital-hero.png" alt="Hospital revenue-cycle leaders reviewing an EHR and financial performance dashboard" />
+                <Image src="/hospital-hero.png" alt="Hospital revenue-cycle leaders reviewing an EHR and financial performance dashboard" width={1536} height={1024} sizes="(max-width:900px) 92vw, 0px" priority quality={85} style={{objectFit:"cover",objectPosition:"52% center"}} />
               </div>
               <p className="hero-intro">Hospital billing is not physician billing with a bigger claim form. A hospital bills for the facility: the bed, the operating room, the drugs, the imaging. Admitted patients pay under MS-DRG, outpatient visits pay under APC, and both ride on a UB-04. When a claim in either system is coded short or denied, that is revenue the hospital already earned. We handle the facility side end to end, and we report what actually landed at the payer.</p>
               <div className="hero-action">
@@ -26,8 +21,7 @@ export default function HospitalMedicalBillingPage() {
             </div>
             {/* desktop image */}
             <div className="hero-media">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/hospital-hero.png" alt="Hospital revenue-cycle leaders reviewing an EHR and financial performance dashboard" />
+              <Image src="/hospital-hero.png" alt="Hospital revenue-cycle leaders reviewing an EHR and financial performance dashboard" fill sizes="(max-width:900px) 0px, (max-width:1160px) 45vw, 590px" priority quality={85} style={{objectFit:"cover",objectPosition:"52% center"}} />
             </div>
           </div>
         </section>
@@ -306,8 +300,7 @@ export default function HospitalMedicalBillingPage() {
           <p>The revenue assessment is free, and it is specific. We look at your denials, your aged AR, and your DRG mix, and we show you where the money is going. No rate card, no obligation.</p>
           <div className="cta-card" id="assessment">
             <div className="cta-media">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/hospital-assessment.png" alt="Hospital revenue assessment meeting reviewing denials, aged accounts receivable and DRG mix" />
+              <Image src="/hospital-assessment.png" alt="Hospital revenue assessment meeting reviewing denials, aged accounts receivable and DRG mix" fill sizes="(max-width:1050px) 100vw, 50vw" quality={80} style={{objectFit:"cover"}} />
             </div>
             <div className="cta-copy">
               <h2 style={{color:'#fff'}}>Your revenue assessment starts here</h2>
