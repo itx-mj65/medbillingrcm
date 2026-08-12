@@ -5,7 +5,7 @@ export default function HospitalMedicalBillingPage() {
 
         {/* ── HERO ── */}
         <section className="hero" id="top">
-          <div className="shell hero-grid">
+          <div className="shell">
             <div className="hero-copy">
               <p className="eyebrow">Hospital revenue cycle management</p>
               <h1>Hospital medical billing services for inpatient and outpatient care</h1>
@@ -129,8 +129,7 @@ export default function HospitalMedicalBillingPage() {
         {/* ── DRG PAYMENT (split-media) ── */}
         <section className="level2 split-media reveal" id="getting-paid-for-the-care-that-was-actually-delivered">
           <div className="section-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/hospital-coding.png" alt="Inpatient coding specialist validating hospital documentation and DRG assignment" />
+            <Image src="/hospital-coding.png" alt="Inpatient coding specialist validating hospital documentation and DRG assignment" fill sizes="(max-width:1080px) 100vw, 45vw" quality={82} style={{objectFit:"cover"}} />
           </div>
           <div className="section-copy">
             <h2 data-eyebrow="Documentation to payment">Getting paid for the care that was actually delivered</h2>

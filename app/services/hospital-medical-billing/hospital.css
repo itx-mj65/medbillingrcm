@@ -1,317 +1,426 @@
-/* ═══════════════════════════════════════════════════
-   HOSPITAL MEDICAL BILLING PAGE — exact from source
-   All tokens, colors, sizes from original HTML CSS.
-═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   HOSPITAL MEDICAL BILLING — page-scoped stylesheet
+   Brand Book v1.0 · August 2026
+   
+   Layout system:
+   - Every section bg fills 100vw
+   - Content centered at max-width 1180px (brand book)
+   - Horizontal padding: max(24px, (100vw - 1180px) / 2)
+   - Section vertical padding: 112px desktop → 80px tablet → 64px mobile
+   - Fonts: Poppins (headings) + Montserrat (body) via var(--font-heading/body)
+   - Type scale from globals.css --fs-h1 / --fs-h2 / --fs-h3
+═══════════════════════════════════════════════════════ */
 
-/* ── Scoped token overrides: use original file's values ── */
-.site-head,
-.hero,
-.proof-strip,
-.level2,
-.level3,
-.cta-card,
-.proof-grid,
-.rcm-visual,
-.rcm-step,
-.section-photo,
-.workflow-visual,
-.faq-layout,
-#main,
-footer {
-  --navy:   #1a214f;
-  --deep:   #101634;
-  --green:  #528532;
-  --green2: #3d6824;
-  --gold:   #d49b28;
-  --ivory:  #f4f0e7;
-  --paper:  #fbfaf6;
-  --ink:    #252943;
-  --muted:  #686b78;
-  --line:   #ded8ca;
-  --shadow: 0 26px 72px rgba(26,33,79,.14);
-  --max:    1240px;
+/* ── Layout helper — same centering as .shell on homepage ── */
+:root {
+  --h-max:  1180px;
+  --h-gap:  max(24px, calc((100vw - 1180px) / 2));
 }
-
-.site-head {
-  height: 82px; position: sticky; top: 0; z-index: 100;
-  background: rgba(251,250,246,.97);
-  border-top: 4px solid #d49b28;
-  border-bottom: 1px solid #ded8ca;
-  backdrop-filter: blur(14px);
-}
-.head-inner {
-  height: 100%; display: flex; align-items: center;
-  justify-content: space-between; gap: 22px;
-}
-/* Original brand: circle mark with "M", not serif "II" */
-/* Nav — original: font-weight 700, no border-radius on head-cta */
-/* Hamburger — original: three-bar style */
 
 /* ── HERO ── */
-.hero { background: #101634; color: #fff; overflow: hidden; }
-.hero-grid {
+.hero {
+  background: #111735;
+  color: #fff;
+  overflow: hidden;
+}
+.hero .shell {
   display: grid;
-  grid-template-columns: minmax(0,1.12fr) minmax(360px,.88fr);
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
   align-items: center;
-  gap: clamp(34px,4.5vw,58px);
-  padding: 48px 0;
+  gap: clamp(32px, 4vw, 56px);
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 .hero-copy { display: flex; flex-direction: column; }
 .hero h1 {
-  font-size: clamp(3rem,4.45vw,4.95rem);
-  line-height: .98; letter-spacing: -.05em;
-  text-wrap: balance; max-width: 760px;
-  margin: 0 0 22px; color: #fff;
   font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  line-height: 1.0;
+  letter-spacing: -.04em;
+  color: #fff;
+  margin: 0 0 20px;
+  max-width: 680px;
+  text-wrap: balance;
 }
-.hero .eyebrow { color: #c4d7b7; }
-.hero .hero-intro { max-width: 700px; color: #f0f1f5; font-size: 1.03rem; line-height: 1.62; }
-.hero-action { margin: 21px 0 19px; }
-.hero-note { max-width: 680px; color: #c7cad6; font-size: .88rem; margin: 0; }
+.hero .eyebrow { color: #c4d7b7; margin-bottom: 14px; }
+.hero-intro {
+  color: #f0f1f5;
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 0 14px;
+}
+.hero-action { margin: 20px 0 18px; }
+.hero-note {
+  color: #c5c9d6;
+  font-size: .88rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.18);
+  font-family: Georgia, serif;
+}
 .hero-media {
-  height: clamp(500px,40vw,570px); overflow: hidden;
+  position: relative;
+  height: clamp(460px, 38vw, 540px);
   border-radius: 112px 0 22px 0;
-  box-shadow: -14px 14px 0 #d49b28;
-  background: #303857; position: relative;
+  overflow: hidden;
+  box-shadow: -14px 14px 0 var(--color-accent);
+  background: #303857;
 }
 .hero-media::after {
   content: 'Institutional billing \2022 837I';
   position: absolute; right: 18px; bottom: 18px;
-  padding: 9px 13px;
-  background: rgba(16,22,52,.88);
-  border-left: 3px solid #d49b28;
-  font-size: .65rem; font-weight: 800;
+  padding: 8px 12px;
+  background: rgba(16, 22, 52, .88);
+  border-left: 3px solid var(--color-accent);
+  font-size: .62rem; font-weight: 800;
   letter-spacing: .12em; text-transform: uppercase; color: #fff;
 }
 .hero-media img { object-position: 52% center; }
 .hero-media.mobile { display: none; }
 
+/* ── BUTTONS — match brand book (8px radius, action green) ── */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  min-height: 54px; padding: 0 24px;
-  background: #528532; color: #fff !important;
-  font-size: .84rem; font-weight: 800;
-  text-decoration: none !important;
-  transition: .25s; border: none; cursor: pointer;
+  min-height: 52px; padding: 0 24px;
+  background: var(--color-action);
+  color: #fff !important;
   font-family: var(--font-body);
+  font-size: .88rem; font-weight: 700;
+  border-radius: var(--radius-btn);
+  border: none; cursor: pointer;
+  text-decoration: none !important;
+  transition: background .22s ease, transform .22s ease;
 }
-.btn:hover { background: #3d6824; transform: translateY(-2px); }
-.btn.gold { background: #d49b28; color: #101634 !important; }
+.btn::after { content: '→'; margin-left: 10px; font-size: 1.1em; }
+.btn:hover  { background: #2e5419; transform: translateY(-2px); }
+.btn.gold   { background: var(--color-accent); color: #111735 !important; }
+.btn.gold:hover { background: #c48e20; }
 
+/* ── EYEBROW ── */
 .eyebrow {
-  display: flex; align-items: center; gap: 12px; margin: 0 0 16px;
-  color: #3d6824; font-size: .74rem; font-weight: 800;
-  letter-spacing: .16em; text-transform: uppercase;
-}
-.eyebrow::before { content: ''; width: 36px; border-top: 2px solid #d49b28; }
-
-/* ── PROOF STRIP ── */
-.proof-strip { background: #528532; color: #fff; }
-.proof-grid { display: grid; grid-template-columns: repeat(4,1fr); min-height: 110px; }
-.proof-item {
-  display: grid; place-items: center; text-align: center;
-  padding: 20px; border-right: 1px solid rgba(255,255,255,.24);
-  font-size: .72rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
-}
-.proof-item:last-child { border: 0; }
-
-/* ── LEVEL 2 — original padding formula ── */
-.level2 {
-  padding: 112px max(32px, calc((100vw - 1240px) / 2));
-  position: relative;
-}
-.level2:nth-of-type(even) { background: #fff; }
-.level2 > h2 {
-  max-width: 900px; margin: 0 0 22px;
-  font-family: var(--font-heading);
-  font-size: clamp(2.35rem,3.8vw,4.15rem);
-  line-height: 1.06; letter-spacing: -.045em;
-  text-wrap: balance; color: #1a214f;
-}
-.level2 > h2::before {
-  content: attr(data-eyebrow);
-  display: block; margin-bottom: 16px;
-  color: #3d6824; font-family: var(--font-body);
+  display: flex; align-items: center; gap: 12px; margin: 0 0 14px;
+  color: var(--color-action);
+  font-family: var(--font-body);
   font-size: .74rem; font-weight: 800;
   letter-spacing: .16em; text-transform: uppercase;
 }
-.level2 > p { max-width: 930px; margin: 0 0 18px; }
-.level2 > p:first-of-type { font-size: 1.05rem; color: #686b78; }
-.level2 a { font-weight: 700; }
-body.js-ready .level2.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.eyebrow::before { content: ''; width: 36px; border-top: 2px solid var(--color-accent); }
+
+/* ── PROOF STRIP ── */
+.proof-strip {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 108px;
+}
+.proof-item {
+  display: grid; place-items: center; text-align: center;
+  padding: 18px 20px;
+  border-right: 1px solid rgba(255,255,255,.22);
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.proof-item:last-child { border-right: 0; }
+
+/* ══════════════════════════════════════════════════════
+   LEVEL 2 SECTIONS
+   Background fills 100vw. Content centered at 1180px.
+   No horizontal padding on the section itself.
+══════════════════════════════════════════════════════ */
+.level2 {
+  padding: 112px var(--h-gap);
+  position: relative;
+}
+
+/* Alternating white background */
+.level2:nth-of-type(even) { background: #fff; }
+
+/* Heading — Poppins, brand H2 scale */
+.level2 > h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  color: var(--color-primary);
+  margin: 0 0 20px;
+  max-width: 860px;
+  text-wrap: balance;
+}
+
+/* Eyebrow via data attribute */
+.level2 > h2::before {
+  content: attr(data-eyebrow);
+  display: block; margin-bottom: 14px;
+  color: var(--color-action);
+  font-family: var(--font-body);
+  font-size: .74rem; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase;
+}
+
+/* Body text */
+.level2 > p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+  max-width: 860px;
+  margin: 0 0 16px;
+}
+.level2 > p:first-of-type { font-size: 1.05rem; color: var(--color-muted); }
+.level2 a { color: var(--color-action); font-weight: 700; }
+.level2 a:hover { color: var(--color-primary); }
+
+/* Reveal animation */
+body.js-ready .level2.reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .65s cubic-bezier(.2,.8,.2,1), transform .65s cubic-bezier(.2,.8,.2,1);
+}
 .level2.reveal.visible { opacity: 1 !important; transform: none !important; }
 
 /* ── WHERE REVENUE GOES MISSING ── */
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank {
-  background:
-    linear-gradient(120deg,rgba(244,240,231,.98),rgba(244,240,231,.83)),
-    radial-gradient(circle at 90% 10%,rgba(212,155,40,.18),transparent 35%);
+  background: linear-gradient(120deg, rgba(244,240,231,.98), rgba(244,240,231,.85)),
+              radial-gradient(circle at 90% 10%, rgba(212,155,40,.15), transparent 38%);
 }
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p {
-  padding: 28px 30px; background: #fff; border-radius: 18px;
-  box-shadow: 0 12px 38px rgba(26,33,79,.07);
+  padding: 26px 28px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 28px rgba(26,33,79,.07);
+  max-width: 860px;
 }
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) {
-  margin-top: 20px; background: #1a214f; color: #eef0f5; font-size: 1.16rem;
+  margin-top: 16px;
+  background: var(--color-primary);
+  color: #eef0f5;
+  font-size: 1.05rem;
 }
-#where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) a { color: #d49b28; }
+#where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) a { color: var(--color-accent); }
 
 /* ── TABLE ── */
-table { width: 100%; min-width: 850px; border-collapse: collapse; background: #fff; }
-.table-wrap { margin: 38px 0; overflow: auto; border-radius: 20px; box-shadow: 0 26px 72px rgba(26,33,79,.14); }
-th, td { padding: 22px 24px; text-align: left; border-bottom: 1px solid #ded8ca; vertical-align: top; }
-th { background: #101634; color: #fff; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-family: var(--font-body); font-weight: 700; }
-td:first-child { font-weight: 800; color: #1a214f; }
-td:last-child { background: #f2f6ee; }
-#two-payment-systems-under-one-roof > p:nth-last-of-type(-n+2) {
-  display: inline-block; width: calc(50% - 14px); vertical-align: top;
-  padding: 28px; background: #f4f0e7; border-left: 4px solid #d49b28;
+.table-wrap {
+  margin: 32px 0;
+  overflow-x: auto;
+  border-radius: var(--radius-card);
+  box-shadow: 0 20px 60px rgba(26,33,79,.12);
 }
-#two-payment-systems-under-one-roof > p:last-child { margin-left: 22px; }
+table { width: 100%; min-width: 820px; border-collapse: collapse; background: #fff; }
+th, td { padding: 20px 22px; text-align: left; border-bottom: 1px solid var(--color-line); vertical-align: top; }
+th {
+  background: #111735; color: #fff;
+  font-family: var(--font-body);
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+}
+td:first-child { font-weight: 700; color: var(--color-primary); }
+td:last-child  { background: #f0f6ea; }
+tr:last-child td { border-bottom: 0; }
+
+/* Two-col note cards below the table */
+#two-payment-systems-under-one-roof > p:nth-last-of-type(-n+2) {
+  display: inline-block; vertical-align: top;
+  width: calc(50% - 10px);
+  padding: 24px 28px;
+  background: var(--color-ivory);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+#two-payment-systems-under-one-roof > p:last-child { margin-left: 16px; }
 
 /* ── RCM FRAMEWORK ── */
-.rcm-visual {
-  margin-top: 45px; padding: 44px 28px 28px;
-  border: 1px solid rgba(255,255,255,.14); border-radius: 26px;
-  background: linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
-  overflow: hidden; position: relative;
+#how-we-hold-a-hospitals-revenue-cycle-together {
+  background: #111735;
+  color: #e9ebf2;
 }
-.rcm-visual::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(110deg,transparent 35%,rgba(255,255,255,.12) 49%,transparent 63%);
-  transform: translateX(-150%);
-  animation: sheen 5.8s ease-in-out infinite;
-}
-.rcm-flow { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; position: relative; z-index: 1; }
-.rcm-step {
-  padding: 78px 25px 24px; background: #fff; color: #252943;
-  border-radius: 18px; position: relative;
-}
-.rcm-step::before {
-  content: attr(data-step);
-  position: absolute; top: 18px; left: 25px;
-  display: grid; place-items: center;
-  width: 42px; height: 42px; border-radius: 50%;
-  background: #d49b28; color: #1a214f;
-  font-family: var(--font-heading); font-weight: 700;
-}
-.rcm-step p { font-size: .87rem; margin: 0; }
-.rcm-step strong { display: block; margin-bottom: 10px; color: #1a214f; font-family: var(--font-heading); }
-#how-we-hold-a-hospitals-revenue-cycle-together { background: #101634; color: #e9ebf2; }
 #how-we-hold-a-hospitals-revenue-cycle-together h2 { color: #fff; }
 #how-we-hold-a-hospitals-revenue-cycle-together > p:not(:first-of-type) { display: none; }
 
-/* ── BLOCKQUOTES ── */
+.rcm-visual {
+  margin-top: 40px; padding: 40px 28px 28px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  overflow: hidden; position: relative;
+}
+.rcm-visual::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.1) 49%, transparent 63%);
+  transform: translateX(-150%);
+  animation: sheen 5.8s ease-in-out infinite;
+}
+.rcm-flow { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; position: relative; z-index: 1; }
+.rcm-step {
+  padding: 72px 22px 22px; background: #fff; color: var(--color-ink);
+  border-radius: var(--radius-card); position: relative;
+}
+.rcm-step::before {
+  content: attr(data-step);
+  position: absolute; top: 18px; left: 22px;
+  display: grid; place-items: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--color-accent); color: var(--color-primary);
+  font-family: var(--font-heading); font-weight: 700; font-size: .88rem;
+}
+.rcm-step strong { display: block; margin-bottom: 8px; color: var(--color-primary); font-family: var(--font-heading); font-size: 1rem; }
+.rcm-step p { font-size: .87rem; margin: 0; line-height: 1.6; }
+
+/* ── BLOCKQUOTES — 4-col card grid ── */
 #every-facility-bills-differently-and-were-built-for-that blockquote,
 #what-the-2026-team-model-changes-for-hospital-billing blockquote,
 #the-rules-we-build-every-claim-around blockquote,
 #what-happens-after-you-request-an-assessment blockquote {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 16px; margin: 38px 0; padding: 0; border: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 14px; margin: 32px 0; padding: 0; border: 0;
 }
-blockquote p { margin: 0; padding: 26px; background: #fff; border: 1px solid #ded8ca; border-radius: 18px; }
+blockquote p {
+  margin: 0; padding: 22px 24px;
+  background: #fff; border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  font-size: .92rem; line-height: 1.65;
+}
 #every-facility-bills-differently-and-were-built-for-that blockquote p:nth-child(3) {
-  background: #528532; color: #fff; border-color: #528532;
+  background: var(--color-secondary); color: #fff; border-color: var(--color-secondary);
 }
 
-/* ── REVENUE SLIPS (level3) ── */
+/* ── REVENUE SLIPS (level3 cards) ── */
 #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one { background: #fff; }
 #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3 {
-  display: inline-block; width: calc(50% - 12px); vertical-align: top;
-  min-height: 330px; margin: 12px 8px 12px 0; padding: 34px;
-  background: #f4f0e7; border-radius: 20px; border-top: 5px solid #528532;
+  display: inline-block; vertical-align: top;
+  width: calc(50% - 10px); min-height: 300px;
+  margin: 10px 8px 10px 0; padding: 32px;
+  background: var(--color-ivory);
+  border-radius: 20px; border-top: 5px solid var(--color-secondary);
 }
-#the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3:nth-of-type(even) { border-top-color: #d49b28; }
-.level3 h3 { font-family: var(--font-heading); color: #1a214f; font-size: 1.2rem; line-height: 1.35; }
-.level3 p { margin: 0 0 18px; }
+#the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3:nth-of-type(even) {
+  border-top-color: var(--color-accent);
+}
+.level3 h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-primary);
+  line-height: 1.3; margin-bottom: 12px;
+}
+.level3 p { font-size: .95rem; line-height: 1.65; margin: 0 0 14px; }
 
-/* ── SPLIT MEDIA ── */
-.split-media { display: grid !important; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+/* ── SPLIT MEDIA (DRG section) ── */
+.split-media {
+  display: grid !important;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 56px; align-items: center;
+}
 .split-media .section-copy { min-width: 0; }
 .section-photo {
-  height: 610px; overflow: hidden;
-  border-radius: 98px 0 22px 0;
-  box-shadow: -14px 14px 0 #d49b28;
-  background: #d8ddd4;
+  height: 580px; overflow: hidden;
+  border-radius: 96px 0 var(--radius-media) 0;
+  box-shadow: -14px 14px 0 var(--color-accent);
+  background: #d0d5cc;
 }
 .section-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ── 340B & TEAM side-by-side ── */
+/* ── 340B & TEAM — side by side ── */
 #b-split-billing-without-the-audit-exposure,
 #what-the-2026-team-model-changes-for-hospital-billing {
-  display: inline-block; width: 50%; vertical-align: top; min-height: 780px;
+  /* Each is a level2 section: padding:112px var(--h-gap) but halved width */
+  /* We override width and float to make side-by-side work */
+  display: inline-block; vertical-align: top;
+  width: 50%; min-height: 720px;
+  /* Override the standard --h-gap centering for half-width columns */
+  padding-left: clamp(28px, 4vw, 72px);
+  padding-right: clamp(28px, 4vw, 72px);
 }
-#b-split-billing-without-the-audit-exposure { background: #f4f0e7; }
-#what-the-2026-team-model-changes-for-hospital-billing { background: #1a214f; color: #eef0f5; }
+#b-split-billing-without-the-audit-exposure { background: var(--color-ivory); }
+#what-the-2026-team-model-changes-for-hospital-billing {
+  background: var(--color-primary); color: #eef0f5;
+}
 #what-the-2026-team-model-changes-for-hospital-billing h2 { color: #fff; }
-#what-the-2026-team-model-changes-for-hospital-billing blockquote { grid-template-columns: 1fr; }
+#what-the-2026-team-model-changes-for-hospital-billing h2::before { color: #c4d7b7; }
+#what-the-2026-team-model-changes-for-hospital-billing > p { color: #c5c9d7; }
+/* Override default blockquote 4-col to 1-col inside navy section */
+#what-the-2026-team-model-changes-for-hospital-billing blockquote {
+  grid-template-columns: 1fr;
+}
 #what-the-2026-team-model-changes-for-hospital-billing blockquote p {
-  background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.14); color: #eef0f5;
 }
 
-/* ── CLEAN CLAIM 97% ── */
+/* ── CLEAN CLAIM — 97% large number left ── */
 #and-where-we-measure-it {
-  background: #528532; color: #fff;
-  padding-left: max(32px, calc((100vw - 1240px) / 2 + 34%));
+  background: var(--color-secondary); color: #fff;
+  padding-left: max(var(--h-gap), calc(var(--h-gap) + 340px));
 }
 #and-where-we-measure-it h2 { color: #fff; }
+#and-where-we-measure-it > p { color: rgba(255,255,255,.85); }
+#and-where-we-measure-it a { color: #c4d7b7; }
 #and-where-we-measure-it::before {
   content: '97%';
   position: absolute;
-  left: max(32px, calc((100vw - 1240px) / 2));
-  top: 50%; transform: translateY(-50%);
+  left: var(--h-gap); top: 50%; transform: translateY(-50%);
   font-family: var(--font-heading);
-  font-size: clamp(6rem,12vw,11rem);
-  line-height: .8; color: #fff;
+  font-size: clamp(5.5rem, 11vw, 10rem);
+  line-height: .85; color: #fff; opacity: .92;
 }
 
-/* ── IN-HOUSE COST ── */
-#what-in-house-hospital-billing-costs-to-run { background: #101634; color: #e9ebf2; }
-#what-in-house-hospital-billing-costs-to-run h2 { color: #fff; }
-#what-in-house-hospital-billing-costs-to-run p:nth-of-type(n+3) {
-  margin-left: 50%; padding: 24px 30px;
-  border-left: 4px solid #d49b28;
-  background: rgba(255,255,255,.05);
+/* ── IN-HOUSE COST — dark section ── */
+#what-in-house-hospital-billing-costs-to-run {
+  background: #111735; color: #e9ebf2;
 }
+#what-in-house-hospital-billing-costs-to-run h2 { color: #fff; }
+#what-in-house-hospital-billing-costs-to-run > p { color: #c5c9d7; max-width: 680px; }
+#what-in-house-hospital-billing-costs-to-run > p:nth-of-type(n+3) {
+  padding: 20px 26px; border-left: 4px solid var(--color-accent);
+  background: rgba(255,255,255,.05); border-radius: 0 8px 8px 0;
+}
+#what-in-house-hospital-billing-costs-to-run a { color: var(--color-accent); }
 
 /* ── CLIENT OUTCOMES ── */
 #what-changed-for-the-practices-we-took-on p:last-child {
-  padding: 34px; background: #1a214f; color: #fff;
-  border-radius: 20px; line-height: 2.1;
+  padding: 28px 32px;
+  background: var(--color-primary); color: #fff;
+  border-radius: var(--radius-card);
+  line-height: 2.0; max-width: 860px;
 }
 #what-changed-for-the-practices-we-took-on p:last-child a {
-  display: inline-block; margin: 4px 8px; padding: 6px 10px;
-  border-bottom: 1px solid #d49b28;
+  display: inline-block; padding: 3px 8px;
+  border-bottom: 1px solid var(--color-accent); color: #fff;
 }
 
-/* ── COMPLIANCE 8+ ── */
+/* ── COMPLIANCE — 8+ large number left ── */
 #the-rules-we-build-every-claim-around {
-  background: #f4f0e7;
-  padding-left: max(32px, calc((100vw - 1240px) / 2 + 26%));
+  background: var(--color-ivory);
+  padding-left: max(var(--h-gap), calc(var(--h-gap) + 280px));
 }
 #the-rules-we-build-every-claim-around::before {
-  content: '8+'; position: absolute;
-  left: max(32px, calc((100vw - 1240px) / 2));
-  top: 145px;
+  content: '8+';
+  position: absolute; left: var(--h-gap); top: 130px;
   font-family: var(--font-heading);
-  font-size: clamp(6rem,10vw,9rem);
-  color: #d49b28;
+  font-size: clamp(5rem, 9vw, 8.5rem);
+  color: var(--color-accent); line-height: .85;
 }
 #the-rules-we-build-every-claim-around blockquote { grid-template-columns: 1fr 1fr; }
 #the-rules-we-build-every-claim-around blockquote p {
   border-radius: 0; border: 0;
-  border-left: 3px solid #528532;
-  padding: 17px 19px; font-size: .87rem;
+  border-left: 3px solid var(--color-secondary);
+  background: transparent; padding: 14px 18px; font-size: .88rem;
 }
 
 /* ── SYSTEMS ── */
-.systems-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 62px; align-items: center; }
-.platforms { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0; }
-.platforms span { padding: 11px 15px; border-radius: 999px; background: #f4f0e7; font-size: .8rem; font-weight: 700; }
+.systems-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 56px; align-items: center; }
+.platforms { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.platforms span {
+  padding: 10px 14px; border-radius: var(--radius-pill);
+  background: #fff; font-size: .8rem; font-weight: 600;
+  color: var(--color-primary); border: 1px solid var(--color-line);
+}
 .workflow-visual {
-  padding: 24px; border-radius: 40px 0 22px 0;
-  background: linear-gradient(145deg,#111735,#1a214f);
-  box-shadow: 0 26px 72px rgba(26,33,79,.14); overflow: hidden;
+  padding: 22px; border-radius: var(--radius-media) 0 var(--radius-card) 0;
+  background: linear-gradient(145deg, #111735, #1a214f);
+  box-shadow: 0 24px 64px rgba(26,33,79,.18); overflow: hidden;
 }
 .workflow-visual svg { display: block; width: 100%; height: auto; }
 .flow-path { stroke-dasharray: 10 12; animation: flow 2.6s linear infinite; }
@@ -319,77 +428,106 @@ blockquote p { margin: 0; padding: 26px; background: #fff; border: 1px solid #de
 .systems-copy > p:last-child { display: none; }
 
 /* ── PROCESS ── */
-#what-happens-after-you-request-an-assessment { background: #101634; color: #e9ebf2; }
+#what-happens-after-you-request-an-assessment { background: #111735; color: #e9ebf2; }
 #what-happens-after-you-request-an-assessment h2 { color: #fff; }
-#what-happens-after-you-request-an-assessment blockquote { border-top: 1px solid #d49b28; }
+#what-happens-after-you-request-an-assessment > p { color: #c5c9d7; }
+#what-happens-after-you-request-an-assessment blockquote {
+  border-top: 1px solid var(--color-accent);
+  grid-template-columns: repeat(4, 1fr);
+}
 #what-happens-after-you-request-an-assessment blockquote p {
   background: transparent; color: #fff; border: 0;
-  border-right: 1px solid rgba(255,255,255,.14); border-radius: 0;
+  border-right: 1px solid rgba(255,255,255,.12); border-radius: 0;
+  padding: 20px 22px;
 }
 
 /* ── WHO THIS IS FOR ── */
 #who-this-is-for blockquote {
-  display: inline-block; width: calc(50% - 12px); vertical-align: top;
-  margin: 0; padding: 30px; background: #1a214f; color: #fff; border-radius: 18px;
+  display: inline-block; vertical-align: top;
+  width: calc(50% - 10px);
+  margin: 0; padding: 28px 32px;
+  background: var(--color-primary); color: #eef0f5;
+  border-radius: var(--radius-card); border: 0;
 }
+#who-this-is-for blockquote p {
+  background: transparent; border: 0; border-radius: 0;
+  padding: 0 0 14px; color: #eef0f5; font-size: .95rem;
+}
+#who-this-is-for blockquote p:last-child { padding-bottom: 0; }
 #who-this-is-for blockquote + p {
-  display: inline-block; width: calc(50% - 12px); margin: 0 0 0 20px;
-  padding: 30px 30px 0; background: #f4f0e7; vertical-align: top;
-  font-family: var(--font-heading); font-weight: 700;
+  display: inline-block; vertical-align: top;
+  width: calc(50% - 10px); margin: 0 0 0 16px;
+  padding: 28px 32px 0;
+  background: var(--color-ivory); border-radius: var(--radius-card) var(--radius-card) 0 0;
+  font-family: var(--font-heading); font-weight: 700; color: var(--color-primary);
+  font-size: .95rem;
 }
 #who-this-is-for blockquote + p + blockquote {
-  margin-left: 20px; background: #f4f0e7; color: #252943; border-radius: 0 0 18px 18px;
+  margin-left: 16px;
+  background: var(--color-ivory); color: var(--color-ink);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
 }
-#who-this-is-for > p:last-child { margin-top: 30px; }
+#who-this-is-for blockquote + p + blockquote p { color: var(--color-ink); }
+#who-this-is-for > p:last-child { margin-top: 28px; }
 
 /* ── FAQ ── */
-.faq-layout { display: grid; grid-template-columns: .62fr 1.38fr; gap: 64px; }
-.faq-intro { position: sticky; top: 118px; }
-.faq-list details { border-bottom: 1px solid #ded8ca; }
+.faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 60px; }
+.faq-intro { position: sticky; top: 110px; }
+.faq-intro p { color: var(--color-muted); font-size: 1rem; }
+.faq-list details { border-bottom: 1px solid var(--color-line); }
 summary {
-  list-style: none; position: relative; padding: 21px 50px 21px 0;
-  font-size: 1.02rem; font-weight: 600; cursor: pointer;
-  font-family: var(--font-heading); color: #1a214f;
+  list-style: none; position: relative;
+  padding: 20px 52px 20px 0; cursor: pointer;
+  font-family: var(--font-heading); font-weight: 600;
+  font-size: 1.02rem; color: var(--color-primary);
 }
 summary::-webkit-details-marker { display: none; }
-summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: #528532; font-size: 1.7rem; }
+summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
 details[open] summary::after { content: '−'; }
-.faq-list details p { padding: 0 45px 22px 0; color: #686b78; margin: 0; }
+.faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: .97rem; line-height: 1.7; }
 
-/* ── CTA ── */
+/* ── CTA SECTION ── */
 #see-where-your-hospital-revenue-is-leaking {
-  padding: 60px max(32px, calc((100vw - 1240px) / 2));
-  background: #528532;
+  background: var(--color-secondary);
 }
+#see-where-your-hospital-revenue-is-leaking > h2 { color: #fff; }
+#see-where-your-hospital-revenue-is-leaking > p  { color: rgba(255,255,255,.85); }
 .cta-card {
-  display: grid; grid-template-columns: 1fr 1fr; min-height: 700px;
-  background: #101634; border-radius: 26px; overflow: hidden;
-  box-shadow: 0 26px 72px rgba(26,33,79,.14);
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 680px;
+  background: #111735; border-radius: 24px; overflow: hidden;
+  box-shadow: 0 28px 72px rgba(0,0,0,.22);
+  margin-top: 32px;
 }
-.cta-media { min-height: 540px; }
+.cta-media { min-height: 520px; position: relative; overflow: hidden; }
 .cta-media img { width: 100%; height: 100%; object-fit: cover; }
-.cta-copy { padding: 62px; color: #e9ebf2; }
-.cta-copy h2 { color: #fff; font-family: var(--font-heading); font-size: clamp(2.35rem,3.8vw,4.15rem); }
-.assessment { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 22px; }
-.assessment label { font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #e2e4eb; display: block; }
-.assessment label.full,
-.assessment button { grid-column: span 2; }
-.assessment input,
-.assessment select {
-  width: 100%; margin-top: 7px; padding: 14px;
-  border: 0; border-bottom: 2px solid transparent;
-  background: #fff; color: #1a214f;
+.cta-copy { padding: 52px 48px; display: flex; flex-direction: column; justify-content: center; }
+.cta-copy h2 {
+  color: #fff; font-family: var(--font-heading);
+  font-size: var(--fs-h2); letter-spacing: -.04em; margin-bottom: 14px;
 }
-.assessment input:focus,
-.assessment select:focus { outline: 0; border-color: #d49b28; }
-.success { display: none; margin-top: 16px; padding: 14px; border-left: 3px solid #d49b28; background: rgba(82,133,50,.28); color: #fff; }
+.cta-copy > p { color: #cdd1de; font-size: .97rem; margin-bottom: 20px; }
+
+/* Assessment form */
+.assessment { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.assessment label {
+  display: block; font-size: .68rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; color: #e0e3ea;
+}
+.assessment label.full, .assessment button { grid-column: span 2; }
+.assessment input, .assessment select {
+  display: block; width: 100%; margin-top: 6px; padding: 13px 14px;
+  background: #fff; border: 0; border-bottom: 2px solid transparent;
+  color: var(--color-primary); font-family: var(--font-body);
+  font-size: .95rem; border-radius: 4px;
+}
+.assessment input:focus, .assessment select:focus { outline: 0; border-color: var(--color-accent); }
+.assessment button { margin-top: 8px; }
+.success { display: none; margin-top: 14px; padding: 14px 18px; border-left: 3px solid var(--color-accent); background: rgba(82,133,50,.26); color: #fff; border-radius: 0 4px 4px 0; }
 .success.show { display: block; }
 
-/* ── FOOTER ── */
-.site-foot { padding: 32px 0; background: #090e28; color: #bec2cf; }
-.foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: .74rem; }
-
-/* ── ANIMATIONS ── */
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
 @keyframes sheen {
   0%,14%  { transform: translateX(-150%); }
   58%,100%{ transform: translateX(150%);  }
@@ -400,75 +538,85 @@ details[open] summary::after { content: '−'; }
   50%    { transform: scale(1.18); opacity: 1; }
 }
 
-/* ── RESPONSIVE — exact from original ── */
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+
+/* ── 1080px ── */
 @media (max-width: 1080px) {
-  .hero-grid { grid-template-columns: minmax(0,1.05fr) minmax(330px,.95fr); }
-  .level2 { padding-top: 92px; padding-bottom: 92px; }
+  .hero .shell { grid-template-columns: 1fr; gap: 0; padding: 56px 0 0; }
+  .hero-grid > .hero-media:not(.mobile) { display: none; }
+  .hero-media.mobile { display: block; height: min(60vw, 440px); margin: 16px 0 0; border-radius: 80px 0 18px 0; }
+  .level2 { padding-top: 88px; padding-bottom: 88px; }
+  .rcm-flow { grid-template-columns: 1fr 1fr; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
   #what-happens-after-you-request-an-assessment blockquote { grid-template-columns: 1fr 1fr; }
-  .split-media, .systems-layout { gap: 38px; }
-  .section-photo { height: 520px; }
+  .split-media { grid-template-columns: 1fr; gap: 36px; }
+  .section-photo { height: 460px; border-radius: 60px 0 var(--radius-media) 0; }
+  .systems-layout { grid-template-columns: 1fr; gap: 36px; }
 }
+
+/* ── 900px ── */
 @media (max-width: 900px) {
-  .shell { width: min(calc(100% - 40px),760px); }
-  .site-head { height: 74px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 30px; padding: 48px 0 30px; }
-  .hero-grid > .hero-media:not(.mobile) { display: none; }
-  .hero-media.mobile { display: block; height: min(62vw,440px); margin: 8px 0 22px; border-radius: 82px 0 18px 0; }
-  .split-media, .systems-layout, .faq-layout { grid-template-columns: 1fr; }
-  .faq-intro { position: static; }
+  .level2 { padding-top: 80px; padding-bottom: 80px; }
   .rcm-flow { grid-template-columns: 1fr; }
   #b-split-billing-without-the-audit-exposure,
-  #what-the-2026-team-model-changes-for-hospital-billing { display: block; width: 100%; min-height: 0; }
-  #and-where-we-measure-it { padding-left: max(32px, calc((100vw - 760px)/2 + 230px)); }
-  #and-where-we-measure-it::before { font-size: 6rem; }
-  #the-rules-we-build-every-claim-around { padding-left: max(32px, calc((100vw - 760px)/2 + 190px)); }
-  #the-rules-we-build-every-claim-around::before { font-size: 5rem; }
+  #what-the-2026-team-model-changes-for-hospital-billing {
+    display: block; width: 100%; min-height: 0;
+  }
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-intro { position: static; }
   .cta-card { grid-template-columns: 1fr; }
-  .cta-media { height: 480px; min-height: 0; }
+  .cta-media { height: 440px; }
+  #and-where-we-measure-it {
+    padding-left: var(--h-gap);
+    padding-top: 220px;
+  }
+  #and-where-we-measure-it::before { top: 80px; transform: none; font-size: 5.5rem; }
+  #the-rules-we-build-every-claim-around {
+    padding-left: var(--h-gap);
+    padding-top: 200px;
+  }
+  #the-rules-we-build-every-claim-around::before { top: 80px; font-size: 4.5rem; }
 }
-@media (min-width: 901px) {
-  .hero-media.mobile { display: none; }
-}
-@media (max-width: 900px) {
-}
-@media (max-width: 620px) {
-  .shell { width: calc(100% - 28px); }
-  .hero h1 { font-size: clamp(2.34rem,10.3vw,3.15rem); line-height: 1; }
-  .level2 > h2 { font-size: clamp(2rem,9vw,2.85rem); }
-  .hero-grid { padding: 38px 0 22px; }
-  .hero-media.mobile { height: min(78vw,340px); border-radius: 62px 0 16px 0; box-shadow: -9px 9px 0 #d49b28; }
+
+/* ── 768px ── */
+@media (max-width: 768px) {
+  .level2 { padding-top: 64px; padding-bottom: 64px; }
   .proof-grid { grid-template-columns: 1fr 1fr; }
   .proof-item:nth-child(2) { border-right: 0; }
-  .proof-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.24); }
-  .level2 { padding: 74px 14px; }
-  .level2 > h2, .level2 > p, .level2 > blockquote,
-  .level2 > .table-wrap, .level2 > .rcm-visual,
-  .level2 > .systems-layout, .level2 > .faq-layout { width: 100%; }
+  .proof-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.2); }
   #two-payment-systems-under-one-roof > p:nth-last-of-type(-n+2) { display: block; width: 100%; }
-  #two-payment-systems-under-one-roof > p:last-child { margin-left: 0; }
-  #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3 { display: block; width: 100%; min-height: 0; margin: 12px 0; }
+  #two-payment-systems-under-one-roof > p:last-child { margin-left: 0; margin-top: 12px; }
+  #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3 { display: block; width: 100%; margin: 10px 0; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
   #what-happens-after-you-request-an-assessment blockquote,
   #the-rules-we-build-every-claim-around blockquote { grid-template-columns: 1fr; }
-  #and-where-we-measure-it,
-  #the-rules-we-build-every-claim-around { padding-left: 14px; padding-top: 190px; }
-  #and-where-we-measure-it::before,
-  #the-rules-we-build-every-claim-around::before { left: 14px; top: 70px; transform: none; }
-  #what-in-house-hospital-billing-costs-to-run p:nth-of-type(n+3) { margin-left: 0; }
   #who-this-is-for blockquote,
   #who-this-is-for blockquote + p { display: block; width: 100%; margin: 0; }
-  #who-this-is-for blockquote + p + blockquote { margin: 0; }
-  .section-photo { height: 390px; }
-  .workflow-visual { padding: 12px; overflow-x: auto; }
-  .workflow-visual svg { width: 610px; max-width: none; }
-  #see-where-your-hospital-revenue-is-leaking { padding: 28px 14px; }
-  .cta-media { height: 350px; }
-  .cta-copy { padding: 44px 23px; }
+  #who-this-is-for blockquote + p + blockquote { margin-left: 0; margin-top: 0; }
+  .cta-copy { padding: 36px 28px; }
   .assessment { grid-template-columns: 1fr; }
   .assessment label.full, .assessment button { grid-column: auto; }
-  .foot-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ── 560px ── */
+@media (max-width: 560px) {
+  :root { --h-gap: 16px; }
+  .level2 { padding-top: 56px; padding-bottom: 56px; }
+  .hero-media.mobile { height: min(74vw, 320px); border-radius: 56px 0 14px 0; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-item { border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,.2) !important; }
+  .proof-item:last-child { border-bottom: 0 !important; }
+  .rcm-flow { grid-template-columns: 1fr; }
+  .workflow-visual { overflow-x: auto; }
+  .workflow-visual svg { width: 580px; max-width: none; }
+  #and-where-we-measure-it { padding-top: 180px; }
+  #and-where-we-measure-it::before { font-size: 4.5rem; top: 56px; }
+  #the-rules-we-build-every-claim-around { padding-top: 160px; }
+  #the-rules-we-build-every-claim-around::before { font-size: 4rem; top: 56px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body.js-ready .level2.reveal { opacity: 1; transform: none; transition: none; }
   .rcm-visual::after, .flow-path, .pulse { animation: none; }
