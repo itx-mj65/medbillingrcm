@@ -308,46 +308,72 @@ blockquote p {
 }
 .level3 p { font-size: .95rem; line-height: 1.65; margin: 0 0 14px; }
 
-/* ── SPLIT MEDIA (DRG section) ── */
+/* ── SPLIT MEDIA (DRG image section) ──
+   Layout: image takes left column (no padding, bleeds naturally),
+   text takes right column with standard content padding.
+   Override level2 padding to zero — inner columns control spacing. */
 .split-media {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   display: grid !important;
   grid-template-columns: .9fr 1.1fr;
-  gap: 56px; align-items: center;
+  gap: 0; align-items: stretch;
 }
-.split-media .section-copy { min-width: 0; }
 .section-photo {
-  height: 580px; overflow: hidden;
-  border-radius: 96px 0 var(--radius-media) 0;
-  box-shadow: -14px 14px 0 var(--color-accent);
+  height: 100%; min-height: 560px;
+  overflow: hidden;
+  border-radius: 0;
   background: #d0d5cc;
+  position: relative;
 }
 .section-photo img { width: 100%; height: 100%; object-fit: cover; }
+.split-media .section-copy {
+  padding: 80px var(--h-gap) 80px clamp(40px, 4vw, 72px);
+  min-width: 0;
+}
 
-/* ── 340B & TEAM — side by side ── */
+/* ── 340B & TEAM — side by side ──
+   Two full-width section elements displayed inline-block at 50% each.
+   No horizontal padding from level2 (overridden below).
+   Each gets symmetric inner padding scaled to its 50vw column width. */
 #b-split-billing-without-the-audit-exposure,
 #what-the-2026-team-model-changes-for-hospital-billing {
-  /* Each is a level2 section: padding:112px var(--h-gap) but halved width */
-  /* We override width and float to make side-by-side work */
-  display: inline-block; vertical-align: top;
-  width: 50%; min-height: 720px;
-  /* Override the standard --h-gap centering for half-width columns */
-  padding-left: clamp(28px, 4vw, 72px);
-  padding-right: clamp(28px, 4vw, 72px);
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  min-height: 680px;
+  /* Kill the level2 centering padding — replace with column-appropriate padding */
+  padding-left:  clamp(32px, 5vw, 80px) !important;
+  padding-right: clamp(32px, 5vw, 80px) !important;
 }
-#b-split-billing-without-the-audit-exposure { background: var(--color-ivory); }
+#b-split-billing-without-the-audit-exposure {
+  background: var(--color-ivory);
+}
 #what-the-2026-team-model-changes-for-hospital-billing {
-  background: var(--color-primary); color: #eef0f5;
+  background: var(--color-primary);
+  color: #eef0f5;
 }
-#what-the-2026-team-model-changes-for-hospital-billing h2 { color: #fff; }
+#what-the-2026-team-model-changes-for-hospital-billing h2       { color: #fff; }
 #what-the-2026-team-model-changes-for-hospital-billing h2::before { color: #c4d7b7; }
-#what-the-2026-team-model-changes-for-hospital-billing > p { color: #c5c9d7; }
-/* Override default blockquote 4-col to 1-col inside navy section */
+#what-the-2026-team-model-changes-for-hospital-billing > p      { color: #c5c9d7; max-width: 100%; }
+#what-the-2026-team-model-changes-for-hospital-billing a        { color: var(--color-accent); }
+/* TEAM blockquote: 1-col list of bullet facts */
 #what-the-2026-team-model-changes-for-hospital-billing blockquote {
   grid-template-columns: 1fr;
+  max-width: 100%;
 }
 #what-the-2026-team-model-changes-for-hospital-billing blockquote p {
-  background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.14); color: #eef0f5;
+  background: rgba(255,255,255,.07);
+  border: 0;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 4px 4px 0;
+  padding: 14px 18px;
+  color: #eef0f5;
+  font-size: .93rem;
 }
+/* 340B content max-width 100% of column */
+#b-split-billing-without-the-audit-exposure > h2,
+#b-split-billing-without-the-audit-exposure > p { max-width: 100%; }
 
 /* ── CLEAN CLAIM — 97% large number left ── */
 #and-where-we-measure-it {
@@ -551,8 +577,9 @@ details[open] summary::after { content: '−'; }
   .rcm-flow { grid-template-columns: 1fr 1fr; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
   #what-happens-after-you-request-an-assessment blockquote { grid-template-columns: 1fr 1fr; }
-  .split-media { grid-template-columns: 1fr; gap: 36px; }
-  .section-photo { height: 460px; border-radius: 60px 0 var(--radius-media) 0; }
+  .split-media { grid-template-columns: 1fr; }
+  .section-photo { height: 460px; }
+  .split-media .section-copy { padding: 48px var(--h-gap); }
   .systems-layout { grid-template-columns: 1fr; gap: 36px; }
 }
 
@@ -563,7 +590,12 @@ details[open] summary::after { content: '−'; }
   #b-split-billing-without-the-audit-exposure,
   #what-the-2026-team-model-changes-for-hospital-billing {
     display: block; width: 100%; min-height: 0;
+    padding-left: var(--h-gap) !important;
+    padding-right: var(--h-gap) !important;
   }
+  .split-media { display: grid !important; grid-template-columns: 1fr; }
+  .section-photo { min-height: 380px; height: 380px; border-radius: 0; }
+  .split-media .section-copy { padding: 48px var(--h-gap); }
   .faq-layout { grid-template-columns: 1fr; }
   .faq-intro { position: static; }
   .cta-card { grid-template-columns: 1fr; }
