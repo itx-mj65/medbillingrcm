@@ -129,7 +129,8 @@ export default function HospitalMedicalBillingPage() {
         {/* ── DRG PAYMENT (split-media) ── */}
         <section className="level2 split-media reveal" id="getting-paid-for-the-care-that-was-actually-delivered">
           <div className="section-photo">
-            <Image src="/hospital-coding.png" alt="Inpatient coding specialist validating hospital documentation and DRG assignment" fill sizes="(max-width:1080px) 100vw, 45vw" quality={82} style={{objectFit:"cover"}} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/hospital-coding.png" alt="Inpatient coding specialist validating hospital documentation and DRG assignment" />
           </div>
           <div className="section-copy">
             <h2 data-eyebrow="Documentation to payment">Getting paid for the care that was actually delivered</h2>

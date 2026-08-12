@@ -315,8 +315,10 @@ blockquote p {
   gap: 64px;
   align-items: center;
 }
-.split-media .section-copy { min-width: 0; }
+
+/* ── section-photo: position:relative REQUIRED for next/image fill ── */
 .section-photo {
+  position: relative;          /* ← critical for next/image fill */
   height: 610px;
   overflow: hidden;
   border-radius: 98px 0 22px 0;
@@ -324,21 +326,49 @@ blockquote p {
   background: #d8ddd4;
   flex-shrink: 0;
 }
-.section-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── section-copy: full typography — mirrors level2 > * rules ── */
+.section-copy { min-width: 0; }
+
+/* Eyebrow via data-eyebrow on h2 inside section-copy */
+.section-copy h2::before,
+.pair-card section h2::before {
+  content: attr(data-eyebrow);
+  display: block; margin-bottom: 14px;
+  color: var(--color-action);
+  font-family: var(--font-body);
+  font-size: .74rem; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.section-copy h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  line-height: 1.1; letter-spacing: -.04em;
+  color: var(--color-primary);
+  margin: 0 0 20px; max-width: 100%;
+}
+.section-copy p {
+  font-family: var(--font-body);
+  font-size: 1rem; line-height: 1.7;
+  color: var(--color-ink);
+  max-width: 100%; margin: 0 0 16px;
+}
+.section-copy a { color: var(--color-action); font-weight: 700; }
+.section-copy a:hover { color: var(--color-primary); }
 
 /* ── 340B & TEAM — pair card inside section wrapper ──
    Both sections sit inside .pair-section which has ivory bg.
    They use a .pair-card (like cta-card) with 50/50 grid.
    Left = 340B (ivory bg), Right = TEAM (navy bg). */
 
-/* Outer wrapper section that holds the card */
+/* ── Pair section wrapper ── */
 .pair-section {
   padding: 112px var(--h-gap);
   position: relative;
   background: var(--color-ivory);
 }
 
-/* The card container — same pattern as .cta-card */
+/* ── Pair card — 2-col grid card ── */
 .pair-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -348,53 +378,50 @@ blockquote p {
   box-shadow: 0 26px 72px rgba(26,33,79,.14);
 }
 
-/* Each panel inside the card */
-.pair-card > section {
-  padding: 64px 56px;
+/* Typography inside pair-card panels */
+.pair-card section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  line-height: 1.1; letter-spacing: -.04em;
+  margin: 0 0 20px; max-width: 100%;
 }
+/* h2::before rule already defined above in section-copy block */
 
-/* 340B panel — ivory */
+.pair-card section p {
+  font-family: var(--font-body);
+  font-size: 1rem; line-height: 1.7;
+  max-width: 100%; margin: 0 0 14px;
+}
+.pair-card section a { font-weight: 700; }
+
+/* 340B panel — ivory background */
 #b-split-billing-without-the-audit-exposure {
   background: var(--color-ivory);
-  display: block !important;
-  width: auto !important;
-  min-height: 0 !important;
-  padding: 64px 56px !important;
+  padding: 64px 56px;
 }
-#b-split-billing-without-the-audit-exposure > h2 {
-  color: var(--color-primary);
-  font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
-  letter-spacing: -.04em; margin: 0 0 20px; max-width: 100%;
-}
-#b-split-billing-without-the-audit-exposure > p { max-width: 100%; }
+#b-split-billing-without-the-audit-exposure h2 { color: var(--color-primary); }
+#b-split-billing-without-the-audit-exposure p  { color: var(--color-ink); }
+#b-split-billing-without-the-audit-exposure h2::before { color: var(--color-action); }
+#b-split-billing-without-the-audit-exposure a { color: var(--color-action); }
 
-/* TEAM panel — navy */
+/* TEAM panel — navy background */
 #what-the-2026-team-model-changes-for-hospital-billing {
   background: var(--color-primary);
+  padding: 64px 56px;
   color: #eef0f5;
-  display: block !important;
-  width: auto !important;
-  min-height: 0 !important;
-  padding: 64px 56px !important;
 }
-#what-the-2026-team-model-changes-for-hospital-billing h2 {
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
-  letter-spacing: -.04em; margin: 0 0 20px; max-width: 100%;
-}
+#what-the-2026-team-model-changes-for-hospital-billing h2       { color: #fff; }
 #what-the-2026-team-model-changes-for-hospital-billing h2::before { color: #c4d7b7; }
-#what-the-2026-team-model-changes-for-hospital-billing > p { color: #c5c9d7; max-width: 100%; }
-#what-the-2026-team-model-changes-for-hospital-billing a { color: var(--color-accent); }
+#what-the-2026-team-model-changes-for-hospital-billing p         { color: #c5c9d7; }
+#what-the-2026-team-model-changes-for-hospital-billing a         { color: var(--color-accent); }
 #what-the-2026-team-model-changes-for-hospital-billing blockquote {
-  grid-template-columns: 1fr; margin: 24px 0;
+  grid-template-columns: 1fr; margin: 20px 0;
 }
 #what-the-2026-team-model-changes-for-hospital-billing blockquote p {
-  background: rgba(255,255,255,.07);
+  background: rgba(255,255,255,.08);
   border: 0; border-left: 3px solid var(--color-accent);
   border-radius: 0 4px 4px 0;
-  padding: 12px 16px; color: #eef0f5; font-size: .92rem;
+  padding: 12px 16px; color: #eef0f5; font-size: .92rem; margin: 0;
 }
 
 /* ── CLEAN CLAIM — 97% large number left ── */
