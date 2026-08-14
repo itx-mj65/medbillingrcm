@@ -3,7 +3,6 @@ import PhysicianScripts from "./PhysicianScripts";
 export default function PhysicianBillingPage() {
   return (
     <div className="ph-page">
-
       <main id="main">
 
         {/* ═══ HERO ═══════════════════════════════════════════ */}
@@ -12,22 +11,17 @@ export default function PhysicianBillingPage() {
             <div className="ph-hero-copy">
               <p className="ew ew--light">Physician billing services</p>
               <h1>Physician billing services for practices that bill on the CMS-1500</h1>
-
-              {/* Mobile image inside copy column */}
               <div className="ph-hero-media-mobile" aria-hidden="true">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/physician-hero.webp" alt="" />
               </div>
-
               <p className="ph-hero-intro">Physician billing is professional billing: the CMS-1500 side of the revenue cycle. A claim is paid on the code, the modifier, and the documentation behind it. We run that side for practices in all 50 states, from charge capture through denial resolution. We report our clean claim rate at the payer.</p>
               <div className="ph-hero-action">
                 <a className="btn btn--gold" href="#assessment">Get a Free Revenue Assessment</a>
                 <a className="btn btn--ghost" href="#scope">See what we cover</a>
               </div>
-              <p className="ph-hero-note">97% first-pass clean claim rate at the payer · 14-day onboarding · No setup fee · All 50 states</p>
+              <p className="ph-hero-note">97% first-pass at the payer &nbsp;|&nbsp; 14-day onboarding &nbsp;|&nbsp; $0 setup &nbsp;|&nbsp; 50 states</p>
             </div>
-
-            {/* Desktop image */}
             <div className="ph-hero-media" aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/physician-hero.webp" alt="Physician and administrator reviewing EHR revenue workflow at a workstation" />
@@ -36,12 +30,12 @@ export default function PhysicianBillingPage() {
         </section>
 
         {/* ═══ PROOF STRIP ════════════════════════════════════ */}
-        <div className="ph-proof" role="list" aria-label="Key metrics">
+        <div className="ph-proof">
           <div className="ph-proof-inner wrap">
-            <div className="ph-proof-item" role="listitem">97% clean claim rate — measured at the payer</div>
-            <div className="ph-proof-item" role="listitem">14-day onboarding</div>
-            <div className="ph-proof-item" role="listitem">No setup fees</div>
-            <div className="ph-proof-item" role="listitem">All 50 states</div>
+            <div className="ph-proof-item">97% clean claim rate — measured at the payer</div>
+            <div className="ph-proof-item">14-day onboarding</div>
+            <div className="ph-proof-item">No setup fees</div>
+            <div className="ph-proof-item">All 50 states</div>
           </div>
         </div>
 
@@ -70,60 +64,78 @@ export default function PhysicianBillingPage() {
           <p className="ph-tbl-note">If your practice also carries a facility component, our <a href="/services/hospital-medical-billing/">hospital billing team</a> runs that side. This page is about the professional claim.</p>
         </section>
 
-        {/* ═══ REVENUE LEAKS — 3 BIG NUMBERS ════════════════ */}
+        {/* ═══ WHERE REVENUE SLIPS ════════════════════════════ */}
         <section className="sec sec--navy ph-reveal">
           <p className="ew ew--light">Where physician revenue slips</p>
-          <h2>Most practices are losing revenue they have already earned</h2>
-          <p>Two places leak the most: the claim coded a level too low, and the authorization nobody chased before the visit. Our physician billing services close both.</p>
+          <h2>Where physician revenue slips</h2>
+          <p>Payers denied 11.8% of claims on first submission in 2024. For Medicare Advantage, the initial rate reached 23.35%, nearly one in four. Most are paid in the end, but only after staff time to rework them and a delay in the cash. That delay is the cost.</p>
+          <p>Prior authorization carries the heaviest load. Physicians average 40 requests a week and 13 hours of staff time. About one in three say those requests are often or always denied.</p>
           <div className="ph-leak-grid">
             <div className="ph-leak-stat">
               <div className="ph-leak-num">11.8%</div>
-              <div className="ph-leak-lbl">Initial denial rate across all payers in 2024</div>
-              <div className="ph-leak-src">Kodiak Solutions / Business Wire, Feb 2025</div>
+              <div className="ph-leak-lbl">Initial denial across all payers</div>
+              <div className="ph-leak-src"><a href="https://www.businesswire.com/news/home/20250227227547/en/Kodiak-Solutions-Revenue-Cycle-Industry-Trends-Report" target="_blank" rel="noopener">Kodiak Solutions / Business Wire, Feb 2025</a></div>
             </div>
             <div className="ph-leak-stat">
               <div className="ph-leak-num">23.35%</div>
-              <div className="ph-leak-lbl">Initial denial rate for Medicare Advantage — nearly 1 in 4 claims</div>
-              <div className="ph-leak-src">Kodiak Solutions / Business Wire, Feb 2025</div>
+              <div className="ph-leak-lbl">Initial denial for Medicare Advantage — nearly 1 in 4</div>
+              <div className="ph-leak-src"><a href="https://www.businesswire.com/news/home/20250227227547/en/Kodiak-Solutions-Revenue-Cycle-Industry-Trends-Report" target="_blank" rel="noopener">Kodiak Solutions / Business Wire, Feb 2025</a></div>
             </div>
             <div className="ph-leak-stat">
               <div className="ph-leak-num">40/wk</div>
               <div className="ph-leak-lbl">Prior auth requests per physician — 13 hours of staff time</div>
-              <div className="ph-leak-src">AMA Prior Authorization Survey</div>
+              <div className="ph-leak-src"><a href="https://www.ama-assn.org/practice-management/prior-authorization/prior-authorization-reform-progress-physicians-remain-burdened" target="_blank" rel="noopener">AMA Prior Authorization Survey</a></div>
             </div>
           </div>
-          <p>Most denied claims are paid in the end, but only after staff time to rework them and a delay in the cash. About one in three physicians say prior auth requests are often or always denied.</p>
+          <p>By the numbers: 11.8% initial denial across all payers, 23.35% for Medicare Advantage, and 40 prior authorizations a week at 13 hours of staff time.</p>
+          <p>Two places leak the most: the claim that goes out coded a level too low, and the authorization nobody chased before the visit. Our physician medical billing services close both.</p>
         </section>
 
-        {/* ═══ SCOPE — 6 CARDS ════════════════════════════════ */}
+        {/* ═══ SCOPE ══════════════════════════════════════════ */}
         <section className="sec sec--ivory ph-reveal" id="scope">
           <p className="ew">What we manage</p>
           <h2>What we run across the physician revenue cycle</h2>
-          <p>Our physician billing services cover the professional revenue cycle end to end — one connected process so a denial pattern changes how the next claim is coded.</p>
+          <p>Our physician billing services cover the professional revenue cycle end to end. This is <a href="/">physician revenue cycle management</a> run as one connected process, so a denial pattern changes how the next claim is coded.</p>
           <div className="ph-scope-grid">
-            {[
-              ["01","Eligibility, benefits & prior authorization","Verified before the visit — not after the denial. We confirm coverage and submit authorizations per payer on schedule."],
-              ["02","Specialty-assigned CPT, ICD-10 & E/M coding","Charge capture assigned by specialty at onboarding. Cardiology, dermatology, and others worked by people who know that specialty's edits."],
-              ["03","Claim scrubbing against payer rules & NCCI edits","Every claim checked against payer-specific rules and NCCI edit sets before submission. Errors caught before they become denials."],
-              ["04","Payment posting & denial resolution","Denials worked by root cause, not batch-processed by age. Patterns feed back into coding so the same mistake does not recur."],
-              ["05","AR follow-up & patient statements","AR worked by payer-specific escalation paths. Patient statements generated and followed up so aging does not accumulate."],
-              ["06","Provider credentialing & payer enrollment","NPI, CAQH, PECOS, and payer applications managed with re-credentialing dates tracked. A lapsed enrollment stops payment — we prevent that."],
-            ].map(([n,t,b]) => (
-              <article className="ph-scope-card ph-reveal" key={n}>
-                <div className="ph-scope-num" aria-hidden="true">{n}</div>
-                <h3>{t}</h3>
-                <p>{b}</p>
-              </article>
-            ))}
+            <article className="ph-scope-card ph-reveal">
+              <div className="ph-scope-num" aria-hidden="true">01</div>
+              <h3>Eligibility, benefits, and prior authorization before the visit</h3>
+              <p>Verified before the visit — not after the denial. Coverage confirmed, authorizations submitted per payer on schedule.</p>
+            </article>
+            <article className="ph-scope-card ph-reveal">
+              <div className="ph-scope-num" aria-hidden="true">02</div>
+              <h3>Specialty-assigned CPT, ICD-10, and E/M coding with charge capture</h3>
+              <p>Charge capture assigned by <a href="/specialties/">specialty</a> at onboarding — coding worked by people who know that specialty&apos;s edits. See also: <a href="/services/medical-coding/">medical coding services</a>.</p>
+            </article>
+            <article className="ph-scope-card ph-reveal">
+              <div className="ph-scope-num" aria-hidden="true">03</div>
+              <h3>Claim scrubbing against payer rules and NCCI edits</h3>
+              <p>Every claim checked against payer-specific rules and NCCI edit sets before submission. Errors caught before they become denials.</p>
+            </article>
+            <article className="ph-scope-card ph-reveal">
+              <div className="ph-scope-num" aria-hidden="true">04</div>
+              <h3>Payment posting and denial resolution by root cause</h3>
+              <p>Denials worked by root cause, not batch-processed by age. Patterns feed back into coding so the same mistake does not recur.</p>
+            </article>
+            <article className="ph-scope-card ph-reveal">
+              <div className="ph-scope-num" aria-hidden="true">05</div>
+              <h3>Accounts receivable follow-up and patient statements</h3>
+              <p><a href="/services/account-receivable-management/">AR</a> worked by payer-specific escalation paths. Patient statements generated and followed up so aging does not accumulate.</p>
+            </article>
+            <article className="ph-scope-card ph-reveal">
+              <div className="ph-scope-num" aria-hidden="true">06</div>
+              <h3>Provider credentialing and payer enrollment kept current</h3>
+              <p>NPI, CAQH, PECOS, and payer applications managed with re-credentialing dates tracked. A lapsed enrollment stops payment — we prevent that.</p>
+            </article>
           </div>
+          <p style={{marginTop:"1.5rem"}}>Coding is assigned by specialty at onboarding, so a cardiology or dermatology claim is worked by someone who knows that specialty&apos;s edits, not a general queue.</p>
         </section>
 
-        {/* ═══ E/M LEVEL — image + number card ═══════════════ */}
+        {/* ═══ E/M OPTIMIZATION ═══════════════════════════════ */}
         <section className="sec sec--navy ph-reveal">
           <p className="ew ew--light">The quietest revenue loss</p>
-          <h2>E/M level optimization</h2>
+          <h2>E/M level optimization, the quietest revenue loss</h2>
           <p>The most common way a physician claim loses money is not a denial. It is a visit billed one level below what the record supports. That is under-coding, and it is silent.</p>
-          <p>Under the 2021 guidelines, an office visit is coded by medical decision making or total time. A 99214 pays about $40 more than a 99213 — roughly $135 against $95. Commercial payers pay 120 to 200 percent of that.</p>
           <div className="ph-em-wrap">
             <div className="ph-em-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -134,10 +146,11 @@ export default function PhysicianBillingPage() {
               </div>
             </div>
             <div>
-              <p style={{color:"rgba(255,255,255,.78)"}}>We review each encounter against the decision-making criteria and code the level the documentation supports, up or down. Where it cannot support a level, the provider gets specific feedback so the fix lands at the chart — not claim by claim.</p>
+              <p>Under the 2021 guidelines, an office visit is coded by medical decision making or total time, not by how much was typed. A 99214 pays about $40 more than a 99213 under the <a href="https://www.cms.gov/medicare/physician-fee-schedule/search" target="_blank" rel="noopener">2026 Medicare Physician Fee Schedule</a>, roughly $135 against $95 in the office. Commercial payers pay 120 to 200 percent of that. Picture one provider seeing 90 established patients a week. Move ten from a 99213 to the 99214 the note already supports, and that is about $400 a week. Over a year it passes $20,000, from visits that already happened. No denial ever fires.</p>
+              <p>We review each encounter against the decision-making criteria and code the level the documentation supports, up or down. Where it cannot support a level, the provider gets specific feedback, so the fix lands at the chart. A 99214 is also among the most audited codes. The review that catches under-coding is the one that holds up under an audit.</p>
               <div className="ph-em-card">
                 <div className="ph-em-big">$20K<span>+</span></div>
-                <div className="ph-em-sub">Annual revenue from visits already happened</div>
+                <div className="ph-em-sub">From visits that already happened</div>
                 <p className="ph-em-note">Move 10 patients a week from 99213 to the 99214 the note already supports — at ~$40 more per visit. No denial ever fires.</p>
                 <div className="ph-em-div" />
                 <div className="ph-em-stats">
@@ -153,14 +166,14 @@ export default function PhysicianBillingPage() {
         <section className="sec sec--white ph-reveal">
           <p className="ew">Denial prevention</p>
           <h2>Where physician claims get denied, and how we stop it</h2>
-          <p>Physician denials cluster in a handful of codes. We catch each before the claim leaves, not after it comes back.</p>
+          <p>Physician denials cluster in a handful of codes. We catch each before the claim leaves, not after it comes back. Prevention beats appeals here.</p>
           <div className="ph-dt-wrap">
             <table className="ph-dt" aria-label="Denial codes and prevention methods">
               <thead><tr><th scope="col">Denial</th><th scope="col">How we stop it</th></tr></thead>
               <tbody>
                 <tr><td>E/M level mismatch</td><td>Decision-making review on every encounter, coded up or down to the record</td></tr>
                 <tr><td>CO-50 medical necessity</td><td>ICD-10 checked against the payer&apos;s coverage policy before billing</td></tr>
-                <tr><td>CO-97 bundling / modifier 25</td><td>NCCI edits checked; modifier applied only when the service is separate</td></tr>
+                <tr><td>CO-97 bundling and modifier 25</td><td>NCCI edits checked; modifier applied only when the service is separate</td></tr>
                 <tr><td>CO-29 timely filing</td><td>Submission inside a set turnaround with deadline monitoring</td></tr>
                 <tr><td>Prior-auth denial</td><td>Authorization tracked per payer before the service is rendered</td></tr>
               </tbody>
@@ -168,36 +181,37 @@ export default function PhysicianBillingPage() {
           </div>
         </section>
 
-        {/* ═══ SPECIALTY WORKFLOWS — 4 BIG-NUMBER CARDS ══════ */}
+        {/* ═══ SPECIALTY WORKFLOWS ════════════════════════════ */}
         <section className="sec sec--ivory ph-reveal">
           <p className="ew">Specialized workflows</p>
           <h2>Every part of the professional revenue cycle, managed</h2>
           <div className="ph-hl-grid">
-            <article className="ph-hl-card ph-reveal" aria-labelledby="pa-h3">
+            <article className="ph-hl-card ph-reveal">
               <div className="ph-hl-big">4 in 5</div>
-              <h3 id="pa-h3">Prior authorization, handled before the visit</h3>
-              <p>Physicians average 40 prior auth requests a week and 13 hours of staff time. Roughly one in three are often or always denied. We submit, track, and appeal per payer before the visit — off the front desk entirely.</p>
-              <p>Around four in five appealed prior-auth denials get overturned, so the appeal is usually the right call.</p>
+              <h3>Prior authorization, handled before the visit</h3>
+              <p>Prior authorization is where a practice loses the most staff time. Physicians average 40 requests a week and 13 hours. Roughly one in three are often or always denied. Left to the front desk, it becomes hold music and missed deadlines. We take it off the front desk.</p>
+              <p>We submit and track authorizations per payer before the visit, watch the status, and appeal the denials that are wrong. Around four in five appealed prior-auth denials get overturned, so the appeal is usually the right call.</p>
               <span className="ph-chip">~4 in 5 appealed denials overturned</span>
             </article>
-            <article className="ph-hl-card ph-hl-card--gold ph-reveal" aria-labelledby="th-h3">
+            <article className="ph-hl-card ph-hl-card--gold ph-reveal">
               <div className="ph-hl-big ph-hl-big--gold">1 fix</div>
-              <h3 id="th-h3">Telehealth billing without the repeat errors</h3>
-              <p>Telehealth denials tend to hit every claim at once — one setup error, every claim wrong. POS 10 when the patient is at home, POS 02 when not. Modifier 95 for audio-video, modifier 93 for audio-only — not interchangeable.</p>
-              <p>We set the place-of-service and modifier pairing per payer and confirm state parity rules. The same visit does not get denied twice.</p>
+              <h3>Telehealth billing without the repeat errors</h3>
+              <p>Telehealth denials tend to hit every claim at once. They come from a setup error, not a single mistake. Fix the setup once.</p>
+              <p>Place of service decides it: POS 10 when the patient is at home, POS 02 when they are not. Modifier 95 marks synchronous audio-video, modifier 93 marks audio-only, and the two are not interchangeable. Under parity laws in most states, commercial payers reimburse telehealth at in-person rates, but only when the POS and modifier are right.</p>
+              <p>We set the place-of-service and modifier pairing per payer and confirm parity rules on commercial claims. The same visit does not get denied twice.</p>
             </article>
-            <article className="ph-hl-card ph-hl-card--navy ph-reveal" aria-labelledby="mips-h3">
+            <article className="ph-hl-card ph-hl-card--navy ph-reveal">
               <div className="ph-hl-big ph-hl-big--navy">−9%</div>
-              <h3 id="mips-h3">MIPS reporting, scored honestly</h3>
-              <p>MIPS moves Medicare Part B payments up or down two years later. Maximum penalty: 9 percent. The upside is budget-neutral and rarely reaches the headline figure.</p>
-              <p>We report Quality, Promoting Interoperability, and Improvement Activities to clear the 75-point threshold and give you the realistic upside — not the statutory maximum.</p>
+              <h3>MIPS reporting, scored honestly</h3>
+              <p>MIPS moves Medicare Part B payments up or down two years later. The performance threshold is <a href="https://qpp.cms.gov" target="_blank" rel="noopener">75 points</a>, and the maximum penalty is 9 percent. The upside is smaller than it sounds: the program is budget neutral, so positive adjustments are scaled down and rarely reach the headline figure.</p>
+              <p>We report Quality, Promoting Interoperability, and Improvement Activities to clear the threshold and avoid the penalty. We tell you the realistic upside, not the statutory maximum.</p>
               <span className="ph-chip ph-chip--navy">Max penalty: 9% of Part B</span>
             </article>
-            <article className="ph-hl-card ph-hl-card--muted ph-reveal" aria-labelledby="cred-h3">
+            <article className="ph-hl-card ph-hl-card--muted ph-reveal">
               <div className="ph-hl-big ph-hl-big--muted">$0</div>
-              <h3 id="cred-h3">Credentialing and enrollment kept current</h3>
-              <p>A lapsed enrollment stops payment with no denial code to warn you. A PECOS deactivation or expired CAQH attestation quietly holds every Medicare claim for that provider.</p>
-              <p>Our <a href="/services/medical-credentialing/">credentialing team</a> manages NPI, CAQH, PECOS, and payer applications, tracking re-credentialing dates so a gap never reaches your remittance.</p>
+              <h3>Credentialing and enrollment kept current</h3>
+              <p>A lapsed enrollment stops payment with no denial code to warn you. A <a href="https://www.cms.gov/medicare/enrollment-renewal/providers-suppliers" target="_blank" rel="noopener">PECOS</a> deactivation or an expired CAQH attestation quietly holds every Medicare claim for that provider.</p>
+              <p>Our credentialing team — managed at <a href="/services/medical-credentialing/">medical-credentialing services</a> — manages NPI, CAQH, PECOS, and payer applications, and tracks re-credentialing dates so a gap never reaches your remittance.</p>
               <span className="ph-chip ph-chip--muted">Zero gaps in enrollment</span>
             </article>
           </div>
@@ -220,15 +234,15 @@ export default function PhysicianBillingPage() {
           <h2>In-house or outsourced, the honest version</h2>
           <div className="ph-inhouse">
             <div>
-              <p>Outsourcing is closer to a coverage question than a cost line. A single biller runs about $50,250 a year before benefits, and that seat carries E/M coding, prior auth, denials, and every CPT change alone. When it sits empty, collections stall. One seat is one point of failure.</p>
-              <p>We work on a percentage of what we collect — paid when you are paid. No seat to backfill, no long-term contract. If you already run a strong team, we take only the leaking piece: <a href="/services/account-receivable-management/">AR</a>, denials, or <a href="/services/medical-credentialing/">credentialing</a>.</p>
+              <p>Outsourcing usually gets weighed as a cost line. For a physician practice, it is closer to a coverage question. A single biller runs about <a href="https://www.bls.gov/oes/current/oes292071.htm" target="_blank" rel="noopener">$50,250 a year</a> in salary before benefits, and that one seat carries E/M coding, prior auth, denials, and every CPT change alone. When it sits empty for a quarter, collections stall with it. One seat is one point of failure.</p>
+              <p>We work on a percentage of what we collect, so we are paid when you are paid. There is no seat to backfill, and no long-term contract if it stops working. If you already run a strong billing team, we take only the piece that is leaking, whether that is <a href="/services/account-receivable-management/">AR</a>, denials, or <a href="/services/medical-credentialing/">credentialing</a>. That is medical billing for physicians shaped to the practice, not a fixed package.</p>
               <div style={{marginTop:"2rem"}}>
                 <a href="#assessment" className="btn">Get a Free Revenue Assessment</a>
               </div>
             </div>
             <div className="ph-cost-box">
               <div className="ph-cost-fig">$50,250</div>
-              <div className="ph-cost-sub">Median biller salary · per year · before benefits (BLS.gov)</div>
+              <div className="ph-cost-sub">Median biller salary · per year · before benefits (<a href="https://www.bls.gov/oes/current/oes292071.htm" target="_blank" rel="noopener" style={{color:"rgba(255,255,255,.5)"}}>BLS.gov</a>)</div>
               <div className="ph-cost-div" />
               <ul className="ph-bul">
                 <li>One biller carries E/M coding, prior auth, and denials alone</li>
@@ -250,44 +264,44 @@ export default function PhysicianBillingPage() {
             <article className="ph-oc ph-reveal">
               <span className="ph-oc-badge">Primary Care</span>
               <div className="ph-oc-metric">18.2% → 61%</div>
-              <div className="ph-oc-lbl">Collection rate on identical $220K/month charges</div>
-              <span className="ph-oc-extra-num">+$94,200</span>
-              <span className="ph-oc-extra-lbl">Additional per month</span>
+              <div className="ph-oc-lbl">Collection rate on identical charges</div>
+              <span className="ph-oc-extra-num">Six-provider group</span>
+              <span className="ph-oc-extra-lbl">Primary care practice</span>
               <div className="ph-oc-name"><a href="/case-studies/patient-first-primary-care/">Patient First Primary Care</a></div>
-              <div className="ph-oc-type">Six-provider primary care group</div>
             </article>
             <article className="ph-oc ph-reveal">
               <span className="ph-oc-badge">Behavioral Health</span>
               <div className="ph-oc-metric">$0 → $43,678</div>
-              <div className="ph-oc-lbl">Monthly collections after ERA &amp; EFT enrollments completed</div>
+              <div className="ph-oc-lbl">Monthly collections after ERA &amp; EFT enrollments that had never been completed</div>
               <span className="ph-oc-extra-num">$178,237</span>
               <span className="ph-oc-extra-lbl">Monthly charges, unchanged</span>
               <div className="ph-oc-name"><a href="/case-studies/psychiatric-connections/">Psychiatric Connections</a></div>
-              <div className="ph-oc-type">Telehealth psychiatry — 6 states</div>
             </article>
             <article className="ph-oc ph-reveal">
               <span className="ph-oc-badge">Dermatology</span>
               <div className="ph-oc-metric">$60,000</div>
               <div className="ph-oc-lbl">Revenue retained in a one-time audit</div>
-              <span className="ph-oc-extra-num">1 audit</span>
-              <span className="ph-oc-extra-lbl">No billing handoff needed</span>
-              <div className="ph-oc-name"><a href="/case-studies/">Divine Dermatology</a></div>
-              <div className="ph-oc-type">Specialty dermatology practice</div>
+              <span className="ph-oc-extra-num">Divine Dermatology</span>
+              <span className="ph-oc-extra-lbl">Specialty dermatology practice</span>
+              <div className="ph-oc-name"><a href="/case-studies/">The full case studies are here.</a></div>
             </article>
           </div>
-          <p style={{marginTop:"1.25rem",fontSize:".9rem",color:"var(--color-muted)"}}>The full <a href="/case-studies/" style={{color:"var(--color-action)",fontWeight:700}}>case studies are here</a>.</p>
+          <p style={{marginTop:"1rem",fontSize:".9rem",color:"var(--color-muted)"}}>
+            Patient First, a six-provider primary care group, moved from an 18.2% to a 61% collection rate. Psychiatric Connections, a behavioral health practice, went from $0 to $43,678 a month once we set up the ERA and EFT enrollments that had never been completed. A one-time audit retained $60,000 for Divine Dermatology. <a href="/case-studies/" style={{color:"var(--color-action)",fontWeight:700}}>The full case studies are here.</a>
+          </p>
         </section>
 
         {/* ═══ 97% MEASURE ════════════════════════════════════ */}
         <section className="sec sec--green ph-reveal">
           <p className="ew ew--gold">How we measure it</p>
+          <h2>The 97% we report, and where we count it</h2>
           <div className="ph-measure">
             <div>
               <div className="ph-measure-mark">97<span>%</span></div>
             </div>
             <div>
               <div className="ph-measure-sub">First-pass clean claim rate</div>
-              <p className="ph-measure-note">Measured at the payer on professional (837-P) claims — not clearinghouse acceptance, which reads 7–12 points higher. Every account runs inside our <a href="/">Revenue Control Framework</a>.</p>
+              <p className="ph-measure-note">As a physician billing company, our 97% first-pass rate is measured at the payer on professional (837-P) claims. It is not the clearinghouse figure, which always reads higher. Every account runs inside our Revenue Control Framework — the five-phase method behind each engagement — and there is no setup fee or long-term contract. <a href="/" style={{color:"rgba(255,255,255,.6)"}}>About the framework →</a></p>
               <div className="ph-m-items">
                 {[
                   ["837-P professional claims only","Not clearinghouse acceptance — that figure reads 7–12 points higher"],
@@ -309,8 +323,8 @@ export default function PhysicianBillingPage() {
         <section className="sec sec--white ph-reveal">
           <p className="ew">System compatibility</p>
           <h2>The systems we already work inside</h2>
-          <p>Switching billing usually raises the fear of ripping out your systems. You keep them. We work inside your existing setup with integrations scoped during the revenue assessment at no extra charge.</p>
-          <div className="ph-ehr" role="list" aria-label="Compatible EHR and practice management systems">
+          <p>Switching billing usually raises the fear of ripping out your systems. You keep them. We work inside your existing setup, including Epic, Athenahealth, eClinicalWorks, NextGen, Kareo, and AdvancedMD, among others, with integrations scoped during the revenue assessment.</p>
+          <div className="ph-ehr" role="list">
             {["Epic","Athenahealth","eClinicalWorks","NextGen","Kareo","AdvancedMD","Office Ally","Practice Fusion","DrChrono","Greenway Health"].map(s=>(
               <span className="ph-ehr-badge" role="listitem" key={s}>{s}</span>
             ))}
@@ -372,24 +386,41 @@ export default function PhysicianBillingPage() {
           <h2>Physician billing questions we get asked</h2>
           <div className="ph-faq-layout">
             <div className="ph-faq-intro">
-              <p style={{color:"var(--color-muted)",fontSize:"1rem",lineHeight:1.7}}>Direct answers for physician practices evaluating an outside billing partner.</p>
+              <p style={{color:"var(--color-muted)"}}>Direct answers for physician practices evaluating an outside billing partner.</p>
             </div>
             <div className="ph-faq-list">
-              {[
-                ["fq1","What is the difference between physician billing and hospital billing?","The two get confused constantly, and billing them the same way is where money leaks. Physician billing covers the provider's work on the CMS-1500 or 837-P, priced by RVUs under the fee schedule. Hospital billing covers the building on the UB-04, priced by DRG or APC. One encounter can generate both, and they are coded and denied differently."],
-                ["fq2","How do you improve E/M coding accuracy?","Most practices lose money to under-coding without ever seeing a denial. We review each encounter against the 2021 decision-making criteria and code the level the documentation supports, up or down. Where the record cannot support a level, the provider gets specific feedback so the fix happens at the chart."],
-                ["fq3","Do you handle prior authorization?","Yes. We submit and track authorizations per payer before the visit and appeal the denials that are wrong. Most appealed prior-auth denials are overturned, so the appeal is usually worth filing."],
-                ["fq4","Can you bill telehealth correctly across states?","Telehealth denials tend to repeat across every claim because one setup error hits them all. Yes, we apply the correct place-of-service code and modifier for each payer, then confirm state parity rules."],
-                ["fq5","Do you support MIPS reporting?","Yes. We report the categories that clear the 75-point threshold and keep you off the penalty, and we give you a realistic view of the upside — not the statutory maximum."],
-                ["fq6","What EHR and practice management systems do you work with?","You keep your systems. We work inside Epic, Athenahealth, eClinicalWorks, NextGen, Kareo, AdvancedMD, and others, with integrations scoped during the revenue assessment."],
-                ["fq7","How fast can you onboard, and is there a contract?","Onboarding runs about 14 days with no gap in claim submission, no setup fee, and no long-term contract."],
-                ["fq8","How do you measure your clean claim rate?","At the payer, on first submission, with zero rework — so a claim that needed a correction before it paid does not count. Many vendors quote clearinghouse acceptance instead, which reads 7–12 points higher."],
-              ].map(([id,q,a])=>(
-                <details key={id}>
-                  <summary>{q}</summary>
-                  <p>{a}</p>
-                </details>
-              ))}
+              <details>
+                <summary>What is the difference between physician billing and hospital billing?</summary>
+                <p>The two get confused constantly, and billing them the same way is where money leaks. Physician, or professional, billing covers the provider&apos;s work on the CMS-1500 or 837-P, priced by RVUs under the fee schedule. Hospital, or facility, billing covers the building on the UB-04, priced by DRG or APC. One encounter can generate both, and they are coded and denied differently.</p>
+              </details>
+              <details>
+                <summary>How do you improve E/M coding accuracy?</summary>
+                <p>Most practices lose money to under-coding without ever seeing a denial. We review each encounter against the 2021 decision-making criteria and code the level the documentation supports, up or down. Where the record cannot support a level, the provider gets specific feedback, so the fix happens at the chart, not claim by claim.</p>
+              </details>
+              <details>
+                <summary>Do you handle prior authorization?</summary>
+                <p>Prior authorization is the biggest time sink most practices have, and the easiest to hand off. Yes, we submit and track authorizations per payer before the visit and appeal the denials that are wrong. Most appealed prior-auth denials are overturned, so the appeal is usually worth filing.</p>
+              </details>
+              <details>
+                <summary>Can you bill telehealth correctly across states?</summary>
+                <p>Telehealth denials tend to repeat across every claim, because one setup error hits them all. Yes, we apply the correct place-of-service code and modifier for each payer, then confirm state parity rules, so those claims stop getting rejected.</p>
+              </details>
+              <details>
+                <summary>Do you support MIPS reporting?</summary>
+                <p>The risk with MIPS is a penalty of up to 9 percent, and the upside is usually oversold. Yes, we report the categories that clear the 75-point threshold and keep you off the penalty, and we give you a realistic view of the upside, not the statutory maximum.</p>
+              </details>
+              <details>
+                <summary>What EHR and practice management systems do you work with?</summary>
+                <p>Switching billing usually raises the fear of ripping out your systems. You keep them. We work inside your existing setup, including Epic, Athenahealth, eClinicalWorks, NextGen, Kareo, and AdvancedMD, among others, with integrations scoped during the revenue assessment.</p>
+              </details>
+              <details>
+                <summary>How fast can you onboard, and is there a contract?</summary>
+                <p>The worry is a long, disruptive switch that locks you in. Neither happens here. Onboarding runs about 14 days with no gap in claim submission, no setup fee, and no long-term contract.</p>
+              </details>
+              <details>
+                <summary>How do you measure your clean claim rate?</summary>
+                <p>This is the number to pin any billing company on, because it is easy to inflate. We measure ours at the payer, on first submission, with zero rework, so a claim that needed a correction before it paid does not count. Many vendors quote clearinghouse acceptance instead, which reads higher.</p>
+              </details>
             </div>
           </div>
         </section>
@@ -397,13 +428,13 @@ export default function PhysicianBillingPage() {
         {/* ═══ ASSESSMENT ═════════════════════════════════════ */}
         <section className="sec sec--green ph-reveal" id="assessment">
           <p className="ew ew--gold">Ready when you are</p>
-          <h2>The free assessment is specific</h2>
-          <p>We pull a sample of your claims and show your E/M distribution against benchmark, your top denial reasons by dollar, and your aged AR by payer. You keep the findings whether or not you work with us.</p>
+          <h2>The free assessment is specific.</h2>
+          <p>We pull a sample of your claims and show your E/M distribution against benchmark, your top denial reasons by dollar, and your aged AR by payer. You keep the findings whether or not you work with us. If you decide to outsource physician billing services after that, onboarding runs about two weeks, with no setup fee and no long-term contract.</p>
 
           {/* Wide banner */}
           <div className="ph-assess-banner">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/physician-meeting.webp" alt="Practice administrator and RCM strategist reviewing revenue analysis reports" loading="lazy" />
+            <img src="/physician-meeting.webp" alt="Practice administrator and senior RCM strategist reviewing printed revenue analysis reports and denial breakdowns at a professional conference table" loading="lazy" />
             <div className="ph-assess-grad" aria-hidden="true" />
             <div className="ph-assess-text" aria-hidden="true">
               <div className="ph-assess-tag">Revenue Assessment</div>
@@ -415,7 +446,7 @@ export default function PhysicianBillingPage() {
           <div className="ph-assess-grid">
             <div className="ph-assess-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/physician-assessment.webp" alt="Senior RCM strategist presenting revenue assessment summary on tablet" loading="lazy" />
+              <img src="/physician-assessment.webp" alt="Senior RCM strategist presenting revenue assessment summary on tablet to physician practice owner — consultation meeting, no sales pose" loading="lazy" />
               <div className="ph-assess-accent" aria-hidden="true" />
               <div className="ph-assess-caption" aria-hidden="true">
                 <div className="ph-assess-cap-h">45-minute revenue assessment</div>
@@ -425,12 +456,19 @@ export default function PhysicianBillingPage() {
 
             <div>
               <p className="ew ew--gold" style={{marginBottom:"1.25rem"}}>Your revenue assessment starts here</p>
-              <h3 style={{color:"#fff",marginBottom:"1rem",fontSize:"clamp(1.25rem,2.2vw,1.5rem)"}}>A focused look at where your revenue is going</h3>
+              <h3 style={{fontSize:"clamp(1.25rem,2.2vw,1.625rem)",fontWeight:700,color:"#fff",marginBottom:"1rem"}}>A focused look at where your revenue is going</h3>
               <p style={{color:"rgba(255,255,255,.65)",maxWidth:"none"}}>We review your claims, your E/M distribution, your top denial codes by dollar, and your aged AR by payer. You keep the findings. No rate card, no obligation.</p>
               <ul className="ph-checklist">
-                {["E/M distribution benchmarked against your specialty","Top denial reasons by dollar from your AR","Aged AR by payer — filing window exposure","You keep the findings either way","HIPAA-compliant — BAA signed before any data moves","No setup fee. No long-term contract."].map(item=>(
+                {[
+                  "E/M distribution benchmarked against your specialty",
+                  "Top denial reasons by dollar from your AR",
+                  "Aged AR by payer — filing window exposure",
+                  "You keep the findings either way",
+                  "HIPAA-compliant — BAA signed before any data moves",
+                  "No setup fee. No long-term contract.",
+                ].map(item=>(
                   <li key={item}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#528532" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#528532" strokeWidth="2.5" strokeLinecap="round" width="16" height="16" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
                     {item}
                   </li>
                 ))}
@@ -440,21 +478,45 @@ export default function PhysicianBillingPage() {
             <div className="ph-form-box">
               <h3>Get a Free Revenue Assessment</h3>
               <form id="physicianAssessmentForm" action="/request-free-audit/" method="post" noValidate>
-                <div className="ph-form-group"><label className="ph-form-lbl" htmlFor="f-name">Full name</label><input className="ph-form-ctrl" type="text" id="f-name" name="full_name" placeholder="Dr. Jane Smith" autoComplete="name" required /></div>
-                <div className="ph-form-group"><label className="ph-form-lbl" htmlFor="f-email">Work email</label><input className="ph-form-ctrl" type="email" id="f-email" name="work_email" placeholder="name@practice.com" autoComplete="email" required /></div>
-                <div className="ph-form-group"><label className="ph-form-lbl" htmlFor="f-practice">Practice name</label><input className="ph-form-ctrl" type="text" id="f-practice" name="practice_name" placeholder="Your practice or group name" required /></div>
+                <div className="ph-form-group">
+                  <label className="ph-form-lbl" htmlFor="f-name">Full name</label>
+                  <input className="ph-form-ctrl" type="text" id="f-name" name="full_name" placeholder="Dr. Jane Smith" autoComplete="name" required />
+                </div>
+                <div className="ph-form-group">
+                  <label className="ph-form-lbl" htmlFor="f-email">Work email</label>
+                  <input className="ph-form-ctrl" type="email" id="f-email" name="work_email" placeholder="name@practice.com" autoComplete="email" required />
+                </div>
+                <div className="ph-form-group">
+                  <label className="ph-form-lbl" htmlFor="f-practice">Practice name</label>
+                  <input className="ph-form-ctrl" type="text" id="f-practice" name="practice_name" placeholder="Your practice or group name" required />
+                </div>
                 <div className="ph-form-group">
                   <label className="ph-form-lbl" htmlFor="f-specialty">Specialty</label>
                   <select className="ph-form-ctrl" id="f-specialty" name="specialty" defaultValue="">
                     <option value="" disabled>Select specialty</option>
-                    {["Primary care","Cardiology","Dermatology","Behavioral health","Orthopedics","Gastroenterology","Neurology","Oncology","Radiology","Other specialty"].map(s=><option key={s}>{s}</option>)}
+                    <option>Primary care</option>
+                    <option>Cardiology</option>
+                    <option>Dermatology</option>
+                    <option>Behavioral health</option>
+                    <option>Orthopedics</option>
+                    <option>Gastroenterology</option>
+                    <option>Neurology</option>
+                    <option>Oncology</option>
+                    <option>Radiology</option>
+                    <option>Other specialty</option>
                   </select>
                 </div>
                 <div className="ph-form-group">
                   <label className="ph-form-lbl" htmlFor="f-concern">Primary revenue concern</label>
                   <select className="ph-form-ctrl" id="f-concern" name="revenue_concern" defaultValue="">
                     <option value="" disabled>Select concern</option>
-                    {["Denials","Under-coded E/M levels","Prior authorization burden","Aged AR","Credentialing gaps","Telehealth billing","Full revenue cycle"].map(s=><option key={s}>{s}</option>)}
+                    <option>Denials</option>
+                    <option>Under-coded E/M levels</option>
+                    <option>Prior authorization burden</option>
+                    <option>Aged AR</option>
+                    <option>Credentialing gaps</option>
+                    <option>Telehealth billing</option>
+                    <option>Full revenue cycle</option>
                   </select>
                 </div>
                 <button type="submit" className="ph-form-submit">Get a Free Revenue Assessment</button>
@@ -472,6 +534,7 @@ export default function PhysicianBillingPage() {
           <div className="ph-footer-brand">
             <a href="/">Medbilling RCM</a>
             <p>Professional billing for CMS-1500 practices, measured at the payer. E/M coding, prior auth, denials, and telehealth across all 50 states.</p>
+            <p style={{marginTop:".5rem",fontSize:".78rem",color:"rgba(255,255,255,.3)"}}>Last reviewed August 2026. Figures cited from CMS, the AMA, Kodiak Solutions, and the U.S. Bureau of Labor Statistics; see the linked sources.</p>
           </div>
           <div>
             <h4>Services</h4>
@@ -509,7 +572,7 @@ export default function PhysicianBillingPage() {
         <div className="ph-footer-bot">
           <div>
             <p className="ph-footer-copy">© 2026 Medbilling RCM. All rights reserved.</p>
-            <p className="ph-footer-copy">8907 Creeks Gate Ct, Richmond, TX 77407 | 7 1st St, Rosedale, NY 11422</p>
+            <p className="ph-footer-copy">8907 Creeks Gate Ct, Richmond, TX 77407 &nbsp;|&nbsp; 7 1st St, Rosedale, NY 11422</p>
           </div>
           <p className="ph-footer-rev">Last reviewed August 2026. Figures from CMS, AMA, Kodiak Solutions, and BLS.</p>
         </div>
