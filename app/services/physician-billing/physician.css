@@ -129,7 +129,7 @@
   display: inline-flex; align-items: center; justify-content: center;
   gap: 8px; min-height: 52px; padding: 0 28px;
   background: var(--color-action); color: #fff !important;
-  font-family: var(--font-body); font-size: .9rem; font-weight: 700;
+  font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 700;
   border-radius: var(--radius-btn); border: none; cursor: pointer;
   text-decoration: none !important;
   transition: background .22s, transform .22s;
@@ -186,7 +186,7 @@
 .ph-page .ph-hero-intro  { font-size: var(--fs-body); color: rgba(255,255,255,.78); line-height: var(--lh-lead); max-width: 600px; margin: 0 0 12px; }
 .ph-page .ph-hero-action { margin: 20px 0 18px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .ph-page .ph-hero-note {
-  font-size: .88rem; color: rgba(255,255,255,.5);
+  font-size: var(--fs-sm); color: rgba(255,255,255,.5);
   padding-top: 16px; border-top: 1px solid rgba(255,255,255,.14);
   margin: 0; max-width: 600px; font-style: italic;
 }
@@ -271,7 +271,7 @@
 .ph-page .ph-scope-card:hover { box-shadow: 0 8px 28px rgba(26,33,79,.1); transform: translateY(-2px); }
 .ph-page .ph-scope-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--color-primary); opacity: .1; line-height: 1; margin-bottom: 10px; }
 .ph-page .ph-scope-card h3 { font-size: var(--fs-body); color: var(--color-primary); margin-bottom: .375rem; }
-.ph-page .ph-scope-card p  { font-size: .84rem; color: var(--color-muted); line-height: 1.6; max-width: none; margin: 0; }
+.ph-page .ph-scope-card p  { font-size: .84rem; color: var(--color-muted); line-height: var(--lh-body); max-width: none; margin: 0; }
 .ph-page .ph-scope-card a  { color: var(--color-action); font-weight: 700; }
 
 /* ─── E/M SECTION (image + copy card) ───────────────────── */
@@ -362,7 +362,7 @@
 .ph-page .ph-cost-sub { font-size: .8rem; color: rgba(255,255,255,.45); margin-bottom: 1.5rem; }
 .ph-page .ph-cost-div { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 1.5rem; }
 .ph-page .ph-bul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .75rem; }
-.ph-page .ph-bul li { display: flex; gap: .75rem; font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.55; }
+.ph-page .ph-bul li { display: flex; gap: .75rem; font-size: var(--fs-sm); color: rgba(255,255,255,.75); line-height: 1.55; }
 .ph-page .ph-bul li::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); margin-top: .55rem; }
 
 /* ─── OUTCOMES ───────────────────────────────────────────── */
@@ -373,7 +373,7 @@
 .ph-page .ph-oc-lbl    { font-size: .82rem; color: var(--color-muted); line-height: 1.4; }
 .ph-page .ph-oc-extra-num { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-primary); letter-spacing: -.02em; display: block; margin-top: .75rem; }
 .ph-page .ph-oc-extra-lbl { font-size: var(--fs-xs); color: var(--color-muted); display: block; }
-.ph-page .ph-oc-name a { color: var(--color-action); font-weight: 700; font-size: .88rem; text-decoration: none; }
+.ph-page .ph-oc-name a { color: var(--color-action); font-weight: 700; font-size: var(--fs-sm); text-decoration: none; }
 .ph-page .ph-oc-type   { font-size: .75rem; color: var(--color-muted); }
 
 /* ─── 97% MEASURE ────────────────────────────────────────── */
@@ -381,7 +381,7 @@
 .ph-page .ph-measure-mark { font-family: var(--font-heading); font-size: clamp(5rem,11vw,9rem); font-weight: 800; color: var(--text-on-dark); line-height: .82; letter-spacing: var(--ls-heading); white-space: nowrap; }
 .ph-page .ph-measure-mark span { font-size: 55%; color: rgba(255,255,255,.4); }
 .ph-page .ph-measure-sub  { font-size: 1.25rem; font-weight: 600; color: rgba(255,255,255,.88); margin-bottom: .625rem; }
-.ph-page .ph-measure-note { font-size: .9rem; color: rgba(255,255,255,.5); max-width: 40ch; line-height: var(--lh-lead); }
+.ph-page .ph-measure-note { font-size: var(--fs-sm); color: rgba(255,255,255,.5); max-width: 40ch; line-height: var(--lh-lead); }
 .ph-page .ph-measure-note a { color: rgba(255,255,255,.6); }
 .ph-page .ph-m-items { display: flex; flex-direction: column; margin-top: 1.5rem; }
 .ph-page .ph-m-item { border-bottom: 1px solid rgba(255,255,255,.08); padding: 1.25rem 0; }
@@ -400,7 +400,7 @@
 .ph-page .ph-fit-head { display: flex; align-items: center; gap: .625rem; font-family: var(--font-heading); font-size: var(--fs-sm); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 1.25rem; color: var(--text-on-dark); }
 .ph-page .ph-fit-no .ph-fit-head { color: var(--color-primary); }
 .ph-page .ph-fit-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .875rem; }
-.ph-page .ph-fit-list li { display: flex; gap: .75rem; font-size: .9rem; line-height: 1.55; color: rgba(255,255,255,.82); padding-bottom: .875rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+.ph-page .ph-fit-list li { display: flex; gap: .75rem; font-size: var(--fs-sm); line-height: 1.55; color: rgba(255,255,255,.82); padding-bottom: .875rem; border-bottom: 1px solid rgba(255,255,255,.1); }
 .ph-page .ph-fit-list li:last-child { border-bottom: none; padding-bottom: 0; }
 .ph-page .ph-fit-no .ph-fit-list li { color: var(--color-ink); border-bottom-color: rgba(26,33,79,.1); }
 .ph-page .ph-fit-list li::before { content: '›'; color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
@@ -448,7 +448,7 @@
 .ph-page .ph-assess-cap-h { font-family: var(--font-heading); font-size: var(--fs-sm); font-weight: 700; color: var(--text-on-dark); margin-bottom: 3px; }
 .ph-page .ph-assess-cap-s { font-size: var(--fs-2xs); color: rgba(255,255,255,.55); }
 .ph-page .ph-checklist { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: .875rem; }
-.ph-page .ph-checklist li { display: flex; gap: .75rem; font-size: .9rem; color: rgba(255,255,255,.88); line-height: 1.55; align-items: flex-start; padding-bottom: .875rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+.ph-page .ph-checklist li { display: flex; gap: .75rem; font-size: var(--fs-sm); color: rgba(255,255,255,.88); line-height: 1.55; align-items: flex-start; padding-bottom: .875rem; border-bottom: 1px solid rgba(255,255,255,.12); }
 .ph-page .ph-checklist li:last-child { border-bottom: none; padding-bottom: 0; }
 .ph-page .ph-checklist li svg { flex-shrink: 0; margin-top: .15rem; }
 /* Form box — dark navy card on green section (matches original .assess-form) */

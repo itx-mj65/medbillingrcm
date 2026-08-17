@@ -68,7 +68,7 @@
   --radius-media: 22px;         /* Media 18–26px — midpoint */
   --radius-pill:  999px;        /* Pills */
   --radius-btn:   8px;          /* Buttons — rounded from brand mockup */
-  --space-section: clamp(4rem, 8vw, 9rem);
+  --space-section: clamp(7rem, 8vw, 9rem);    /* 112-144px desktop — brand book p.15 */
 
   /* ── Font stacks ── */
   --serif:        Georgia, 'Times New Roman', serif;
@@ -83,10 +83,11 @@
   --fs-2xs:      0.6875rem;  /* 11px — fine print */
 
   /* ── Line-heights (brand book p.12: body 1.6) ── */
-  --lh-heading:  1.08;   /* H1 */
+  --lh-display:  1.06;   /* Display 68/64 — brand book p.12 */
+  --lh-heading:  1.08;   /* H1 58/52 — brand book p.12 */
   --lh-subhead:  1.12;   /* H2 */
   --lh-h3:       1.3;    /* H3 */
-  --lh-body:     1.7;    /* Body — brand book 1.6 baseline */
+  --lh-body:     1.6;    /* Body — brand book p.12 EXACT: 1.6 line-height */
   --lh-lead:     1.65;   /* Lead/intro paragraphs */
 
   /* ── Letter-spacing ── */
@@ -95,8 +96,10 @@
   --ls-badge:    .1em;    /* Small caps */
 
   /* ── Section padding ── */
-  --sec-desktop: clamp(5.5rem, 8vw, 7rem);   /* 88-112px */
-  --sec-gap:     max(24px, calc((100vw - 1180px) / 2));  /* centering gap */
+  --sec-desktop: clamp(7rem, 8vw, 9rem);     /* 112-144px desktop — brand book p.15 */
+  --sec-gap:     max(24px, calc((100vw - 1180px) / 2));  /* centering gap — brand book p.15 */
+  --sec-tablet:  clamp(5.5rem, 6vw, 6.5rem); /* 88-104px tablet — brand book p.15 */
+  --sec-mobile:  clamp(4rem, 5vw, 5rem);     /* 64-80px mobile  — brand book p.15 */
 
   /* ── Dark surface text ── */
   --text-on-dark:        #ffffff;
@@ -136,7 +139,7 @@ body  {
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: var(--fs-body);       /* 16px — brand book minimum */
-  line-height: 1.6;                /* brand book exact */
+  line-height: var(--lh-body);     /* brand book p.12 exact: 1.6 */
   -webkit-font-smoothing: antialiased;
 }
 body.menu-open { overflow: hidden; }
@@ -167,38 +170,40 @@ button { cursor: pointer; }
 /* ── 6. TYPOGRAPHY — brand book p.12 ── */
 h1, h2, h3, p { margin-top: 0; }
 
-h1, h2 {
-  font-family: var(--font-heading);
-  letter-spacing: -.04em;
+h1, h2, h3 {
+  font-family: var(--font-heading);   /* Poppins — brand book p.11 */
+  letter-spacing: var(--ls-heading);  /* -.04em tight — brand book */
   color: var(--navy);
 }
 
 h1 {
-  font-size: var(--fs-h1);   /* 36px → 52px */
-  line-height: 1.08;
+  font-size: var(--fs-h1);            /* 36px → 52px — brand book p.12 */
+  font-weight: 700;                    /* Poppins 700 — brand book p.11 */
+  line-height: var(--lh-heading);     /* 1.08 ≈ 58/52 — brand book p.12 */
   margin-bottom: 20px;
 }
 
 h2 {
-  font-size: var(--fs-h2);   /* 30px → 40px */
-  line-height: 1.12;
+  font-size: var(--fs-h2);            /* 30px → 40px — brand book p.12 */
+  font-weight: 700;                    /* Poppins 700 — brand book p.11 */
+  line-height: var(--lh-subhead);     /* 1.12 ≈ 48/40 — brand book p.12 */
   margin-bottom: 20px;
 }
 
 h3 {
-  font-size: var(--fs-h3);   /* 24px */
-  line-height: 1.3;
-  color: var(--navy);
-  font-family: var(--font-heading);
-  font-weight: 600;
+  font-size: var(--fs-h3);            /* 24px desktop / 22px mobile — brand book p.12 */
+  font-weight: 600;                    /* Poppins 600 — brand book p.11 */
+  line-height: var(--lh-h3);         /* 1.3 ≈ 31/24 — brand book p.12 */
   margin-bottom: 10px;
 }
 
 .lead {
-  font-size: var(--fs-lead); /* 18px */
-  line-height: 1.7;
-  color: #4f5570;
-  max-width: 680px;
+  font-family: var(--font-body);       /* Montserrat — brand book p.11 */
+  font-size: var(--fs-lead);           /* 18px — brand book body ceiling */
+  font-weight: 400;
+  line-height: var(--lh-body);        /* 1.6 — brand book p.12 exact */
+  color: var(--color-muted);          /* #6a6d77 — muted text */
+  max-width: 68ch;                    /* brand book: max measure ~68 chars */
 }
 
 /* ── 6b. GLOBAL TYPE SYSTEM — used by ALL pages ────────────
