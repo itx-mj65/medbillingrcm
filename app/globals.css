@@ -1529,16 +1529,13 @@ body.js-ready .reveal {
 .cta-sec-contact { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; }
 .cta-sec-contact a {
   display: flex; align-items: center; gap: 8px;
-  font-size: var(--fs-sm); font-weight: 700;
-  color: #ffffff;                          /* full white — high contrast on green bg */
-  background: rgba(0,0,0,.18);            /* subtle dark pill so text separates from green */
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: var(--radius-pill);
-  padding: 8px 16px;
-  text-decoration: none; transition: background .18s, border-color .18s;
+  font-size: var(--fs-sm); font-weight: 600;
+  color: var(--color-accent);   /* gold #d49b28 — brand book accent on dark/green bg */
+  text-decoration: none;
+  transition: color .18s;
 }
-.cta-sec-contact a svg { flex-shrink: 0; opacity: .9; }
-.cta-sec-contact a:hover { background: rgba(0,0,0,.32); border-color: rgba(255,255,255,.5); }
+.cta-sec-contact a svg { flex-shrink: 0; }
+.cta-sec-contact a:hover { color: #fff; }
 /* Right column — form card */
 .cta-sec-right {}
 .cta-sec-form-box {
