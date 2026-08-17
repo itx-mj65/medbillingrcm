@@ -533,7 +533,7 @@ details[open] summary::after { content: '−'; }
 @media (max-width: 1080px) {
   .hero .shell { grid-template-columns: 1fr; gap: 0; padding: 56px 0 0; }
   .hero-media.mobile { display: block; height: min(60vw,440px); margin: 16px 0 0; border-radius: 80px 0 18px 0; }
-  .level2 { padding-top: 88px; padding-bottom: 88px; }
+  .level2 { padding-top: var(--sec-tablet); padding-bottom: var(--sec-tablet); }
   .rcm-flow { grid-template-columns: 1fr 1fr; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
   #what-happens-after-you-request-an-assessment blockquote { grid-template-columns: 1fr 1fr; }
@@ -542,7 +542,7 @@ details[open] summary::after { content: '−'; }
   .systems-layout { grid-template-columns: 1fr; gap: 36px; }
 }
 @media (max-width: 900px) {
-  .level2 { padding-top: 80px; padding-bottom: 80px; }
+  .level2 { padding-top: var(--sec-tablet); padding-bottom: var(--sec-tablet); }
   .rcm-flow { grid-template-columns: 1fr; }
   .pair-card { grid-template-columns: 1fr; }
   #b-split-billing-without-the-audit-exposure,
@@ -557,7 +557,7 @@ details[open] summary::after { content: '−'; }
   #the-rules-we-build-every-claim-around::before { top: 80px; font-size: 4.5rem; }
 }
 @media (max-width: 768px) {
-  .level2 { padding-top: 64px; padding-bottom: 64px; }
+  .level2 { padding-top: var(--sec-mobile); padding-bottom: var(--sec-mobile); }
   .proof-grid { grid-template-columns: 1fr 1fr; }
   .proof-item:nth-child(2) { border-right: 0; }
   .proof-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.2); }
@@ -576,7 +576,7 @@ details[open] summary::after { content: '−'; }
 }
 @media (max-width: 560px) {
   :root { --h-gap: 16px; }
-  .level2 { padding-top: 56px; padding-bottom: 56px; }
+  .level2 { padding-top: clamp(3.5rem,5vw,4rem); padding-bottom: clamp(3.5rem,5vw,4rem); }
   .hero-media.mobile { height: min(74vw,320px); border-radius: 56px 0 14px 0; }
   .proof-grid { grid-template-columns: 1fr; }
   .proof-item { border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,.2) !important; }

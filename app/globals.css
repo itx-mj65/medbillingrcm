@@ -1330,6 +1330,104 @@ body.js-ready .reveal {
   .hdr-logo-sub { display: none; }
 }
 
+
+/* ═══════════════════════════════════════════════════════════
+   CTA SECTION — reusable across all pages
+   Green outer bg · 2-col: left checklist / right form card
+═══════════════════════════════════════════════════════════ */
+.cta-sec {
+  background: var(--color-secondary);
+  padding: var(--sec-desktop) var(--sec-gap);
+}
+.cta-sec-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+/* Left column */
+.cta-sec-ew {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 14px;
+  font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--color-accent);
+}
+.cta-sec-ew::before { content: ''; flex-shrink: 0; width: 28px; border-top: 2px solid var(--color-accent); }
+.cta-sec-h2 {
+  font-family: var(--font-heading); font-size: var(--fs-h2); font-weight: 700;
+  line-height: var(--lh-subhead); letter-spacing: var(--ls-heading);
+  color: #fff; margin: 0 0 16px; max-width: 100%;
+}
+.cta-sec-body {
+  font-size: var(--fs-body); color: rgba(255,255,255,.82);
+  line-height: var(--lh-body); margin: 0 0 24px; max-width: 52ch;
+}
+.cta-sec-list {
+  list-style: none; padding: 0; margin: 0 0 28px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.cta-sec-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: var(--fs-body); color: rgba(255,255,255,.88); line-height: 1.55;
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.cta-sec-list li:last-child { border-bottom: none; }
+.cta-sec-check { flex-shrink: 0; margin-top: 2px; }
+.cta-sec-contact { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; }
+.cta-sec-contact a {
+  display: flex; align-items: center; gap: 8px;
+  font-size: var(--fs-sm); font-weight: 600; color: rgba(255,255,255,.65);
+  text-decoration: none; transition: color .18s;
+}
+.cta-sec-contact a:hover { color: #fff; }
+/* Right column — form card */
+.cta-sec-right {}
+.cta-sec-form-box {
+  background: #fff; border-radius: 20px;
+  padding: 36px 32px; box-shadow: 0 24px 64px rgba(0,0,0,.18);
+}
+.cta-sec-form-h3 {
+  font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700;
+  color: var(--color-primary); margin: 0 0 22px;
+}
+.cta-sec-form { display: flex; flex-direction: column; gap: 14px; }
+.cta-sec-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cta-sec-field { display: flex; flex-direction: column; gap: 5px; }
+.cta-sec-field--full { }
+.cta-sec-lbl {
+  font-family: var(--font-body); font-size: var(--fs-2xs); font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted);
+}
+.cta-sec-ctrl {
+  background: var(--color-ivory); border: 1.5px solid var(--color-line);
+  border-radius: 8px; padding: 11px 13px;
+  font-family: var(--font-body); font-size: var(--fs-body);
+  color: var(--color-ink); width: 100%; transition: border-color .2s, background .2s;
+}
+.cta-sec-ctrl::placeholder { color: var(--color-muted); opacity: .6; }
+.cta-sec-ctrl:focus { outline: none; border-color: var(--color-secondary); background: #fff; }
+.cta-sec-submit {
+  margin-top: 4px; padding: 14px; width: 100%; border: none; cursor: pointer;
+  background: var(--color-secondary); color: #fff; border-radius: var(--radius-pill);
+  font-family: var(--font-body); font-size: var(--fs-body); font-weight: 700;
+  letter-spacing: .02em; transition: background .22s, box-shadow .22s, transform .18s;
+}
+.cta-sec-submit:hover { background: var(--color-action); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(63,110,36,.3); }
+.cta-sec-foot { font-size: var(--fs-2xs); color: var(--color-muted); text-align: center; margin: 8px 0 0; }
+
+/* CTA responsive */
+@media (max-width: 900px) {
+  .cta-sec-wrap  { grid-template-columns: 1fr; }
+  .cta-sec-row   { grid-template-columns: 1fr 1fr; }
+  .cta-sec-body  { max-width: 100%; }
+}
+@media (max-width: 560px) {
+  .cta-sec-row   { grid-template-columns: 1fr; }
+  .cta-sec-form-box { padding: 28px 20px; }
+}
+
 /* ═══════════════════════════════════════════════════════════
    FOOTER — redesigned
    Top band: logo + tagline + CTA right
