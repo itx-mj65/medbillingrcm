@@ -154,6 +154,7 @@ function ServicesMegaMenu({ onClose }) {
                 src={active.img}
                 alt={active.imgAlt}
                 className="hdr-mega-img"
+                style={{width:"100%",height:"190px",objectFit:"cover",objectPosition:"center 30%",display:"block"}}
               />
             ) : (
               <div className="hdr-mega-img-ph">

@@ -1269,10 +1269,11 @@ body.js-ready .reveal {
 
 /* Image */
 .hdr-mega-img-wrap {
-  position: relative; flex: 0 0 180px; overflow: hidden;
+  position: relative; flex: 0 0 190px; overflow: hidden;
+  background: var(--color-navy-deep);
 }
 .hdr-mega-img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+  width: 100%; height: 190px; object-fit: cover; object-position: center 30%;
   display: block;
 }
 .hdr-mega-img-ph {
