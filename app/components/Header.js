@@ -134,7 +134,7 @@ function ServicesMegaMenu({ onClose }) {
                 onClick={onClose}
               >
                 <span className="hdr-mega-label">{svc.label}</span>
-                <span className="hdr-mega-desc">{svc.desc}</span>
+
               </Link>
             </li>
           ))}
