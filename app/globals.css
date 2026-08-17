@@ -1482,6 +1482,36 @@ body.js-ready .reveal {
 }
 /* ─────────────────────────────────────────────────────────── */
 
+
+/* ── PageHero image placeholder ─────────────────────────────
+   Shown when heroPlaceholder prop is passed and no real image exists.
+   Replace by adding image prop to PageHero once asset is ready.
+────────────────────────────────────────────────────────── */
+.pg-hero-placeholder {
+  border: 2px dashed var(--color-accent) !important;
+  background: rgba(212,155,40,.06) !important;
+  display: flex !important; align-items: center; justify-content: center;
+  box-shadow: -14px 14px 0 var(--color-accent);
+}
+.pg-hero-ph-inner {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 10px; text-align: center; padding: 24px; max-width: 320px;
+}
+.pg-hero-ph-icon  { font-size: 2.5rem; }
+.pg-hero-ph-title {
+  font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700;
+  color: var(--text-on-dark);
+}
+.pg-hero-ph-spec  {
+  font-size: var(--fs-sm); color: var(--color-accent);
+  font-family: monospace; background: rgba(0,0,0,.3);
+  padding: 4px 10px; border-radius: 4px; word-break: break-all;
+}
+.pg-hero-ph-prompt {
+  font-size: var(--fs-sm); color: rgba(255,255,255,.6);
+  font-style: italic; line-height: 1.55;
+}
+.pg-hero-ph-prompt strong { color: var(--color-accent); font-style: normal; }
 /* ═══════════════════════════════════════════════════════════
    CTA SECTION — reusable across all pages
    Green outer bg · 2-col: left checklist / right form card

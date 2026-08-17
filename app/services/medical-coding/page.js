@@ -6,18 +6,7 @@ export default function MedicalCodingPage() {
   return (
     <main className="mc-page" id="main">
 
-      {/* ═══ HERO — shared PageHero component ═══════════════════════
-          IMAGE PLACEHOLDER:
-          Size: 1536 × 900 px (16:9)
-          Use: /public/mc-hero.webp
-          Subject: Medical coder at dual monitors reviewing ICD-10 and CPT code 
-                   documentation — close-up of screen showing coding queue, 
-                   specialist in scrubs or clinical attire.
-          AI prompt: "Medical billing coder at dual computer monitors in a 
-                     modern healthcare office, reviewing medical coding documents, 
-                     ICD-10 codes visible on screen, professional clinical setting, 
-                     navy and green color tones, photorealistic, no text overlay"
-      ════════════════════════════════════════════════════════════ */}
+      {/* ═══ HERO — shared PageHero component ═════════════════════ */}
       <PageHero
         eyebrow="CPC · CCS · COC Certified Coders"
         heading="Medical Coding Services"
@@ -27,10 +16,12 @@ export default function MedicalCodingPage() {
         ctaAlt="See our process"
         ctaAltHref="#process"
         badge="CPC · CCS · COC Certified"
-        image="/mc-hero.webp"
-        imageAlt="Certified medical coder reviewing ICD-10, CPT and HCPCS documentation at workstation"
-        imageW={1536}
-        imageH={900}
+        heroPlaceholder={{
+          show: true,
+          title: "Hero Image — Medical Coder Workstation",
+          spec: "1536 × 900 px  ·  /public/mc-hero.webp",
+          prompt: "Medical billing coder at dual computer monitors in a modern healthcare office, reviewing ICD-10 and CPT coding documents, code queue visible on screen, specialist in clinical attire, navy and green color tones, photorealistic, no text overlay"
+        }}
       />
 
       {/* ═══ PROOF STRIP ═════════════════════════════════════════ */}
@@ -211,46 +202,6 @@ export default function MedicalCodingPage() {
         </div>
       </section>
 
-      {/* ═══ TESTIMONIALS ════════════════════════════════════════ */}
-      <section className="mc-sec mc-sec--white reveal">
-        <div className="mc-wrap">
-          <p className="mc-ew">Client Outcomes</p>
-          <h2>What Healthcare Leaders Say</h2>
-          <p>Feedback that reflects our commitment to delivering measurable, transparent coding results.</p>
-
-          {/* IMAGE PLACEHOLDER — Testimonials background/accent
-              Size: 800 × 800 px
-              Use: /public/mc-testimonial-bg.webp
-              Subject: Professional healthcare environment — abstract background 
-                       or physician portrait (no identifiable faces without consent). 
-                       Used as testimonial accent imagery.
-              AI prompt: "Professional healthcare billing team in modern office, 
-                         diverse group, trust and expertise, clean background, 
-                         suitable for testimonial section, photorealistic"
-          */}
-          <div className="mc-testi-grid">
-            {[
-              { q:"Med Billing RCM has been a game changer for my practice. Since teaming up, we've seen a significant improvement in collections and a smoother overall process. The team is highly responsive and transparent.", name:"Dr. Sarah Kin",    role:"Family Medicine Practice" },
-              { q:"Their streamlined processes have modernized our system and increased our monthly revenue. We particularly appreciate the transparency and regular updates on our claims status.", name:"Dr. Alan Peterson", role:"Cardiology Clinic" },
-              { q:"Their attention to detail and commitment to HIPAA compliance gives us confidence. They handle everything from AR management to claims submissions with professionalism and efficiency.", name:"Dr. Nick Toriani",  role:"Specialty Practice" },
-              { q:"Switching to Med Billing RCM was one of the best decisions we've made. Their expertise in cardiology billing has led to a significant improvement in our claim acceptance rate.", name:"Dr. Jennifer Lee",  role:"Dermatology Practice" },
-            ].map(({ q, name, role }) => (
-              <blockquote className="mc-testi reveal" key={name}>
-                <p className="mc-testi-q">&ldquo;{q}&rdquo;</p>
-                <footer className="mc-testi-footer">
-                  <div className="mc-testi-avatar" aria-hidden="true">
-                    {name.split(' ').map(w => w[0]).join('')}
-                  </div>
-                  <div>
-                    <div className="mc-testi-name">{name}</div>
-                    <div className="mc-testi-role">{role}</div>
-                  </div>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══ CLOSING CTA BAND ════════════════════════════════════ */}
       <div className="mc-cta-band">

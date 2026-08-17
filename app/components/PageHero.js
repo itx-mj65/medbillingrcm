@@ -34,6 +34,7 @@ export default function PageHero({
   imageAlt  = "",
   imageW    = 1536,
   imageH    = 1024,
+  heroPlaceholder = null,  // { title, spec, prompt } — shown when no real image exists
 }) {
   return (
     <section className="pg-hero" aria-labelledby="pg-hero-h1">
@@ -52,6 +53,16 @@ export default function PageHero({
                 priority quality={85}
                 style={{ objectFit:"cover", objectPosition:"52% center", width:"100%", height:"100%" }}
               />
+              {badge && <span className="pg-hero-badge">{badge}</span>}
+            </div>
+          )}
+          {!image && heroPlaceholder && (
+            <div className="pg-hero-img pg-hero-img--mob pg-hero-placeholder" aria-label="Image placeholder">
+              <div className="pg-hero-ph-inner">
+                <div className="pg-hero-ph-icon">📷</div>
+                <div className="pg-hero-ph-title">{heroPlaceholder.title}</div>
+                <div className="pg-hero-ph-spec">{heroPlaceholder.spec}</div>
+              </div>
               {badge && <span className="pg-hero-badge">{badge}</span>}
             </div>
           )}
@@ -77,6 +88,20 @@ export default function PageHero({
               priority quality={85}
               style={{ objectFit:"cover", objectPosition:"52% center", width:"100%", height:"100%" }}
             />
+            {badge && <span className="pg-hero-badge">{badge}</span>}
+          </div>
+        )}
+        {/* ── Hero image placeholder (shown when no real image yet) ── */}
+        {!image && heroPlaceholder && (
+          <div className="pg-hero-img pg-hero-img--desk pg-hero-placeholder" aria-label="Image placeholder">
+            <div className="pg-hero-ph-inner">
+              <div className="pg-hero-ph-icon">📷</div>
+              <div className="pg-hero-ph-title">{heroPlaceholder.title}</div>
+              <div className="pg-hero-ph-spec">{heroPlaceholder.spec}</div>
+              <div className="pg-hero-ph-prompt">
+                <strong>AI prompt:</strong> {heroPlaceholder.prompt}
+              </div>
+            </div>
             {badge && <span className="pg-hero-badge">{badge}</span>}
           </div>
         )}
