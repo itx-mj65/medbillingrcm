@@ -34,7 +34,7 @@ export default function ARManagementPage() {
       </div>
 
       {/* ═══ WHERE AR SLIPS ═════════════════════════════════ */}
-      <section className="ar-sec ar-sec--navy ar-reveal" id="where-ar-slips">
+      <section className="ar-sec ar-sec--navy reveal" id="where-ar-slips">
         <div className="ar-wrap">
           <p className="ar-ew ar-ew--gold">Where AR revenue slips</p>
           <h2>Where AR revenue slips, and why it keeps slipping</h2>
@@ -75,7 +75,7 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ SCOPE ══════════════════════════════════════════ */}
-      <section className="ar-sec ar-sec--ivory ar-reveal" id="scope">
+      <section className="ar-sec ar-sec--ivory reveal" id="scope">
         <div className="ar-wrap">
           <p className="ar-ew">What we manage</p>
           <h2>What we run across the AR recovery cycle</h2>
@@ -89,7 +89,7 @@ export default function ARManagementPage() {
               { n:"05", h:"Patient balance resolution", t:"Patient balance resolution and CMS-compliant statements" },
               { n:"06", h:"Healthcare AR outsourcing", t:<><a href="/services/">Healthcare AR services outsourcing</a> for practices whose denial volume exceeds internal capacity</> },
             ].map(({ n, h, t }) => (
-              <article className="ar-scope-card ar-reveal" key={n}>
+              <article className="ar-scope-card reveal" key={n}>
                 <div className="ar-scope-num">{n}</div>
                 <h3>{h}</h3>
                 <p>{t}</p>
@@ -101,7 +101,7 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ INSURANCE AR ════════════════════════════════════ */}
-      <section className="ar-sec ar-sec--white ar-reveal">
+      <section className="ar-sec ar-sec--white reveal">
         <div className="ar-wrap">
           <p className="ar-ew">The systematic loss most practices accept</p>
           <h2>Insurance AR, the systematic loss most practices accept without knowing</h2>
@@ -135,7 +135,7 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ WRITE-OFF RECOVERY ══════════════════════════════ */}
-      <section className="ar-sec ar-sec--navy ar-reveal">
+      <section className="ar-sec ar-sec--navy reveal">
         <div className="ar-wrap">
           <p className="ar-ew ar-ew--gold">Write-off recovery</p>
           <h2>Write-off recovery, the revenue practices leave twice</h2>
@@ -164,7 +164,7 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ PATIENT AR ══════════════════════════════════════ */}
-      <section className="ar-sec ar-sec--white ar-reveal">
+      <section className="ar-sec ar-sec--white reveal">
         <div className="ar-wrap">
           <p className="ar-ew">After insurance pays</p>
           <h2>Patient AR, after insurance pays</h2>
@@ -185,13 +185,13 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ SPECIALTY AR ════════════════════════════════════ */}
-      <section className="ar-sec ar-sec--ivory ar-reveal">
+      <section className="ar-sec ar-sec--ivory reveal">
         <div className="ar-wrap">
           <p className="ar-ew">Configured per specialty</p>
           <h2>Specialty AR recovery, configured per specialty</h2>
           <p>AR recovery protocols that work for family practice do not transfer to orthopedics without modification. Each specialty has distinct denial patterns, documentation requirements, and payer behavior. Our <a href="/specialties/">medical AR management</a> workflows are built per specialty, not applied generically.</p>
                     <div className="ar-spec-grid">
-            <div className="ar-spec-card ar-reveal">
+            <div className="ar-spec-card reveal">
               <div className="ar-spec-head">Orthopedics</div>
               <ul className="ar-spec-list">
                 <li>Global surgical period modifier review</li>
@@ -199,7 +199,7 @@ export default function ARManagementPage() {
                 <li>Multiple procedure reduction disputes</li>
               </ul>
             </div>
-            <div className="ar-spec-card ar-reveal">
+            <div className="ar-spec-card reveal">
               <div className="ar-spec-head">Behavioral health</div>
               <ul className="ar-spec-list">
                 <li>Managed care authorization documentation</li>
@@ -207,7 +207,7 @@ export default function ARManagementPage() {
                 <li>Medicaid MCO retroactive recovery</li>
               </ul>
             </div>
-            <div className="ar-spec-card ar-reveal">
+            <div className="ar-spec-card reveal">
               <div className="ar-spec-head">Oncology</div>
               <ul className="ar-spec-list">
                 <li>J-code underpayment identification</li>
@@ -215,7 +215,7 @@ export default function ARManagementPage() {
                 <li>Buy-and-bill adjudication disputes</li>
               </ul>
             </div>
-            <div className="ar-spec-card ar-reveal">
+            <div className="ar-spec-card reveal">
               <div className="ar-spec-head">Laboratory</div>
               <ul className="ar-spec-list">
                 <li>LOINC validation corrections</li>
@@ -223,7 +223,7 @@ export default function ARManagementPage() {
                 <li>Technical vs professional component billing</li>
               </ul>
             </div>
-            <div className="ar-spec-card ar-reveal">
+            <div className="ar-spec-card reveal">
               <div className="ar-spec-head">Radiology</div>
               <ul className="ar-spec-list">
                 <li>TC/PC split billing disputes</li>
@@ -231,7 +231,7 @@ export default function ARManagementPage() {
                 <li>Multi-read claim routing</li>
               </ul>
             </div>
-            <div className="ar-spec-card ar-reveal">
+            <div className="ar-spec-card reveal">
               <div className="ar-spec-head">ASC</div>
               <ul className="ar-spec-list">
                 <li>Facility fee coding disputes</li>
@@ -254,7 +254,7 @@ export default function ARManagementPage() {
       </div>
 
       {/* ═══ IN-HOUSE VS OUTSOURCED ══════════════════════════ */}
-      <section className="ar-sec ar-sec--navy ar-reveal">
+      <section className="ar-sec ar-sec--navy reveal">
         <div className="ar-wrap">
           <p className="ar-ew ar-ew--gold">Honest comparison</p>
           <h2>In-house AR or outsourced, the honest version</h2>
@@ -281,27 +281,27 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ OUTCOMES ════════════════════════════════════════ */}
-      <section className="ar-sec ar-sec--white ar-reveal">
+      <section className="ar-sec ar-sec--white reveal">
         <div className="ar-wrap">
           <p className="ar-ew">Documented client work</p>
           <h2>What changed for the practices we took on</h2>
           <p>These are practices we bill for now. The charges did not change; the collections did. Every dollar came from collecting revenue that had already been earned.</p>
           <div className="ar-oc-grid">
-            <article className="ar-oc ar-reveal">
+            <article className="ar-oc reveal">
               <span className="ar-oc-badge">Primary Care</span>
               <div className="ar-oc-metric">18.2% → 61%</div>
               <div className="ar-oc-lbl">Gross collection rate on identical charges</div>
               <div className="ar-oc-detail">Patient First Primary Care, a six-provider primary care group running fee-for-service and capitation together, lifted its gross collection rate from 18.2% to 61% on identical charge volume of $220,000 a month. Monthly collections moved from $40,000 to $134,200, an additional $94,200 every month. The claims had stopped being followed after submission.</div>
               <Link href="/case-studies/patient-first-primary-care/" className="ar-oc-link">Patient First Primary Care →</Link>
             </article>
-            <article className="ar-oc ar-reveal">
+            <article className="ar-oc reveal">
               <span className="ar-oc-badge">Behavioral Health</span>
               <div className="ar-oc-metric">$0 → $43,678</div>
               <div className="ar-oc-lbl">Monthly collections after ERA &amp; EFT enrollments</div>
               <div className="ar-oc-detail">Psychiatric Connections, a telehealth psychiatry practice billing $178,237 a month across six states, was collecting nothing at all because the ERA and EFT enrollments had never been set up. Monthly collections now run $43,678 on the same charge volume.</div>
               <Link href="/case-studies/psychiatric-connections/" className="ar-oc-link">Psychiatric Connections →</Link>
             </article>
-            <article className="ar-oc ar-reveal">
+            <article className="ar-oc reveal">
               <span className="ar-oc-badge">Combined</span>
               <div className="ar-oc-metric">$179,778/mo</div>
               <div className="ar-oc-lbl">Additional monthly collections across three engagements</div>
@@ -313,7 +313,7 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ 90% MEASURE ══════════════════════════════════════ */}
-      <section className="ar-sec ar-sec--green ar-reveal">
+      <section className="ar-sec ar-sec--green reveal">
         <div className="ar-wrap">
           <p className="ar-ew ar-ew--gold">How we measure it</p>
           <h2>The 90% we report, and where we count it</h2>
@@ -341,7 +341,7 @@ export default function ARManagementPage() {
       </section>
 
       {/* ═══ CLOSING BANNER ══════════════════════════════════ */}
-      <div className="ar-closing ar-reveal">
+      <div className="ar-closing reveal">
         <Image src="/ar-closing.webp" alt="Senior RCM strategist and practice executive reviewing AR recovery results in boardroom" width={1536} height={500} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 30%"}} />
         <div className="ar-closing-grad" aria-hidden="true" />
         <div className="ar-closing-stats" aria-hidden="true">
@@ -355,7 +355,7 @@ export default function ARManagementPage() {
       </div>
 
       {/* ═══ FAQ ═════════════════════════════════════════════ */}
-      <section className="ar-sec ar-sec--white ar-reveal" id="faq">
+      <section className="ar-sec ar-sec--white reveal" id="faq">
         <div className="ar-wrap">
           <p className="ar-ew">Common questions</p>
           <h2>AR recovery questions we get asked</h2>
