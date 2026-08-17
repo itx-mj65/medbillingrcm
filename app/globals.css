@@ -1325,11 +1325,11 @@ body.js-ready .reveal {
 /* ── Inner grid ─────────────────────────────────────────── */
 .pg-hero-inner {
   display: grid;
-  grid-template-columns: minmax(0,1.12fr) minmax(320px,.88fr);
+  grid-template-columns: minmax(0,1.12fr) minmax(300px,.88fr);
   align-items: center;
   gap: clamp(32px, 4vw, 56px);
-  padding: 52px var(--sec-gap) 48px;
-  width: min(100%, calc(1180px + 2 * var(--sec-gap)));
+  padding: 52px 0 48px;
+  width: min(calc(100% - 48px), 1180px);
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -1424,7 +1424,7 @@ body.js-ready .reveal {
   height: clamp(460px, 38vw, 540px);
 }
 /* Mobile image — hidden on desktop */
-.pg-hero-img--mob { display: none; }
+.pg-hero-img--mob { display: none !important; }  /* hidden on desktop */
 
 /* Badge overlay */
 .pg-hero-badge {
@@ -1445,11 +1445,11 @@ body.js-ready .reveal {
   .pg-hero-inner {
     grid-template-columns: 1fr;
     gap: 0;
-    padding-bottom: 0;
+    padding: 36px 0 0;
   }
-  .pg-hero-img--desk { display: none; }      /* hide desktop image */
-  .pg-hero-img--mob  {                        /* show mobile image */
-    display: block;
+  .pg-hero-img--desk { display: none !important; }   /* hide desktop — !important prevents any override */
+  .pg-hero-img--mob  {                                 /* show mobile image */
+    display: block !important;
     height: min(60vw, 440px);
     border-radius: 80px 0 18px 0;
     box-shadow: -10px 10px 0 var(--color-accent);

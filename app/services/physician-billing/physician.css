@@ -16,7 +16,8 @@
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--color-ink);
-  background: var(--color-paper);
+  /* NO background here — child sections define their own bg colours.
+     A parent background would override .pg-hero's navy bg. */
 }
 
 /* ─── EYEBROW .ew — context-aware colors ─────────────────── */
@@ -29,8 +30,8 @@
 .ph-page .ew::before { content: ''; flex-shrink: 0; width: 36px; border-top: 2px solid var(--color-accent); }
 
 /* On navy bg → gold */
-.ph-page .sec--navy .ew, .ph-page .ph-hero .ew { color: var(--color-accent); }
-.ph-page .sec--navy .ew::before, .ph-page .ph-hero .ew::before { border-color: var(--color-accent); }
+.ph-page .sec--navy .ew { color: var(--color-accent); }
+.ph-page .sec--navy .ew::before { border-color: var(--color-accent); }
 
 /* On green bg → gold */
 .ph-page .sec--green .ew { color: var(--color-accent); }
