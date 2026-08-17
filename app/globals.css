@@ -1530,7 +1530,7 @@ body.js-ready .reveal {
 .cta-sec-contact a {
   display: flex; align-items: center; gap: 8px;
   font-size: var(--fs-sm); font-weight: 600;
-  color: var(--color-accent);   /* gold #d49b28 — brand book accent on dark/green bg */
+  color: #ffffff;
   text-decoration: none;
   transition: color .18s;
 }
