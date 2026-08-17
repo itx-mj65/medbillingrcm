@@ -68,15 +68,28 @@
   font-family: var(--font-body);
   font-size: var(--fs-xs); font-weight: 800;
   letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
-  color: var(--color-action);
+  color: var(--color-action);        /* dark green — legible on white/ivory */
 }
 .ph-page .ew::before {
   content: ''; flex-shrink: 0;
   width: 36px; border-top: 2px solid var(--color-accent);
 }
-.ph-page .ew--light { color: rgba(255,255,255,.55); }
+/* Navy bg (.sec--navy, hero): use gold accent — dark green is invisible on dark bg */
+.ph-page .sec--navy .ew,
+.ph-page .ph-hero .ew,
+.ph-page .ew--light {
+  color: var(--color-accent);
+}
+.ph-page .sec--navy .ew::before,
+.ph-page .ph-hero .ew::before,
 .ph-page .ew--light::before { border-color: var(--color-accent); }
-.ph-page .ew--gold { color: var(--color-accent); }
+/* Green bg (.sec--green): use gold accent — dark green invisible on green bg */
+.ph-page .sec--green .ew,
+.ph-page .ew--gold {
+  color: var(--color-accent);
+}
+.ph-page .sec--green .ew::before,
+.ph-page .ew--gold::before { border-color: rgba(255,255,255,.6); }
 
 /* ─── SHARED: SECTION ────────────────────────────────────── */
 .ph-page .sec {

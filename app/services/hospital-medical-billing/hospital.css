@@ -257,6 +257,7 @@ tr:last-child td { border-bottom: 0; }
 /* ─── RCM FRAMEWORK ─────────────────────────────────────── */
 #how-we-hold-a-hospitals-revenue-cycle-together { background: #111735; color: #e9ebf2; }
 #how-we-hold-a-hospitals-revenue-cycle-together h2 { color: var(--text-on-dark); }
+#how-we-hold-a-hospitals-revenue-cycle-together h2::before { color: var(--color-accent); }
 #how-we-hold-a-hospitals-revenue-cycle-together > p:not(:first-of-type) { display: none; }
 
 .rcm-visual {
@@ -377,6 +378,7 @@ blockquote p {
 /* ─── 97% SECTION ───────────────────────────────────────── */
 #and-where-we-measure-it { background: var(--color-secondary); color: var(--text-on-dark); padding-left: max(var(--h-gap), calc(var(--h-gap) + 340px)); }
 #and-where-we-measure-it h2 { color: var(--text-on-dark); }
+#and-where-we-measure-it h2::before { color: var(--color-accent); }  /* gold on green — visible */
 #and-where-we-measure-it > p { color: rgba(255,255,255,.85); }
 #and-where-we-measure-it a { color: #c4d7b7; }
 #and-where-we-measure-it::before {
@@ -389,6 +391,7 @@ blockquote p {
 /* ─── IN-HOUSE COST ─────────────────────────────────────── */
 #what-in-house-hospital-billing-costs-to-run { background: #111735; color: #e9ebf2; }
 #what-in-house-hospital-billing-costs-to-run h2 { color: var(--text-on-dark); }
+#what-in-house-hospital-billing-costs-to-run h2::before { color: var(--color-accent); }
 #what-in-house-hospital-billing-costs-to-run > p { color: #c5c9d7; max-width: 680px; }
 #what-in-house-hospital-billing-costs-to-run > p:nth-of-type(n+3) {
   padding: 20px 26px; border-left: 4px solid var(--color-accent);
@@ -442,6 +445,7 @@ blockquote p {
 /* ─── PROCESS ───────────────────────────────────────────── */
 #what-happens-after-you-request-an-assessment { background: #111735; color: #e9ebf2; }
 #what-happens-after-you-request-an-assessment h2 { color: var(--text-on-dark); }
+#what-happens-after-you-request-an-assessment h2::before { color: var(--color-accent); }
 #what-happens-after-you-request-an-assessment > p { color: #c5c9d7; }
 #what-happens-after-you-request-an-assessment blockquote {
   border-top: 1px solid var(--color-accent);
@@ -588,4 +592,17 @@ details[open] summary::after { content: '−'; }
 @media (prefers-reduced-motion: reduce) {
   body.js-ready .level2.reveal { opacity: 1; transform: none; transition: none; }
   .rcm-visual::after, .flow-path, .pulse { animation: none; }
+}
+
+/* ── Eyebrow visibility on dark/green section backgrounds ──
+   Default eyebrow color (--color-action = #3f6e24) is invisible on dark navy
+   and green backgrounds. Override to gold for all dark-bg level2 sections. */
+[style*="background: #111735"] > h2::before,
+[style*="background:var(--color-navy-deep)"] > h2::before,
+[style*="background: var(--color-navy-deep)"] > h2::before,
+[style*="background:var(--color-secondary)"] > h2::before,
+[style*="background: var(--color-secondary)"] > h2::before,
+[style*="background:var(--green)"] > h2::before,
+[style*="color: var(--green)"] > h2::before {
+  color: var(--color-accent) !important;   /* gold — always visible on dark bg */
 }
