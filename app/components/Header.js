@@ -148,18 +148,18 @@ function ServicesMegaMenu({ onClose }) {
         {/* Right: dynamic preview */}
         <div className="hdr-mega-preview" key={active.href}>
           <div className="hdr-mega-img-wrap">
-            {active.img ? (
+            {active.preview.img ? (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
-                src={active.img}
-                alt={active.imgAlt}
+                src={active.preview.img}
+                alt={active.preview.imgAlt}
                 className="hdr-mega-img"
                 style={{width:"100%",height:"190px",objectFit:"cover",objectPosition:"center 30%",display:"block"}}
               />
             ) : (
               <div className="hdr-mega-img-ph">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                <span>{active.imgPlaceholder}</span>
+                <span>{active.preview.imgPlaceholder}</span>
               </div>
             )}
             <div className="hdr-mega-img-overlay" aria-hidden="true" />
