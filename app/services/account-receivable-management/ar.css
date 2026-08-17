@@ -98,24 +98,40 @@
 .ar-tbl thead th { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: 600; text-align: left; padding: 13px 18px; }
 .ar-tbl thead th:first-child { border-radius: var(--radius-card) 0 0 0; }
 .ar-tbl thead th:last-child  { border-radius: 0 var(--radius-card) 0 0; }
-.ar-tbl tbody tr { border-bottom: 1px solid rgba(26,33,79,.06); }
+.ar-tbl tbody tr { border-bottom: 1px solid rgba(26,33,79,.08); }
 .ar-tbl tbody tr:last-child { border-bottom: none; }
-.ar-tbl tbody tr:nth-child(odd) { background: #fff; }
-.ar-tbl tbody tr:nth-child(even) { background: var(--color-ivory); }
+.ar-tbl tbody tr:nth-child(odd)  { background: #ffffff; }
+.ar-tbl tbody tr:nth-child(even) { background: #f7f5ef; }
+.ar-tbl td { background: inherit; }   /* each cell inherits row bg — no navy bleed-through */
 .ar-tbl td { padding: 12px 18px; font-size: var(--fs-sm); color: var(--color-ink); vertical-align: top; }
 .ar-tbl td:first-child { font-weight: 700; color: var(--color-primary); }
 .ar-tbl td:not(:first-child) { border-left: 1px solid rgba(26,33,79,.06); }
 /* Row colour states */
-.ar-tbl-best td:first-child { color: var(--color-action); }
-.ar-tbl-warn     { background: rgba(212,155,40,.08) !important; }
-.ar-tbl-warn td  { color: var(--color-ink); }
-.ar-tbl-warn td:first-child  { color: #a07200; font-weight: 700; }
-.ar-tbl-danger   { background: rgba(212,100,40,.1) !important; }
-.ar-tbl-danger td { color: var(--color-ink); }
-.ar-tbl-danger td:first-child { color: #9a4a00; font-weight: 700; }
-.ar-tbl-critical { background: rgba(160,30,30,.09) !important; }
-.ar-tbl-critical td { color: #7a1515; }
-.ar-tbl-critical td:first-child { color: #7a1515; font-weight: 700; }
+/* Table row state colours — ALL solid/opaque so navy parent bg cannot bleed through */
+.ar-tbl-best td:first-child { color: var(--color-action); font-weight: 700; }
+
+/* 0-60 days: best — white bg, green first cell */
+.ar-tbl-best { background: #ffffff !important; }
+.ar-tbl-best td { background: #ffffff !important; color: var(--color-ink); }
+.ar-tbl-best td:first-child { background: #ffffff !important; color: var(--color-action); font-weight: 700; }
+
+/* 61-90 days: narrowing — ivory bg, normal text */
+/* (uses :nth-child even → #f7f5ef, no override needed) */
+
+/* 91-120 days: warn — solid amber tint, dark readable text */
+.ar-tbl-warn { background: #fdf4e0 !important; }
+.ar-tbl-warn td { background: #fdf4e0 !important; color: #3d2800 !important; }
+.ar-tbl-warn td:first-child { background: #fdf4e0 !important; color: #7a4f00 !important; font-weight: 700; }
+
+/* 121-180 days: danger — solid orange tint, dark readable text */
+.ar-tbl-danger { background: #fdeede !important; }
+.ar-tbl-danger td { background: #fdeede !important; color: #3d1400 !important; }
+.ar-tbl-danger td:first-child { background: #fdeede !important; color: #8b3000 !important; font-weight: 700; }
+
+/* 180+ days: critical — solid red tint, dark readable text */
+.ar-tbl-critical { background: #fdecec !important; }
+.ar-tbl-critical td { background: #fdecec !important; color: #5c0a0a !important; }
+.ar-tbl-critical td:first-child { background: #fdecec !important; color: #8b1a1a !important; font-weight: 700; }
 .ar-tbl-note { font-size: var(--fs-sm); color: var(--color-muted); margin-top: .75rem; font-style: italic; }
 .ar-tbl-note a { color: var(--color-action); }
 
