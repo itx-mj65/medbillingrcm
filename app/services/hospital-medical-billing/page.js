@@ -1,3 +1,4 @@
+import CtaSection from "@/components/CtaSection";
 import Image from "next/image";
 export default function HospitalMedicalBillingPage() {
   return (
@@ -297,51 +298,22 @@ export default function HospitalMedicalBillingPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="level2 reveal" id="see-where-your-hospital-revenue-is-leaking" style={{background:'var(--green)'}}>
-          <h2 data-eyebrow="Free, specific, no obligation">See where your hospital revenue is leaking</h2>
-          <p>The revenue assessment is free, and it is specific. We look at your denials, your aged AR, and your DRG mix, and we show you where the money is going. No rate card, no obligation.</p>
-          <div className="cta-card" id="assessment">
-            <div className="cta-media">
-              <Image src="/hospital-assessment.png" alt="Hospital revenue assessment meeting reviewing denials, aged accounts receivable and DRG mix" fill sizes="(max-width:1050px) 100vw, 50vw" quality={80} style={{objectFit:"cover"}} />
-            </div>
-            <div className="cta-copy">
-              <h2 style={{color:'#fff'}}>Your revenue assessment starts here</h2>
-              <p>A 45-minute conversation with a senior RCM strategist. We review your denials, aged AR, and DRG mix, and show you where the money is going. No rate card, no obligation.</p>
-              <form className="assessment" id="hospitalForm">
-                <label>Full name<input name="name" autoComplete="name" required /></label>
-                <label>Work email<input name="email" type="email" autoComplete="email" required /></label>
-                <label>Hospital / facility<input name="organization" required /></label>
-                <label>Facility type
-                  <select name="facility_type">
-                    <option value="">Select type</option>
-                    <option>Acute care hospital</option>
-                    <option>Critical access hospital</option>
-                    <option>Skilled nursing facility</option>
-                    <option>Long-term acute care</option>
-                    <option>Inpatient rehab</option>
-                    <option>Ambulatory surgery center</option>
-                    <option>Behavioral health facility</option>
-                    <option>Health system</option>
-                  </select>
-                </label>
-                <label className="full">Primary revenue concern
-                  <select name="concern">
-                    <option value="">Select concern</option>
-                    <option>Denials</option>
-                    <option>Aged AR</option>
-                    <option>DRG downgrades</option>
-                    <option>Charge capture</option>
-                    <option>340B split billing</option>
-                    <option>TEAM model performance</option>
-                    <option>Full revenue cycle</option>
-                  </select>
-                </label>
-                <button className="btn gold" type="submit">Get a Free Revenue Assessment</button>
-              </form>
-              <div className="success" id="hospitalSuccess" role="status">Thank you. Your assessment request has been received.</div>
-            </div>
-          </div>
-        </section>
+        {/* ═══ ASSESSMENT — shared CtaSection component ══════ */}
+        <CtaSection
+          eyebrow="See where your hospital revenue is leaking"
+          heading="The free assessment is specific."
+          body="The revenue assessment is free, and it is specific. We look at your denials, your aged AR, and your DRG mix, and we show you where the money is going. No rate card, no obligation."
+          formId="hospitalForm"
+          ctaLabel="Get a Free Revenue Assessment"
+          checklist={[
+            "Denial breakdown by code and payer",
+            "Aged AR by payer — filing window exposure",
+            "DRG mix analysis against benchmark",
+            "You keep the findings either way",
+            "HIPAA-compliant — BAA signed before data moves",
+            "No setup fee. No long-term contract.",
+          ]}
+        />
 
     </main>
   );

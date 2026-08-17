@@ -1,4 +1,5 @@
 import PhysicianScripts from "./PhysicianScripts";
+import CtaSection from "@/components/CtaSection";
 
 export default function PhysicianBillingPage() {
   return (
@@ -425,160 +426,18 @@ export default function PhysicianBillingPage() {
           </div>
         </section>
 
-        {/* ═══ ASSESSMENT ═════════════════════════════════════ */}
-        <section className="sec sec--green ph-reveal" id="assessment">
-          <p className="ew ew--gold">Ready when you are</p>
-          <h2>The free assessment is specific.</h2>
-          <p>We pull a sample of your claims and show your E/M distribution against benchmark, your top denial reasons by dollar, and your aged AR by payer. You keep the findings whether or not you work with us. If you decide to outsource physician billing services after that, onboarding runs about two weeks, with no setup fee and no long-term contract.</p>
-
-          {/* Wide banner */}
-          <div className="ph-assess-banner">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/physician-meeting.webp" alt="Practice administrator and senior RCM strategist reviewing printed revenue analysis reports and denial breakdowns at a professional conference table" loading="lazy" />
-            <div className="ph-assess-grad" aria-hidden="true" />
-            <div className="ph-assess-text" aria-hidden="true">
-              <div className="ph-assess-tag">Revenue Assessment</div>
-              <div className="ph-assess-hl">A 45-minute review with a senior RCM specialist — no sales pitch, just the numbers.</div>
-            </div>
-          </div>
-
-          {/* 3-col: photo | checklist | form */}
-          <div className="ph-assess-grid">
-            <div className="ph-assess-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/physician-assessment.webp" alt="Senior RCM strategist presenting revenue assessment summary on tablet to physician practice owner — consultation meeting, no sales pose" loading="lazy" />
-              <div className="ph-assess-accent" aria-hidden="true" />
-              <div className="ph-assess-caption" aria-hidden="true">
-                <div className="ph-assess-cap-h">45-minute revenue assessment</div>
-                <div className="ph-assess-cap-s">No rate card. No obligation. You keep the findings.</div>
-              </div>
-            </div>
-
-            <div>
-              <p className="ew ew--gold" style={{marginBottom:"1.25rem"}}>Your revenue assessment starts here</p>
-              <h3 style={{fontSize:"clamp(1.25rem,2.2vw,1.625rem)",fontWeight:700,color:"#fff",marginBottom:"1rem"}}>A focused look at where your revenue is going</h3>
-              <p style={{color:"rgba(255,255,255,.65)",maxWidth:"none"}}>We review your claims, your E/M distribution, your top denial codes by dollar, and your aged AR by payer. You keep the findings. No rate card, no obligation.</p>
-              <ul className="ph-checklist">
-                {[
-                  "E/M distribution benchmarked against your specialty",
-                  "Top denial reasons by dollar from your AR",
-                  "Aged AR by payer — filing window exposure",
-                  "You keep the findings either way",
-                  "HIPAA-compliant — BAA signed before any data moves",
-                  "No setup fee. No long-term contract.",
-                ].map(item=>(
-                  <li key={item}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#528532" strokeWidth="2.5" strokeLinecap="round" width="16" height="16" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="ph-form-box">
-              <h3>Get a Free Revenue Assessment</h3>
-              <form id="physicianAssessmentForm" action="/request-free-audit/" method="post" noValidate>
-                <div className="ph-form-group">
-                  <label className="ph-form-lbl" htmlFor="f-name">Full name</label>
-                  <input className="ph-form-ctrl" type="text" id="f-name" name="full_name" placeholder="Dr. Jane Smith" autoComplete="name" required />
-                </div>
-                <div className="ph-form-group">
-                  <label className="ph-form-lbl" htmlFor="f-email">Work email</label>
-                  <input className="ph-form-ctrl" type="email" id="f-email" name="work_email" placeholder="name@practice.com" autoComplete="email" required />
-                </div>
-                <div className="ph-form-group">
-                  <label className="ph-form-lbl" htmlFor="f-practice">Practice name</label>
-                  <input className="ph-form-ctrl" type="text" id="f-practice" name="practice_name" placeholder="Your practice or group name" required />
-                </div>
-                <div className="ph-form-group">
-                  <label className="ph-form-lbl" htmlFor="f-specialty">Specialty</label>
-                  <select className="ph-form-ctrl" id="f-specialty" name="specialty" defaultValue="">
-                    <option value="" disabled>Select specialty</option>
-                    <option>Primary care</option>
-                    <option>Cardiology</option>
-                    <option>Dermatology</option>
-                    <option>Behavioral health</option>
-                    <option>Orthopedics</option>
-                    <option>Gastroenterology</option>
-                    <option>Neurology</option>
-                    <option>Oncology</option>
-                    <option>Radiology</option>
-                    <option>Other specialty</option>
-                  </select>
-                </div>
-                <div className="ph-form-group">
-                  <label className="ph-form-lbl" htmlFor="f-concern">Primary revenue concern</label>
-                  <select className="ph-form-ctrl" id="f-concern" name="revenue_concern" defaultValue="">
-                    <option value="" disabled>Select concern</option>
-                    <option>Denials</option>
-                    <option>Under-coded E/M levels</option>
-                    <option>Prior authorization burden</option>
-                    <option>Aged AR</option>
-                    <option>Credentialing gaps</option>
-                    <option>Telehealth billing</option>
-                    <option>Full revenue cycle</option>
-                  </select>
-                </div>
-                <button type="submit" className="ph-form-submit">Get a Free Revenue Assessment</button>
-                <p className="ph-form-foot">HIPAA-compliant · No setup fee · No long-term contract</p>
-              </form>
-            </div>
-          </div>
-        </section>
+        {/* ═══ ASSESSMENT — shared CtaSection component ══════ */}
+        <CtaSection
+          eyebrow="Ready when you are"
+          heading="The free assessment is specific."
+          body="We pull a sample of your claims and show your E/M distribution against benchmark, your top denial reasons by dollar, and your aged AR by payer. You keep the findings whether or not you work with us. If you decide to outsource physician billing services after that, onboarding runs about two weeks, with no setup fee and no long-term contract."
+          formId="physicianAssessmentForm"
+          ctaLabel="Get a Free Revenue Assessment"
+        />
 
       </main>
 
-      {/* FOOTER */}
-      <footer className="ph-footer">
-        <div className="ph-footer-grid">
-          <div className="ph-footer-brand">
-            <a href="/">Medbilling RCM</a>
-            <p>Professional billing for CMS-1500 practices, measured at the payer. E/M coding, prior auth, denials, and telehealth across all 50 states.</p>
-            <p style={{marginTop:".5rem",fontSize:".78rem",color:"rgba(255,255,255,.3)"}}>Last reviewed August 2026. Figures cited from CMS, the AMA, Kodiak Solutions, and the U.S. Bureau of Labor Statistics; see the linked sources.</p>
-          </div>
-          <div>
-            <h4>Services</h4>
-            <ul className="ph-footer-links">
-              <li><a href="/services/physician-billing/">Physician Billing</a></li>
-              <li><a href="/services/hospital-medical-billing/">Hospital Billing</a></li>
-              <li><a href="/services/medical-coding/">Medical Coding</a></li>
-              <li><a href="/services/account-receivable-management/">AR Management</a></li>
-              <li><a href="/services/medical-credentialing/">Credentialing</a></li>
-              <li><a href="/services/coverage-discovery/">Coverage Discovery</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Specialties</h4>
-            <ul className="ph-footer-links">
-              <li><a href="/specialties/">All Specialties</a></li>
-              <li><a href="/specialties/cardiology/">Cardiology</a></li>
-              <li><a href="/specialties/dermatology/">Dermatology</a></li>
-              <li><a href="/specialties/behavioral-health/">Behavioral Health</a></li>
-              <li><a href="/specialties/oncology/">Oncology</a></li>
-              <li><a href="/specialties/radiology/">Radiology</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Company</h4>
-            <ul className="ph-footer-links">
-              <li><a href="/case-studies/">Case Studies</a></li>
-              <li><a href="/#standard">About Us</a></li>
-              <li><a href="/request-free-audit/">Free Revenue Assessment</a></li>
-              <li><a href="tel:+18885512526">1-888-551-2526</a></li>
-              <li><a href="mailto:info@medbillingrcm.com">info@medbillingrcm.com</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="ph-footer-bot">
-          <div>
-            <p className="ph-footer-copy">© 2026 Medbilling RCM. All rights reserved.</p>
-            <p className="ph-footer-copy">8907 Creeks Gate Ct, Richmond, TX 77407 &nbsp;|&nbsp; 7 1st St, Rosedale, NY 11422</p>
-          </div>
-          <p className="ph-footer-rev">Last reviewed August 2026. Figures from CMS, AMA, Kodiak Solutions, and BLS.</p>
-        </div>
-      </footer>
-
-      <PhysicianScripts />
+    <PhysicianScripts />
     </div>
   );
 }
