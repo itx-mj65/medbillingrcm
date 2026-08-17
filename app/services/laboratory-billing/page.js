@@ -48,10 +48,17 @@ export default function LaboratoryBillingPage() {
       {/* ═══ COMPLIANCE BADGES ══════════════════════════════ */}
       <div className="lab-badges-bar">
         <div className="lab-badges-inner">
-          {["CAP Accredited","CLIA Compliant","NCCI Edits Applied","HIPAA Compliant"].map(b => (
-            <span className="lab-badge" key={b}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              {b}
+          <span className="lab-badges-label">Compliance standards</span>
+          <div className="lab-badges-divider" aria-hidden="true" />
+          {[
+            { icon:"🏛️", text:"CAP Accredited" },
+            { icon:"🧬", text:"CLIA Compliant" },
+            { icon:"📋", text:"NCCI Edits Applied" },
+            { icon:"🔒", text:"HIPAA Compliant" },
+          ].map(({ icon, text }) => (
+            <span className="lab-badge" key={text}>
+              <span className="lab-badge-icon" aria-hidden="true">{icon}</span>
+              {text}
             </span>
           ))}
         </div>
@@ -303,9 +310,7 @@ export default function LaboratoryBillingPage() {
         formNote="PAMA · CLIA · HIPAA compliant · All 50 states"
       />
 
-      <p className="lab-footer-note">
-        Last reviewed August 2026. PAMA data from ASCP, CAP, and NILA. Coding statistics from AMA via PGM Billing. Denial data from Change Healthcare, MGMA, and Aptarro.
-      </p>
+
 
     </main>
   );

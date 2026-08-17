@@ -15,6 +15,7 @@ const NAV = [
         { label: "Hospital Billing",    href: "/services/hospital-medical-billing/",  desc: "Institutional billing, DRG optimization & 340B" },
         { label: "Medical Coding",      href: "/services/medical-coding/",            desc: "CPT, ICD-10, E/M coding with specialty assignment" },
         { label: "AR Management",       href: "/services/account-receivable-management/", desc: "Denial resolution and aged AR recovery" },
+        { label: "Laboratory Billing",  href: "/services/laboratory-billing/",        desc: "Clinical lab, pathology & molecular diagnostics billing" },
         { label: "Credentialing",       href: "/services/medical-credentialing/",     desc: "NPI, CAQH, PECOS and payer enrollment" },
         { label: "Coverage Discovery",  href: "/services/coverage-discovery/",        desc: "Insurance verification and eligibility checks" },
       ],
