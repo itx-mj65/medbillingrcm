@@ -408,10 +408,7 @@ export default function ARManagementPage() {
         formNote="HIPAA-compliant · No setup fee · No long-term contract"
       />
 
-      {/* Footer note */}
-      <div className="ar-footer-note">
-        Last reviewed August 2026. Figures cited from MGMA, HFMA, CMS, the AMA, and Kodiak Solutions; see the linked sources.
-      </div>
+
 
     </main>
   );

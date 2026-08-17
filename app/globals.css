@@ -1592,7 +1592,7 @@ body.js-ready .reveal {
 /* ── Top band ───────────────────────────────────────────── */
 .ftr { background: #0d1126; color: rgba(255,255,255,.6); }
 
-.ftr-band { background: #111a38; border-bottom: 1px solid rgba(255,255,255,.07); }
+.ftr-band { background: #0d1126; border-bottom: 1px solid rgba(255,255,255,.08); }
 .ftr-band-inner {
   display: flex; align-items: flex-start; justify-content: space-between;
   gap: 3rem; padding: 52px 0;
