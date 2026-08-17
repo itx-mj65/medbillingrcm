@@ -2,50 +2,39 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * PageHero — Single shared hero component for ALL service pages.
+ * PageHero — shared hero for ALL service pages.
+ * Props: eyebrow, heading, intro, note, cta, ctaAlt, ctaAltHref,
+ *        badge, image, imageAlt, imageW, imageH, heroPlaceholder
  *
- * Used on:  Hospital Billing, Physician Billing, and every future page.
- * NOT used on homepage (uses its own Hero.js with different layout).
- *
- * Props:
- *   eyebrow    {string}  — small ALL CAPS label
- *   heading    {string}  — H1 text
- *   intro      {string}  — lead paragraph
- *   note       {string}  — italic note below CTA buttons
- *   cta        {string}  — primary button text (href always → #assessment)
- *   ctaAlt     {string}  — optional secondary ghost button text
- *   ctaAltHref {string}  — ghost button href (default #scope)
- *   badge      {string}  — image overlay label (bottom-right of photo)
- *   image      {string}  — /public image path
- *   imageAlt   {string}  — image alt text
- *   imageW     {number}  — intrinsic width (for next/image)
- *   imageH     {number}  — intrinsic height (for next/image)
+ * heroPlaceholder = { title, spec, prompt }
+ *   Pass when no real image exists yet. Shows a visible dashed box
+ *   in the right column only. Remove when adding real image prop.
  */
 export default function PageHero({
   eyebrow,
   heading,
   intro,
   note,
-  cta       = "Get a Free Revenue Assessment",
+  cta           = "Get a Free Revenue Assessment",
   ctaAlt,
-  ctaAltHref = "#scope",
+  ctaAltHref    = "#scope",
   badge,
   image,
-  imageAlt  = "",
-  imageW    = 1536,
-  imageH    = 1024,
-  heroPlaceholder = null,  // { title, spec, prompt } — shown when no real image exists
+  imageAlt      = "",
+  imageW        = 1536,
+  imageH        = 1024,
+  heroPlaceholder = null,
 }) {
   return (
     <section className="pg-hero" aria-labelledby="pg-hero-h1">
-
-      {/* ── Copy + Mobile image ──────────────────────────── */}
       <div className="pg-hero-inner">
+
+        {/* ── Left: copy column ──────────────────────────── */}
         <div className="pg-hero-copy">
           {eyebrow && <p className="pg-hero-ew">{eyebrow}</p>}
           <h1 className="pg-hero-h1" id="pg-hero-h1">{heading}</h1>
 
-          {/* Mobile-only image (sits between H1 and intro on small screens) */}
+          {/* Mobile image — hidden on desktop via CSS, shown between H1 and intro */}
           {image && (
             <div className="pg-hero-img pg-hero-img--mob" aria-hidden="true">
               <Image
@@ -53,16 +42,6 @@ export default function PageHero({
                 priority quality={85}
                 style={{ objectFit:"cover", objectPosition:"52% center", width:"100%", height:"100%" }}
               />
-              {badge && <span className="pg-hero-badge">{badge}</span>}
-            </div>
-          )}
-          {!image && heroPlaceholder && (
-            <div className="pg-hero-img pg-hero-img--mob pg-hero-placeholder" aria-label="Image placeholder">
-              <div className="pg-hero-ph-inner">
-                <div className="pg-hero-ph-icon">📷</div>
-                <div className="pg-hero-ph-title">{heroPlaceholder.title}</div>
-                <div className="pg-hero-ph-spec">{heroPlaceholder.spec}</div>
-              </div>
               {badge && <span className="pg-hero-badge">{badge}</span>}
             </div>
           )}
@@ -79,8 +58,11 @@ export default function PageHero({
           {note && <p className="pg-hero-note">{note}</p>}
         </div>
 
-        {/* ── Desktop image (right column) ────────────────── */}
-        {image && (
+        {/* ── Right: image column ─────────────────────────
+            Real image: shown on desktop, hidden on mobile (CSS handles it)
+            Placeholder: shown only when no real image exists
+        ──────────────────────────────────────────────── */}
+        {image ? (
           <div className="pg-hero-img pg-hero-img--desk" aria-hidden="true">
             <Image
               src={image} alt={imageAlt}
@@ -90,9 +72,7 @@ export default function PageHero({
             />
             {badge && <span className="pg-hero-badge">{badge}</span>}
           </div>
-        )}
-        {/* ── Hero image placeholder (shown when no real image yet) ── */}
-        {!image && heroPlaceholder && (
+        ) : heroPlaceholder ? (
           <div className="pg-hero-img pg-hero-img--desk pg-hero-placeholder" aria-label="Image placeholder">
             <div className="pg-hero-ph-inner">
               <div className="pg-hero-ph-icon">📷</div>
@@ -104,9 +84,9 @@ export default function PageHero({
             </div>
             {badge && <span className="pg-hero-badge">{badge}</span>}
           </div>
-        )}
-      </div>
+        ) : null}
 
+      </div>
     </section>
   );
 }
