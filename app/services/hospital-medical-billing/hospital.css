@@ -1,70 +1,79 @@
-/* ═══════════════════════════════════════════════════════
-   HOSPITAL MEDICAL BILLING — page-scoped stylesheet
-   Brand Book v1.0 · August 2026
+/* ═══════════════════════════════════════════════════════════
+   HOSPITAL BILLING — page-specific styles only.
    
-   Layout system:
-   - Every section bg fills 100vw
-   - Content centered at max-width 1180px (brand book)
-   - Horizontal padding: max(24px, (100vw - 1180px) / 2)
-   - Section vertical padding: 112px desktop → 80px tablet → 64px mobile
-   - Fonts: Poppins (headings) + Montserrat (body) via var(--font-heading/body)
-   - Type scale from globals.css --fs-h1 / --fs-h2 / --fs-h3
-═══════════════════════════════════════════════════════ */
+   Global tokens used (defined in globals.css :root):
+   --font-heading, --font-body, --fs-h1, --fs-h2, --fs-h3
+   --fs-body, --fs-lead, --fs-xs, --fs-sm, --fs-2xs
+   --color-primary, --color-secondary, --color-action
+   --color-accent, --color-ivory, --color-ink, --color-muted
+   --color-line, --color-navy-deep (= #111735)
+   --radius-card, --radius-btn, --radius-pill, --radius-media
+   --lh-heading, --lh-subhead, --lh-body, --lh-lead
+   --ls-heading, --ls-eyebrow
+   --sec-desktop, --sec-gap
+   --text-on-dark, --text-on-dark-sub, --text-on-dark-muted
+   
+   Global utility classes used:
+   .gs-eyebrow, .gs-btn, .gs-proof-strip, .gs-proof-grid,
+   .gs-proof-item, .gs-reveal, .gs-in
+═══════════════════════════════════════════════════════════ */
 
-/* ── Layout helper — same centering as .shell on homepage ── */
+/* ─── Layout helper ──────────────────────────────────────── */
 :root {
-  --h-max:  1180px;
-  --h-gap:  max(24px, calc((100vw - 1180px) / 2));
+  --h-gap: max(24px, calc((100vw - 1180px) / 2));
 }
 
-/* ── HERO ── */
+/* ─── HERO ───────────────────────────────────────────────── */
 .hero {
-  background: #111735;
-  color: #fff;
+  background: var(--color-navy-deep);
+  color: var(--text-on-dark);
   overflow: hidden;
 }
 .hero .shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
+  grid-template-columns: minmax(0,1.12fr) minmax(340px,.88fr);
   align-items: center;
-  gap: clamp(32px, 4vw, 56px);
+  gap: clamp(32px,4vw,56px);
   padding-top: 48px;
   padding-bottom: 48px;
 }
 .hero-copy { display: flex; flex-direction: column; }
+
+/* H1 — uses global token */
 .hero h1 {
   font-family: var(--font-heading);
   font-size: var(--fs-h1);
-  line-height: 1.0;
-  letter-spacing: -.04em;
-  color: #fff;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+  color: var(--text-on-dark);
   margin: 0 0 20px;
   max-width: 680px;
   text-wrap: balance;
 }
 .hero .eyebrow { color: #c4d7b7; margin-bottom: 14px; }
 .hero-intro {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-lead);
   color: #f0f1f5;
-  font-size: 1rem;
-  line-height: 1.65;
   max-width: 640px;
   margin: 0 0 14px;
 }
 .hero-action { margin: 20px 0 18px; }
 .hero-note {
-  color: #c5c9d6;
-  font-size: .88rem;
+  font-family: Georgia, serif;
+  font-size: var(--fs-sm);
   line-height: 1.6;
+  color: #c5c9d6;
   max-width: 600px;
   margin: 0;
   padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,.18);
-  font-family: Georgia, serif;
 }
 .hero-media {
   position: relative;
-  height: clamp(460px, 38vw, 540px);
-  border-radius: 112px 0 22px 0;
+  height: clamp(460px,38vw,540px);
+  border-radius: 112px 0 var(--radius-media) 0;
   overflow: hidden;
   box-shadow: -14px 14px 0 var(--color-accent);
   background: #303857;
@@ -73,22 +82,24 @@
   content: 'Institutional billing \2022 837I';
   position: absolute; right: 18px; bottom: 18px;
   padding: 8px 12px;
-  background: rgba(16, 22, 52, .88);
+  background: rgba(16,22,52,.88);
   border-left: 3px solid var(--color-accent);
-  font-size: .62rem; font-weight: 800;
-  letter-spacing: .12em; text-transform: uppercase; color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs); font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-on-dark);
 }
 .hero-media img { object-position: 52% center; }
 .hero-media.mobile { display: none; }
 
-/* ── BUTTONS — match brand book (8px radius, action green) ── */
+/* ─── BUTTON overrides for hospital page ────────────────── */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 52px; padding: 0 24px;
   background: var(--color-action);
-  color: #fff !important;
+  color: var(--text-on-dark) !important;
   font-family: var(--font-body);
-  font-size: .88rem; font-weight: 700;
+  font-size: var(--fs-body); font-weight: 700;
   border-radius: var(--radius-btn);
   border: none; cursor: pointer;
   text-decoration: none !important;
@@ -96,161 +107,167 @@
 }
 .btn::after { content: '→'; margin-left: 10px; font-size: 1.1em; }
 .btn:hover  { background: #2e5419; transform: translateY(-2px); }
-.btn.gold   { background: var(--color-accent); color: #111735 !important; }
+.btn.gold   { background: var(--color-accent); color: var(--color-ink) !important; }
 .btn.gold:hover { background: #c48e20; }
 
-/* ── EYEBROW ── */
+/* ─── EYEBROW ────────────────────────────────────────────── */
 .eyebrow {
   display: flex; align-items: center; gap: 12px; margin: 0 0 14px;
-  color: var(--color-action);
   font-family: var(--font-body);
-  font-size: .74rem; font-weight: 800;
-  letter-spacing: .16em; text-transform: uppercase;
+  font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--color-action);
 }
 .eyebrow::before { content: ''; width: 36px; border-top: 2px solid var(--color-accent); }
 
-/* ── PROOF STRIP ── */
-.proof-strip {
-  background: var(--color-secondary);
-  color: #fff;
-}
+/* ─── PROOF STRIP — uses global .gs-proof classes ─────────
+   The hospital page uses its own .proof-strip / .proof-grid / .proof-item
+   which mirror globals exactly with section padding. */
+.proof-strip { background: var(--color-secondary); color: var(--text-on-dark); }
 .proof-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(4,1fr);
   min-height: 108px;
 }
 .proof-item {
   display: grid; place-items: center; text-align: center;
   padding: 18px 20px;
   border-right: 1px solid rgba(255,255,255,.22);
-  font-size: .72rem; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs); font-weight: 700;
+  letter-spacing: var(--ls-badge, .08em); text-transform: uppercase;
 }
 .proof-item:last-child { border-right: 0; }
 
-/* ══════════════════════════════════════════════════════
-   LEVEL 2 SECTIONS
-   Background fills 100vw. Content centered at 1180px.
-   No horizontal padding on the section itself.
-══════════════════════════════════════════════════════ */
+/* ─── LEVEL2 SECTIONS ────────────────────────────────────── */
 .level2 {
-  padding: 112px var(--h-gap);
+  padding: var(--sec-desktop) var(--h-gap);
   position: relative;
 }
-
-/* Alternating white background */
 .level2:nth-of-type(even) { background: #fff; }
 
-/* Heading — Poppins, brand H2 scale */
+/* H2 — global font tokens */
 .level2 > h2 {
   font-family: var(--font-heading);
   font-size: var(--fs-h2);
-  line-height: 1.1;
-  letter-spacing: -.04em;
+  line-height: var(--lh-subhead);
+  letter-spacing: var(--ls-heading);
   color: var(--color-primary);
-  margin: 0 0 20px;
-  max-width: 860px;
-  text-wrap: balance;
+  margin: 0 0 20px; max-width: 860px; text-wrap: balance;
 }
-
-/* Eyebrow via data attribute */
+/* Eyebrow via data-eyebrow attribute */
 .level2 > h2::before {
   content: attr(data-eyebrow);
   display: block; margin-bottom: 14px;
-  color: var(--color-action);
   font-family: var(--font-body);
-  font-size: .74rem; font-weight: 800;
-  letter-spacing: .16em; text-transform: uppercase;
+  font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--color-action);
 }
-
 /* Body text */
 .level2 > p {
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   color: var(--color-ink);
-  max-width: 860px;
-  margin: 0 0 16px;
+  max-width: 860px; margin: 0 0 16px;
 }
-.level2 > p:first-of-type { font-size: 1.05rem; color: var(--color-muted); }
+.level2 > p:first-of-type { font-size: var(--fs-body); color: var(--color-muted); }
 .level2 a { color: var(--color-action); font-weight: 700; }
-.level2 a:hover { color: var(--color-primary); }
 
-/* Reveal animation */
+/* section-copy inherits level2 typography */
+.section-copy h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-subhead);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+  margin: 0 0 20px; max-width: 100%;
+}
+.section-copy h2::before {
+  content: attr(data-eyebrow);
+  display: block; margin-bottom: 14px;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--color-action);
+}
+.section-copy p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body); line-height: var(--lh-body);
+  color: var(--color-ink); max-width: 100%; margin: 0 0 16px;
+}
+.section-copy a { color: var(--color-action); font-weight: 700; }
+
+/* Eyebrow for pair-card panels */
+.pair-card section h2::before {
+  content: attr(data-eyebrow);
+  display: block; margin-bottom: 14px;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--color-action);
+}
+
+/* Reveal */
 body.js-ready .level2.reveal {
   opacity: 0; transform: translateY(18px);
   transition: opacity .65s cubic-bezier(.2,.8,.2,1), transform .65s cubic-bezier(.2,.8,.2,1);
 }
 .level2.reveal.visible { opacity: 1 !important; transform: none !important; }
 
-/* ── WHERE REVENUE GOES MISSING ── */
+/* ─── REVENUE MISSING SECTION ───────────────────────────── */
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank {
-  background: linear-gradient(120deg, rgba(244,240,231,.98), rgba(244,240,231,.85)),
-              radial-gradient(circle at 90% 10%, rgba(212,155,40,.15), transparent 38%);
+  background: linear-gradient(120deg,rgba(244,240,231,.98),rgba(244,240,231,.85)),
+              radial-gradient(circle at 90% 10%,rgba(212,155,40,.15),transparent 38%);
 }
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p {
-  padding: 26px 28px;
-  background: #fff;
+  padding: 26px 28px; background: #fff;
   border-radius: var(--radius-card);
   box-shadow: 0 8px 28px rgba(26,33,79,.07);
   max-width: 860px;
 }
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) {
-  margin-top: 16px;
-  background: var(--color-primary);
-  color: #eef0f5;
-  font-size: 1.05rem;
+  margin-top: 16px; background: var(--color-primary);
+  color: #eef0f5; font-size: var(--fs-body);
 }
 #where-hospital-revenue-goes-missing-between-the-bedside-and-the-bank p:nth-of-type(2) a { color: var(--color-accent); }
 
-/* ── TABLE ── */
-.table-wrap {
-  margin: 32px 0;
-  overflow-x: auto;
-  border-radius: var(--radius-card);
-  box-shadow: 0 20px 60px rgba(26,33,79,.12);
-}
+/* ─── TABLE ─────────────────────────────────────────────── */
+.table-wrap { margin: 32px 0; overflow-x: auto; border-radius: var(--radius-card); box-shadow: 0 20px 60px rgba(26,33,79,.12); }
 table { width: 100%; min-width: 820px; border-collapse: collapse; background: #fff; }
 th, td { padding: 20px 22px; text-align: left; border-bottom: 1px solid var(--color-line); vertical-align: top; }
 th {
-  background: #111735; color: #fff;
+  background: #111735; color: var(--text-on-dark);
   font-family: var(--font-body);
-  font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  font-size: var(--fs-xs); font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
 }
 td:first-child { font-weight: 700; color: var(--color-primary); }
 td:last-child  { background: #f0f6ea; }
 tr:last-child td { border-bottom: 0; }
-
-/* Two-col note cards below the table */
 #two-payment-systems-under-one-roof > p:nth-last-of-type(-n+2) {
   display: inline-block; vertical-align: top;
-  width: calc(50% - 10px);
-  padding: 24px 28px;
+  width: calc(50% - 10px); padding: 24px 28px;
   background: var(--color-ivory);
   border-left: 4px solid var(--color-accent);
   border-radius: 0 var(--radius-card) var(--radius-card) 0;
 }
 #two-payment-systems-under-one-roof > p:last-child { margin-left: 16px; }
 
-/* ── RCM FRAMEWORK ── */
-#how-we-hold-a-hospitals-revenue-cycle-together {
-  background: #111735;
-  color: #e9ebf2;
-}
-#how-we-hold-a-hospitals-revenue-cycle-together h2 { color: #fff; }
+/* ─── RCM FRAMEWORK ─────────────────────────────────────── */
+#how-we-hold-a-hospitals-revenue-cycle-together { background: #111735; color: #e9ebf2; }
+#how-we-hold-a-hospitals-revenue-cycle-together h2 { color: var(--text-on-dark); }
 #how-we-hold-a-hospitals-revenue-cycle-together > p:not(:first-of-type) { display: none; }
 
 .rcm-visual {
   margin-top: 40px; padding: 40px 28px 28px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 24px;
-  background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.12); border-radius: 24px;
+  background: linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
   overflow: hidden; position: relative;
 }
 .rcm-visual::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.1) 49%, transparent 63%);
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(110deg,transparent 35%,rgba(255,255,255,.1) 49%,transparent 63%);
   transform: translateX(-150%);
   animation: sheen 5.8s ease-in-out infinite;
 }
@@ -265,37 +282,40 @@ tr:last-child td { border-bottom: 0; }
   display: grid; place-items: center;
   width: 40px; height: 40px; border-radius: 50%;
   background: var(--color-accent); color: var(--color-primary);
-  font-family: var(--font-heading); font-weight: 700; font-size: .88rem;
+  font-family: var(--font-heading); font-weight: 700; font-size: var(--fs-sm);
 }
-.rcm-step strong { display: block; margin-bottom: 8px; color: var(--color-primary); font-family: var(--font-heading); font-size: 1rem; }
-.rcm-step p { font-size: .87rem; margin: 0; line-height: 1.6; }
+.rcm-step strong {
+  display: block; margin-bottom: 8px;
+  color: var(--color-primary);
+  font-family: var(--font-heading); font-size: var(--fs-body);
+}
+.rcm-step p { font-size: var(--fs-sm); margin: 0; line-height: 1.6; }
 
-/* ── BLOCKQUOTES — 4-col card grid ── */
+/* ─── 4-COL BLOCKQUOTES ─────────────────────────────────── */
 #every-facility-bills-differently-and-were-built-for-that blockquote,
-#what-the-2026-team-model-changes-for-hospital-billing blockquote,
-#the-rules-we-build-every-claim-around blockquote,
-#what-happens-after-you-request-an-assessment blockquote {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+#what-happens-after-you-request-an-assessment blockquote,
+#the-rules-we-build-every-claim-around blockquote {
+  display: grid; grid-template-columns: repeat(4,1fr);
   gap: 14px; margin: 32px 0; padding: 0; border: 0;
 }
 blockquote p {
   margin: 0; padding: 22px 24px;
   background: #fff; border: 1px solid var(--color-line);
   border-radius: var(--radius-card);
-  font-size: .92rem; line-height: 1.65;
+  font-size: var(--fs-body); line-height: var(--lh-lead);
 }
 #every-facility-bills-differently-and-were-built-for-that blockquote p:nth-child(3) {
-  background: var(--color-secondary); color: #fff; border-color: var(--color-secondary);
+  background: var(--color-secondary); color: var(--text-on-dark); border-color: var(--color-secondary);
 }
 
-/* ── REVENUE SLIPS (level3 cards) ── */
+/* ─── REVENUE INTEGRITY CARDS ───────────────────────────── */
 #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one { background: #fff; }
 #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3 {
   display: inline-block; vertical-align: top;
   width: calc(50% - 10px); min-height: 300px;
   margin: 10px 8px 10px 0; padding: 32px;
-  background: var(--color-ivory);
-  border-radius: 20px; border-top: 5px solid var(--color-secondary);
+  background: var(--color-ivory); border-radius: 20px;
+  border-top: 5px solid var(--color-secondary);
 }
 #the-places-hospital-revenue-quietly-slips-and-how-we-close-each-one > .level3:nth-of-type(even) {
   border-top-color: var(--color-accent);
@@ -303,149 +323,72 @@ blockquote p {
 .level3 h3 {
   font-family: var(--font-heading);
   font-size: var(--fs-h3);
-  color: var(--color-primary);
-  line-height: 1.3; margin-bottom: 12px;
+  color: var(--color-primary); line-height: var(--lh-h3); margin-bottom: 12px;
 }
-.level3 p { font-size: .95rem; line-height: 1.65; margin: 0 0 14px; }
+.level3 p { font-size: var(--fs-body); line-height: var(--lh-lead); margin: 0 0 14px; }
 
-/* ── SPLIT MEDIA — exact from original HTML ── */
+/* ─── SPLIT MEDIA (DRG section) ─────────────────────────── */
 .split-media {
   display: grid !important;
   grid-template-columns: .9fr 1.1fr;
-  gap: 64px;
-  align-items: center;
+  gap: 64px; align-items: center;
 }
-
-/* ── section-photo: position:relative REQUIRED for next/image fill ── */
+.split-media .section-copy { min-width: 0; }
 .section-photo {
-  position: relative;          /* ← critical for next/image fill */
-  height: 610px;
-  overflow: hidden;
-  border-radius: 98px 0 22px 0;
-  box-shadow: -14px 14px 0 #d49b28;
-  background: #d8ddd4;
-  flex-shrink: 0;
-}
-
-/* ── section-copy: full typography — mirrors level2 > * rules ── */
-.section-copy { min-width: 0; }
-
-/* Eyebrow via data-eyebrow on h2 inside section-copy */
-.section-copy h2::before,
-.pair-card section h2::before {
-  content: attr(data-eyebrow);
-  display: block; margin-bottom: 14px;
-  color: var(--color-action);
-  font-family: var(--font-body);
-  font-size: .74rem; font-weight: 800;
-  letter-spacing: .16em; text-transform: uppercase;
-}
-.section-copy h2 {
-  font-family: var(--font-heading);
-  font-size: var(--fs-h2);
-  line-height: 1.1; letter-spacing: -.04em;
-  color: var(--color-primary);
-  margin: 0 0 20px; max-width: 100%;
-}
-.section-copy p {
-  font-family: var(--font-body);
-  font-size: 1rem; line-height: 1.7;
-  color: var(--color-ink);
-  max-width: 100%; margin: 0 0 16px;
-}
-.section-copy a { color: var(--color-action); font-weight: 700; }
-.section-copy a:hover { color: var(--color-primary); }
-
-/* ── 340B & TEAM — pair card inside section wrapper ──
-   Both sections sit inside .pair-section which has ivory bg.
-   They use a .pair-card (like cta-card) with 50/50 grid.
-   Left = 340B (ivory bg), Right = TEAM (navy bg). */
-
-/* ── Pair section wrapper ── */
-.pair-section {
-  padding: 112px var(--h-gap);
   position: relative;
-  background: var(--color-ivory);
+  height: 610px; overflow: hidden;
+  border-radius: 98px 0 22px 0;
+  box-shadow: -14px 14px 0 var(--color-accent);
+  background: #d8ddd4;
 }
+.section-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* ── Pair card — 2-col grid card ── */
-.pair-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 680px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 26px 72px rgba(26,33,79,.14);
-}
-
-/* Typography inside pair-card panels */
+/* ─── PAIR SECTION (340B + TEAM) ────────────────────────── */
+.pair-section { padding: var(--sec-desktop) var(--h-gap); position: relative; background: var(--color-ivory); }
+.pair-card { display: grid; grid-template-columns: 1fr 1fr; min-height: 680px; border-radius: 24px; overflow: hidden; box-shadow: 0 26px 72px rgba(26,33,79,.14); }
 .pair-card section h2 {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
-  line-height: 1.1; letter-spacing: -.04em;
+  font-size: clamp(1.6rem,2.4vw,2.4rem);
+  line-height: var(--lh-subhead);
+  letter-spacing: var(--ls-heading);
   margin: 0 0 20px; max-width: 100%;
 }
-/* h2::before rule already defined above in section-copy block */
-
 .pair-card section p {
   font-family: var(--font-body);
-  font-size: 1rem; line-height: 1.7;
+  font-size: var(--fs-body); line-height: var(--lh-body);
   max-width: 100%; margin: 0 0 14px;
 }
 .pair-card section a { font-weight: 700; }
 
-/* 340B panel — ivory background */
-#b-split-billing-without-the-audit-exposure {
-  background: var(--color-ivory);
-  padding: 64px 56px;
-}
+#b-split-billing-without-the-audit-exposure { background: var(--color-ivory); padding: 64px 56px; }
 #b-split-billing-without-the-audit-exposure h2 { color: var(--color-primary); }
 #b-split-billing-without-the-audit-exposure p  { color: var(--color-ink); }
 #b-split-billing-without-the-audit-exposure h2::before { color: var(--color-action); }
 #b-split-billing-without-the-audit-exposure a { color: var(--color-action); }
 
-/* TEAM panel — navy background */
-#what-the-2026-team-model-changes-for-hospital-billing {
-  background: var(--color-primary);
-  padding: 64px 56px;
-  color: #eef0f5;
-}
-#what-the-2026-team-model-changes-for-hospital-billing h2       { color: #fff; }
+#what-the-2026-team-model-changes-for-hospital-billing { background: var(--color-primary); padding: 64px 56px; color: #eef0f5; }
+#what-the-2026-team-model-changes-for-hospital-billing h2       { color: var(--text-on-dark); }
 #what-the-2026-team-model-changes-for-hospital-billing h2::before { color: #c4d7b7; }
-#what-the-2026-team-model-changes-for-hospital-billing p         { color: #c5c9d7; }
-#what-the-2026-team-model-changes-for-hospital-billing a         { color: var(--color-accent); }
-#what-the-2026-team-model-changes-for-hospital-billing blockquote {
-  grid-template-columns: 1fr; margin: 20px 0;
-}
-#what-the-2026-team-model-changes-for-hospital-billing blockquote p {
-  background: rgba(255,255,255,.08);
-  border: 0; border-left: 3px solid var(--color-accent);
-  border-radius: 0 4px 4px 0;
-  padding: 12px 16px; color: #eef0f5; font-size: .92rem; margin: 0;
-}
+#what-the-2026-team-model-changes-for-hospital-billing > p      { color: #c5c9d7; }
+#what-the-2026-team-model-changes-for-hospital-billing a        { color: var(--color-accent); }
+#what-the-2026-team-model-changes-for-hospital-billing blockquote { grid-template-columns: 1fr; margin: 20px 0; }
+#what-the-2026-team-model-changes-for-hospital-billing blockquote p { background: rgba(255,255,255,.08); border:0; border-left:3px solid var(--color-accent); border-radius:0 4px 4px 0; padding:12px 16px; color:#eef0f5; font-size:var(--fs-body); margin:0; }
 
-/* ── CLEAN CLAIM — 97% large number left ── */
-#and-where-we-measure-it {
-  background: var(--color-secondary); color: #fff;
-  padding-left: max(var(--h-gap), calc(var(--h-gap) + 340px));
-}
-#and-where-we-measure-it h2 { color: #fff; }
+/* ─── 97% SECTION ───────────────────────────────────────── */
+#and-where-we-measure-it { background: var(--color-secondary); color: var(--text-on-dark); padding-left: max(var(--h-gap), calc(var(--h-gap) + 340px)); }
+#and-where-we-measure-it h2 { color: var(--text-on-dark); }
 #and-where-we-measure-it > p { color: rgba(255,255,255,.85); }
 #and-where-we-measure-it a { color: #c4d7b7; }
 #and-where-we-measure-it::before {
-  content: '97%';
-  position: absolute;
-  left: var(--h-gap); top: 50%; transform: translateY(-50%);
+  content: '97%'; position: absolute; left: var(--h-gap); top: 50%; transform: translateY(-50%);
   font-family: var(--font-heading);
-  font-size: clamp(5.5rem, 11vw, 10rem);
-  line-height: .85; color: #fff; opacity: .92;
+  font-size: clamp(5.5rem,11vw,10rem);
+  line-height: .85; color: var(--text-on-dark); opacity: .92;
 }
 
-/* ── IN-HOUSE COST — dark section ── */
-#what-in-house-hospital-billing-costs-to-run {
-  background: #111735; color: #e9ebf2;
-}
-#what-in-house-hospital-billing-costs-to-run h2 { color: #fff; }
+/* ─── IN-HOUSE COST ─────────────────────────────────────── */
+#what-in-house-hospital-billing-costs-to-run { background: #111735; color: #e9ebf2; }
+#what-in-house-hospital-billing-costs-to-run h2 { color: var(--text-on-dark); }
 #what-in-house-hospital-billing-costs-to-run > p { color: #c5c9d7; max-width: 680px; }
 #what-in-house-hospital-billing-costs-to-run > p:nth-of-type(n+3) {
   padding: 20px 26px; border-left: 4px solid var(--color-accent);
@@ -453,48 +396,42 @@ blockquote p {
 }
 #what-in-house-hospital-billing-costs-to-run a { color: var(--color-accent); }
 
-/* ── CLIENT OUTCOMES ── */
+/* ─── CLIENT OUTCOMES ───────────────────────────────────── */
 #what-changed-for-the-practices-we-took-on p:last-child {
   padding: 28px 32px;
-  background: var(--color-primary); color: #fff;
-  border-radius: var(--radius-card);
-  line-height: 2.0; max-width: 860px;
+  background: var(--color-primary); color: var(--text-on-dark);
+  border-radius: var(--radius-card); line-height: 2.0; max-width: 860px;
 }
 #what-changed-for-the-practices-we-took-on p:last-child a {
   display: inline-block; padding: 3px 8px;
-  border-bottom: 1px solid var(--color-accent); color: #fff;
+  border-bottom: 1px solid var(--color-accent); color: var(--text-on-dark);
 }
 
-/* ── COMPLIANCE — 8+ large number left ── */
-#the-rules-we-build-every-claim-around {
-  background: var(--color-ivory);
-  padding-left: max(var(--h-gap), calc(var(--h-gap) + 280px));
-}
+/* ─── COMPLIANCE ────────────────────────────────────────── */
+#the-rules-we-build-every-claim-around { background: var(--color-ivory); padding-left: max(var(--h-gap), calc(var(--h-gap) + 280px)); }
 #the-rules-we-build-every-claim-around::before {
-  content: '8+';
-  position: absolute; left: var(--h-gap); top: 130px;
+  content: '8+'; position: absolute; left: var(--h-gap); top: 130px;
   font-family: var(--font-heading);
-  font-size: clamp(5rem, 9vw, 8.5rem);
+  font-size: clamp(5rem,9vw,8.5rem);
   color: var(--color-accent); line-height: .85;
 }
 #the-rules-we-build-every-claim-around blockquote { grid-template-columns: 1fr 1fr; }
 #the-rules-we-build-every-claim-around blockquote p {
-  border-radius: 0; border: 0;
-  border-left: 3px solid var(--color-secondary);
-  background: transparent; padding: 14px 18px; font-size: .88rem;
+  border-radius: 0; border: 0; border-left: 3px solid var(--color-secondary);
+  background: transparent; padding: 14px 18px; font-size: var(--fs-sm);
 }
 
-/* ── SYSTEMS ── */
+/* ─── SYSTEMS ───────────────────────────────────────────── */
 .systems-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 56px; align-items: center; }
 .platforms { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
 .platforms span {
   padding: 10px 14px; border-radius: var(--radius-pill);
-  background: #fff; font-size: .8rem; font-weight: 600;
+  background: #fff; font-size: var(--fs-sm); font-weight: 600;
   color: var(--color-primary); border: 1px solid var(--color-line);
 }
 .workflow-visual {
   padding: 22px; border-radius: var(--radius-media) 0 var(--radius-card) 0;
-  background: linear-gradient(145deg, #111735, #1a214f);
+  background: linear-gradient(145deg,#111735,#1a214f);
   box-shadow: 0 24px 64px rgba(26,33,79,.18); overflow: hidden;
 }
 .workflow-visual svg { display: block; width: 100%; height: auto; }
@@ -502,179 +439,119 @@ blockquote p {
 .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-in-out infinite; }
 .systems-copy > p:last-child { display: none; }
 
-/* ── PROCESS ── */
+/* ─── PROCESS ───────────────────────────────────────────── */
 #what-happens-after-you-request-an-assessment { background: #111735; color: #e9ebf2; }
-#what-happens-after-you-request-an-assessment h2 { color: #fff; }
+#what-happens-after-you-request-an-assessment h2 { color: var(--text-on-dark); }
 #what-happens-after-you-request-an-assessment > p { color: #c5c9d7; }
 #what-happens-after-you-request-an-assessment blockquote {
   border-top: 1px solid var(--color-accent);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
 }
 #what-happens-after-you-request-an-assessment blockquote p {
-  background: transparent; color: #fff; border: 0;
-  border-right: 1px solid rgba(255,255,255,.12); border-radius: 0;
-  padding: 20px 22px;
+  background: transparent; color: var(--text-on-dark); border: 0;
+  border-right: 1px solid rgba(255,255,255,.12); border-radius: 0; padding: 20px 22px;
 }
 
-/* ── WHO THIS IS FOR ── */
+/* ─── WHO THIS IS FOR ───────────────────────────────────── */
 #who-this-is-for blockquote {
   display: inline-block; vertical-align: top;
-  width: calc(50% - 10px);
-  margin: 0; padding: 28px 32px;
+  width: calc(50% - 10px); margin: 0; padding: 28px 32px;
   background: var(--color-primary); color: #eef0f5;
   border-radius: var(--radius-card); border: 0;
 }
-#who-this-is-for blockquote p {
-  background: transparent; border: 0; border-radius: 0;
-  padding: 0 0 14px; color: #eef0f5; font-size: .95rem;
-}
+#who-this-is-for blockquote p { background: transparent; border: 0; border-radius: 0; padding: 0 0 14px; color: #eef0f5; font-size: var(--fs-body); }
 #who-this-is-for blockquote p:last-child { padding-bottom: 0; }
 #who-this-is-for blockquote + p {
   display: inline-block; vertical-align: top;
-  width: calc(50% - 10px); margin: 0 0 0 16px;
-  padding: 28px 32px 0;
+  width: calc(50% - 10px); margin: 0 0 0 16px; padding: 28px 32px 0;
   background: var(--color-ivory); border-radius: var(--radius-card) var(--radius-card) 0 0;
-  font-family: var(--font-heading); font-weight: 700; color: var(--color-primary);
-  font-size: .95rem;
+  font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); font-size: var(--fs-body);
 }
-#who-this-is-for blockquote + p + blockquote {
-  margin-left: 16px;
-  background: var(--color-ivory); color: var(--color-ink);
-  border-radius: 0 0 var(--radius-card) var(--radius-card);
-}
+#who-this-is-for blockquote + p + blockquote { margin-left: 16px; background: var(--color-ivory); color: var(--color-ink); border-radius: 0 0 var(--radius-card) var(--radius-card); }
 #who-this-is-for blockquote + p + blockquote p { color: var(--color-ink); }
 #who-this-is-for > p:last-child { margin-top: 28px; }
 
-/* ── FAQ ── */
+/* ─── FAQ ───────────────────────────────────────────────── */
 .faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 60px; }
 .faq-intro { position: sticky; top: 110px; }
-.faq-intro p { color: var(--color-muted); font-size: 1rem; }
+.faq-intro p { color: var(--color-muted); font-size: var(--fs-body); }
 .faq-list details { border-bottom: 1px solid var(--color-line); }
 summary {
   list-style: none; position: relative;
   padding: 20px 52px 20px 0; cursor: pointer;
   font-family: var(--font-heading); font-weight: 600;
-  font-size: 1.02rem; color: var(--color-primary);
+  font-size: var(--fs-body); color: var(--color-primary);
 }
 summary::-webkit-details-marker { display: none; }
 summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
 details[open] summary::after { content: '−'; }
-.faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: .97rem; line-height: 1.7; }
+.faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); }
 
-/* ── CTA SECTION — exact from original HTML ── */
-#see-where-your-hospital-revenue-is-leaking {
-  background: #528532; /* var(--green) exact */
-}
-#see-where-your-hospital-revenue-is-leaking > h2 {
-  color: #fff;
-  max-width: 860px;
-}
-#see-where-your-hospital-revenue-is-leaking > p {
-  color: rgba(255,255,255,.88);
-  max-width: 760px;
-}
+/* ─── CTA SECTION ───────────────────────────────────────── */
+#see-where-your-hospital-revenue-is-leaking { background: var(--color-secondary); }
+#see-where-your-hospital-revenue-is-leaking > h2 { color: var(--text-on-dark); }
+#see-where-your-hospital-revenue-is-leaking > p  { color: rgba(255,255,255,.88); }
 .cta-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 700px;
-  background: #101634; /* var(--deep) */
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: 0 26px 72px rgba(26,33,79,.14);
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 700px;
+  background: #101634; border-radius: 26px; overflow: hidden;
+  box-shadow: 0 26px 72px rgba(26,33,79,.14); margin-top: 2rem;
 }
 .cta-media { min-height: 540px; position: relative; overflow: hidden; }
 .cta-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cta-copy {
-  padding: 62px;
-  color: #e9ebf2;
-  display: flex; flex-direction: column; justify-content: center;
-}
+.cta-copy { padding: 62px; color: #e9ebf2; display: flex; flex-direction: column; justify-content: center; }
 .cta-copy h2 {
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
-  letter-spacing: -.04em; line-height: 1.1;
-  margin-bottom: 16px;
+  color: var(--text-on-dark); font-family: var(--font-heading);
+  font-size: clamp(1.8rem,2.8vw,2.8rem);
+  letter-spacing: var(--ls-heading); line-height: var(--lh-subhead); margin-bottom: 16px;
 }
-.cta-copy > p { color: #c9cdd8; font-size: .97rem; margin-bottom: 20px; }
+.cta-copy > p { color: #c9cdd8; font-size: var(--fs-body); margin-bottom: 20px; }
 
 /* Assessment form */
 .assessment { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.assessment label {
-  display: block; font-size: .68rem; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase; color: #e0e3ea;
-}
+.assessment label { display: block; font-family: var(--font-body); font-size: var(--fs-2xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #e0e3ea; }
 .assessment label.full, .assessment button { grid-column: span 2; }
 .assessment input, .assessment select {
   display: block; width: 100%; margin-top: 6px; padding: 13px 14px;
   background: #fff; border: 0; border-bottom: 2px solid transparent;
-  color: var(--color-primary); font-family: var(--font-body);
-  font-size: .95rem; border-radius: 4px;
+  color: var(--color-primary); font-family: var(--font-body); font-size: var(--fs-body); border-radius: 4px;
 }
 .assessment input:focus, .assessment select:focus { outline: 0; border-color: var(--color-accent); }
 .assessment button { margin-top: 8px; }
-.success { display: none; margin-top: 14px; padding: 14px 18px; border-left: 3px solid var(--color-accent); background: rgba(82,133,50,.26); color: #fff; border-radius: 0 4px 4px 0; }
+.success { display: none; margin-top: 14px; padding: 14px 18px; border-left: 3px solid var(--color-accent); background: rgba(82,133,50,.26); color: var(--text-on-dark); border-radius: 0 4px 4px 0; }
 .success.show { display: block; }
 
-/* ══════════════════════════════════════
-   ANIMATIONS
-══════════════════════════════════════ */
-@keyframes sheen {
-  0%,14%  { transform: translateX(-150%); }
-  58%,100%{ transform: translateX(150%);  }
-}
+/* ─── ANIMATIONS ────────────────────────────────────────── */
+@keyframes sheen { 0%,14% { transform: translateX(-150%); } 58%,100%{ transform: translateX(150%); } }
 @keyframes flow { to { stroke-dashoffset: -88; } }
-@keyframes pulse {
-  0%,100%{ transform: scale(.88); opacity: .55; }
-  50%    { transform: scale(1.18); opacity: 1; }
-}
+@keyframes pulse { 0%,100%{ transform: scale(.88); opacity: .55; } 50%{ transform: scale(1.18); opacity: 1; } }
 
-/* ══════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════ */
-
-/* ── 1080px ── */
+/* ─── RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 1080px) {
   .hero .shell { grid-template-columns: 1fr; gap: 0; padding: 56px 0 0; }
-  .hero-grid > .hero-media:not(.mobile) { display: none; }
-  .hero-media.mobile { display: block; height: min(60vw, 440px); margin: 16px 0 0; border-radius: 80px 0 18px 0; }
+  .hero-media.mobile { display: block; height: min(60vw,440px); margin: 16px 0 0; border-radius: 80px 0 18px 0; }
   .level2 { padding-top: 88px; padding-bottom: 88px; }
   .rcm-flow { grid-template-columns: 1fr 1fr; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
   #what-happens-after-you-request-an-assessment blockquote { grid-template-columns: 1fr 1fr; }
-  .split-media,.systems-layout { gap: 38px; }
-  .section-photo { height: 520px; }
-  .pair-card { grid-template-columns: 1fr 1fr; }
+  .split-media { grid-template-columns: 1fr; gap: 36px; }
+  .section-photo { height: 460px; }
+  .systems-layout { grid-template-columns: 1fr; gap: 36px; }
 }
-
-/* ── 900px ── */
 @media (max-width: 900px) {
   .level2 { padding-top: 80px; padding-bottom: 80px; }
   .rcm-flow { grid-template-columns: 1fr; }
   .pair-card { grid-template-columns: 1fr; }
   #b-split-billing-without-the-audit-exposure,
-  #what-the-2026-team-model-changes-for-hospital-billing {
-    padding: 48px 36px !important;
-  }
-  .split-media { grid-template-columns: 1fr; gap: 0; }
-  .section-photo { height: 400px; border-radius: 60px 0 18px 0; }
+  #what-the-2026-team-model-changes-for-hospital-billing { padding: 48px 36px !important; }
   .faq-layout { grid-template-columns: 1fr; }
   .faq-intro { position: static; }
   .cta-card { grid-template-columns: 1fr; }
   .cta-media { height: 440px; }
-  #and-where-we-measure-it {
-    padding-left: var(--h-gap);
-    padding-top: 220px;
-  }
+  #and-where-we-measure-it { padding-left: var(--h-gap); padding-top: 220px; }
   #and-where-we-measure-it::before { top: 80px; transform: none; font-size: 5.5rem; }
-  #the-rules-we-build-every-claim-around {
-    padding-left: var(--h-gap);
-    padding-top: 200px;
-  }
+  #the-rules-we-build-every-claim-around { padding-left: var(--h-gap); padding-top: 200px; }
   #the-rules-we-build-every-claim-around::before { top: 80px; font-size: 4.5rem; }
 }
-
-/* ── 768px ── */
 @media (max-width: 768px) {
   .level2 { padding-top: 64px; padding-bottom: 64px; }
   .proof-grid { grid-template-columns: 1fr 1fr; }
@@ -693,12 +570,10 @@ details[open] summary::after { content: '−'; }
   .assessment { grid-template-columns: 1fr; }
   .assessment label.full, .assessment button { grid-column: auto; }
 }
-
-/* ── 560px ── */
 @media (max-width: 560px) {
   :root { --h-gap: 16px; }
   .level2 { padding-top: 56px; padding-bottom: 56px; }
-  .hero-media.mobile { height: min(74vw, 320px); border-radius: 56px 0 14px 0; }
+  .hero-media.mobile { height: min(74vw,320px); border-radius: 56px 0 14px 0; }
   .proof-grid { grid-template-columns: 1fr; }
   .proof-item { border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,.2) !important; }
   .proof-item:last-child { border-bottom: 0 !important; }
@@ -710,7 +585,6 @@ details[open] summary::after { content: '−'; }
   #the-rules-we-build-every-claim-around { padding-top: 160px; }
   #the-rules-we-build-every-claim-around::before { font-size: 4rem; top: 56px; }
 }
-
 @media (prefers-reduced-motion: reduce) {
   body.js-ready .level2.reveal { opacity: 1; transform: none; transition: none; }
   .rcm-visual::after, .flow-path, .pulse { animation: none; }

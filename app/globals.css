@@ -74,6 +74,43 @@
   --serif:        Georgia, 'Times New Roman', serif;
   --font-heading: var(--font-poppins);
   --font-body:    var(--font-montserrat);
+
+  /* ── Additional font-size tokens for UI/components ── */
+  --fs-display:  clamp(2.625rem, 4.44vw, 4rem);  /* 64→42px mobile Display */
+  --fs-xl:       clamp(1.375rem, 1.94vw, 1.75rem); /* 28px — section intros */
+  --fs-sm:       0.875rem;   /* 14px — captions, labels */
+  --fs-xs:       0.75rem;    /* 12px — eyebrows, badges */
+  --fs-2xs:      0.6875rem;  /* 11px — fine print */
+
+  /* ── Line-heights (brand book p.12: body 1.6) ── */
+  --lh-heading:  1.08;   /* H1 */
+  --lh-subhead:  1.12;   /* H2 */
+  --lh-h3:       1.3;    /* H3 */
+  --lh-body:     1.7;    /* Body — brand book 1.6 baseline */
+  --lh-lead:     1.65;   /* Lead/intro paragraphs */
+
+  /* ── Letter-spacing ── */
+  --ls-heading:  -.04em;  /* H1, H2 — tight */
+  --ls-eyebrow:  .14em;   /* ALL caps labels */
+  --ls-badge:    .1em;    /* Small caps */
+
+  /* ── Section padding ── */
+  --sec-desktop: clamp(5.5rem, 8vw, 7rem);   /* 88-112px */
+  --sec-gap:     max(24px, calc((100vw - 1180px) / 2));  /* centering gap */
+
+  /* ── Dark surface text ── */
+  --text-on-dark:        #ffffff;
+  --text-on-dark-sub:    rgba(255,255,255,.8);
+  --text-on-dark-muted:  rgba(255,255,255,.55);
+  --text-on-dark-faint:  rgba(255,255,255,.35);
+  --text-on-green:       rgba(255,255,255,.88);
+  --text-on-green-muted: rgba(255,255,255,.65);
+
+  /* ── Surface backgrounds ── */
+  --bg-hero:    #111735;   /* hero / deep navy */
+  --bg-section: #ffffff;
+  --bg-alt:     var(--color-ivory);
+
 }
 
 /* Tailwind v4 theme bridge */
@@ -163,6 +200,250 @@ h3 {
   color: #4f5570;
   max-width: 680px;
 }
+
+/* ── 6b. GLOBAL TYPE SYSTEM — used by ALL pages ────────────
+   These classes are available site-wide. Service pages should
+   use these instead of defining local typography rules.
+   Never hardcode font-family, font-size or color in page CSS
+   when a global token or class already covers the need.
+────────────────────────────────────────────────────────── */
+
+/* Section wrapper — padding auto-centers content at --max */
+.gs-sec {
+  padding: var(--sec-desktop) var(--sec-gap);
+  position: relative;
+}
+
+/* Section background variants */
+.gs-white  { background: var(--bg-section); }
+.gs-ivory  { background: var(--color-ivory); }
+.gs-navy   { background: var(--bg-hero); color: var(--text-on-dark); }
+.gs-green  { background: var(--color-secondary); color: var(--text-on-dark); }
+.gs-ink    { background: var(--color-ink); color: var(--text-on-dark); }
+.gs-paper  { background: var(--color-paper); }
+
+/* Headings on dark surfaces */
+.gs-navy h1, .gs-navy h2, .gs-navy h3,
+.gs-green h1, .gs-green h2, .gs-green h3,
+.gs-ink h1, .gs-ink h2, .gs-ink h3 { color: var(--text-on-dark); }
+
+/* Body text on dark surfaces */
+.gs-navy p, .gs-navy li,
+.gs-ink p, .gs-ink li { color: var(--text-on-dark-sub); }
+.gs-green p, .gs-green li { color: var(--text-on-green); }
+
+/* Display text (hero H1 size) */
+.gs-display {
+  font-family: var(--font-heading);
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+  text-wrap: balance;
+  margin: 0 0 20px;
+}
+.gs-navy .gs-display,
+.gs-green .gs-display,
+.gs-ink .gs-display { color: var(--text-on-dark); }
+
+/* H1 */
+.gs-h1 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+  text-wrap: balance;
+  margin: 0 0 20px;
+}
+
+/* H2 */
+.gs-h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: var(--lh-subhead);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+  text-wrap: balance;
+  margin: 0 0 20px;
+  max-width: 860px;
+}
+.gs-navy .gs-h2,
+.gs-green .gs-h2,
+.gs-ink .gs-h2 { color: var(--text-on-dark); }
+
+/* H3 */
+.gs-h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: var(--lh-h3);
+  letter-spacing: -.02em;
+  color: var(--color-primary);
+  margin: 0 0 10px;
+}
+.gs-navy .gs-h3,
+.gs-green .gs-h3,
+.gs-ink .gs-h3 { color: var(--text-on-dark); }
+
+/* Body paragraphs */
+.gs-p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);   /* 16px */
+  font-weight: 400;
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+  max-width: 72ch;
+  margin: 0 0 16px;
+}
+.gs-navy .gs-p,
+.gs-ink .gs-p { color: var(--text-on-dark-sub); }
+.gs-green .gs-p { color: var(--text-on-green); }
+
+/* Lead / intro paragraph (18px) */
+.gs-lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);  /* 18px */
+  font-weight: 400;
+  line-height: var(--lh-lead);
+  color: var(--color-ink);
+  max-width: 68ch;
+  margin: 0 0 20px;
+}
+.gs-navy .gs-lead { color: rgba(255,255,255,.78); }
+
+/* Eyebrow label */
+.gs-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);    /* 12px */
+  font-weight: 800;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-action);
+  margin: 0 0 16px;
+}
+.gs-eyebrow::before {
+  content: ''; flex-shrink: 0;
+  width: 36px; border-top: 2px solid var(--color-accent);
+}
+.gs-navy .gs-eyebrow  { color: rgba(255,255,255,.55); }
+.gs-green .gs-eyebrow { color: var(--color-accent); }
+.gs-green .gs-eyebrow::before { border-color: var(--color-accent); }
+
+/* Meta text — captions, labels, badges */
+.gs-meta {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);   /* 14px */
+  font-weight: 600;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+/* Fine print */
+.gs-fine {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);  /* 11px */
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+/* Global link style */
+.gs-link { color: var(--color-action); font-weight: 700; text-decoration: none; }
+.gs-link:hover { color: var(--color-primary); }
+.gs-navy .gs-link,
+.gs-ink .gs-link { color: rgba(255,255,255,.75); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── 6c. GLOBAL BUTTON SYSTEM ───────────────────────────── */
+/* Primary — dark green on white (brand book p.16) */
+.gs-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; min-height: 52px; padding: 0 28px;
+  background: var(--color-action); color: #fff;
+  font-family: var(--font-body); font-size: var(--fs-body);
+  font-weight: 700; letter-spacing: .01em;
+  border-radius: var(--radius-btn); border: none; cursor: pointer;
+  text-decoration: none;
+  transition: background .22s ease, transform .18s ease, box-shadow .22s ease;
+  white-space: nowrap;
+}
+.gs-btn::after { content: '→'; margin-left: 6px; }
+.gs-btn:hover  { background: #2e5419; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(63,110,36,.32); }
+
+/* Gold — on dark surfaces (brand book p.17) */
+.gs-btn--gold { background: var(--color-accent); color: var(--color-ink); }
+.gs-btn--gold::after { content: '→'; }
+.gs-btn--gold:hover  { background: #c48e20; color: var(--color-ink); transform: translateY(-2px); }
+
+/* Ghost — on dark/image surfaces */
+.gs-btn--ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); }
+.gs-btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); transform: translateY(-2px); }
+
+/* ── 6d. GLOBAL CARD PATTERNS ───────────────────────────── */
+/* Proof / stat strip — green bar */
+.gs-proof-strip { background: var(--color-secondary); color: #fff; }
+.gs-proof-grid  {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  min-height: 104px;
+}
+.gs-proof-item {
+  display: grid; place-items: center; text-align: center;
+  padding: 18px 16px;
+  border-right: 1px solid rgba(255,255,255,.2);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs); font-weight: 700;
+  letter-spacing: var(--ls-badge); text-transform: uppercase;
+}
+.gs-proof-item:last-child { border-right: none; }
+
+/* Outcome card */
+.gs-oc {
+  background: var(--color-ivory); border-radius: var(--radius-card);
+  padding: 32px; border: 1px solid rgba(26,33,79,.06);
+  display: flex; flex-direction: column; gap: .5rem;
+}
+.gs-oc-badge {
+  display: inline-block; align-self: flex-start;
+  font-family: var(--font-body); font-size: var(--fs-2xs); font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--color-action); background: rgba(63,110,36,.08);
+  border-radius: var(--radius-pill); padding: 4px 12px;
+}
+.gs-oc-metric {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-weight: 800; color: var(--color-primary);
+  letter-spacing: var(--ls-heading); line-height: 1;
+}
+.gs-oc-lbl { font-size: var(--fs-sm); color: var(--color-muted); line-height: 1.4; }
+
+/* Section reveal (same as globals .reveal but scoped override) */
+body.js-ready .gs-reveal {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.gs-reveal.gs-in { opacity: 1 !important; transform: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  body.js-ready .gs-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── 6e. RESPONSIVE PROOF STRIP ─────────────────────────── */
+@media (max-width: 768px) {
+  .gs-proof-grid { grid-template-columns: 1fr 1fr; }
+  .gs-proof-item:nth-child(2) { border-right: none; }
+  .gs-proof-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.2); }
+}
+@media (max-width: 480px) {
+  .gs-proof-grid { grid-template-columns: 1fr; }
+  .gs-proof-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.2) !important; }
+  .gs-proof-item:last-child { border-bottom: none !important; }
+}
+
+/* ─────────────────────────────────────────────────────────── */
 
 /* ── 7. SECTIONS — 112–144px desktop (brand book p.15) ── */
 .section { padding: 120px 0; position: relative; }
