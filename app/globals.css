@@ -1535,7 +1535,7 @@ body.js-ready .reveal {
   transition: color .18s;
 }
 .cta-sec-contact a svg { flex-shrink: 0; }
-.cta-sec-contact a:hover { color: #fff; }
+.cta-sec-contact a:hover { color: var(--color-accent); }  /* gold on hover */
 /* Right column — form card */
 .cta-sec-right {}
 .cta-sec-form-box {
