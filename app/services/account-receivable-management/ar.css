@@ -84,6 +84,7 @@
 
 /* Where AR slips — full-width image then full-width table, not side-by-side */
 .ar-slips-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem,5vw,4rem); align-items: start; margin-top: 2rem; }
+.ar-slips-layout > * { min-width: 0; }   /* prevent grid blowout — grid items must shrink below content size */
 .ar-slips-img {
   position: relative; border-radius: 98px 0 22px 0; overflow: hidden;
   box-shadow: -12px 12px 0 var(--color-accent); background: #d0d5e8;
@@ -235,6 +236,7 @@ body.js-ready .ar-page .reveal { opacity: 0; transform: translateY(16px); transi
 
 
 /* Insurance AR — image sits beside text, denial table below at full width */
+.ar-insurance-split > * { min-width: 0; }
 .ar-insurance-split {
   display: grid;
   grid-template-columns: 1.1fr .9fr;

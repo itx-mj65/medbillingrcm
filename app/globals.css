@@ -1530,12 +1530,12 @@ body.js-ready .reveal {
 .cta-sec-contact a {
   display: flex; align-items: center; gap: 8px;
   font-size: var(--fs-sm); font-weight: 600;
-  color: #ffffff;
-  text-decoration: none;
+  color: #ffffff !important;    /* !important needed — page-scope .ar-page a / .ph-page a override this */
+  text-decoration: none !important;
   transition: color .18s;
 }
 .cta-sec-contact a svg { flex-shrink: 0; }
-.cta-sec-contact a:hover { color: var(--color-accent); }  /* gold on hover */
+.cta-sec-contact a:hover { color: var(--color-accent) !important; }  /* gold on hover */
 /* Right column — form card */
 .cta-sec-right {}
 .cta-sec-form-box {
