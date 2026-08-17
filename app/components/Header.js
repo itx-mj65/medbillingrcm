@@ -212,15 +212,6 @@ function SpecialtiesDropdown({ onClose }) {
 }
 
 /* ─── Logo ───────────────────────────────────────────────── */
-function LogoMark() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <circle cx="20" cy="20" r="20" fill="#f0f7e8"/>
-      <path d="M8 22 Q11 16 14 22 Q17 28 20 14 Q23 0 26 20 Q29 28 32 22" stroke="#528532" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
-      <path d="M10 24 Q15 30 20 26 Q25 22 30 24" stroke="#1a214f" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity=".55"/>
-    </svg>
-  );
-}
 
 /* ─── Main Header ────────────────────────────────────────── */
 export default function Header() {
@@ -250,11 +241,8 @@ export default function Header() {
 
         {/* Logo */}
         <Link className="hdr-logo" href="/" onClick={closeAll} aria-label="Medbilling RCM home">
-          <LogoMark />
-          <div className="hdr-logo-text">
-            <span className="hdr-logo-main">Medbilling<strong>RCM</strong></span>
-            <span className="hdr-logo-sub">Revenue Cycle Management</span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-dark.png" alt="Medbilling RCM" className="hdr-logo-img" />
         </Link>
 
         {/* Desktop nav */}

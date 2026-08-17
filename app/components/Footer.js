@@ -25,15 +25,7 @@ const COMPANY = [
   { label: "FAQ",                  href: "/#faq" },
 ];
 
-function LogoWave() {
-  return (
-    <svg width="38" height="38" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <circle cx="20" cy="20" r="20" fill="rgba(82,133,50,.22)"/>
-      <path d="M7 22 Q10 15 13 22 Q16 29 20 12 Q24 -4 27 20 Q30 29 33 22"
-        stroke="#528532" strokeWidth="2.6" strokeLinecap="round" fill="none"/>
-    </svg>
-  );
-}
+
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -45,11 +37,8 @@ export default function Footer() {
         <div className="ftr-band-inner">
           <div className="ftr-band-left">
             <Link href="/" className="ftr-logo" aria-label="Medbilling RCM home">
-              <LogoWave />
-              <div className="ftr-logo-words">
-                <span className="ftr-logo-name">Medbilling<strong>RCM</strong></span>
-                <span className="ftr-logo-sub">Revenue Cycle Management</span>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo-white.png" alt="Medbilling RCM" className="ftr-logo-img" />
             </Link>
             <p className="ftr-tagline">
               Medical billing for CMS-1500 practices and hospital systems.

@@ -1170,20 +1170,10 @@ body.js-ready .reveal {
 
 /* Logo */
 .hdr-logo {
-  display: flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center;
   text-decoration: none; flex-shrink: 0;
 }
-.hdr-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
-.hdr-logo-main {
-  font-family: var(--font-heading); font-size: 1.25rem;
-  font-weight: 500; color: var(--color-primary); letter-spacing: -.02em;
-}
-.hdr-logo-main strong { font-weight: 700; color: var(--color-secondary); }
-.hdr-logo-sub {
-  font-family: var(--font-body); font-size: .6rem;
-  font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--color-muted);
-}
+.hdr-logo-img { height: 40px; width: auto; display: block; object-fit: contain; }
 
 /* Desktop Nav */
 .hdr-nav {
@@ -1388,7 +1378,6 @@ body.js-ready .reveal {
   .hdr-inner { width: calc(100% - 32px); height: 68px; }
   .hdr-mobile { top: 68px; }
   .hdr-backdrop { top: 68px; }
-  .hdr-logo-sub { display: none; }
 }
 
 
@@ -1724,18 +1713,15 @@ body.js-ready .reveal {
 }
 .ftr-band-left { max-width: 420px; }
 .ftr-logo {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center;
   text-decoration: none; margin-bottom: 16px;
 }
-.ftr-logo-words { display: flex; flex-direction: column; line-height: 1.2; }
-.ftr-logo-name {
-  font-family: var(--font-heading); font-size: 1.3rem; font-weight: 500;
-  color: #fff; letter-spacing: -.02em;
-}
-.ftr-logo-name strong { color: var(--color-secondary); font-weight: 700; }
-.ftr-logo-sub {
-  font-size: .58rem; font-weight: 600; letter-spacing: .12em;
-  text-transform: uppercase; color: rgba(255,255,255,.3);
+.ftr-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* White logo renders on dark bg — filter not needed since logo-white.png is pre-colored */
 }
 .ftr-tagline {
   font-size: var(--fs-sm); line-height: 1.65;
