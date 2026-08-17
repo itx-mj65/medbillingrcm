@@ -42,12 +42,12 @@ export default function ARManagementPage() {
           <p>The deeper problem is the filing window. Commercial payers enforce hard deadlines: 90 days for most UnitedHealthcare and Aetna plans, 90 to 180 days for BCBS depending on state. Miss the cutoff by one day and the claim is gone permanently. No appeal. No exception. <a href="https://www.hfma.org/revenue-cycle/map-keys/" target="_blank" rel="noopener">HFMA sets the benchmark</a> at no more than 10% of total AR sitting beyond 90 days. Most billing teams are too occupied with today&apos;s claims to systematically chase last quarter&apos;s, and the aged bucket drifts past that line.</p>
           <p>Two buckets lose the most revenue: claims that aged past the filing window without a follow-up touch, and balances written off before the actual deadline expired. Both are recoverable before they are not.</p>
 
-          {/* Revenue slips image */}
-          <div className="ar-split">
-            <div className="ar-split-img">
+          {/* Revenue slips — image left, aging table right */}
+          <div className="ar-slips-layout">
+            <div className="ar-slips-img">
               <Image src="/ar-revenue-slips.webp" alt="Practice administrator reviewing aging accounts receivable report with 90-plus day bucket highlighted" width={900} height={600} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover"}} />
             </div>
-            <div className="ar-split-copy">
+            <div>
               {/* Aging table */}
               <div className="ar-tbl-wrap">
                 <table className="ar-tbl" aria-label="AR aging bucket recovery rates">
@@ -105,30 +105,34 @@ export default function ARManagementPage() {
         <div className="ar-wrap">
           <p className="ar-ew">The systematic loss most practices accept</p>
           <h2>Insurance AR, the systematic loss most practices accept without knowing</h2>
-          <div className="ar-split ar-split--rev">
+          {/* Top: 3 paragraphs (left) + image (right) */}
+          <div className="ar-insurance-split">
             <div className="ar-split-copy">
               <p>The most common way a practice loses AR revenue is not a payer error. It is a claim that sat in a 60-day aging bucket and received no substantive follow-up. No denial code fires. The claim just ages past the commercial filing window and becomes permanently uncollectable.</p>
               <p>Under standard payer contracts, UnitedHealthcare and Aetna both enforce 90-day timely filing limits on most commercial plans. Miss those windows by a single day and the claim cannot be appealed, corrected, or recovered. <a href="https://www.hfma.org/revenue-cycle/map-keys/" target="_blank" rel="noopener">HFMA sets the target</a> at under 10% of receivables in the 90-plus day bucket. Most billing teams are running well past that line.</p>
               <p>We review each account in the aging report for filing window status before working it. Accounts near expiration are prioritized over stable accounts regardless of dollar value. A $300 claim expiring in 10 days gets worked before a $3,000 claim with 90 days left.</p>
-
-              <h3>Where AR accounts get stuck, and how we clear them</h3>
-              <p>AR denials cluster in a short list of reason codes. We address each at the claim level and at the workflow level so the same denial does not reappear on the next submission.</p>
-              <div className="ar-tbl-wrap">
-                <table className="ar-tbl" aria-label="AR denial problems and solutions">
-                  <thead><tr><th>The problem</th><th>How we address it</th></tr></thead>
-                  <tbody>
-                    <tr><td>Denial rate above 5%</td><td>We analyze your denial pattern by CARC code, payer, and claim type to identify the root cause, correct the upstream error, and resubmit with complete documentation. We track whether the same denial reappears after correction.</td></tr>
-                    <tr><td>CO-4 modifier required</td><td>Modifier reviewed per payer policy before resubmission. NCCI edits checked and modifier applied only when the service qualifies as separate and distinct.</td></tr>
-                    <tr><td>CO-50 medical necessity</td><td>ICD-10 checked against the payer&apos;s coverage policy and LCD before billing. Missing diagnosis codes identified and documentation reviewed before appeal.</td></tr>
-                    <tr><td>CO-29 timely filing</td><td>Every account flagged for filing window position at intake. Accounts within 30 days of expiration worked first. No account ages out without a documented follow-up touch.</td></tr>
-                    <tr><td>CO-97 bundling dispute</td><td>NCCI bundling edits reviewed. Unbundling justification documented and supported with modifier and clinical notes before appeal.</td></tr>
-                    <tr><td>Prior authorization denial</td><td>Authorization tracked per payer and service type before claim submission. Retroactive authorization pursued where payer policy permits.</td></tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
             <div className="ar-split-img">
               <Image src="/ar-insurance.webp" alt="AR specialist reviewing insurance aging report on dual monitors showing payer follow-up queue" width={900} height={700} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover"}} />
+            </div>
+          </div>
+
+          {/* Below: H3 + denial table — full width */}
+          <div className="ar-denial-full">
+            <h3>Where AR accounts get stuck, and how we clear them</h3>
+            <p>AR denials cluster in a short list of reason codes. We address each at the claim level and at the workflow level so the same denial does not reappear on the next submission.</p>
+            <div className="ar-tbl-wrap">
+              <table className="ar-tbl" aria-label="AR denial problems and solutions">
+                <thead><tr><th>The problem</th><th>How we address it</th></tr></thead>
+                <tbody>
+                  <tr><td>Denial rate above 5%</td><td>We analyze your denial pattern by CARC code, payer, and claim type to identify the root cause, correct the upstream error, and resubmit with complete documentation. We track whether the same denial reappears after correction.</td></tr>
+                  <tr><td>CO-4 modifier required</td><td>Modifier reviewed per payer policy before resubmission. NCCI edits checked and modifier applied only when the service qualifies as separate and distinct.</td></tr>
+                  <tr><td>CO-50 medical necessity</td><td>ICD-10 checked against the payer&apos;s coverage policy and LCD before billing. Missing diagnosis codes identified and documentation reviewed before appeal.</td></tr>
+                  <tr><td>CO-29 timely filing</td><td>Every account flagged for filing window position at intake. Accounts within 30 days of expiration worked first. No account ages out without a documented follow-up touch.</td></tr>
+                  <tr><td>CO-97 bundling dispute</td><td>NCCI bundling edits reviewed. Unbundling justification documented and supported with modifier and clinical notes before appeal.</td></tr>
+                  <tr><td>Prior authorization denial</td><td>Authorization tracked per payer and service type before claim submission. Retroactive authorization pursued where payer policy permits.</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
