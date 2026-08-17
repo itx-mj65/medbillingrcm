@@ -39,9 +39,8 @@ const SERVICES = [
       title:  "Medical Coding Services",
       body:   "CPC, CCS, and COC certified coders applying ICD-10, CPT, and HCPCS expertise. 99.5% coding accuracy with real-time edits and audits.",
       stat:   "99.5% coding accuracy · HIPAA compliant",
-      img:    null,
-      imgAlt: "Medical coder reviewing ICD-10 documentation at workstation",
-      imgPlaceholder: "Medical Coding",
+      img:    "/mc-hero.webp",
+      imgAlt: "Medical billing coder reviewing ICD-10 and CPT coding documents at dual monitors",
     },
   },
   {

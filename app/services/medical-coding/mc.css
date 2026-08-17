@@ -72,19 +72,9 @@
   color: var(--color-primary); letter-spacing: .04em; margin: 20px 0 10px;
 }
 
-/* ─── IMAGE PLACEHOLDERS ─────────────────────────────────── */
-.mc-img-placeholder {
-  border: 2px dashed var(--color-accent); border-radius: var(--radius-card);
-  background: rgba(212,155,40,.04); display: flex; align-items: center;
-  justify-content: center; text-align: center; padding: 32px;
-}
-.mc-placeholder-inner { display: flex; flex-direction: column; gap: 8px; max-width: 480px; }
-.mc-placeholder-icon  { font-size: 2.5rem; }
-.mc-placeholder-title { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); }
-.mc-placeholder-spec  { font-size: var(--fs-sm); color: var(--color-muted); font-family: monospace; background: rgba(26,33,79,.06); padding: 4px 10px; border-radius: 4px; }
-.mc-placeholder-prompt { font-size: var(--fs-sm); color: var(--color-muted); font-style: italic; line-height: 1.5; }
-.mc-infra-img  { height: clamp(260px, 30vw, 420px); margin: 2rem 0; }
-.mc-outsource-img { height: clamp(280px, 32vw, 440px); }
+/* Image placeholders removed — real images now used */
+.mc-infra-img  { height: clamp(300px, 32vw, 440px); margin: 2rem 0; border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 8px 32px rgba(26,33,79,.12); }
+.mc-outsource-img { height: clamp(300px, 36vw, 460px); border-radius: var(--radius-card); overflow: hidden; box-shadow: -10px 10px 0 var(--color-accent); }
 
 /* ─── FEATURE GRID ───────────────────────────────────────── */
 .mc-feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 2rem; }

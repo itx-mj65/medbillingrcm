@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
@@ -16,12 +17,10 @@ export default function MedicalCodingPage() {
         ctaAlt="See our process"
         ctaAltHref="#process"
         badge="CPC · CCS · COC Certified"
-        heroPlaceholder={{
-          show: true,
-          title: "Hero Image — Medical Coder Workstation",
-          spec: "1536 × 900 px  ·  /public/mc-hero.webp",
-          prompt: "Medical billing coder at dual computer monitors in a modern healthcare office, reviewing ICD-10 and CPT coding documents, code queue visible on screen, specialist in clinical attire, navy and green color tones, photorealistic, no text overlay"
-        }}
+        image="/mc-hero.webp"
+        imageAlt="Medical billing coder reviewing ICD-10 and CPT coding documents at dual monitors"
+        imageW={1536}
+        imageH={900}
       />
 
       {/* ═══ PROOF STRIP ═════════════════════════════════════════ */}
@@ -60,13 +59,8 @@ export default function MedicalCodingPage() {
                          medical billing office, EHR system on screen, professional 
                          team environment, clean clinical aesthetic, photorealistic"
           */}
-          <div className="mc-infra-img mc-img-placeholder" aria-label="Image placeholder: Medical coding infrastructure team">
-            <div className="mc-placeholder-inner">
-              <div className="mc-placeholder-icon">📷</div>
-              <div className="mc-placeholder-title">Infrastructure Team Image</div>
-              <div className="mc-placeholder-spec">1200 × 700 px · /public/mc-infrastructure.webp</div>
-              <div className="mc-placeholder-prompt">AI prompt: "Healthcare revenue cycle specialists working in modern medical billing office, EHR system on screen, professional team environment, clean clinical aesthetic, photorealistic"</div>
-            </div>
+          <div className="mc-infra-img">
+            <Image src="/mc-infrastructure.webp" alt="Healthcare revenue cycle specialists working in modern medical billing office" width={1200} height={700} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}} />
           </div>
 
           <div className="mc-feature-grid">
@@ -136,13 +130,8 @@ export default function MedicalCodingPage() {
                          business outcome, clean professional setting, photorealistic"
           */}
           <div className="mc-outsource-layout">
-            <div className="mc-outsource-img mc-img-placeholder" aria-label="Image placeholder: Outsourced coding outcomes">
-              <div className="mc-placeholder-inner">
-                <div className="mc-placeholder-icon">📷</div>
-                <div className="mc-placeholder-title">Outsource Outcomes Image</div>
-                <div className="mc-placeholder-spec">1200 × 600 px · /public/mc-outsource.webp</div>
-                <div className="mc-placeholder-prompt">AI prompt: "Practice administrator reviewing revenue improvement analytics on laptop in modern medical office, positive business outcome, clean professional setting, photorealistic"</div>
-              </div>
+            <div className="mc-outsource-img">
+              <Image src="/mc-outsource.webp" alt="Practice administrator reviewing revenue improvement analytics on laptop" width={1200} height={600} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}} />
             </div>
             <div className="mc-outsource-copy">
               <p>Outsourcing your medical coding to Medbilling RCM eliminates the cost of in-house coding staff, ongoing training, software, and compliance monitoring while delivering measurably better outcomes.</p>
