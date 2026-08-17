@@ -1,3 +1,4 @@
+import PageHero from "@/components/PageHero";
 import PhysicianScripts from "./PhysicianScripts";
 import CtaSection from "@/components/CtaSection";
 
@@ -7,28 +8,20 @@ export default function PhysicianBillingPage() {
       <main id="main">
 
         {/* ═══ HERO ═══════════════════════════════════════════ */}
-        <section className="ph-hero">
-          <div className="ph-hero-inner">
-            <div className="ph-hero-copy">
-              <p className="ew ew--light">Physician billing services</p>
-              <h1>Physician billing services for practices that bill on the CMS-1500</h1>
-              <div className="ph-hero-media-mobile" aria-hidden="true">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/physician-hero.webp" alt="" />
-              </div>
-              <p className="ph-hero-intro">Physician billing is professional billing: the CMS-1500 side of the revenue cycle. A claim is paid on the code, the modifier, and the documentation behind it. We run that side for practices in all 50 states, from charge capture through denial resolution. We report our clean claim rate at the payer.</p>
-              <div className="ph-hero-action">
-                <a className="btn btn--gold" href="#assessment">Get a Free Revenue Assessment</a>
-                <a className="btn btn--ghost" href="#scope">See what we cover</a>
-              </div>
-              <p className="ph-hero-note">97% first-pass at the payer &nbsp;|&nbsp; 14-day onboarding &nbsp;|&nbsp; $0 setup &nbsp;|&nbsp; 50 states</p>
-            </div>
-            <div className="ph-hero-media" aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/physician-hero.webp" alt="Physician and administrator reviewing EHR revenue workflow at a workstation" />
-            </div>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Physician billing services"
+          heading="Physician billing services for practices that bill on the CMS-1500"
+          intro="Physician billing is professional billing: the CMS-1500 side of the revenue cycle. A claim is paid on the code, the modifier, and the documentation behind it. We run that side for practices in all 50 states, from charge capture through denial resolution. We report our clean claim rate at the payer."
+          note="97% first-pass at the payer | 14-day onboarding | $0 setup | 50 states"
+          cta="Get a Free Revenue Assessment"
+          ctaAlt="See what we cover"
+          ctaAltHref="#scope"
+          badge="Professional billing · CMS-1500"
+          image="/physician-hero.webp"
+          imageAlt="Physician and administrator reviewing EHR revenue workflow at a workstation"
+          imageW={1537}
+          imageH={1023}
+        />
 
         {/* ═══ PROOF STRIP ════════════════════════════════════ */}
         <div className="ph-proof">

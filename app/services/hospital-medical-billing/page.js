@@ -1,31 +1,24 @@
+import PageHero from "@/components/PageHero";
 import CtaSection from "@/components/CtaSection";
-import Image from "next/image";
 export default function HospitalMedicalBillingPage() {
   return (
     <main id="main" className="level1">
 
         {/* ── HERO ── */}
-        <section className="hero" id="top">
-          <div className="shell">
-            <div className="hero-copy">
-              <p className="eyebrow">Hospital revenue cycle management</p>
-              <h1>Hospital medical billing services for inpatient and outpatient care</h1>
-              {/* mobile image */}
-              <div className="hero-media mobile">
-                <Image src="/hospital-hero.png" alt="Hospital revenue-cycle leaders reviewing an EHR and financial performance dashboard" width={1536} height={1024} sizes="(max-width:900px) 92vw, 0px" priority quality={85} style={{objectFit:"cover",objectPosition:"52% center"}} />
-              </div>
-              <p className="hero-intro">Hospital billing is not physician billing with a bigger claim form. A hospital bills for the facility: the bed, the operating room, the drugs, the imaging. Admitted patients pay under MS-DRG, outpatient visits pay under APC, and both ride on a UB-04. When a claim in either system is coded short or denied, that is revenue the hospital already earned. We handle the facility side end to end, and we report what actually landed at the payer.</p>
-              <div className="hero-action">
-                <a className="btn gold" href="#assessment">Get a Free Revenue Assessment</a>
-              </div>
-              <p className="hero-note">Institutional billing built around status, documentation, payer rules, and the payment that actually lands.</p>
-            </div>
-            {/* desktop image */}
-            <div className="hero-media">
-              <Image src="/hospital-hero.png" alt="Hospital revenue-cycle leaders reviewing an EHR and financial performance dashboard" fill sizes="(max-width:900px) 0px, (max-width:1160px) 45vw, 590px" priority quality={85} style={{objectFit:"cover",objectPosition:"52% center"}} />
-            </div>
-          </div>
-        </section>
+                <PageHero
+          eyebrow="Hospital revenue cycle management"
+          heading="Hospital medical billing services for inpatient and outpatient care"
+          intro="Hospital billing is not physician billing with a bigger claim form. A hospital bills for the facility: the bed, the operating room, the drugs, the imaging. Admitted patients pay under MS-DRG, outpatient visits pay under APC, and both ride on a UB-04. When a claim in either system is coded short or denied, that is revenue the hospital already earned. We handle the facility side end to end, and we report what actually landed at the payer."
+          note="Institutional billing built around status, documentation, payer rules, and the payment that actually lands."
+          cta="Get a Free Revenue Assessment"
+          ctaAlt="See what we cover"
+          ctaAltHref="#scope"
+          badge="Institutional billing · 837I"
+          image="/hospital-hero.png"
+          imageAlt="Hospital revenue-cycle leaders reviewing an EHR and financial performance dashboard"
+          imageW={1536}
+          imageH={1024}
+        />
 
         {/* ── PROOF STRIP ── */}
         <div className="proof-strip">

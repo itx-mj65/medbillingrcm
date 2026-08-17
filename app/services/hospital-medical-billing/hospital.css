@@ -24,73 +24,12 @@
 }
 
 /* ─── HERO ───────────────────────────────────────────────── */
-.hero {
-  background: var(--color-navy-deep);
-  color: var(--text-on-dark);
-  overflow: hidden;
-}
-.hero .shell {
-  display: grid;
-  grid-template-columns: minmax(0,1.12fr) minmax(340px,.88fr);
-  align-items: center;
-  gap: clamp(32px,4vw,56px);
-  padding-top: 48px;
-  padding-bottom: 48px;
-}
-.hero-copy { display: flex; flex-direction: column; }
+/* Hero: now uses shared PageHero component → .pg-hero in globals.css */
 
 /* H1 — uses global token */
-.hero h1 {
-  font-family: var(--font-heading);
-  font-size: var(--fs-h1);
-  line-height: var(--lh-heading);
-  letter-spacing: var(--ls-heading);
-  color: var(--text-on-dark);
-  margin: 0 0 20px;
-  max-width: 680px;
-  text-wrap: balance;
-}
-.hero .eyebrow { color: #c4d7b7; margin-bottom: 14px; }
-.hero-intro {
-  font-family: var(--font-body);
-  font-size: var(--fs-body);
-  line-height: var(--lh-lead);
-  color: #f0f1f5;
-  max-width: 640px;
-  margin: 0 0 14px;
-}
-.hero-action { margin: 20px 0 18px; }
-.hero-note {
-  font-family: Georgia, serif;
-  font-size: var(--fs-sm);
-  line-height: var(--lh-body);
-  color: #c5c9d6;
-  max-width: 600px;
-  margin: 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,.18);
-}
-.hero-media {
-  position: relative;
-  height: clamp(460px,38vw,540px);
-  border-radius: 112px 0 var(--radius-media) 0;
-  overflow: hidden;
-  box-shadow: -14px 14px 0 var(--color-accent);
-  background: #303857;
-}
-.hero-media::after {
-  content: 'Institutional billing \2022 837I';
-  position: absolute; right: 18px; bottom: 18px;
-  padding: 8px 12px;
-  background: rgba(16,22,52,.88);
-  border-left: 3px solid var(--color-accent);
-  font-family: var(--font-body);
-  font-size: var(--fs-2xs); font-weight: 800;
-  letter-spacing: .12em; text-transform: uppercase;
-  color: var(--text-on-dark);
-}
-.hero-media img { object-position: 52% center; }
-.hero-media.mobile { display: none; }
+
+
+
 
 /* ─── BUTTON overrides for hospital page ────────────────── */
 .btn {
@@ -531,8 +470,8 @@ details[open] summary::after { content: '−'; }
 
 /* ─── RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 1080px) {
-  .hero .shell { grid-template-columns: 1fr; gap: 0; padding: 56px 0 0; }
-  .hero-media.mobile { display: block; height: min(60vw,440px); margin: 16px 0 0; border-radius: 80px 0 18px 0; }
+
+
   .level2 { padding-top: var(--sec-tablet); padding-bottom: var(--sec-tablet); }
   .rcm-flow { grid-template-columns: 1fr 1fr; }
   #every-facility-bills-differently-and-were-built-for-that blockquote,
@@ -577,7 +516,7 @@ details[open] summary::after { content: '−'; }
 @media (max-width: 560px) {
   :root { --h-gap: 16px; }
   .level2 { padding-top: clamp(3.5rem,5vw,4rem); padding-bottom: clamp(3.5rem,5vw,4rem); }
-  .hero-media.mobile { height: min(74vw,320px); border-radius: 56px 0 14px 0; }
+
   .proof-grid { grid-template-columns: 1fr; }
   .proof-item { border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,.2) !important; }
   .proof-item:last-child { border-bottom: 0 !important; }

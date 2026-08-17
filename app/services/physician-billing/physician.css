@@ -90,56 +90,7 @@
 .ph-page .btn--ghost { background: transparent; color: var(--text-on-dark) !important; border: 2px solid rgba(255,255,255,.4); }
 .ph-page .btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); }
 
-/* ─── HERO ───────────────────────────────────────────────── */
-.ph-page .ph-hero {
-  background: var(--color-navy-deep); overflow: hidden; position: relative;
-}
-.ph-page .ph-hero::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse 60% 80% at 75% 40%, rgba(82,133,50,.13) 0%, transparent 60%),
-              radial-gradient(ellipse 30% 50% at 5% 85%, rgba(212,155,40,.07) 0%, transparent 55%);
-}
-.ph-page .ph-hero-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; gap: clamp(32px,4vw,56px);
-  padding: 56px var(--sec-gap) 48px;
-  position: relative; z-index: 1;
-  max-width: 1180px; margin: 0 auto;
-}
-.ph-page .ph-hero-copy { display: flex; flex-direction: column; }
-
-/* Desktop image */
-.ph-page .ph-hero-media {
-  position: relative; height: clamp(440px,38vw,540px);
-  border-radius: 112px 0 22px 0; overflow: hidden;
-  box-shadow: -14px 14px 0 var(--color-accent); background: #303857;
-}
-.ph-page .ph-hero-media img {
-  width: 100%; height: 100%; object-fit: cover; object-position: 52% center; display: block;
-}
-.ph-page .ph-hero-media::after {
-  content: 'Professional billing \2022 CMS-1500';
-  position: absolute; right: 18px; bottom: 18px; padding: 8px 12px;
-  background: rgba(16,22,52,.88); border-left: 3px solid var(--color-accent);
-  font-size: var(--fs-2xs); font-weight: 800;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--text-on-dark);
-}
-/* Mobile image — hidden desktop, shown mobile */
-.ph-page .ph-hero-media-mobile {
-  display: none;
-  height: min(60vw,420px); border-radius: 80px 0 18px 0;
-  overflow: hidden; box-shadow: -10px 10px 0 var(--color-accent);
-  margin: 16px 0 22px; background: #303857; position: relative;
-}
-.ph-page .ph-hero-media-mobile img {
-  width: 100%; height: 100%; object-fit: cover; object-position: 52% center; display: block;
-}
-.ph-page .ph-hero-intro { font-size: var(--fs-body); color: rgba(255,255,255,.78); line-height: var(--lh-lead); max-width: 600px; margin: 0 0 12px; }
-.ph-page .ph-hero-action { margin: 20px 0 18px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.ph-page .ph-hero-note {
-  font-size: var(--fs-sm); color: rgba(255,255,255,.5); padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,.14); margin: 0; max-width: 600px; font-style: italic;
-}
+/* Hero: now uses shared PageHero component (.pg-hero in globals.css) */
 
 /* ─── PROOF STRIP ─────────────────────────────────────────── */
 .ph-page .ph-proof { background: var(--color-secondary); color: var(--text-on-dark); }
@@ -340,9 +291,9 @@ body.js-ready .ph-page .ph-reveal { opacity: 0; transform: translateY(16px); tra
 
 /* ── 1080px — hero stacks, image swaps ── */
 @media (max-width: 1080px) {
-  .ph-page .ph-hero-inner   { grid-template-columns: 1fr; gap: 0; padding-bottom: 0; }
-  .ph-page .ph-hero-media   { display: none; }           /* hide desktop image */
-  .ph-page .ph-hero-media-mobile { display: block; }     /* show mobile image */
+
+
+
   .ph-page .ph-em-wrap      { grid-template-columns: 1fr; gap: 40px; }
   .ph-page .ph-em-photo     { height: 460px; border-radius: 60px 0 18px 0; }
   .ph-page .ph-inhouse      { grid-template-columns: 1fr; }
@@ -379,8 +330,8 @@ body.js-ready .ph-page .ph-reveal { opacity: 0; transform: translateY(16px); tra
   .ph-page .ph-proof-item   { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.2) !important; }
   .ph-page .ph-proof-item:last-child { border-bottom: none !important; }
   .ph-page .ph-em-stats     { flex-direction: column; gap: 1rem; }
-  .ph-page .ph-hero-media-mobile { height: min(72vw, 340px); }
-  .ph-page .ph-hero-inner   { padding-left: var(--sec-gap); padding-right: var(--sec-gap); }
+
+
   .ph-page .ph-cta-band     { padding-left: var(--sec-gap); padding-right: var(--sec-gap); }
   .ph-page .ph-closing-stats { right: 1.5rem; }
 }

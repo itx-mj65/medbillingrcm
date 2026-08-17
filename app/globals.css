@@ -1299,6 +1299,189 @@ body.js-ready .reveal {
 }
 
 
+
+/* ═══════════════════════════════════════════════════════════
+   PAGE HERO — shared component for all service pages
+   Scoped under .pg-hero — zero conflict with .hero (homepage)
+   or any page-level CSS.
+   
+   Layout: 2-col desktop (copy left, image right)
+           1-col mobile (copy → mobile-image → intro → CTA)
+═══════════════════════════════════════════════════════════ */
+.pg-hero {
+  background: var(--color-navy-deep);
+  color: var(--text-on-dark);
+  overflow: hidden;
+  position: relative;
+}
+.pg-hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 80% at 72% 35%, rgba(82,133,50,.14) 0%, transparent 60%),
+    radial-gradient(ellipse 28% 50% at 5% 85%,  rgba(212,155,40,.07) 0%, transparent 55%);
+}
+
+/* ── Inner grid ─────────────────────────────────────────── */
+.pg-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0,1.12fr) minmax(320px,.88fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 56px);
+  padding: 52px var(--sec-gap) 48px;
+  width: min(100%, calc(1180px + 2 * var(--sec-gap)));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Copy column ────────────────────────────────────────── */
+.pg-hero-copy { display: flex; flex-direction: column; }
+
+/* Eyebrow */
+.pg-hero-ew {
+  display: flex; align-items: center; gap: 12px;
+  margin: 0 0 16px;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--color-accent);
+}
+.pg-hero-ew::before {
+  content: ''; flex-shrink: 0;
+  width: 36px; border-top: 2px solid var(--color-accent);
+}
+
+/* H1 */
+.pg-hero-h1 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+  color: var(--text-on-dark);
+  margin: 0 0 20px;
+  max-width: 680px;
+  text-wrap: balance;
+}
+
+/* Intro paragraph */
+.pg-hero-intro {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-lead);
+  color: rgba(255,255,255,.78);
+  max-width: 600px;
+  margin: 0 0 8px;
+}
+
+/* CTA buttons */
+.pg-hero-actions {
+  display: flex; gap: 14px; align-items: center;
+  flex-wrap: wrap; margin: 20px 0 18px;
+}
+.pg-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; min-height: 52px; padding: 0 28px;
+  font-family: var(--font-body); font-size: var(--fs-body); font-weight: 700;
+  border-radius: var(--radius-btn); border: none; cursor: pointer;
+  text-decoration: none; white-space: nowrap;
+  transition: background .22s, transform .18s, box-shadow .22s;
+}
+.pg-btn::after { content: '→'; margin-left: 4px; }
+.pg-btn--gold {
+  background: var(--color-accent); color: var(--color-ink);
+}
+.pg-btn--gold:hover { background: #c48e20; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,155,40,.35); }
+.pg-btn--ghost {
+  background: transparent; color: var(--text-on-dark);
+  border: 2px solid rgba(255,255,255,.35);
+}
+.pg-btn--ghost:hover { border-color: var(--text-on-dark); background: rgba(255,255,255,.08); transform: translateY(-1px); }
+
+/* Note */
+.pg-hero-note {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-style: italic;
+  color: rgba(255,255,255,.48);
+  max-width: 600px;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+/* ── Image column ───────────────────────────────────────── */
+.pg-hero-img {
+  position: relative;
+  border-radius: 112px 0 22px 0;
+  overflow: hidden;
+  box-shadow: -14px 14px 0 var(--color-accent);
+  background: #303857;
+  flex-shrink: 0;
+}
+.pg-hero-img--desk {
+  height: clamp(460px, 38vw, 540px);
+}
+/* Mobile image — hidden on desktop */
+.pg-hero-img--mob { display: none; }
+
+/* Badge overlay */
+.pg-hero-badge {
+  position: absolute; bottom: 18px; right: 18px;
+  padding: 8px 12px;
+  background: rgba(16,22,52,.9);
+  border-left: 3px solid var(--color-accent);
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs); font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-on-dark);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+/* 1080px: stack to 1 column */
+@media (max-width: 1080px) {
+  .pg-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .pg-hero-img--desk { display: none; }      /* hide desktop image */
+  .pg-hero-img--mob  {                        /* show mobile image */
+    display: block;
+    height: min(60vw, 440px);
+    border-radius: 80px 0 18px 0;
+    box-shadow: -10px 10px 0 var(--color-accent);
+    margin: 16px 0 22px;
+    width: 100%;
+  }
+  .pg-hero-h1   { max-width: 100%; }
+  .pg-hero-intro { max-width: 100%; }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .pg-hero-inner { padding-top: 40px; }
+  .pg-hero-img--mob { height: min(68vw, 400px); }
+}
+
+/* 560px */
+@media (max-width: 560px) {
+  .pg-hero-inner { padding-top: 36px; }
+  .pg-hero-img--mob {
+    height: min(74vw, 320px);
+    border-radius: 56px 0 14px 0;
+    box-shadow: -8px 8px 0 var(--color-accent);
+  }
+  .pg-btn { min-height: 48px; padding: 0 22px; font-size: var(--fs-sm); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-btn { transition: none; }
+}
+/* ─────────────────────────────────────────────────────────── */
+
 /* ═══════════════════════════════════════════════════════════
    CTA SECTION — reusable across all pages
    Green outer bg · 2-col: left checklist / right form card
