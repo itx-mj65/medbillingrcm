@@ -1,17 +1,16 @@
 import { siteConfig } from "@/app/lib/metadata";
 
 /**
- * CtaSection — Reusable assessment CTA for every page.
+ * CtaSection — Reusable assessment CTA, used on every page.
  * 
  * Props:
- *   eyebrow  {string}  — small label above heading (default: "Ready when you are")
- *   heading  {string}  — main H2 text
- *   body     {string}  — paragraph below heading
- *   ctaLabel {string}  — submit button text
- *   formId   {string}  — unique form id for JS targeting (default: "ctaForm")
- *   checklist {string[]} — optional bullet list shown left of form
- *   image    {string}  — optional /public image path for left column
- *   imageAlt {string}  — image alt text
+ *   eyebrow   {string}   — small label above heading
+ *   heading   {string}   — H2 heading
+ *   body      {string}   — paragraph
+ *   ctaLabel  {string}   — submit button + form title text
+ *   formId    {string}   — unique id for JS targeting
+ *   checklist {string[]} — bullet list items
+ *   formNote  {string}   — fine print below submit button
  */
 export default function CtaSection({
   eyebrow   = "Ready when you are",
@@ -27,22 +26,25 @@ export default function CtaSection({
     "HIPAA-compliant — BAA signed before data moves",
     "No setup fee. No long-term contract.",
   ],
-  formNote  = "HIPAA-compliant · No setup fee · No long-term contract",
+  formNote = "HIPAA-compliant · No setup fee · No long-term contract",
 }) {
   return (
-    <section className="cta-sec" id="assessment" aria-labelledby="cta-heading">
+    <section className="cta-sec" id="assessment" aria-labelledby={`${formId}-heading`}>
       <div className="cta-sec-wrap">
-        {/* Left — eyebrow, heading, body, checklist */}
+
+        {/* ── Left column ──────────────────────────────────── */}
         <div className="cta-sec-left">
           <p className="cta-sec-ew">{eyebrow}</p>
-          <h2 className="cta-sec-h2" id="cta-heading">{heading}</h2>
+          <h2 className="cta-sec-h2" id={`${formId}-heading`}>{heading}</h2>
           <p className="cta-sec-body">{body}</p>
 
           {checklist.length > 0 && (
             <ul className="cta-sec-list" aria-label="What the assessment covers">
               {checklist.map((item) => (
                 <li key={item}>
-                  <svg className="cta-sec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true" width="16" height="16">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                    strokeLinecap="round" aria-hidden="true" width="16" height="16"
+                    style={{flexShrink:0,marginTop:"2px"}}>
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
                   {item}
@@ -53,49 +55,69 @@ export default function CtaSection({
 
           <div className="cta-sec-contact">
             <a href={`tel:${siteConfig.phone.replace(/\D/g,"")}`}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 011 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7a16 16 0 006.91 6.91l.35-.36a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 011 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7a16 16 0 006.91 6.91l.35-.36a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
               {siteConfig.phone}
             </a>
             <a href={`mailto:${siteConfig.email}`}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
               {siteConfig.email}
             </a>
           </div>
         </div>
 
-        {/* Right — Form */}
+        {/* ── Right column — form card ─────────────────────── */}
         <div className="cta-sec-right">
           <div className="cta-sec-form-box">
             <h3 className="cta-sec-form-h3">{ctaLabel}</h3>
-            <form className="cta-sec-form" id={formId} action="/request-free-audit/" method="post" noValidate>
+            <form className="cta-sec-form" id={formId}
+              action="/request-free-audit/" method="post" noValidate>
               <div className="cta-sec-row">
                 <div className="cta-sec-field">
                   <label className="cta-sec-lbl" htmlFor={`${formId}-name`}>Full name</label>
-                  <input className="cta-sec-ctrl" type="text" id={`${formId}-name`} name="full_name" placeholder="Dr. Jane Smith" autoComplete="name" required />
+                  <input className="cta-sec-ctrl" type="text" id={`${formId}-name`}
+                    name="full_name" placeholder="Dr. Jane Smith"
+                    autoComplete="name" required />
                 </div>
                 <div className="cta-sec-field">
                   <label className="cta-sec-lbl" htmlFor={`${formId}-email`}>Work email</label>
-                  <input className="cta-sec-ctrl" type="email" id={`${formId}-email`} name="work_email" placeholder="name@practice.com" autoComplete="email" required />
+                  <input className="cta-sec-ctrl" type="email" id={`${formId}-email`}
+                    name="work_email" placeholder="name@practice.com"
+                    autoComplete="email" required />
                 </div>
               </div>
               <div className="cta-sec-row">
                 <div className="cta-sec-field">
                   <label className="cta-sec-lbl" htmlFor={`${formId}-practice`}>Practice name</label>
-                  <input className="cta-sec-ctrl" type="text" id={`${formId}-practice`} name="practice_name" placeholder="Your practice or group name" required />
+                  <input className="cta-sec-ctrl" type="text" id={`${formId}-practice`}
+                    name="practice_name" placeholder="Your practice or group name" required />
                 </div>
                 <div className="cta-sec-field">
                   <label className="cta-sec-lbl" htmlFor={`${formId}-specialty`}>Specialty</label>
-                  <select className="cta-sec-ctrl" id={`${formId}-specialty`} name="specialty" defaultValue="">
+                  <select className="cta-sec-ctrl" id={`${formId}-specialty`}
+                    name="specialty" defaultValue="">
                     <option value="" disabled>Select specialty</option>
-                    {["Primary care","Cardiology","Dermatology","Behavioral health","Orthopedics","Gastroenterology","Neurology","Oncology","Radiology","Hospital / Health system","Other"].map(s => <option key={s}>{s}</option>)}
+                    {["Primary care","Cardiology","Dermatology","Behavioral health",
+                      "Orthopedics","Gastroenterology","Neurology","Oncology",
+                      "Radiology","Hospital / Health system","Other"].map(s =>
+                      <option key={s}>{s}</option>)}
                   </select>
                 </div>
               </div>
-              <div className="cta-sec-field cta-sec-field--full">
+              <div className="cta-sec-field">
                 <label className="cta-sec-lbl" htmlFor={`${formId}-concern`}>Primary revenue concern</label>
-                <select className="cta-sec-ctrl" id={`${formId}-concern`} name="revenue_concern" defaultValue="">
+                <select className="cta-sec-ctrl" id={`${formId}-concern`}
+                  name="revenue_concern" defaultValue="">
                   <option value="" disabled>Select concern</option>
-                  {["Denials","Under-coded E/M levels","Prior authorization burden","Aged AR","Credentialing gaps","Telehealth billing","Full revenue cycle"].map(s => <option key={s}>{s}</option>)}
+                  {["Denials","Under-coded E/M levels","Prior authorization burden",
+                    "Aged AR","Credentialing gaps","Telehealth billing",
+                    "Full revenue cycle"].map(s => <option key={s}>{s}</option>)}
                 </select>
               </div>
               <button type="submit" className="cta-sec-submit">{ctaLabel}</button>
@@ -103,6 +125,7 @@ export default function CtaSection({
             </form>
           </div>
         </div>
+
       </div>
     </section>
   );
