@@ -94,6 +94,18 @@ const SERVICES = [
       imgPlaceholder: "Coverage Discovery",
     },
   },
+  {
+    label: "ASC Billing",
+    href:  "/services/asc-billing/",
+    preview: {
+      title:  "Ambulatory Surgery Center Billing",
+      body:   "ASC billing for freestanding and multi-specialty surgery centers. APC coding, implant pass-through, NCCI compliance, and 48hr denial turnaround.",
+      stat:   "16–22% denial rate — we fix the infrastructure",
+      img:    null,
+      imgAlt: "Ambulatory surgery center operating room with surgical team",
+      imgPlaceholder: "ASC Billing",
+    },
+  },
 ];
 
 const SPECIALTIES = [
