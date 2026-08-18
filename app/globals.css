@@ -1695,6 +1695,22 @@ body.js-ready .reveal {
 .cta-sec-submit:hover { background: var(--color-action); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(63,110,36,.3); }
 .cta-sec-foot { font-size: var(--fs-2xs); color: var(--color-muted); text-align: center; margin: 8px 0 0; }
 
+/* ─── CTA SUCCESS MESSAGE — hidden by default, shown via JS ──────── */
+.cta-sec-success {
+  display: none;                  /* ← HIDDEN until JS adds .show */
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(82,133,50,.12);
+  border: 1px solid rgba(82,133,50,.3);
+  border-radius: var(--radius-card);
+  padding: 18px 22px;
+  margin: 16px 0 0;
+}
+.cta-sec-success.show { display: flex; }   /* JS adds .show on success */
+.cta-sec-success svg  { flex-shrink: 0; color: var(--color-secondary); margin-top: 3px; }
+.cta-sec-success strong { display: block; font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); margin-bottom: 4px; font-size: var(--fs-body); }
+.cta-sec-success p { font-size: var(--fs-sm); color: var(--color-muted); margin: 0; line-height: 1.5; max-width: none; }
+
 /* CTA responsive */
 @media (max-width: 900px) {
   .cta-sec-wrap  { grid-template-columns: 1fr; }
