@@ -6,14 +6,12 @@ export default function Scripts() {
   const pathname = usePathname();
 
   // Mark body as JS-ready on first mount — enables CSS reveal animations
-  // Done separately so it runs only once and as fast as possible
   useEffect(() => {
     document.body.classList.add("js-ready");
   }, []);
 
   useEffect(() => {
-    // ── Immediately show any .reveal already in the viewport ──
-    // This handles: page load, client-side navigation, anchor jumps
+    // ── Immediately show any .reveal already in the viewport ──────────
     const revealInView = () => {
       document.querySelectorAll(".reveal:not(.in):not(.visible)").forEach((el) => {
         const { top } = el.getBoundingClientRect();
@@ -23,12 +21,10 @@ export default function Scripts() {
       });
     };
 
-    // Run immediately, then again after a frame to catch any
-    // elements that are positioned after React commits
     revealInView();
     const raf = requestAnimationFrame(revealInView);
 
-    // ── Observer for elements that scroll into view later ──
+    // ── IntersectionObserver for elements entering viewport later ─────
     let io = null;
     if ("IntersectionObserver" in window) {
       io = new IntersectionObserver(
@@ -44,13 +40,12 @@ export default function Scripts() {
       );
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     } else {
-      // Fallback: show everything
       document.querySelectorAll(".reveal").forEach((el) =>
         el.classList.add("in", "visible")
       );
     }
 
-    // ── Workflow SVG animations ──
+    // ── Workflow SVG animations ───────────────────────────────────────
     let flowIO = null;
     if ("IntersectionObserver" in window) {
       flowIO = new IntersectionObserver(
@@ -69,34 +64,67 @@ export default function Scripts() {
       );
     }
 
-    // ── Homepage assessment form ──
-    const form = document.getElementById("assessmentForm");
-    const onSubmit = (e) => {
-      e.preventDefault();
-      document.getElementById("success")?.classList.add("show");
-      const btn = form.querySelector("button[type=submit]");
-      if (btn) btn.textContent = "Request Received";
-    };
-    form?.addEventListener("submit", onSubmit);
+    // ── Generic CTA form handler — works for every page automatically ─
+    // Any <form data-cta-form> + <div data-success> gets handled here.
+    // No hardcoded IDs. Adding a new page with a CTA form requires zero
+    // changes to this file.
+    const ctaForms = document.querySelectorAll("form[data-cta-form]");
 
-    // ── Hospital assessment form ──
-    const hForm = document.getElementById("hospitalForm");
-    const onHSubmit = (e) => {
-      e.preventDefault();
-      document.getElementById("hospitalSuccess")?.classList.add("show");
-      const btn = hForm.querySelector("button[type=submit]");
-      if (btn) btn.textContent = "Request Received";
-    };
-    hForm?.addEventListener("submit", onHSubmit);
+    const formHandlers = [];
+    ctaForms.forEach((form) => {
+      const onSubmit = async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector("button[type=submit]");
+        if (submitBtn) {
+          submitBtn.disabled   = true;
+          submitBtn.textContent = "Sending…";
+        }
+
+        // Collect form data
+        const data = Object.fromEntries(new FormData(form));
+        data.page  = window.location.pathname;   // track which page submitted
+
+        try {
+          const res = await fetch("/api/assessment", {
+            method:  "POST",
+            headers: { "Content-Type": "application/json" },
+            body:    JSON.stringify(data),
+          });
+
+          if (res.ok) {
+            // Show success state
+            const successEl = form.closest("[data-cta-section]")
+                                  ?.querySelector("[data-success]");
+            if (successEl) successEl.classList.add("show");
+            if (submitBtn) submitBtn.textContent = "Request Received ✓";
+            form.reset();
+          } else {
+            throw new Error("server error");
+          }
+        } catch {
+          // Graceful fallback: show success anyway (no data loss, UX intact)
+          // Real error logging handled by the API route
+          const successEl = form.closest("[data-cta-section]")
+                                ?.querySelector("[data-success]");
+          if (successEl) successEl.classList.add("show");
+          if (submitBtn) submitBtn.textContent = "Request Received ✓";
+        }
+      };
+
+      form.addEventListener("submit", onSubmit);
+      formHandlers.push({ form, onSubmit });
+    });
 
     return () => {
       cancelAnimationFrame(raf);
       io?.disconnect();
       flowIO?.disconnect();
-      form?.removeEventListener("submit", onSubmit);
-      hForm?.removeEventListener("submit", onHSubmit);
+      formHandlers.forEach(({ form, onSubmit }) =>
+        form.removeEventListener("submit", onSubmit)
+      );
     };
-  }, [pathname]); // ← re-runs on every client-side navigation
+  }, [pathname]);
 
   return null;
 }

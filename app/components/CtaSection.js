@@ -29,7 +29,7 @@ export default function CtaSection({
   formNote = "HIPAA-compliant · No setup fee · No long-term contract",
 }) {
   return (
-    <section className="cta-sec" id="assessment" aria-labelledby={`${formId}-heading`}>
+    <section className="cta-sec" id="assessment" data-cta-section aria-labelledby={`${formId}-heading`}>
       <div className="cta-sec-wrap">
 
         {/* ── Left column ──────────────────────────────────── */}
@@ -77,7 +77,7 @@ export default function CtaSection({
           <div className="cta-sec-form-box">
             <h3 className="cta-sec-form-h3">{ctaLabel}</h3>
             <form className="cta-sec-form" id={formId}
-              action="/request-free-audit/" method="post" noValidate>
+              data-cta-form noValidate>
               <div className="cta-sec-row">
                 <div className="cta-sec-field">
                   <label className="cta-sec-lbl" htmlFor={`${formId}-name`}>Full name</label>
@@ -126,6 +126,18 @@ export default function CtaSection({
           </div>
         </div>
 
+      </div>
+
+      {/* Success message — shown via JS after POST /api/assessment succeeds */}
+      <div className="cta-sec-success" data-success aria-live="polite" aria-atomic="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        <div>
+          <strong>Assessment request received.</strong>
+          <p>Our team will review and be in touch within one business day.</p>
+        </div>
       </div>
     </section>
   );

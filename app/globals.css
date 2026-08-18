@@ -38,6 +38,19 @@
   --color-navy-deep: #111735;   /* Dark navy for hero/card backgrounds */
   --color-white:     #ffffff;
 
+  /* ── Semantic status tokens (AR aging table + UI states) ── */
+  --color-status-warn-bg:    #fdf4e0;   /* amber 60-89 day AR row  */
+  --color-status-warn-text:  #3d2800;   /* amber row body text     */
+  --color-status-warn-label: #7a4f00;   /* amber row label text    */
+  --color-status-danger-bg:  #fdeede;   /* orange 90-119 day row   */
+  --color-status-danger-text:#3d1400;   /* orange row body text    */
+  --color-status-danger-label:#8b3000;  /* orange row label text   */
+  --color-status-crit-bg:    #fdecec;   /* red 120+ day row        */
+  --color-status-crit-text:  #5c0a0a;   /* red row body text       */
+  --color-status-crit-label: #8b1a1a;   /* red row label text      */
+  --color-img-fallback:      #d0d5e8;   /* image placeholder bg    */
+  --color-img-fallback-alt:  #d8ddd4;   /* secondary placeholder   */
+
   /* ── Aliases for convenience ── */
   --navy:       var(--color-primary);
   --navy-deep:  var(--color-navy-deep);

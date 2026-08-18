@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="ftr-band-left">
             <Link href="/" className="ftr-logo" aria-label="Medbilling RCM home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-white.png" alt="Medbilling RCM" className="ftr-logo-img" />
+              <img src="/logo-white.png" alt="Medbilling RCM" className="ftr-logo-img" width="160" height="36" decoding="async" loading="lazy" />
             </Link>
             <p className="ftr-tagline">
               Medical billing for CMS-1500 practices and hospital systems.

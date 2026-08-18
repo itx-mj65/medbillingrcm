@@ -18,7 +18,7 @@ export default function HospitalBillingPage() {
         ctaAlt="See how we measure it"
         ctaAltHref="#measurement"
         badge="97% at payer · UB-04 · MS-DRG · APC"
-        image="/hospital-hero.png"
+        image="/hospital-hero.webp"
         imageAlt="Hospital revenue cycle specialists reviewing inpatient and outpatient billing workflow"
         imageW={1536}
         imageH={900}

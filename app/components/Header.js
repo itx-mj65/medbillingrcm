@@ -27,7 +27,7 @@ const SERVICES = [
       title:  "Hospital Medical Billing",
       body:   "Institutional billing for inpatient and outpatient care. DRG optimization, 340B compliance, and facility fee management on the UB-04.",
       stat:   "97% clean claim rate — measured at the payer",
-      img:    "/hospital-hero.png",
+      img:    "/hospital-hero.webp",
       imgAlt: "Hospital revenue-cycle leaders reviewing EHR financial dashboard",
     },
   },
@@ -175,6 +175,10 @@ function ServicesMegaMenu({ onClose }) {
                 src={active.preview.img}
                 alt={active.preview.imgAlt}
                 className="hdr-mega-img"
+                width="380"
+                height="190"
+                fetchPriority="low"
+                decoding="async"
                 style={{width:"100%",height:"190px",objectFit:"cover",objectPosition:"center 30%",display:"block"}}
               />
             ) : (
@@ -263,7 +267,7 @@ export default function Header() {
         {/* Logo */}
         <Link className="hdr-logo" href="/" onClick={closeAll} aria-label="Medbilling RCM home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-dark.png" alt="Medbilling RCM" className="hdr-logo-img" />
+          <img src="/logo-dark.png" alt="Medbilling RCM" className="hdr-logo-img" width="160" height="40" decoding="async" />
         </Link>
 
         {/* Desktop nav */}

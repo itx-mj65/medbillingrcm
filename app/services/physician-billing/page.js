@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import PhysicianScripts from "./PhysicianScripts";
 import CtaSection from "@/components/CtaSection";
@@ -132,8 +133,13 @@ export default function PhysicianBillingPage() {
           <p>The most common way a physician claim loses money is not a denial. It is a visit billed one level below what the record supports. That is under-coding, and it is silent.</p>
           <div className="ph-em-wrap">
             <div className="ph-em-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/physician-em-coding.webp" alt="Medical billing specialist reviewing encounter notes and CPT coding on dual monitors" loading="lazy" />
+              <Image
+                src="/physician-em-coding.webp"
+                alt="Medical billing specialist reviewing encounter notes and CPT coding on dual monitors"
+                width={900} height={580}
+                loading="lazy"
+                style={{width:"100%",height:"100%",objectFit:"cover"}}
+              />
               <div className="ph-em-photo__chip" aria-hidden="true">
                 <div className="ph-em-chip-num">$40</div>
                 <div className="ph-em-chip-lbl">More per visit<br/>99213 → 99214</div>
@@ -360,8 +366,13 @@ export default function PhysicianBillingPage() {
 
         {/* ═══ CLOSING BANNER ═════════════════════════════════ */}
         <div className="ph-closing ph-reveal">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/physician-closing.webp" alt="Senior practice executive reviewing revenue analysis dashboard at a modern executive desk" loading="lazy" />
+          <Image
+            src="/physician-closing.webp"
+            alt="Senior practice executive reviewing revenue analysis dashboard at a modern executive desk"
+            width={1536} height={480}
+            loading="lazy"
+            style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 40%"}}
+          />
           <div className="ph-closing-grad" aria-hidden="true" />
           <div className="ph-closing-stats" aria-hidden="true">
             <div className="ph-closing-big">97%</div>
