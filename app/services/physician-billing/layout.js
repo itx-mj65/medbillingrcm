@@ -11,6 +11,7 @@ export const metadata = {
     siteName:    "Medbilling RCM",
     type:        "article",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 const schemaJsonLd = {
@@ -61,6 +62,32 @@ const schemaJsonLd = {
         { "@type": "Question", "name": "How fast can you onboard, and is there a contract?", "acceptedAnswer": { "@type": "Answer", "text": "The worry is a long, disruptive switch that locks you in. Neither happens here. Onboarding runs about 14 days with no gap in claim submission, no setup fee, and no long-term contract." } },
         { "@type": "Question", "name": "How do you measure your clean claim rate?", "acceptedAnswer": { "@type": "Answer", "text": "This is the number to pin any billing company on, because it is easy to inflate. We measure ours at the payer, on first submission, with zero rework, so a claim that needed a correction before it paid does not count. Many vendors quote clearinghouse acceptance instead, which reads higher." } }
       ]
+    }
+  ]
+};
+
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://medbillingrcm.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://medbillingrcm.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Physician Billing Services",
+      "item": "https://medbillingrcm.com/services/physician-billing/"
     }
   ]
 };

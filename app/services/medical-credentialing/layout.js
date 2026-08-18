@@ -11,6 +11,7 @@ export const metadata = {
     siteName:    "Medbilling RCM",
     type:        "article",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 const schema = {
@@ -48,10 +49,37 @@ const schema = {
   ]
 };
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://medbillingrcm.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://medbillingrcm.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Medical Credentialing Services",
+      "item": "https://medbillingrcm.com/services/medical-credentialing/"
+    }
+  ]
+};
+
 export default function CredentialingLayout({ children }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {children}
     </>
   );

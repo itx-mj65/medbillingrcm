@@ -11,6 +11,7 @@ export const metadata = {
     siteName:    "Medbilling RCM",
     type:        "article",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 const schemaJsonLd = {
@@ -61,6 +62,32 @@ const schemaJsonLd = {
         { "@type": "Question", "name": "What EHR and practice management systems do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "You keep your existing systems. We work inside your setup, including Epic, Athenahealth, eClinicalWorks, NextGen, Kareo, and AdvancedMD, among others, with integrations scoped during the free AR analysis." } },
         { "@type": "Question", "name": "How does your pricing work?", "acceptedAnswer": { "@type": "Answer", "text": "We work on a percentage of what we recover. There is no setup fee, no retainer, and no fee on accounts where recovery is unsuccessful. If we do not collect, you do not pay. The specific percentage is set based on the volume, age distribution, and complexity of your AR portfolio, assessed during the initial free analysis." } }
       ]
+    }
+  ]
+};
+
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://medbillingrcm.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://medbillingrcm.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Account Receivable Management",
+      "item": "https://medbillingrcm.com/services/account-receivable-management/"
     }
   ]
 };

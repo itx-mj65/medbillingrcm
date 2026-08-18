@@ -11,6 +11,7 @@ export const metadata = {
     siteName:    "Medbilling RCM",
     type:        "article",
   },
+  twitter: { card: "summary_large_image" },
   keywords: "laboratory billing services, lab billing company, pathology billing, diagnostic billing services, clinical laboratory billing, molecular diagnostics billing, toxicology billing, PAMA laboratory, laboratory CPT codes",
 };
 
@@ -52,10 +53,37 @@ const schema = {
   ]
 };
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://medbillingrcm.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://medbillingrcm.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Laboratory Billing Services",
+      "item": "https://medbillingrcm.com/services/laboratory-billing/"
+    }
+  ]
+};
+
 export default function LabBillingLayout({ children }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {children}
     </>
   );

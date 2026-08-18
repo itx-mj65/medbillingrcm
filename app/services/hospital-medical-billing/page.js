@@ -7,7 +7,7 @@ export default function HospitalBillingPage() {
     <main className="hospital-page" id="main">
 
       {/* ═══ HERO ══════════════════════════════════════════════
-          IMAGE: /public/hospital-hero.png  |  1536 × 900 px
+          IMAGE: /public/hospital-hero.webp  |  1536 × 900 px
       ══════════════════════════════════════════════════════════ */}
       <PageHero
         eyebrow="Hospital medical billing services"
