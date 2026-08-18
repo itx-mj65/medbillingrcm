@@ -7,74 +7,136 @@ export default function MedicalCodingPage() {
   return (
     <main className="mc-page" id="main">
 
-      {/* ═══ HERO — shared PageHero component ═════════════════════ */}
+      {/* ═══ HERO ══════════════════════════════════════════════
+          IMAGE: /public/mc-hero.webp  |  1536 × 900 px
+      ══════════════════════════════════════════════════════════ */}
       <PageHero
-        eyebrow="CPC · CCS · COC Certified Coders"
-        heading="Medical Coding Services"
-        intro="Our certified team (CPC, CCS, COC) applies deep expertise in ICD-10, CPT, and HCPCS coding prioritizing accuracy, compliance, and measurable financial outcomes for your practice."
-        note="99.5% coding accuracy  |  100% HIPAA compliant  |  30% denial reduction  |  All 50 states"
-        cta="Request Free Audit"
-        ctaAlt="See our process"
-        ctaAltHref="#process"
-        badge="CPC · CCS · COC Certified"
+        eyebrow="Medical coding services"
+        heading="Medical coding services"
+        intro="A wrong modifier, an unspecified diagnosis where specificity was required, a CPT code that failed an NCCI edit the scrubber missed. None of these generate a phone call. They generate a denial 30 days later, and 65% of those denials are never resubmitted. We are a medical coding company that covers ICD-10-CM, CPT, and HCPCS Level II coding for physician practices, hospital outpatient departments, ASCs, and specialty groups. AAPC and AHIMA certified coders deliver professional medical coding services with NCCI compliance on every claim and quarterly code set updates built into the workflow."
+        note="50+ Specialties  |  48hr Turnaround  |  AAPC + AHIMA + HIPAA Compliant"
+        cta="Get a Free Coding Assessment"
+        ctaAlt="See what we cover"
+        ctaAltHref="#services"
+        badge="AAPC · AHIMA · NCCI"
         image="/mc-hero.webp"
         imageAlt="Medical billing coder reviewing ICD-10 and CPT coding documents at dual monitors"
         imageW={1536}
         imageH={900}
       />
 
-      {/* ═══ PROOF STRIP ═════════════════════════════════════════ */}
-      <div className="mc-proof">
-        <div className="mc-proof-inner">
-          <div className="mc-proof-item">99.5% Coding Accuracy</div>
-          <div className="mc-proof-item">100% HIPAA Compliance</div>
-          <div className="mc-proof-item">30% Denial Reduction</div>
-          <div className="mc-proof-item">+10% Cash Flow Boost</div>
+      {/* ═══ FEATURE STRIP ══════════════════════════════════ */}
+      <div className="mc-feature-strip">
+        <div className="mc-feature-inner">
+          {[
+            { icon:"{ }", text:"ICD-10 + CPT + HCPCS Level II" },
+            { icon:"🏅",  text:"AAPC + AHIMA Certified" },
+            { icon:"✓",   text:"NCCI Edit Compliance" },
+            { icon:"⏱",   text:"48hr Coding Turnaround" },
+          ].map(({ icon, text }) => (
+            <div className="mc-feature-item" key={text}>
+              <span className="mc-feature-icon" aria-hidden="true">{icon}</span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* ═══ WHY MEDBILLING — CODING INFRASTRUCTURE ══════════════ */}
-      <section className="mc-sec mc-sec--white reveal" id="why">
+      {/* ═══ COMPLIANCE BADGES ══════════════════════════════ */}
+      <div className="mc-badges-bar">
+        <div className="mc-badges-inner">
+          <span className="mc-badges-label">Compliance standards</span>
+          <div className="mc-badges-div" aria-hidden="true" />
+          {[
+            { icon:"🏛️", text:"AAPC Certified" },
+            { icon:"📘", text:"AHIMA Certified" },
+            { icon:"🔒", text:"HIPAA Compliant" },
+            { icon:"⚕️", text:"CMS Compliant" },
+          ].map(({ icon, text }) => (
+            <span className="mc-badge" key={text}>
+              <span aria-hidden="true">{icon}</span>{text}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ═══ WHY CODING ERRORS COST MORE ════════════════════ */}
+      <section className="mc-sec mc-sec--white reveal" id="problem">
         <div className="mc-wrap">
-          <p className="mc-ew">Why Medbilling RCM</p>
-          <h2>Your General Surgery Revenue Infrastructure Partner</h2>
-          <p className="mc-lead">Specialized general surgery billing with AAPC and AHIMA certified coders who understand the complexity of surgical modifiers, global periods, and facility fee billing.</p>
+          <p className="mc-ew">Why coding errors cost more than a denied claim</p>
+          <h2>Why coding errors cost more than a denied claim</h2>
 
-          <div className="mc-cert-badges">
-            <span className="mc-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>CPC Certified</span>
-            <span className="mc-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>CCS Certified</span>
-            <span className="mc-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>COC Certified</span>
-            <span className="mc-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>HIPAA Compliant</span>
+          {/* Two stat blocks — large numbers anchor each fact */}
+          <div className="mc-stat-row">
+            <div className="mc-stat-block">
+              <div className="mc-stat-num">42<span>%</span></div>
+              <div className="mc-stat-lbl">of all claim denials are caused by coding errors</div>
+              <div className="mc-stat-src"><a href="https://qualigenix.com/claim-denials-2026/" target="_blank" rel="noopener">Sully.ai, 2026</a></div>
+            </div>
+            <div className="mc-stat-block mc-stat-block--accent">
+              <div className="mc-stat-num">$6–7<span>B</span></div>
+              <div className="mc-stat-lbl">annual revenue lost to coding errors across US healthcare</div>
+              <div className="mc-stat-src"><a href="https://steadymedicalbilling.com/understanding-cpt-icd10-hcpcs-codes/" target="_blank" rel="noopener">steadymedicalbilling.com, 2026</a></div>
+            </div>
           </div>
 
-          <p className="mc-tag-line">Expert HIM Consulting · Advanced CDI Solutions · Proven Expertise</p>
-          <p>We bring together expert Health Information Management consulting, advanced Clinical Documentation Improvement solutions, and skilled medical coders with demonstrated specialty-specific expertise all in one integrated coding infrastructure.</p>
+          <p>Coding errors are not an occasional billing problem. They are a structural one. A claim denied for a coding reason costs <a href="https://qualigenix.com/claim-denials-2026/" target="_blank" rel="noopener">$57.23 to rework on average, according to Aptarro (2026)</a>. Multiply that across a practice volume and the math gets uncomfortable quickly.</p>
+          <p>The 2026 environment made it worse. CMS added <a href="https://www.medicalbillersandcoders.com/blog/icd-10-cm-updates-fy-2026/" target="_blank" rel="noopener">487 new ICD-10-CM diagnosis codes for FY 2026</a>. The AMA released <a href="https://www.tebra.com/theintake/featured/cpt-code-changes-2026/" target="_blank" rel="noopener">288 new CPT codes as part of 418 total changes</a>. The National Correct Coding Initiative underwent <a href="https://practolytics.com/blog/top-10-coding-errors-that-trigger-denials/" target="_blank" rel="noopener">its largest single-cycle update in seven years</a>. Each of those updates is a point of failure for practices whose coding workflows were not updated to match. A code that passed in 2025 can produce a CO-97 denial in 2026 because the NCCI bundling logic changed.</p>
 
-          {/* IMAGE PLACEHOLDER — Infrastructure section
-              Size: 1200 × 700 px
-              Use: /public/mc-infrastructure.webp
-              Subject: Split image — left: coder at workstation with EHR system;
-                       right: performance dashboard showing coding accuracy metrics.
-              AI prompt: "Healthcare revenue cycle specialists working in modern 
-                         medical billing office, EHR system on screen, professional 
-                         team environment, clean clinical aesthetic, photorealistic"
-          */}
-          <div className="mc-infra-img">
-            <Image src="/mc-infrastructure.webp" alt="Healthcare revenue cycle specialists working in modern medical billing office" width={1200} height={700} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}} />
+          {/* Callout box — 65% stat */}
+          <div className="mc-callout">
+            <div className="mc-callout-accent" aria-hidden="true" />
+            <div>
+              <div className="mc-callout-stat"><a href="https://wifitalents.com/medical-billing-errors-statistics/" target="_blank" rel="noopener">65% of denied claims are never resubmitted.</a></div>
+              <p className="mc-callout-sub">That is revenue earned, coded incorrectly, denied, and written off.</p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mc-feature-grid">
+      {/* ═══ SERVICES COVERED ════════════════════════════════ */}
+      <section className="mc-sec mc-sec--ivory reveal" id="services">
+        <div className="mc-wrap">
+          <p className="mc-ew">What our professional medical coding services cover</p>
+          <h2>What our professional medical coding services cover</h2>
+
+          <div className="mc-services-grid">
             {[
-              { h:"Advanced Coding Algorithms", t:"Intelligent coding systems accurately match diagnoses, procedures, and treatments with correct codes. Automating much of the process reduces human error and the likelihood of claim denials." },
-              { h:"Certified Coding Specialists", t:"Our team brings deep understanding of medical terminology, coding rules, and industry standards ensuring coding is consistently accurate, fully compliant, and aligned with best practices." },
-              { h:"Real-Time Edits & Audits", t:"We include real-time edits and audits in our coding process, instantly validating accuracy and completeness. Quick corrections minimize coding errors and keep everything compliance-aligned." },
-              { h:"EHR & Billing System Integration", t:"Our services integrate seamlessly with Electronic Health Records and billing systems, creating a streamlined coding workflow with efficient data sharing across your revenue cycle." },
-              { h:"Compliance with Coding Standards", t:"We adhere to ICD-10, CPT, and HCPCS coding standards with full HIPAA compliance ensuring patient data remains confidential and protected while following all industry regulations." },
-              { h:"Customizable Reporting & Analytics", t:"Clear insights into coding accuracy, trends, and reimbursement patterns. Data-driven analytics empower you to track performance and identify areas for improvement across your organization." },
-            ].map(({ h, t }) => (
-              <article className="mc-feature-card reveal" key={h}>
-                <div className="mc-feature-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              {
+                n:"01", icon:"📄",
+                h:"ICD-10-CM and CPT code assignment",
+                t:"Clinical notes, operative reports, and diagnostic documentation reviewed and coded against current CMS and AMA code sets. Quarterly HCPCS Level II updates incorporated at each release cycle, not annually.",
+              },
+              {
+                n:"02", icon:"🛡️",
+                h:"NCCI compliance and modifier management",
+                t:"Every claim validated against NCCI edit pairs before submission. Modifier 25, Modifier 59, and the XE/XS/XP/XU unbundling set applied per payer-specific rules. Modifier misuse is the source of CO-97 and CO-11 denials that look like payer problems but are coding problems.",
+              },
+              {
+                n:"03", icon:"🩺",
+                h:"Clinical documentation improvement (CDI)",
+                t:"When a physician note uses a non-specific diagnosis where specificity is required, or omits severity indicators that support higher-acuity coding, the coder either undercodes or creates audit risk. We identify documentation gaps before coding and generate compliant physician queries that clarify the clinical picture without suggesting codes.",
+              },
+              {
+                n:"04", icon:"📊",
+                h:"HCC and risk adjustment coding",
+                t:"Hierarchical Condition Category coding links ICD-10-CM diagnosis codes to RAF scores that determine reimbursement under Medicare Advantage and value-based care contracts. An unspecified code where a more specific one exists reduces the RAF score and understates patient complexity. We code to documented specificity.",
+              },
+              {
+                n:"05", icon:"🔍",
+                h:"Retrospective coding audits",
+                t:"We review a statistically valid sample of historical claims, typically 30 to 50 records per specialty, identify undercoding patterns, overcoding patterns, modifier errors, and diagnosis specificity gaps, and quantify the financial impact of each.",
+              },
+              {
+                n:"06", icon:"🏥",
+                h:"Inpatient coding and DRG optimization",
+                t:"Hospital inpatient claims are assigned to MS-DRGs that determine facility reimbursement. We apply ICD-10-CM and ICD-10-PCS codes under current IPPS rules to ensure the assigned DRG reflects the full documented complexity of the encounter. Silent underpayment on high-acuity cases is prevented.",
+              },
+            ].map(({ n, icon, h, t }) => (
+              <article className="mc-service-card reveal" key={n}>
+                <div className="mc-service-top">
+                  <span className="mc-service-num">{n}</span>
+                  <span className="mc-service-icon" aria-hidden="true">{icon}</span>
                 </div>
                 <h3>{h}</h3>
                 <p>{t}</p>
@@ -84,145 +146,159 @@ export default function MedicalCodingPage() {
         </div>
       </section>
 
-      {/* ═══ CODING PROCESS ══════════════════════════════════════ */}
-      <section className="mc-sec mc-sec--navy reveal" id="process">
+      {/* ═══ IN-HOUSE VS OUTSOURCED ══════════════════════════ */}
+      <section className="mc-sec mc-sec--white reveal">
         <div className="mc-wrap">
-          <p className="mc-ew mc-ew--gold">Coding Infrastructure</p>
-          <h2>The Medical Coding Process</h2>
-          <p>Four essential steps designed to ensure maximum accuracy, compliance, and reimbursement on every single claim.</p>
+          <p className="mc-ew">The cost of keeping coding in-house</p>
+          <h2>The cost of keeping coding in-house</h2>
 
-          <div className="mc-process-grid">
-            {[
-              { n:"01", h:"Retrieving Patient Information",   t:"We collect all necessary documentation nursing notes, physician records, and demographic details providing a complete foundation for the coding process." },
-              { n:"02", h:"Entering Key Details",             t:"We input important information location of service, the physician's name, and relevant price modifiers into our system to prepare for accurate and comprehensive coding." },
-              { n:"03", h:"Assigning Relevant Codes",         t:"With a strong focus on precision, we assign the appropriate codes in line with regulatory standards CPT, HCPCS, ICD, DRG, and HCC codes along with applicable modifiers." },
-              { n:"04", h:"Rechecking & Auditing",            t:"We thoroughly review and audit assigned codes, conducting multiple checks to identify and correct any up-coding or down-coding errors maintaining the integrity of the entire coding process." },
-            ].map(({ n, h, t }) => (
-              <div className="mc-process-step reveal" key={n}>
-                <div className="mc-step-num">{n}</div>
-                <h3>{h}</h3>
-                <p>{t}</p>
+          <div className="mc-cost-compare">
+            <div className="mc-cost-col mc-cost-col--left">
+              <div className="mc-cost-marker">In-house</div>
+              <div className="mc-cost-rows">
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">$50,250</div>
+                  <div className="mc-cost-lbl">Median coder salary/year — <a href="https://www.bls.gov/oes/current/oes291099.htm" target="_blank" rel="noopener">BLS, May 2024 OES</a></div>
+                </div>
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">$67,147</div>
+                  <div className="mc-cost-lbl">With AAPC CPC certification — <a href="https://www.aapc.com/blog/85965-2025-salary-report/" target="_blank" rel="noopener">AAPC 2025 salary survey</a></div>
+                </div>
+                <div className="mc-cost-row mc-cost-row--highlight">
+                  <div className="mc-cost-num">$95,000<span>+</span></div>
+                  <div className="mc-cost-lbl">Fully loaded cost/year (salary + benefits + encoder + management + training)</div>
+                </div>
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">$3K–$6K</div>
+                  <div className="mc-cost-lbl">Encoder software per seat/year (3M CodeFinder, Optum360 EncoderPro)</div>
+                </div>
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">487 + 288</div>
+                  <div className="mc-cost-lbl">New ICD-10-CM + CPT codes in 2026 requiring continuous retraining</div>
+                </div>
               </div>
-            ))}
+            </div>
+            <div className="mc-cost-col mc-cost-col--right">
+              <div className="mc-cost-marker">Outsourced to Medbilling RCM</div>
+              <div className="mc-cost-rows">
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">$2.50–$4.50</div>
+                  <div className="mc-cost-lbl">Per chart — outpatient</div>
+                </div>
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">$8–$18</div>
+                  <div className="mc-cost-lbl">Per chart — inpatient</div>
+                </div>
+                <div className="mc-cost-row mc-cost-row--highlight">
+                  <div className="mc-cost-num">25–58<span>%</span></div>
+                  <div className="mc-cost-lbl">Reduction in total coding costs for mid-size organizations — <a href="https://medcodexhealth.com" target="_blank" rel="noopener">MedCodex Health, 2026</a></div>
+                </div>
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">$0</div>
+                  <div className="mc-cost-lbl">Encoder licensing, training overhead, turnover risk</div>
+                </div>
+                <div className="mc-cost-row">
+                  <div className="mc-cost-num">Auto</div>
+                  <div className="mc-cost-lbl">NCCI updates and code set releases managed automatically</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="mc-process-cta">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Schedule Revenue Assessment</Link>
-            <p className="mc-process-note">For practices across all specialties · CPC, CCS & COC certified team · All 50 states</p>
+          <div className="mc-cost-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+            <p>The case for practices that outsource medical coding is not about labor arbitrage. It is about accuracy at a cost structure the practice can predict. A 7% <Link href="/services/account-receivable-management/">denial rate</Link> on a $3 million practice equals $210,000 in reworked claims annually. If 65% of those denials are never resubmitted, the actual revenue loss is higher than that.</p>
           </div>
         </div>
       </section>
 
-      {/* ═══ OUTSOURCE SECTION ═══════════════════════════════════ */}
-      <section className="mc-sec mc-sec--ivory reveal">
-        <div className="mc-wrap">
-          <p className="mc-ew">Why Outsource to Us</p>
-          <h2>Outsource Your Medical Coding. Keep Your Revenue.</h2>
-
-          {/* IMAGE PLACEHOLDER — Outsource section
-              Size: 1200 × 600 px  
-              Use: /public/mc-outsource.webp
-              Subject: Practice administrator reviewing revenue improvement chart, 
-                       confident expression, modern office setting, showing measurable 
-                       outcomes from outsourced coding partnership.
-              AI prompt: "Practice administrator reviewing revenue improvement 
-                         analytics on laptop in modern medical office, positive 
-                         business outcome, clean professional setting, photorealistic"
-          */}
-          <div className="mc-outsource-layout">
-            <div className="mc-outsource-img">
-              <Image src="/mc-outsource.webp" alt="Practice administrator reviewing revenue improvement analytics on laptop" width={1200} height={600} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}} />
-            </div>
-            <div className="mc-outsource-copy">
-              <p>Outsourcing your medical coding to Medbilling RCM eliminates the cost of in-house coding staff, ongoing training, software, and compliance monitoring while delivering measurably better outcomes.</p>
-              <Link href="/request-free-audit/" className="mc-collab-link">Let&apos;s Collaborate →</Link>
-              <div className="mc-outcome-grid">
-                {[
-                  { stat:"10%",  label:"10% Improved Cash Flow",          desc:"More accurate coding means fewer underpayments and faster reimbursements." },
-                  { stat:"↓",    label:"Reduced Administrative Burden", desc:"Eliminate in-house coding overhead, training costs, and software investment." },
-                  { stat:"100%", label:"HIPAA Compliance",             desc:"All coding workflows are HIPAA-compliant with full audit trail documentation." },
-                  { stat:"30%",  label:"30% Reduction in A/R",            desc:"Accurate first-pass coding dramatically reduces claim denials and AR days." },
-                  { stat:"✓",    label:"Denial Management Services",   desc:"Root-cause analysis and rapid resubmission for all denied claims." },
-                  { stat:"⚡",   label:"Real-Time Coding Insights",    desc:"Access live performance dashboards showing coding accuracy and trends." },
-                  { stat:"★",    label:"CMS & AMA Regulatory Updates", desc:"Constant alignment with the latest CMS and AMA coding changes zero lag." },
-                  { stat:"↑",    label:"Enhanced Reimbursement Precision", desc:"High-quality coding results ensure claims are paid in full first time." },
-                ].map(({ stat, label, desc }) => (
-                  <div className="mc-outcome-item reveal" key={label}>
-                    <div className="mc-outcome-stat">{stat}</div>
-                    <div>
-                      <div className="mc-outcome-label">{label}</div>
-                      <div className="mc-outcome-desc">{desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ CODE SYSTEMS ════════════════════════════════════════ */}
+      {/* ═══ SPECIALTY COMPLEXITY ════════════════════════════ */}
       <section className="mc-sec mc-sec--navy reveal">
         <div className="mc-wrap">
-          <p className="mc-ew mc-ew--gold">Coding Standards &amp; Compliance</p>
-          <h2>Every Code System. Every Specialty. Full Compliance.</h2>
-          <p>Our team is certified and regularly trained across all major coding systems ensuring your claims are always accurate, audit-proof, and aligned with the latest regulatory requirements.</p>
-          <p>We cover a broad spectrum of <a href="/specialties/">specialties</a> including cardiology, family medicine, radiology, urgent care, OBGYN, orthopaedics, and many others. Our team includes specialists for each field, ensuring coding precision for highly specialized medical services.</p>
+          <p className="mc-ew mc-ew--gold">Specialty coding complexity we manage</p>
+          <h2>Specialty coding complexity we manage</h2>
 
-          <div className="mc-code-grid">
+          <div className="mc-spec-grid">
             {[
-              { code:"ICD-10", full:"International Classification of Diseases, 10th Revision", desc:"Diagnosis and inpatient procedure coding updated annually with full compliance tracking", tag:"Active" },
-              { code:"CPT",    full:"Current Procedural Terminology",                           desc:"AMA-published codes for medical, surgical, and diagnostic procedures and services", tag:"Active" },
-              { code:"HCPCS",  full:"Healthcare Common Procedure Coding System",               desc:"Level I (CPT) and Level II codes for supplies, equipment, and non-physician services", tag:"Active" },
-              { code:"DRG",    full:"Diagnosis-Related Groups",                                desc:"Hospital inpatient classification system for Medicare reimbursement", tag:"Hospital" },
-              { code:"HCC",    full:"Hierarchical Condition Categories",                       desc:"Risk-adjustment coding for Medicare Advantage and value-based contracts", tag:"Risk Adj." },
-              { code:"HIPAA",  full:"Health Insurance Portability & Accountability Act",       desc:"Full compliance for all PHI handling, data transmission, and audit requirements", tag:"Compliant" },
-            ].map(({ code, full, desc, tag }) => (
-              <article className="mc-code-card reveal" key={code}>
-                <div className="mc-code-top">
-                  <span className="mc-code-label">{code}</span>
-                  <span className="mc-code-tag">{tag}</span>
-                </div>
-                <h3>{full}</h3>
-                <p>{desc}</p>
+              {
+                icon:"🦴", sp:"Orthopedics and spine",
+                t:"Global surgical period modifier management (58, 78, 79) for staged procedures and complications. Per-level spinal add-on code stacking rules. Total joint replacement CPT codes expanded on the ASC Covered Procedures List for 2026. Implant supply capture tied to operative reports.",
+              },
+              {
+                icon:"💊", sp:"Oncology",
+                t:"Chemotherapy administration hierarchy (96413, 96415, 96417): primary drug first, sequential infusions as add-ons, concurrent infusions coded by the hour. J-code drug unit reconciliation against the administered dose. Waste documentation for high-cost drugs where partial vials are discarded.",
+              },
+              {
+                icon:"🧠", sp:"Behavioral health",
+                t:"Time-based psychotherapy code selection (90832, 90834, 90837) by documented session length. Same-day E/M and psychotherapy add-on pairing under Modifier 25. Panel availability verification affects whether a provider can bill as in-network. Coding reflects the same contract status.",
+              },
+              {
+                icon:"🏥", sp:"Hospital outpatient and ASC",
+                t:<>APC grouping under the OPPS payment system. Multiple procedure reduction (100%/50% rule). Pass-through versus packaged implant billing under HCPCS C-codes. CARC 96 prevention through correct implant classification before submission. See: <Link href="/services/asc-billing/">ASC billing services</Link>.</>,
+              },
+              {
+                icon:"📋", sp:"HCC and Medicare Advantage",
+                t:"ICD-10-CM diagnosis codes mapped to HCC categories determine RAF scores. An unspecified diagnosis where a more specific code exists understates the patient's risk score and reduces reimbursement. We code to documented specificity on every encounter.",
+              },
+              {
+                icon:"🔭", sp:"Radiology and diagnostic imaging",
+                t:"Supervision and interpretation component coding: modifier TC for technical component, modifier 26 for professional interpretation. Global billing where both components are billed together. Interventional radiology coding combines imaging guidance codes with procedural codes. NCCI edits frequently apply.",
+              },
+            ].map(({ icon, sp, t }) => (
+              <article className="mc-spec-card reveal" key={sp}>
+                <div className="mc-spec-icon" aria-hidden="true">{icon}</div>
+                <h3>{sp}</h3>
+                <p>{t}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-
-      {/* ═══ CLOSING CTA BAND ════════════════════════════════════ */}
-      <div className="mc-cta-band">
-        <div className="mc-cta-inner">
-          <div>
-            <p className="mc-ew mc-ew--gold" style={{marginBottom:"12px"}}>Coding Infrastructure</p>
-            <h2>Let Our Coding Expertise Transform Your Revenue Cycle.</h2>
-            <p>Reach out today to discuss how we can customize our medical coding services to your practice&apos;s specialty mix, volume, and revenue goals with zero disruption to your existing workflows.</p>
+      {/* ═══ EHR SYSTEMS ════════════════════════════════════ */}
+      <section className="mc-sec mc-sec--ivory reveal">
+        <div className="mc-wrap">
+          <p className="mc-ew">Works with your existing systems</p>
+          <h2>Works with your existing systems</h2>
+          <p className="mc-sys-lead">Our healthcare coding services connect to your existing systems. No system replacement. No disruption to clinical workflows. Secure chart access, coded records returned to your EHR within the turnaround window, and coding metrics reported back to your billing team.</p>
+          <div className="mc-sys-strip">
+            {["Epic","Cerner","eClinicalWorks","Athenahealth","AdvancedMD","Kareo","NextGen","30+ others"].map(s => (
+              <span className="mc-sys-tag" key={s}>{s}</span>
+            ))}
           </div>
-          <div className="mc-cta-actions">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Schedule Revenue Assessment</Link>
-            <p className="mc-cta-note">CPC, CCS & COC certified coders · ICD-10, CPT, HCPCS expertise · All 50 states</p>
+          <div className="mc-sys-cta">
+            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Coding Assessment</Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ═══ FAQ ═════════════════════════════════════════════════ */}
+      {/* ═══ FAQ ════════════════════════════════════════════ */}
       <section className="mc-sec mc-sec--white reveal" id="faq">
         <div className="mc-wrap">
-          <p className="mc-ew">Common Questions</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="mc-ew">Medical coding questions we get asked</p>
+          <h2>Medical coding questions we get asked</h2>
           <div className="mc-faq-layout">
             <div className="mc-faq-intro">
-              <p>Direct answers about our medical coding services, compliance standards, and turnaround times.</p>
+              <p>Direct answers for practices and billing teams evaluating medical coding outsourcing.</p>
             </div>
             <div className="mc-faq-list">
               {[
-                ["What is the process for outsourcing medical coding services?", "Our process begins with a comprehensive needs assessment to understand your practice's unique requirements. Once defined, we assign experienced coders who work closely with your team, providing regular updates and transparent reporting to maintain alignment with your goals."],
-                ["How do you ensure compliance with coding standards?", "Our medical coders are certified and regularly trained in ICD-10, CPT, and HCPCS updates. We conduct compliance audits and align with HIPAA, CMS, and OIG guidelines to safeguard your practice against penalties and audit exposure."],
-                ["What specialties do you cover?", "We cover a broad spectrum including cardiology, family medicine, radiology, urgent care, OBGYN, orthopaedics, dermatology, internal medicine, and many others. Our team includes specialists for each field, ensuring coding precision for highly specialized medical services."],
-                ["How do you handle claim denials related to coding?", "Our denial management approach focuses on root-cause analysis we identify whether the denial was due to a coding error, documentation gap, or payer policy issue. We correct, resubmit, and provide transparent reporting on denial trends to address issues proactively and prevent recurrence."],
-                ["How quickly do you turn around coding after receiving documentation?", "Standard turnaround is 24–48 hours from receipt of complete documentation. For high-volume practices, we scale our team to maintain consistent turnaround times. Rush processing is available for time-sensitive claims with same-day coding when needed."],
+                ["What is medical coding outsourcing?",
+                 "Medical coding outsourcing is the practice of delegating ICD-10, CPT, and HCPCS code assignment to an external team of certified coders rather than handling it in-house. The practice or facility securely transmits clinical documentation to the coding vendor, receives coded records back within an agreed turnaround window, and uses those codes to generate and submit claims. Outsourcing eliminates the overhead of recruiting, training, and retaining in-house coders while maintaining compliance with annual code set updates."],
+                ["How much does it cost to outsource medical coding?",
+                 "Per-chart pricing typically runs $2.50 to $4.50 for outpatient work and $8.00 to $18.00 for inpatient work, depending on specialty complexity and volume. Fully loaded in-house coder costs typically exceed $95,000 per coder annually when salary, benefits, encoder licensing, management, and training are included. For mid-size organizations, outsourcing can reduce total coding costs by 25 to 58%, according to a 2026 CFO benchmark analysis by MedCodex Health."],
+                ["What are the benefits of outsourcing medical coding?",
+                 "Professional medical coding services provide access to specialty-trained certified coders, eliminate recruitment and retention costs, keep coding current with quarterly NCCI updates and annual code set releases, and convert fixed staffing overhead into predictable per-chart costs. Coding accuracy improves when coders work only within their specialty rather than handling mixed-specialty queues."],
+                ["What certifications should a medical coding company have?",
+                 "Look for AAPC-certified coders holding CPC (Certified Professional Coder) credentials for outpatient and physician work, and AHIMA-certified coders holding CCS (Certified Coding Specialist) credentials for inpatient and hospital coding. Coders working in specialty areas (risk adjustment, inpatient, outpatient facilities) should hold the corresponding specialty credential (CRC, CIC, or COC). HIPAA compliance and a signed Business Associate Agreement are non-negotiable baseline requirements."],
+                ["What is the difference between medical coding and medical billing?",
+                 "Medical coding translates clinical documentation into standardized alphanumeric codes: ICD-10-CM for diagnoses, CPT for procedures, and HCPCS for supplies and certain services. Medical billing uses those codes to construct claims and submit them to payers for reimbursement. Coding errors create billing problems. A wrong code or missing modifier results in a denied claim that the billing team then has to work. The two functions are distinct but directly connected."],
+                ["What types of medical coding exist?",
+                 "The three primary code sets are ICD-10-CM (diagnosis codes, maintained by CDC/NCHS), CPT (Current Procedural Terminology, maintained by AMA), and HCPCS Level II (supplies, drugs, and non-physician services, maintained by CMS). Within those code sets, distinct coding disciplines exist: outpatient facility coding (APC/OPPS), inpatient facility coding (MS-DRG/IPPS), professional fee coding (profee), HCC/risk adjustment coding for Medicare Advantage, and specialty-specific coding for radiology, oncology, behavioral health, and surgical specialties."],
+                ["Is outsourcing medical coding HIPAA-compliant?",
+                 "Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and maintains HIPAA-compliant data handling protocols: encrypted transmission, role-based access controls, and secure coding environments. A BAA is not optional. It is a legal requirement under HIPAA for any third party that handles protected health information on your behalf."],
+                ["How do I get started?",
+                 "Request a free coding assessment. We review a sample of your current claims for coding accuracy, modifier compliance, and NCCI edit exposure, then deliver a written report identifying the error patterns costing you the most revenue. No obligation. You keep the report whether or not you work with us."],
               ].map(([q, a]) => (
                 <details key={q}>
                   <summary>{q}</summary>
@@ -234,22 +310,37 @@ export default function MedicalCodingPage() {
         </div>
       </section>
 
-      {/* ═══ ASSESSMENT — shared CtaSection component ════════════ */}
+      {/* ═══ CLOSING CTA BAND ════════════════════════════════ */}
+      <div className="mc-closing-band">
+        <div className="mc-closing-inner">
+          <div>
+            <p className="mc-ew mc-ew--gold" style={{marginBottom:"12px"}}>Coded right. Paid faster.</p>
+            <h2>Coded right. Paid faster.</h2>
+            <p>Coding errors that prevent payment today were avoidable at the time the code was assigned. The 2026 code environment: 487 new ICD-10-CM codes, 288 new CPT codes, the largest NCCI update in seven years. It makes in-house coding accuracy harder to maintain than it was in 2025. Our healthcare coding services track those changes so your practice does not have to.</p>
+          </div>
+          <div className="mc-closing-actions">
+            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Coding Assessment</Link>
+            <p className="mc-closing-note">AAPC + AHIMA certified · 50+ specialties · All 50 states</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══ ASSESSMENT CTA ═════════════════════════════════ */}
       <CtaSection
         eyebrow="Ready when you are"
-        heading="Request a Free Coding Audit."
-        body="We review a sample of your coding records, identify accuracy gaps, and show you where revenue is being left on the table. You keep the findings. No obligation, no setup fee, no long-term contract."
-        ctaLabel="Request Free Audit"
+        heading="Request a Free Coding Assessment."
+        body="We review a sample of your current claims for coding accuracy, modifier compliance, and NCCI edit exposure, then deliver a written report identifying the error patterns costing you the most revenue. No obligation. You keep the report whether or not you work with us."
+        ctaLabel="Get a Free Coding Assessment"
         formId="mcAssessmentForm"
         checklist={[
-          "Coding accuracy review across CPT, ICD-10, and HCPCS",
+          "Coding accuracy review across CPT, ICD-10-CM, and HCPCS",
+          "NCCI edit exposure and modifier compliance check",
           "Denial pattern analysis by code and payer",
-          "Modifier and bundling compliance check",
           "You keep the findings either way",
           "HIPAA-compliant — BAA signed before data moves",
           "No setup fee. No long-term contract.",
         ]}
-        formNote="HIPAA-compliant · CPC, CCS & COC certified · All 50 states"
+        formNote="AAPC + AHIMA certified · NCCI compliant · All 50 states"
       />
 
     </main>

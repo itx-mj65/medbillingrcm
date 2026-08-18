@@ -1,17 +1,16 @@
 import "./mc.css";
 
 export const metadata = {
-  title:       "Medical Coding Services: Revenue Cycle Optimization | Medbilling RCM",
-  description: "Expert medical coding services by MedBilling RCM: ICD-10, CPT, HCPCS for claim accuracy & revenue optimization. HIPAA compliant. Contact us.",
+  title:       "Medical Coding Outsourcing Services | Medbilling RCM",
+  description: "Medical coding company offering ICD-10, CPT, and HCPCS coding for physician practices, ASCs, and hospitals. AAPC/AHIMA certified. Free coding assessment.",
   alternates:  { canonical: "https://medbillingrcm.com/services/medical-coding/" },
   openGraph: {
-    title:       "Medical Coding Services - Accurate Coding & RCM Experts",
-    description: "Improve claim accuracy with expert medical coding services including ICD-10, CPT, HCPCS coding, compliance support, and revenue cycle optimization.",
+    title:       "Medical Coding Services | Medical Coding Company | Medbilling RCM",
+    description: "Outsource medical coding to AAPC and AHIMA certified coders. NCCI compliance, specialty-specific coding, 48hr turnaround. Free assessment.",
     url:         "https://medbillingrcm.com/services/medical-coding/",
     siteName:    "Medbilling RCM",
     type:        "article",
   },
-  keywords: "medical coding services, outsourced medical coding, certified medical coders, CPC coders, CCS coders, COC coders, ICD-10 coding, CPT coding, HCPCS coding, revenue cycle management",
 };
 
 const schema = {
@@ -19,43 +18,34 @@ const schema = {
   "@graph": [
     {
       "@type": "Service",
-      "name": "Medical Coding Services",
-      "serviceType": "Medical Coding",
+      "@id": "https://medbillingrcm.com/services/medical-coding/#service",
+      "serviceType": "Medical Coding Services",
       "provider": {
         "@type": "Organization",
-        "@id": "https://medbillingrcm.com/#organization",
         "name": "Medbilling RCM",
         "url": "https://medbillingrcm.com",
-        "telephone": "+18885512526",
-        "email": "info@medbillingrcm.com",
+        "telephone": "+1-888-551-2526",
         "address": [
           { "@type": "PostalAddress", "streetAddress": "8907 Creeks Gate Ct", "addressLocality": "Richmond", "addressRegion": "TX", "postalCode": "77407", "addressCountry": "US" },
           { "@type": "PostalAddress", "streetAddress": "7 1st St", "addressLocality": "Rosedale", "addressRegion": "NY", "postalCode": "11422", "addressCountry": "US" }
         ]
       },
       "areaServed": { "@type": "Country", "name": "United States" },
-      "description": "Expert medical coding services including ICD-10, CPT, HCPCS, DRG, and HCC coding by CPC, CCS, and COC certified coders. HIPAA compliant. All 50 states.",
-      "url": "https://medbillingrcm.com/services/medical-coding/",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Medical Coding Services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ICD-10 Coding" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CPT Coding" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HCPCS Coding" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DRG Coding" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HCC Risk Adjustment Coding" } }
-        ]
-      }
+      "description": "Medical coding outsourcing services including ICD-10-CM, CPT, and HCPCS Level II coding by AAPC and AHIMA certified coders. Specialty coding, NCCI compliance, HCC risk adjustment, and coding audits for physician practices, ASCs, and hospital outpatient departments.",
+      "url": "https://medbillingrcm.com/services/medical-coding/"
     },
     {
       "@type": "FAQPage",
+      "@id": "https://medbillingrcm.com/services/medical-coding/#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "What is the process for outsourcing medical coding services?", "acceptedAnswer": { "@type": "Answer", "text": "Our process begins with a comprehensive needs assessment to understand your practice's unique requirements. Once defined, we assign experienced coders who work closely with your team, providing regular updates and transparent reporting to maintain alignment with your goals." } },
-        { "@type": "Question", "name": "How do you ensure compliance with coding standards?", "acceptedAnswer": { "@type": "Answer", "text": "Our medical coders are certified and regularly trained in ICD-10, CPT, and HCPCS updates. We conduct compliance audits and align with HIPAA, CMS, and OIG guidelines to safeguard your practice against penalties and audit exposure." } },
-        { "@type": "Question", "name": "What specialties do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "We cover a broad spectrum including cardiology, family medicine, radiology, urgent care, OBGYN, orthopaedics, dermatology, internal medicine, and many others. Our team includes specialists for each field, ensuring coding precision for highly specialized medical services." } },
-        { "@type": "Question", "name": "How do you handle claim denials related to coding?", "acceptedAnswer": { "@type": "Answer", "text": "Our denial management approach focuses on root-cause analysis we identify whether the denial was due to a coding error, documentation gap, or payer policy issue. We correct, resubmit, and provide transparent reporting on denial trends to address issues proactively and prevent recurrence." } },
-        { "@type": "Question", "name": "How quickly do you turn around coding after receiving documentation?", "acceptedAnswer": { "@type": "Answer", "text": "Standard turnaround is 24–48 hours from receipt of complete documentation. For high-volume practices, we scale our team to maintain consistent turnaround times. Rush processing is available for time-sensitive claims with same-day coding when needed." } }
+        { "@type": "Question", "name": "What is medical coding outsourcing?", "acceptedAnswer": { "@type": "Answer", "text": "Medical coding outsourcing is the practice of delegating ICD-10, CPT, and HCPCS code assignment to an external team of certified coders rather than handling it in-house. The practice or facility securely transmits clinical documentation to the coding vendor, receives coded records back within an agreed turnaround window, and uses those codes to generate and submit claims. Outsourcing eliminates the overhead of recruiting, training, and retaining in-house coders while maintaining compliance with annual code set updates." } },
+        { "@type": "Question", "name": "How much does it cost to outsource medical coding?", "acceptedAnswer": { "@type": "Answer", "text": "Per-chart pricing typically runs $2.50 to $4.50 for outpatient work and $8.00 to $18.00 for inpatient work. Fully loaded in-house coder costs typically exceed $95,000 per coder annually when salary, benefits, encoder licensing, management, and training are included. For mid-size organizations, outsourcing can reduce total coding costs by 25 to 58 percent." } },
+        { "@type": "Question", "name": "What are the benefits of outsourcing medical coding?", "acceptedAnswer": { "@type": "Answer", "text": "Professional medical coding services provide access to specialty-trained certified coders, eliminate recruitment and retention costs, keep coding current with quarterly NCCI updates and annual code set releases, and convert fixed staffing overhead into predictable per-chart costs. Coding accuracy improves when coders work only within their specialty rather than handling mixed-specialty queues." } },
+        { "@type": "Question", "name": "What certifications should a medical coding company have?", "acceptedAnswer": { "@type": "Answer", "text": "Look for AAPC-certified coders holding CPC credentials for outpatient and physician work, and AHIMA-certified coders holding CCS credentials for inpatient and hospital coding. Coders working in specialty areas should hold the corresponding specialty credential (CRC, CIC, or COC). HIPAA compliance and a signed Business Associate Agreement are non-negotiable baseline requirements." } },
+        { "@type": "Question", "name": "What is the difference between medical coding and medical billing?", "acceptedAnswer": { "@type": "Answer", "text": "Medical coding translates clinical documentation into standardized alphanumeric codes: ICD-10-CM for diagnoses, CPT for procedures, and HCPCS for supplies and certain services. Medical billing uses those codes to construct claims and submit them to payers for reimbursement. Coding errors create billing problems. A wrong code or missing modifier results in a denied claim that the billing team then has to work." } },
+        { "@type": "Question", "name": "What types of medical coding exist?", "acceptedAnswer": { "@type": "Answer", "text": "The three primary code sets are ICD-10-CM, CPT, and HCPCS Level II. Within those, distinct coding disciplines exist: outpatient facility coding (APC/OPPS), inpatient facility coding (MS-DRG/IPPS), professional fee coding (profee), HCC and risk adjustment coding for Medicare Advantage, and specialty-specific coding for radiology, oncology, behavioral health, and surgical specialties." } },
+        { "@type": "Question", "name": "Is outsourcing medical coding HIPAA-compliant?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, when the vendor operates under a signed Business Associate Agreement and maintains HIPAA-compliant data handling protocols including encrypted transmission, role-based access controls, and secure coding environments. A Business Associate Agreement is a legal requirement under HIPAA for any third party that handles protected health information on your behalf." } },
+        { "@type": "Question", "name": "How do I get started?", "acceptedAnswer": { "@type": "Answer", "text": "Request a free coding assessment. We review a sample of your current claims for coding accuracy, modifier compliance, and NCCI edit exposure, then deliver a written report identifying the error patterns costing you the most revenue. No obligation. You keep the report whether or not you work with us." } }
       ]
     }
   ]
