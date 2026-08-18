@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
@@ -27,11 +28,10 @@ export default function MedicalCredentialingPage() {
         ctaAlt="See our process"
         ctaAltHref="#process"
         badge="NCQA · HIPAA · CAQH"
-        heroPlaceholder={{
-          title:  "Hero Image — Credentialing Specialist",
-          spec:   "1536 × 900 px  ·  /public/cred-hero.webp",
-          prompt: "Medical credentialing specialist reviewing provider enrollment documents and payer portal on dual monitors in professional healthcare billing office, CAQH and PECOS forms visible, navy and green tones, photorealistic, no text overlay",
-        }}
+        image="/cred-hero.webp"
+        imageAlt="Medical credentialing specialist reviewing CAQH and PECOS provider enrollment applications on dual monitors with certificate of liability insurance document"
+        imageW={1536}
+        imageH={900}
       />
 
       {/* ═══ COMPLIANCE BADGES ══════════════════════════════ */}
@@ -130,13 +130,15 @@ export default function MedicalCredentialingPage() {
                          and payer enrollment applications on dual computer
                          monitors, professional healthcare billing office,
                          organized workstation, photorealistic" */}
-          <div className="cred-services-img cred-img-placeholder" aria-label="Image placeholder">
-            <div className="cred-ph-inner">
-              <span className="cred-ph-icon">📷</span>
-              <strong>Services Section Image</strong>
-              <span>1100 × 580 px · /public/cred-services.webp</span>
-              <em>AI prompt: "Medical credentialing team reviewing CAQH profiles and payer enrollment applications on dual computer monitors, professional healthcare billing office, organized workstation, photorealistic"</em>
-            </div>
+          <div className="cred-services-img">
+            <Image
+              src="/cred-services.webp"
+              alt="Medical credentialing team reviewing CAQH Provider Profile and payer enrollment applications at dual monitors"
+              width={1100}
+              height={580}
+              loading="lazy"
+              style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}}
+            />
           </div>
 
           <div className="cred-services-grid">

@@ -75,9 +75,8 @@ const SERVICES = [
       title:  "Medical Credentialing",
       body:   "Provider credentialing and payer enrollment kept current. NPI, CAQH, PECOS, and all payer applications managed with re-credentialing dates tracked.",
       stat:   "Zero enrollment gaps — revenue never stops",
-      img:    null,
-      imgAlt: "Medical credentialing specialist reviewing provider enrollment documents",
-      imgPlaceholder: "Credentialing",
+      img:    "/cred-hero.webp",
+      imgAlt: "Medical credentialing specialist reviewing CAQH and PECOS provider enrollment applications",
     },
   },
   {
