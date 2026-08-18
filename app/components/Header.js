@@ -63,9 +63,8 @@ const SERVICES = [
       title:  "Laboratory Billing Services",
       body:   "Lab billing for clinical labs, pathology, molecular diagnostics, and toxicology. PAMA-compliant with 48hr denial turnaround across 1,000+ payers.",
       stat:   "48hr denial turnaround · PAMA compliant",
-      img:    null,
-      imgAlt: "Laboratory technician reviewing diagnostic samples",
-      imgPlaceholder: "Laboratory Billing",
+      img:    "/lab-hero.webp",
+      imgAlt: "Laboratory technician reviewing diagnostic samples with centrifuge and microscope",
     },
   },
   {

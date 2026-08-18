@@ -134,7 +134,9 @@
 
 /* ─── SCOPE IMAGE PLACEHOLDER ────────────────────────────── */
 .lab-scope-img {
-  height: clamp(200px, 24vw, 340px); margin: 2rem 0;
+  height: clamp(260px, 28vw, 400px); margin: 2rem 0;
+  border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: 0 8px 32px rgba(26,33,79,.12);
 }
 
 /* ─── IMAGE PLACEHOLDER BASE ─────────────────────────────── */
@@ -151,9 +153,8 @@
 .lab-ph-inner span   { font-size: var(--fs-sm); color: var(--color-accent); font-family: monospace; background: rgba(26,33,79,.06); padding: 3px 10px; border-radius: 4px; }
 .lab-ph-inner em     { font-size: var(--fs-sm); color: var(--color-muted); line-height: 1.55; }
 .lab-ph-icon         { font-size: 2rem; }
-/* Horizontal layout for closing banner */
-.lab-ph-inner--horiz { flex-direction: row; align-items: center; gap: 20px; max-width: 100%; text-align: left; }
-.lab-closing-placeholder { height: clamp(100px,14vw,200px); }
+.lab-closing-banner { height: clamp(240px, 22vw, 380px); overflow: hidden; }
+.lab-closing-banner img { display: block; }
 
 /* ─── SCOPE CARDS ────────────────────────────────────────── */
 .lab-scope-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 2rem; }

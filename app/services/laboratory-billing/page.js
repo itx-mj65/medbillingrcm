@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
@@ -28,11 +29,10 @@ export default function LaboratoryBillingPage() {
         ctaAlt="See what we cover"
         ctaAltHref="#scope"
         badge="PAMA · CLIA · HIPAA"
-        heroPlaceholder={{
-          title:  "Hero Image — Clinical Laboratory",
-          spec:   "1536 × 900 px  ·  /public/lab-hero.webp",
-          prompt: "Clinical laboratory technician in modern lab reviewing diagnostic samples, centrifuge and microscope visible, professional healthcare setting, navy and green tones, photorealistic, no text overlay, wide format",
-        }}
+        image="/lab-hero.webp"
+        imageAlt="Laboratory technician reviewing diagnostic samples with centrifuge and microscope in modern clinical laboratory"
+        imageW={1536}
+        imageH={900}
       />
 
       {/* ═══ PROOF STRIP ════════════════════════════════════ */}
@@ -132,13 +132,8 @@ export default function LaboratoryBillingPage() {
                          claim reports and CPT coding documentation
                          on dual monitors, professional office setting,
                          healthcare RCM environment, photorealistic" */}
-          <div className="lab-scope-img lab-img-placeholder" aria-label="Image placeholder: Lab billing scope">
-            <div className="lab-ph-inner">
-              <div className="lab-ph-icon">📷</div>
-              <strong>Lab Billing Scope Image</strong>
-              <span>1100 × 600 px · /public/lab-scope.webp</span>
-              <em>AI prompt: "Medical billing team reviewing laboratory claim reports and CPT coding documentation on dual monitors, professional office setting, healthcare RCM environment, photorealistic"</em>
-            </div>
+          <div className="lab-scope-img">
+            <Image src="/lab-scope.webp" alt="Medical billing team reviewing laboratory CPT coding documentation and claim reports on dual monitors" width={1100} height={600} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top"}} />
           </div>
 
           <p>We are a lab billing company built for that reality. Our laboratory billing services cover the full revenue cycle for clinical labs, hospital outreach, reference labs, molecular diagnostics, toxicology, and pathology practices. Coding, claim submission, denial management, PAMA compliance, and CLFS reporting, handled by a team that does lab billing exclusively.</p>
@@ -243,15 +238,8 @@ export default function LaboratoryBillingPage() {
                      department, organized workstations, medical equipment,
                      sterile professional environment, navy and green
                      color palette, photorealistic, no text overlay" */}
-      <div className="lab-closing-placeholder lab-img-placeholder" aria-label="Image placeholder: Lab closing banner">
-        <div className="lab-ph-inner lab-ph-inner--horiz">
-          <div className="lab-ph-icon">📷</div>
-          <div>
-            <strong>Closing Banner Image</strong>
-            <span>1536 × 480 px · /public/lab-closing.webp</span>
-            <em>AI prompt: "Wide panoramic shot of modern clinical laboratory department, organized workstations, medical equipment, sterile professional environment, navy and green color palette, photorealistic, no text overlay"</em>
-          </div>
-        </div>
+      <div className="lab-closing-banner">
+        <Image src="/lab-closing.webp" alt="Modern clinical laboratory department with organized workstations and medical equipment" width={1536} height={480} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 40%"}} />
       </div>
 
       {/* ═══ FAQ ═════════════════════════════════════════════ */}
