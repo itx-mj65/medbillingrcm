@@ -1,0 +1,208 @@
+/* ═══════════════════════════════════════════════════════════
+   HEALTHCARE FTE OUTSOURCING — scoped under .fte-page
+   Design: numbers as visual anchors, stat-forward
+═══════════════════════════════════════════════════════════ */
+
+.fte-page { font-family: var(--font-body); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--color-ink); }
+
+/* ─── SECTIONS ───────────────────────────────────────────── */
+.fte-sec { padding: var(--sec-desktop) 0; }
+.fte-sec--white { background: #fff; }
+.fte-sec--ivory { background: var(--color-ivory); }
+.fte-sec--navy  { background: var(--color-navy-deep); color: var(--text-on-dark); }
+.fte-wrap { width: min(calc(100% - 48px), 1180px); margin: 0 auto; }
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+.fte-page h2 { font-family: var(--font-heading); font-size: var(--fs-h2); font-weight: 700; line-height: var(--lh-subhead); letter-spacing: var(--ls-heading); color: var(--color-primary); margin: 0 0 24px; max-width: 860px; text-wrap: balance; }
+.fte-sec--navy h2 { color: var(--text-on-dark); }
+.fte-page h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; line-height: var(--lh-h3); color: var(--color-primary); margin: 0 0 10px; }
+.fte-sec--navy h3 { color: var(--text-on-dark); }
+.fte-page p { font-size: var(--fs-body); line-height: var(--lh-body); margin: 0 0 16px; max-width: 72ch; }
+.fte-sec--navy p { color: var(--text-on-dark-sub); max-width: 100%; }
+.fte-sec-intro { font-size: var(--fs-body); color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.fte-page a { color: var(--color-action); font-weight: 700; }
+.fte-sec--navy a { color: rgba(255,255,255,.75); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ─── EYEBROW ────────────────────────────────────────────── */
+.fte-ew { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 800; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--color-action); }
+.fte-ew::before { content: ''; flex-shrink: 0; width: 36px; border-top: 2px solid var(--color-accent); }
+.fte-ew--gold { color: var(--color-accent); }
+.fte-ew--gold::before { border-color: var(--color-accent); }
+
+/* ─── SECOND HERO PARAGRAPH ──────────────────────────────── */
+.fte-hero-sub { background: var(--color-navy-deep); border-top: 1px solid rgba(255,255,255,.08); }
+.fte-hero-sub-inner { width: min(calc(100% - 48px),1180px); margin: 0 auto; padding: 20px 0 24px; }
+.fte-hero-sub-inner p { font-size: var(--fs-lead); font-weight: 500; color: rgba(255,255,255,.75); line-height: var(--lh-lead); max-width: 72ch; margin: 0; font-style: italic; }
+
+/* ─── COMPLIANCE BADGES ──────────────────────────────────── */
+.fte-badges-bar { background: var(--color-primary); border-bottom: 1px solid rgba(255,255,255,.08); padding: 14px 0; }
+.fte-badges-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; width: min(calc(100% - 48px),1180px); margin: 0 auto; }
+.fte-badges-label { font-family: var(--font-body); font-size: var(--fs-2xs); font-weight: 800; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: rgba(255,255,255,.4); flex-shrink: 0; }
+.fte-badges-div { width: 1px; height: 20px; background: rgba(255,255,255,.18); flex-shrink: 0; }
+.fte-badge { display: flex; align-items: center; gap: 8px; font-size: var(--fs-sm); font-weight: 600; color: rgba(255,255,255,.88); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-card); padding: 7px 16px; }
+
+/* ─── 34% STAT CALLOUT ───────────────────────────────────── */
+.fte-stat-callout { display: flex; align-items: center; gap: 28px; background: var(--color-ivory); border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 28px 32px; margin: 2rem 0; border-left: 6px solid var(--color-secondary); }
+.fte-stat-callout-num { font-family: var(--font-heading); font-size: clamp(3rem,6vw,5rem); font-weight: 800; color: var(--color-primary); line-height: .85; letter-spacing: var(--ls-heading); flex-shrink: 0; }
+.fte-stat-callout-num span { font-size: 55%; color: var(--color-secondary); margin-left: 2px; }
+.fte-stat-callout-lbl { font-size: var(--fs-body); font-weight: 600; color: var(--color-ink); line-height: 1.4; margin-bottom: 6px; }
+.fte-stat-callout-src { font-size: var(--fs-xs); color: var(--color-muted); }
+.fte-stat-callout-src a { color: var(--color-action); font-weight: 700; }
+
+/* ─── COMPARISON TABLE ───────────────────────────────────── */
+.fte-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-card); box-shadow: 0 4px 24px rgba(26,33,79,.1); margin: 2rem 0; width: 100%; }
+.fte-table { width: 100%; border-collapse: collapse; min-width: 680px; }
+.fte-table thead { background: var(--color-primary); color: #fff; }
+.fte-table thead th { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: 600; text-align: left; padding: 14px 16px; }
+.fte-table thead th:first-child { border-radius: var(--radius-card) 0 0 0; }
+.fte-th-highlight { background: var(--color-secondary) !important; color: #fff; }
+.fte-table tbody tr { border-bottom: 1px solid rgba(26,33,79,.06); }
+.fte-table tbody tr:last-child { border-bottom: none; }
+.fte-table tbody tr:nth-child(odd) { background: #fff; }
+.fte-table tbody tr:nth-child(even) { background: var(--color-ivory); }
+.fte-table td { padding: 12px 16px; font-size: var(--fs-sm); color: var(--color-ink); vertical-align: top; }
+.fte-table td:first-child { font-weight: 700; color: var(--color-primary); }
+.fte-td-highlight { background: rgba(82,133,50,.06) !important; font-weight: 600; color: var(--color-action) !important; border-left: 2px solid var(--color-secondary); }
+.fte-td-highlight strong { color: var(--color-secondary); }
+.fte-table td a { color: var(--color-action); font-weight: 700; }
+
+/* Table note */
+.fte-table-note { display: flex; align-items: flex-start; gap: 14px; background: rgba(212,155,40,.06); border: 1px solid rgba(212,155,40,.18); border-radius: var(--radius-card); padding: 20px 24px; }
+.fte-table-note svg { flex-shrink: 0; color: var(--color-accent); margin-top: 2px; }
+.fte-table-note p { font-size: var(--fs-body); color: var(--color-ink); font-style: italic; line-height: var(--lh-lead); max-width: none; margin: 0; }
+.fte-table-note a { color: var(--color-action); font-weight: 700; }
+
+/* ─── IMAGE PLACEHOLDER ──────────────────────────────────── */
+.fte-img-placeholder { border: 2px dashed var(--color-accent); border-radius: var(--radius-card); background: rgba(212,155,40,.04); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.fte-ph-inner { display: flex; flex-direction: column; align-items: center; gap: 8px; max-width: 480px; text-align: center; }
+.fte-ph-icon { font-size: 2rem; }
+.fte-ph-inner strong { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); }
+.fte-ph-inner span { font-size: var(--fs-sm); color: var(--color-accent); font-family: monospace; background: rgba(26,33,79,.06); padding: 3px 10px; border-radius: 4px; }
+.fte-ph-inner em   { font-size: var(--fs-sm); color: var(--color-muted); line-height: 1.55; }
+.fte-services-img { height: clamp(200px,22vw,320px); margin: 2rem 0; }
+
+/* ─── THREE PILLARS ──────────────────────────────────────── */
+.fte-pillars { display: flex; flex-direction: column; gap: 2px; background: var(--color-line); border-radius: var(--radius-card); overflow: hidden; margin-top: 2rem; }
+.fte-pillar { background: #fff; }
+.fte-pillar-head { display: flex; align-items: center; gap: 14px; padding: 22px 28px; background: var(--color-primary); cursor: default; }
+.fte-pillar-icon { font-size: 1.5rem; flex-shrink: 0; }
+.fte-pillar-head h3 { font-size: var(--fs-h3); font-weight: 700; color: #fff; margin: 0; }
+.fte-pillar-items { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--color-line); }
+.fte-pillar-item { background: #fff; padding: 24px 28px; transition: background .18s; }
+.fte-pillar-item:hover { background: var(--color-ivory); }
+.fte-pillar-title { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+.fte-pillar-item p { font-size: var(--fs-sm); color: var(--color-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+.fte-pillar-item a { color: var(--color-action); font-weight: 700; }
+
+/* ─── COST COMPARISON ────────────────────────────────────── */
+.fte-cost-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 4px 24px rgba(26,33,79,.1); margin: 2rem 0; }
+.fte-cost-col { padding: 36px 32px; }
+.fte-cost-col--left  { background: var(--color-ivory); border-right: 1px solid var(--color-line); }
+.fte-cost-col--right { background: var(--color-primary); }
+.fte-cost-marker { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: 800; text-transform: uppercase; letter-spacing: var(--ls-eyebrow); margin-bottom: 20px; color: var(--color-muted); }
+.fte-cost-col--right .fte-cost-marker { color: var(--color-accent); }
+.fte-cost-rows { display: flex; flex-direction: column; gap: 2px; }
+.fte-cost-row { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; background: rgba(255,255,255,.5); border-radius: 8px; }
+.fte-cost-col--right .fte-cost-row { background: rgba(255,255,255,.06); }
+.fte-cost-row--highlight { background: rgba(26,33,79,.06) !important; border-left: 3px solid var(--color-accent); }
+.fte-cost-col--right .fte-cost-row--highlight { background: rgba(212,155,40,.12) !important; }
+.fte-cost-num { font-family: var(--font-heading); font-size: clamp(1.1rem,2vw,1.5rem); font-weight: 800; color: var(--color-primary); line-height: 1; letter-spacing: -.02em; }
+.fte-cost-col--right .fte-cost-num { color: var(--color-accent); }
+.fte-cost-lbl { font-size: var(--fs-xs); color: var(--color-muted); line-height: 1.45; }
+.fte-cost-lbl a { color: var(--color-action); font-weight: 700; }
+.fte-cost-col--right .fte-cost-lbl { color: rgba(255,255,255,.5); }
+.fte-cost-col--right .fte-cost-lbl a { color: rgba(255,255,255,.65); }
+.fte-cost-note { display: flex; align-items: flex-start; gap: 14px; background: rgba(212,155,40,.06); border: 1px solid rgba(212,155,40,.18); border-radius: var(--radius-card); padding: 20px 24px; }
+.fte-cost-note svg { flex-shrink: 0; color: var(--color-accent); margin-top: 2px; }
+.fte-cost-note p { font-size: var(--fs-body); color: var(--color-ink); font-style: italic; line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── SECURITY CARDS ─────────────────────────────────────── */
+.fte-security-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.06); border-radius: var(--radius-card); overflow: hidden; margin-top: 2rem; }
+.fte-security-card { background: rgba(255,255,255,.06); padding: 28px; display: flex; flex-direction: column; gap: 10px; transition: background .2s; }
+.fte-security-card:hover { background: rgba(255,255,255,.1); }
+.fte-security-icon { font-size: 1.75rem; }
+.fte-security-card h3 { font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; }
+.fte-security-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── EHR GROUPS ─────────────────────────────────────────── */
+.fte-ehr-groups { display: flex; flex-direction: column; gap: 20px; margin-top: 2rem; }
+.fte-ehr-group-label { font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 10px; }
+.fte-ehr-strip { display: flex; flex-wrap: wrap; gap: 8px; }
+.fte-ehr-tag { padding: 8px 18px; border-radius: var(--radius-pill); background: rgba(26,33,79,.06); border: 1px solid var(--color-line); font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 600; color: var(--color-primary); }
+.fte-ehr-note { margin-top: 1.5rem; padding: 20px 24px; background: rgba(26,33,79,.04); border-left: 4px solid var(--color-secondary); border-radius: 0 var(--radius-card) var(--radius-card) 0; }
+.fte-ehr-note p { font-size: var(--fs-body); color: var(--color-ink); line-height: var(--lh-lead); max-width: none; margin: 0; }
+.fte-ehr-cta { margin-top: 2rem; }
+
+/* ─── 4-STEP PROCESS ─────────────────────────────────────── */
+.fte-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.fte-step { display: grid; grid-template-columns: 96px 1fr; gap: 0; align-items: start; }
+.fte-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
+.fte-step-num { font-family: var(--font-heading); font-size: clamp(2.5rem,4vw,3.5rem); font-weight: 800; color: var(--color-accent); line-height: .9; letter-spacing: var(--ls-heading); text-align: center; width: 80px; }
+.fte-step-connector { flex: 1; width: 2px; background: rgba(255,255,255,.12); min-height: 40px; margin: 12px 0; }
+.fte-step-body { background: rgba(255,255,255,.06); border-radius: var(--radius-card); padding: 28px 32px; margin: 0 0 8px 16px; transition: background .2s; }
+.fte-step:hover .fte-step-body { background: rgba(255,255,255,.1); }
+.fte-step-body h3 { font-size: var(--fs-h3); color: var(--text-on-dark); margin-bottom: 12px; }
+.fte-step-body p  { color: var(--text-on-dark-sub); font-size: var(--fs-body); max-width: none; margin: 0; }
+.fte-step-body a  { color: rgba(255,255,255,.75); }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.fte-faq-layout { display: grid; grid-template-columns: .62fr 1.38fr; gap: 64px; margin-top: 2rem; }
+.fte-faq-intro  { position: sticky; top: 110px; }
+.fte-faq-intro p { color: var(--color-muted); }
+.fte-faq-list details { border-bottom: 1px solid var(--color-line); }
+.fte-faq-list summary { list-style: none; position: relative; padding: 20px 52px 20px 0; cursor: pointer; font-family: var(--font-heading); font-weight: 600; font-size: var(--fs-body); color: var(--color-primary); transition: color .2s; }
+.fte-faq-list summary::-webkit-details-marker { display: none; }
+.fte-faq-list summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
+.fte-faq-list details[open] summary::after { content: '−'; }
+.fte-faq-list details[open] summary { color: var(--color-action); }
+.fte-faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); max-width: none; }
+
+/* ─── CLOSING BAND ───────────────────────────────────────── */
+.fte-closing-band { background: var(--color-navy-deep); padding: var(--sec-desktop) 0; }
+.fte-closing-inner { width: min(calc(100% - 48px),1180px); margin: 0 auto; display: grid; grid-template-columns: 1.3fr .7fr; gap: 3rem; align-items: center; }
+.fte-closing-inner h2 { color: var(--text-on-dark); max-width: none; margin-bottom: 12px; }
+.fte-closing-inner p  { color: var(--text-on-dark-muted); max-width: none; }
+.fte-closing-inner a  { color: rgba(255,255,255,.75); font-weight: 700; }
+.fte-closing-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.fte-closing-note { font-size: var(--fs-sm); color: var(--text-on-dark-muted); margin: 0; }
+
+/* ─── REVEAL ─────────────────────────────────────────────── */
+body.js-ready .fte-page .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s cubic-bezier(.2,.8,.2,1), transform .65s cubic-bezier(.2,.8,.2,1); }
+.fte-page .reveal.in { opacity: 1 !important; transform: none !important; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .fte-pillar-items    { grid-template-columns: 1fr; }
+  .fte-cost-compare    { grid-template-columns: 1fr; }
+  .fte-cost-col--left  { border-right: none; border-bottom: 1px solid var(--color-line); }
+  .fte-security-grid   { grid-template-columns: 1fr 1fr; }
+  .fte-faq-layout      { grid-template-columns: 1fr; gap: 2rem; }
+  .fte-faq-intro       { position: static; }
+  .fte-closing-inner   { grid-template-columns: 1fr; }
+  .fte-step            { grid-template-columns: 72px 1fr; }
+  .fte-stat-callout    { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (max-width: 900px) {
+  .fte-sec             { padding: var(--sec-tablet) 0; }
+  .fte-security-grid   { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .fte-security-grid   { grid-template-columns: 1fr; }
+  .fte-pillar-items    { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .fte-sec             { padding: var(--sec-mobile) 0; }
+  .fte-step            { grid-template-columns: 1fr; }
+  .fte-step-aside      { flex-direction: row; align-items: center; gap: 12px; padding-top: 0; margin-bottom: 8px; }
+  .fte-step-connector  { display: none; }
+  .fte-step-body       { margin-left: 0; }
+  .fte-cost-col        { padding: 24px 20px; }
+  .fte-badges-div      { display: none; }
+  .fte-faq-list summary { padding-right: 36px; font-size: var(--fs-sm); }
+  .fte-security-grid   { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.js-ready .fte-page .reveal { opacity: 1; transform: none; transition: none; }
+}

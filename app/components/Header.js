@@ -104,6 +104,18 @@ const SERVICES = [
       imgPlaceholder: "ASC Billing",
     },
   },
+  {
+    label: "FTE Outsourcing",
+    href:  "/services/healthcare-fte-outsourcing/",
+    preview: {
+      title:  "Healthcare FTE Outsourcing",
+      body:   "Dedicated virtual staff deployed inside your EHR in 5–10 business days. Billing, coding, prior auth, VMAs, scribes, and front-office. HIPAA + BAA compliant.",
+      stat:   "5–10 day deployment — no ramp-up, no overhead",
+      img:    null,
+      imgAlt: "Dedicated healthcare virtual staff member at professional medical billing workstation",
+      imgPlaceholder: "FTE Outsourcing",
+    },
+  },
 ];
 
 const SPECIALTIES = [
