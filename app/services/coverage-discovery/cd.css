@@ -173,7 +173,7 @@
 .cd-img-placeholder--navy .cd-ph-inner em { color: rgba(255,255,255,.4); }
 .cd-problem-img { height: clamp(200px, 26vw, 340px); margin: 2rem 0 0; }
 .cd-process-img { height: clamp(180px, 22vw, 280px); margin: 2rem 0 0; }
-.cd-connected-img { min-height: 280px; }
+.cd-connected-img { min-height: 320px; border-radius: var(--radius-card); overflow: hidden; box-shadow: -10px 10px 0 var(--color-accent); }
 
 /* ─── SIX GAPS ───────────────────────────────────────────── */
 .cd-gaps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--color-line); border-radius: var(--radius-card); overflow: hidden; margin-top: 2rem; }

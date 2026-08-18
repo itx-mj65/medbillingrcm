@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
@@ -23,11 +24,10 @@ export default function CoverageDiscoveryPage() {
         ctaAlt="See how it works"
         ctaAltHref="#how-it-works"
         badge="1,000+ Payers · HIPAA"
-        heroPlaceholder={{
-          title:  "Hero Image — Coverage Discovery",
-          spec:   "1536 × 900 px  ·  /public/cd-hero.webp",
-          prompt: "Insurance eligibility specialist at dual computer monitors in modern medical billing office, payer database search results visible on screen, professional healthcare RCM environment, navy and green tones, photorealistic, no text overlay, wide format",
-        }}
+        image="/cd-hero.webp"
+        imageAlt="Insurance eligibility specialist reviewing eligibility results and payer database on dual monitors in healthcare billing office"
+        imageW={1536}
+        imageH={900}
       />
 
       {/* ═══ PROOF STRIP ════════════════════════════════════ */}
@@ -72,13 +72,8 @@ export default function CoverageDiscoveryPage() {
               AI prompt: "Hospital administrator reviewing uncompensated care
               financial report at desk, self-pay account dashboard visible,
               executive healthcare setting, professional attire, photorealistic" */}
-          <div className="cd-problem-img cd-img-placeholder" aria-label="Image placeholder">
-            <div className="cd-ph-inner">
-              <span className="cd-ph-icon">📷</span>
-              <strong>Problem Section Image</strong>
-              <span>1100 × 580 px · /public/cd-problem.webp</span>
-              <em>AI prompt: "Hospital administrator reviewing uncompensated care financial report at desk, self-pay account dashboard visible, executive healthcare setting, professional attire, photorealistic"</em>
-            </div>
+          <div className="cd-problem-img">
+            <Image src="/cd-problem.webp" alt="Hospital administrator reviewing uncompensated care financial report with self-pay accounts dashboard visible on screen" width={1100} height={580} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%"}} />
           </div>
         </div>
       </section>
@@ -158,13 +153,8 @@ export default function CoverageDiscoveryPage() {
               AI prompt: "Medical billing team working through patient eligibility
               verification workflow, multiple stages visible, professional
               healthcare office, navy and green color palette, photorealistic" */}
-          <div className="cd-process-img cd-img-placeholder cd-img-placeholder--navy" aria-label="Image placeholder">
-            <div className="cd-ph-inner">
-              <span className="cd-ph-icon">📷</span>
-              <strong>Process Workflow Image</strong>
-              <span>1200 × 600 px · /public/cd-process.webp</span>
-              <em>AI prompt: "Medical billing team working through patient eligibility verification workflow, multiple stages visible, professional healthcare office, navy and green color palette, photorealistic"</em>
-            </div>
+          <div className="cd-process-img">
+            <Image src="/cd-process.webp" alt="Medical billing team working through patient eligibility verification workflow at Medbilling RCM office" width={1200} height={600} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}} />
           </div>
         </div>
       </section>
@@ -237,13 +227,8 @@ export default function CoverageDiscoveryPage() {
                 AI prompt: "Medical billing software integration dashboard on
                 computer screen, EHR and payer database connections visible,
                 clean professional interface, healthcare technology, photorealistic" */}
-            <div className="cd-connected-img cd-img-placeholder" aria-label="Image placeholder">
-              <div className="cd-ph-inner">
-                <span className="cd-ph-icon">📷</span>
-                <strong>Integration Image</strong>
-                <span>640 × 720 px · /public/cd-integration.webp</span>
-                <em>AI prompt: "Medical billing software integration dashboard on computer screen, EHR and payer database connections visible, clean professional interface, healthcare technology, photorealistic"</em>
-              </div>
+            <div className="cd-connected-img">
+              <Image src="/cd-integration.webp" alt="Medbilling RCM integration dashboard showing EHR system and payer database connections on computer screen" width={640} height={720} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",borderRadius:"var(--radius-card)"}} />
             </div>
           </div>
         </div>

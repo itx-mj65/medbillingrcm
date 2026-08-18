@@ -88,9 +88,8 @@ const SERVICES = [
       title:  "Coverage Discovery",
       body:   "Insurance verification and eligibility checks before the visit. We surface hidden coverage so claims are submitted correctly the first time.",
       stat:   "Catch coverage gaps before they become denials",
-      img:    null,
-      imgAlt: "Insurance verification specialist reviewing patient eligibility",
-      imgPlaceholder: "Coverage Discovery",
+      img:    "/cd-hero.webp",
+      imgAlt: "Insurance eligibility specialist reviewing payer database results on dual monitors",
     },
   },
   {
