@@ -309,7 +309,7 @@ export default function HealthcareFTEPage() {
         <div className="fte-wrap">
           <p className="reveal fte-ew fte-ew--gold">Enterprise-grade security and HIPAA compliance</p>
           <h2 className="reveal">Enterprise-grade security and HIPAA compliance</h2>
-          <p className="fte-sec-intro">Healthcare administrative outsourcing requires a higher compliance standard than generic BPO. Every Medbilling RCM engagement operates under:</p>
+          <p className="reveal fte-sec-intro">Healthcare administrative outsourcing requires a higher compliance standard than generic BPO. Every Medbilling RCM engagement operates under:</p>
 
           <div className="fte-security-grid">
             {[
@@ -354,7 +354,7 @@ export default function HealthcareFTEPage() {
             <p>Staff arrive pre-vetted and trained on your platform. Healthcare staffing outsourcing through the FTE model means your team member already knows Epic, eClinicalWorks, or whatever system you run on day one. Healthcare staffing outsourcing eliminates the 4 to 8 week training ramp that in-house hires require on unfamiliar platforms. No lengthy onboarding. No generic learning curves.</p>
           </div>
           <div className="fte-ehr-cta">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
           </div>
         </div>
       </section>
@@ -429,7 +429,7 @@ export default function HealthcareFTEPage() {
                 ["What happens if an FTE takes leave or leaves the role?","We provide a zero-downtime replacement guarantee. In the event of scheduled leave or unexpected absence, a cross-trained backup specialist steps in under supervisor guidance. If a staff member leaves the role permanently, a replacement is placed and onboarded without workflow disruption or additional recruiting cost to the practice."],
                 ["How do I get started?","Request a free revenue assessment. We review your current staffing structure, workflow bottlenecks, volume requirements, and EHR environment, then deliver a written staffing recommendation with projected cost savings. No obligation. You keep the analysis whether or not you work with us."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>
@@ -448,7 +448,7 @@ export default function HealthcareFTEPage() {
             <p><a href="https://kevinmd.com/2026/04/administrative-burden-is-driving-severe-physician-burnout" target="_blank" rel="noopener">62% of physicians report burnout, with administrative burden consistently ranking as the top cause (Medscape 2025)</a>. The answer is not hiring more in-house staff. Healthcare outsourcing services built around the dedicated FTE model solve the capacity problem without the overhead, turnover, and ramp-up time of traditional hiring. The gap is not motivation. It is capacity. We see it in every engagement. A practice running the right number of trained people on the right tasks collects more, burns out less, and scales without rebuilding the same infrastructure every time a staff member leaves.</p>
           </div>
           <div className="fte-closing-actions">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
             <p className="fte-closing-note">5–10 day deployment · HIPAA + BAA compliant · All 50 states</p>
           </div>
         </div>

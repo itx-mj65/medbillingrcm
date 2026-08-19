@@ -122,7 +122,7 @@ export default function SpecialtiesIndexPage() {
             ].map(({ num, lbl }) => (
               <div key={lbl} className="specs-hero-stat">
                 <div className="specs-hero-stat-num">{num}</div>
-                <div className="specs-hero-stat-lbl">{lbl}</div>
+                <div className="reveal specs-hero-stat-lbl">{lbl}</div>
               </div>
             ))}
           </div>
@@ -133,7 +133,7 @@ export default function SpecialtiesIndexPage() {
       <div className="specs-intro-strip">
         <div className="specs-wrap">
           <h2 className="reveal specs-section-h2">Medical Billing Specialties</h2>
-          <p className="specs-section-sub">The best qualities of services for a Medical Billing Department include accuracy and efficiency in managing claims and reimbursements. Additionally, providing excellent customer support and maintaining compliance with healthcare regulations are essential for smooth operations and financial success.</p>
+          <p className="reveal specs-section-sub">The best qualities of services for a Medical Billing Department include accuracy and efficiency in managing claims and reimbursements. Additionally, providing excellent customer support and maintaining compliance with healthcare regulations are essential for smooth operations and financial success.</p>
         </div>
       </div>
 
@@ -147,16 +147,16 @@ export default function SpecialtiesIndexPage() {
               <Link
                 key={slug}
                 href={`/specialties/${slug}/`}
-                className="specs-live-card"
+                className="reveal specs-live-card"
                 aria-label={`${label} billing services`}
               >
-                <div className="specs-live-card-top">
+                <div className="reveal specs-live-card-top">
                   <div className="specs-live-icon" aria-hidden="true">{icon}</div>
                   <span className="specs-live-badge">{badge}</span>
                 </div>
                 <h3 className="reveal">{label} Billing Services</h3>
                 <p>{desc}</p>
-                <div className="specs-live-cta">
+                <div className="reveal specs-live-cta">
                   Explore services <span aria-hidden="true">→</span>
                 </div>
               </Link>
@@ -170,7 +170,7 @@ export default function SpecialtiesIndexPage() {
         <div className="specs-wrap">
           <p className="reveal specs-ew">All Specialties We Serve</p>
           <h2 className="reveal specs-section-h2">50+ Medical Billing Specialties</h2>
-          <p className="specs-section-sub">Every specialty below receives the same AAPC-certified coding, payer-specific billing rules, and denial management. Full pages are being built — get in touch for any specialty.</p>
+          <p className="reveal specs-section-sub">Every specialty below receives the same AAPC-certified coding, payer-specific billing rules, and denial management. Full pages are being built — get in touch for any specialty.</p>
 
           <div className="specs-all-grid">
             {SPECIALTIES.map(({ slug, label, icon, badge, desc, status }) => {
@@ -181,7 +181,7 @@ export default function SpecialtiesIndexPage() {
                     <span className="specs-all-icon" aria-hidden="true">{icon}</span>
                     {isLive && <span className="specs-all-live-dot" aria-label="Page available" />}
                   </div>
-                  <div className="specs-all-label">{label}</div>
+                  <div className="reveal specs-all-label">{label}</div>
                   <div className="specs-all-badge">{badge}</div>
                 </div>
               );

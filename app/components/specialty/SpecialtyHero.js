@@ -30,12 +30,12 @@ export default function SpecialtyHero({
 
         {/* Left content column */}
         <div className="sp-hero-copy">
-          {badge && <div className="sp-hero-badge">{badge}</div>}
-          <p className="sp-hero-ew">{eyebrow}</p>
-          <h1 className="sp-hero-h1">{heading}</h1>
-          <p className="sp-hero-intro">{intro}</p>
+          {badge && <div className="sp-hero-badge reveal">{badge}</div>}
+          <p className="sp-hero-ew reveal">{eyebrow}</p>
+          <h1 className="sp-hero-h1 reveal">{heading}</h1>
+          <p className="sp-hero-intro reveal">{intro}</p>
 
-          <div className="sp-hero-actions">
+          <div className="sp-hero-actions reveal">
             <Link href={ctaHref} className="sp-btn sp-btn--primary">{cta}</Link>
             <a href={phone} className="sp-btn sp-btn--ghost">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -51,7 +51,7 @@ export default function SpecialtyHero({
         {stats.length > 0 && (
           <div className="sp-hero-stats" aria-label="Key performance metrics">
             {stats.map(({ num, label }) => (
-              <div className="sp-hero-stat" key={label}>
+              <div className="sp-hero-stat reveal" key={label}>
                 <div className="sp-hero-stat-num">{num}</div>
                 <div className="sp-hero-stat-lbl">{label}</div>
               </div>

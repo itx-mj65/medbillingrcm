@@ -60,7 +60,7 @@ export default function Faq() {
         </div>
         <div className="reveal">
           {faqs.map((faq, i) => (
-            <details key={i}>
+            <details className="reveal" key={i}>
               <summary>{faq.q}</summary>
               <p>{faq.a}</p>
             </details>

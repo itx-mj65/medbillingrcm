@@ -35,12 +35,12 @@ export default function HospitalBillingPage() {
           <div className="h-stat-row">
             <div className="reveal h-stat-block">
               <div className="h-stat-num">86<span>%</span></div>
-              <div className="h-stat-lbl">of initial denials are avoidable</div>
+              <div className="reveal h-stat-lbl">of initial denials are avoidable</div>
               <div className="h-stat-src"><a href="https://www.mgma.com/data/benchmarking-data/revenue-cycle-denials-benchmarking-report" target="_blank" rel="noopener">Change Healthcare Denials Index via MGMA</a></div>
             </div>
             <div className="reveal h-stat-block h-stat-block--accent">
               <div className="h-stat-num">17<span>%</span></div>
-              <div className="h-stat-lbl">Medicare Advantage initial denial rate on first submission</div>
+              <div className="reveal h-stat-lbl">Medicare Advantage initial denial rate on first submission</div>
               <div className="h-stat-src"><a href="https://www.healthaffairs.org/doi/10.1377/hlthaff.2024.01485" target="_blank" rel="noopener">Health Affairs, 2024</a></div>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function HospitalBillingPage() {
         <div className="h-wrap">
           <p className="reveal h-ew h-ew--gold">How we hold a hospital's revenue cycle together</p>
           <h2 className="reveal">How we hold a hospital's revenue cycle together</h2>
-          <p className="h-sec-intro">Every hospital account runs inside our Revenue Control Framework, the five-phase method behind every Medbilling RCM engagement, from the opening revenue audit through to monthly revenue intelligence. On the hospital side, our hospital revenue cycle management work falls into three stages, each built to catch revenue before it leaks rather than chase it after.</p>
+          <p className="reveal h-sec-intro">Every hospital account runs inside our Revenue Control Framework, the five-phase method behind every Medbilling RCM engagement, from the opening revenue audit through to monthly revenue intelligence. On the hospital side, our hospital revenue cycle management work falls into three stages, each built to catch revenue before it leaks rather than chase it after.</p>
 
           <div className="h-stages">
             <div className="h-stage reveal">
@@ -289,7 +289,7 @@ export default function HospitalBillingPage() {
             <h2 className="reveal">See where your hospital revenue is leaking</h2>
             <p>The revenue assessment is free, and it is specific. We look at your denials, your aged AR, and your DRG mix, and we show you where the money is going.</p>
           </div>
-          <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
+          <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
         </div>
       </div>
 
@@ -370,7 +370,7 @@ export default function HospitalBillingPage() {
         <div className="h-wrap">
           <p className="reveal h-ew h-ew--gold">What happens after you request an assessment</p>
           <h2 className="reveal">What happens after you request an assessment</h2>
-          <p className="h-sec-intro">Starting with us takes four steps, not a quarter.</p>
+          <p className="reveal h-sec-intro">Starting with us takes four steps, not a quarter.</p>
 
           <div className="h-onboard-steps">
             {[
@@ -417,7 +417,7 @@ export default function HospitalBillingPage() {
           </div>
 
           <div className="h-fit-cta">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
           </div>
         </div>
       </section>
@@ -451,7 +451,7 @@ export default function HospitalBillingPage() {
                 ["Are you HIPAA compliant?",
                  "Yes. We sign a Business Associate Agreement before accessing any patient data, encrypt protected health information in transit and at rest, restrict access by role, and train staff on HIPAA every year."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

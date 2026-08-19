@@ -23,13 +23,13 @@ export default function SpecialtyProcess({
   return (
     <section className="sp-process sp-sec--navy">
       <div className="sp-wrap">
-        <p className="sp-ew sp-ew--gold">Revenue Control Framework</p>
-        <h2>How We Engineer Your Revenue System</h2>
-        <p className="sp-process-intro">{intro}</p>
+        <p className="sp-ew sp-ew--gold reveal">Revenue Control Framework</p>
+        <h2 className="reveal">How We Engineer Your Revenue System</h2>
+        <p className="sp-process-intro reveal">{intro}</p>
 
         <div className="sp-steps">
           {steps.map(({ n, h, t }, i) => (
-            <div className="sp-step" key={n}>
+            <div className="sp-step reveal" key={n}>
               <div className="sp-step-aside">
                 <div className="sp-step-num">{n}</div>
                 {i < steps.length - 1 && <div className="sp-step-conn" aria-hidden="true" />}

@@ -152,15 +152,15 @@ export default function ARManagementPage() {
             <div className="ar-writeoff-stat-col">
               <div className="ar-stat-card">
                 <div className="ar-stat-big">8–15%</div>
-                <div className="ar-stat-lbl">Of annual write-offs are recoverable</div>
+                <div className="reveal ar-stat-lbl">Of annual write-offs are recoverable</div>
               </div>
               <div className="ar-stat-card ar-stat-card--accent">
                 <div className="ar-stat-big">$40K–$75K</div>
-                <div className="ar-stat-lbl">Recoverable pool for a practice writing off $500K/year</div>
+                <div className="reveal ar-stat-lbl">Recoverable pool for a practice writing off $500K/year</div>
               </div>
               <div className="ar-stat-card">
                 <div className="ar-stat-big">12 mo</div>
-                <div className="ar-stat-lbl">Write-off history we audit — no full handoff required</div>
+                <div className="reveal ar-stat-lbl">Write-off history we audit — no full handoff required</div>
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@ export default function ARManagementPage() {
             <h2 className="reveal">Two buckets lose the most revenue. Let us show you exactly where yours is.</h2>
             <p>The free AR analysis pulls a sample of your aging report and shows your top denial reasons by dollar, your filing window exposure by payer, and your recoverable write-off estimate.</p>
           </div>
-          <Link href="#assessment" className="pg-btn pg-btn--gold">Get a Free AR Analysis</Link>
+          <Link href="#assessment" className="reveal pg-btn pg-btn--gold">Get a Free AR Analysis</Link>
         </div>
       </div>
 
@@ -266,7 +266,7 @@ export default function ARManagementPage() {
             <div>
               <p>Outsourcing AR recovery usually gets weighed as a cost line. For a practice with aging AR, it is closer to a capacity question. A billing team running current claims cannot simultaneously chase every 90-plus day account before filing windows close. One seat is one point of failure.</p>
               <p>We work on a percentage of what we collect, so we are paid when you are paid. There is no setup fee, no retainer, and no long-term contract. If you already run a strong billing team, we take only the piece that is leaking, whether that is aged AR, specific payer denials, or the write-off backlog. That is <a href="/services/">healthcare AR services</a> shaped to the practice, not a fixed package.</p>
-              <Link href="#assessment" className="pg-btn pg-btn--gold" style={{marginTop:"1.5rem",display:"inline-flex"}}>Get a Free AR Analysis</Link>
+              <Link href="#assessment" className="reveal pg-btn pg-btn--gold" style={{marginTop:"1.5rem",display:"inline-flex"}}>Get a Free AR Analysis</Link>
             </div>
             <div className="ar-cost-box">
               <div className="ar-cost-fig">0%</div>
@@ -380,7 +380,7 @@ export default function ARManagementPage() {
                 ["What EHR and practice management systems do you work with?","You keep your existing systems. We work inside your setup, including Epic, Athenahealth, eClinicalWorks, NextGen, Kareo, and AdvancedMD, among others, with integrations scoped during the free AR analysis."],
                 ["How does your pricing work?","We work on a percentage of what we recover. There is no setup fee, no retainer, and no fee on accounts where recovery is unsuccessful. If we do not collect, you do not pay. The specific percentage is set based on the volume, age distribution, and complexity of your AR portfolio, assessed during the initial free analysis."],
               ].map(([q,a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

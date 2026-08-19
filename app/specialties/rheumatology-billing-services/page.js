@@ -31,7 +31,7 @@ export default function RheumatologyBillingPage() {
             <div className="rheum-rcm-copy">
               <p>Rheumatology billing involves challenges like complex coding and obtaining prior authorizations for costly treatments, which can affect both cash flow and patient care. At Medbilling RCM, we specialize in taking these billing challenges off your shoulders.</p>
               <p>With over 10 years of rheumatology billing experience, our solutions and software are designed to streamline your operations and increase revenue.</p>
-              <Link href="/request-free-audit/" className="sp-btn sp-btn--outline">Schedule Revenue Assessment</Link>
+              <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--outline">Schedule Revenue Assessment</Link>
             </div>
 
             <div className="rheum-services-list">
@@ -66,7 +66,7 @@ export default function RheumatologyBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Core Capabilities</p>
           <h2 className="reveal">Comprehensive Rheumatology Billing &amp; Coding Services</h2>
-          <p className="rheum-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
+          <p className="reveal rheum-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="rheum-caps-grid">
             {[
@@ -102,7 +102,7 @@ export default function RheumatologyBillingPage() {
               },
             ].map(({ icon, h, t }) => (
               <article className="rheum-cap-card reveal" key={h}>
-                <div className="rheum-cap-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal rheum-cap-icon-wrap" aria-hidden="true">{icon}</div>
                 <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
@@ -127,20 +127,20 @@ export default function RheumatologyBillingPage() {
           <div className="rheum-ba-grid">
             <div className="reveal rheum-ba-card">
               <div className="reveal rheum-ba-num">30</div>
-              <div className="rheum-ba-unit">days</div>
-              <div className="rheum-ba-lbl">Average AR Days</div>
+              <div className="reveal rheum-ba-unit">days</div>
+              <div className="reveal rheum-ba-lbl">Average AR Days</div>
             </div>
             <div className="reveal rheum-ba-card rheum-ba-card--accent">
               <div className="reveal rheum-ba-num">72<span>%</span></div>
-              <div className="rheum-ba-lbl">First-Pass Clean Claims</div>
+              <div className="reveal rheum-ba-lbl">First-Pass Clean Claims</div>
             </div>
             <div className="reveal rheum-ba-card">
               <div className="reveal rheum-ba-num">18<span>%</span></div>
-              <div className="rheum-ba-lbl">Denial Rate</div>
+              <div className="reveal rheum-ba-lbl">Denial Rate</div>
             </div>
             <div className="reveal rheum-ba-card rheum-ba-card--accent">
               <div className="reveal rheum-ba-num">+15<span>%</span></div>
-              <div className="rheum-ba-lbl">Revenue Increase</div>
+              <div className="reveal rheum-ba-lbl">Revenue Increase</div>
             </div>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function RheumatologyBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
           <h2 className="reveal">Your Rheumatology Billing Infrastructure Partner</h2>
-          <p className="rheum-why-intro">Expertise in rheumatology billing including biologics, DMARDs, and complex coding driving measurable revenue improvement from day one.</p>
+          <p className="reveal rheum-why-intro">Expertise in rheumatology billing including biologics, DMARDs, and complex coding driving measurable revenue improvement from day one.</p>
 
           <div className="rheum-why-grid">
             {[
@@ -165,7 +165,7 @@ export default function RheumatologyBillingPage() {
               { icon:"🔍", h:"Transparent Fee Structure",            t:"No hidden fees. Cost-effective, results-driven solutions with full reporting visibility." },
             ].map(({ icon, h, t }) => (
               <div className="rheum-why-card reveal" key={h}>
-                <div className="rheum-why-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal rheum-why-icon-wrap" aria-hidden="true">{icon}</div>
                 <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
@@ -195,7 +195,7 @@ export default function RheumatologyBillingPage() {
                 ["How do you handle modifier usage for rheumatology procedures?",
                  "Incorrect use of modifiers like -25 (separate E/M service) and -59 (distinct procedural service) can trigger audits. We apply the correct modifiers to ensure compliance and maximize reimbursement."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

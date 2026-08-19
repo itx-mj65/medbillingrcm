@@ -394,35 +394,35 @@ export default function PhysicianBillingPage() {
               <p style={{color:"var(--color-muted)"}}>Direct answers for physician practices evaluating an outside billing partner.</p>
             </div>
             <div className="ph-faq-list">
-              <details>
+              <details className="reveal">
                 <summary>What is the difference between physician billing and hospital billing?</summary>
                 <p>The two get confused constantly, and billing them the same way is where money leaks. Physician, or professional, billing covers the provider&apos;s work on the CMS-1500 or 837-P, priced by RVUs under the fee schedule. Hospital, or facility, billing covers the building on the UB-04, priced by DRG or APC. One encounter can generate both, and they are coded and denied differently.</p>
               </details>
-              <details>
+              <details className="reveal">
                 <summary>How do you improve E/M coding accuracy?</summary>
                 <p>Most practices lose money to under-coding without ever seeing a denial. We review each encounter against the 2021 decision-making criteria and code the level the documentation supports, up or down. Where the record cannot support a level, the provider gets specific feedback, so the fix happens at the chart, not claim by claim.</p>
               </details>
-              <details>
+              <details className="reveal">
                 <summary>Do you handle prior authorization?</summary>
                 <p>Prior authorization is the biggest time sink most practices have, and the easiest to hand off. Yes, we submit and track authorizations per payer before the visit and appeal the denials that are wrong. Most appealed prior-auth denials are overturned, so the appeal is usually worth filing.</p>
               </details>
-              <details>
+              <details className="reveal">
                 <summary>Can you bill telehealth correctly across states?</summary>
                 <p>Telehealth denials tend to repeat across every claim, because one setup error hits them all. Yes, we apply the correct place-of-service code and modifier for each payer, then confirm state parity rules, so those claims stop getting rejected.</p>
               </details>
-              <details>
+              <details className="reveal">
                 <summary>Do you support MIPS reporting?</summary>
                 <p>The risk with MIPS is a penalty of up to 9 percent, and the upside is usually oversold. Yes, we report the categories that clear the 75-point threshold and keep you off the penalty, and we give you a realistic view of the upside, not the statutory maximum.</p>
               </details>
-              <details>
+              <details className="reveal">
                 <summary>What EHR and practice management systems do you work with?</summary>
                 <p>Switching billing usually raises the fear of ripping out your systems. You keep them. We work inside your existing setup, including Epic, Athenahealth, eClinicalWorks, NextGen, Kareo, and AdvancedMD, among others, with integrations scoped during the revenue assessment.</p>
               </details>
-              <details>
+              <details className="reveal">
                 <summary>How fast can you onboard, and is there a contract?</summary>
                 <p>The worry is a long, disruptive switch that locks you in. Neither happens here. Onboarding runs about 14 days with no gap in claim submission, no setup fee, and no long-term contract.</p>
               </details>
-              <details>
+              <details className="reveal">
                 <summary>How do you measure your clean claim rate?</summary>
                 <p>This is the number to pin any billing company on, because it is easy to inflate. We measure ours at the payer, on first submission, with zero rework, so a claim that needed a correction before it paid does not count. Many vendors quote clearinghouse acceptance instead, which reads higher.</p>
               </details>

@@ -31,8 +31,8 @@ export default function PageHero({
 
         {/* ── Left: copy column ──────────────────────────── */}
         <div className="pg-hero-copy">
-          {eyebrow && <p className="pg-hero-ew">{eyebrow}</p>}
-          <h1 className="pg-hero-h1" id="pg-hero-h1">{heading}</h1>
+          {eyebrow && <p className="pg-hero-ew reveal">{eyebrow}</p>}
+          <h1 className="pg-hero-h1 reveal" id="pg-hero-h1">{heading}</h1>
 
           {/* Mobile image — hidden on desktop via CSS, shown between H1 and intro */}
           {image && (
@@ -46,16 +46,16 @@ export default function PageHero({
             </div>
           )}
 
-          <p className="pg-hero-intro">{intro}</p>
+          <p className="pg-hero-intro reveal">{intro}</p>
 
-          <div className="pg-hero-actions">
+          <div className="pg-hero-actions reveal">
             <Link href="#assessment" className="pg-btn pg-btn--gold">{cta}</Link>
             {ctaAlt && (
               <Link href={ctaAltHref} className="pg-btn pg-btn--ghost">{ctaAlt}</Link>
             )}
           </div>
 
-          {note && <p className="pg-hero-note">{note}</p>}
+          {note && <p className="pg-hero-note reveal">{note}</p>}
         </div>
 
         {/* ── Right: image column ─────────────────────────

@@ -70,12 +70,12 @@ export default function MedicalCodingPage() {
           <div className="mc-stat-row">
             <div className="reveal mc-stat-block">
               <div className="mc-stat-num">42<span>%</span></div>
-              <div className="mc-stat-lbl">of all claim denials are caused by coding errors</div>
+              <div className="reveal mc-stat-lbl">of all claim denials are caused by coding errors</div>
               <div className="mc-stat-src"><a href="https://qualigenix.com/claim-denials-2026/" target="_blank" rel="noopener">Sully.ai, 2026</a></div>
             </div>
             <div className="reveal mc-stat-block mc-stat-block--accent">
               <div className="mc-stat-num">$6–7<span>B</span></div>
-              <div className="mc-stat-lbl">annual revenue lost to coding errors across US healthcare</div>
+              <div className="reveal mc-stat-lbl">annual revenue lost to coding errors across US healthcare</div>
               <div className="mc-stat-src"><a href="https://steadymedicalbilling.com/understanding-cpt-icd10-hcpcs-codes/" target="_blank" rel="noopener">steadymedicalbilling.com, 2026</a></div>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function MedicalCodingPage() {
             <div className="mc-callout-accent" aria-hidden="true" />
             <div>
               <div className="mc-callout-stat"><a href="https://wifitalents.com/medical-billing-errors-statistics/" target="_blank" rel="noopener">65% of denied claims are never resubmitted.</a></div>
-              <p className="mc-callout-sub">That is revenue earned, coded incorrectly, denied, and written off.</p>
+              <p className="reveal mc-callout-sub">That is revenue earned, coded incorrectly, denied, and written off.</p>
             </div>
           </div>
         </div>
@@ -267,7 +267,7 @@ export default function MedicalCodingPage() {
             ))}
           </div>
           <div className="mc-sys-cta">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Coding Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Coding Assessment</Link>
           </div>
         </div>
       </section>
@@ -300,7 +300,7 @@ export default function MedicalCodingPage() {
                 ["How do I get started?",
                  "Request a free coding assessment. We review a sample of your current claims for coding accuracy, modifier compliance, and NCCI edit exposure, then deliver a written report identifying the error patterns costing you the most revenue. No obligation. You keep the report whether or not you work with us."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>
@@ -319,7 +319,7 @@ export default function MedicalCodingPage() {
             <p>Coding errors that prevent payment today were avoidable at the time the code was assigned. The 2026 code environment: 487 new ICD-10-CM codes, 288 new CPT codes, the largest NCCI update in seven years. It makes in-house coding accuracy harder to maintain than it was in 2025. Our healthcare coding services track those changes so your practice does not have to.</p>
           </div>
           <div className="mc-closing-actions">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Coding Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Coding Assessment</Link>
             <p className="mc-closing-note">AAPC + AHIMA certified · 50+ specialties · All 50 states</p>
           </div>
         </div>

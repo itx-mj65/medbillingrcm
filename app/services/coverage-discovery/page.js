@@ -83,7 +83,7 @@ export default function CoverageDiscoveryPage() {
         <div className="cd-wrap">
           <p className="reveal cd-ew">Understanding the difference</p>
           <h2 className="reveal">Coverage discovery versus eligibility verification</h2>
-          <p className="cd-intro-p">The two terms describe different operations and solve different problems.</p>
+          <p className="reveal cd-intro-p">The two terms describe different operations and solve different problems.</p>
 
           <div className="cd-compare">
             <div className="cd-compare-col cd-compare-col--left">
@@ -110,7 +110,7 @@ export default function CoverageDiscoveryPage() {
         <div className="cd-wrap">
           <p className="reveal cd-ew cd-ew--gold">Where we run discovery in the revenue cycle</p>
           <h2 className="reveal">Where we run discovery in the revenue cycle</h2>
-          <p className="cd-intro-p cd-intro-p--dark">We check for undiscovered coverage at three points, not one. Each catches revenue the others miss.</p>
+          <p className="reveal cd-intro-p cd-intro-p--dark">We check for undiscovered coverage at three points, not one. Each catches revenue the others miss.</p>
 
           <div className="cd-steps">
 
@@ -248,7 +248,7 @@ export default function CoverageDiscoveryPage() {
               { icon:"🔗", h:"No system replacement",       t:"Coverage discovery layers onto your current setup with no system replacement and no forced platform migration. Integration is scoped during the free coverage audit." },
             ].map(({ icon, h, t }) => (
               <div className="cd-why-card reveal" key={h}>
-                <div className="cd-why-icon">{icon}</div>
+                <div className="reveal cd-why-icon">{icon}</div>
                 <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
@@ -256,7 +256,7 @@ export default function CoverageDiscoveryPage() {
           </div>
 
           <div className="cd-why-cta">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Coverage Audit</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Coverage Audit</Link>
           </div>
         </div>
       </section>
@@ -283,7 +283,7 @@ export default function CoverageDiscoveryPage() {
                 ["How long does it take to see results from coverage discovery?","Pre-service discovery produces results before the patient visit. Post-service batch sweeps typically return discoverable coverage within the first two weeks of engagement. Claims on discovered coverage are submitted immediately, and reimbursement follows the normal payer processing timeline, usually 14 to 30 days for clean claims."],
                 ["How do I get started?","Request a free coverage audit. We analyze a sample of your self-pay accounts, identify recoverable coverage by payer type, and report back what we find, including your estimated recovery and coordination-of-benefits exposure. You keep the findings whether or not you work with us."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

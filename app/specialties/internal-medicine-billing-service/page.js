@@ -31,7 +31,7 @@ export default function InternalMedicineBillingPage() {
             <div className="intmed-rcm-copy">
               <p>Internal medicine billing is complex, requiring accurate coding, documentation, and compliance with changing regulations. Our certified specialists handle it all so you can concentrate on providing exceptional patient care.</p>
               <p>From complex E/M coding to chronic care management and value-based payment models, we deploy comprehensive solutions tailored to internal medicine practices of every size.</p>
-              <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+              <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             </div>
 
             <div className="intmed-services-panel">
@@ -65,7 +65,7 @@ export default function InternalMedicineBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Core Capabilities</p>
           <h2 className="reveal">Internal Medicine Billing Challenges We Solve</h2>
-          <p className="intmed-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
+          <p className="reveal intmed-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="intmed-caps-grid">
             {[
@@ -77,8 +77,8 @@ export default function InternalMedicineBillingPage() {
               { icon:"🛡️", n:"06", h:"Compliance & Audit Protection",              t:"We safeguard your practice against Medicare audits, RAC reviews, and HIPAA violations with proactive compliance monitoring and thorough documentation review." },
             ].map(({ icon, n, h, t }) => (
               <article className="intmed-cap-card reveal" key={n}>
-                <div className="intmed-cap-top">
-                  <div className="intmed-cap-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal intmed-cap-top">
+                  <div className="reveal intmed-cap-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="intmed-cap-num">{n}</span>
                 </div>
                 <h3 className="reveal">{h}</h3>
@@ -132,7 +132,7 @@ export default function InternalMedicineBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
           <h2 className="reveal">Your Internal Medicine Revenue Infrastructure Partner</h2>
-          <p className="intmed-why-intro">Over a decade of experience in internal medicine billing clients see a 15–30% revenue increase within months of switching to our services.</p>
+          <p className="reveal intmed-why-intro">Over a decade of experience in internal medicine billing clients see a 15–30% revenue increase within months of switching to our services.</p>
 
           <div className="intmed-why-grid">
             {[
@@ -146,8 +146,8 @@ export default function InternalMedicineBillingPage() {
               { icon:"🔍", n:"08", h:"Transparent Fee Structure",       t:"No hidden fees. Cost-effective, results-driven solutions with full reporting visibility." },
             ].map(({ icon, n, h, t }) => (
               <div className="intmed-why-card reveal" key={n}>
-                <div className="intmed-why-top">
-                  <div className="intmed-why-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal intmed-why-top">
+                  <div className="reveal intmed-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="intmed-why-num">{n}</span>
                 </div>
                 <h3 className="reveal">{h}</h3>
@@ -167,7 +167,7 @@ export default function InternalMedicineBillingPage() {
             <p>Schedule a revenue assessment and discover how our internal medicine billing specialists can recover lost revenue, reduce denials, and accelerate your payment cycles.</p>
           </div>
           <div className="intmed-mid-cta-action">
-            <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             <p className="intmed-mid-note">For internal medicine practices of all sizes · AAPC-certified specialists · 50 states served</p>
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function InternalMedicineBillingPage() {
                 ["What is your process for managing high-volume practices?",
                  "We scale our team and workflows to match your practice volume. Our automated claim scrubbing and dedicated account managers ensure consistent turnaround times regardless of patient volume fluctuations."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

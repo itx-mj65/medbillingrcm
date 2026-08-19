@@ -32,8 +32,8 @@ export default function MentalHealthBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Comprehensive MH Billing</p>
           <h2 className="reveal">Our Comprehensive Mental Health Billing Services</h2>
-          <p className="mh-rcm-intro">Our team of mental health billing experts manages your medical billing end-to-end covering everything from pre-intake insurance verification to accounts receivable management, reporting, and analysis.</p>
-          <p className="mh-rcm-intro">We integrate seamlessly with your existing billing software, EHR, and practice management systems, so nothing changes in your workflow only your results.</p>
+          <p className="reveal mh-rcm-intro">Our team of mental health billing experts manages your medical billing end-to-end covering everything from pre-intake insurance verification to accounts receivable management, reporting, and analysis.</p>
+          <p className="reveal mh-rcm-intro">We integrate seamlessly with your existing billing software, EHR, and practice management systems, so nothing changes in your workflow only your results.</p>
 
           <div className="mh-services-mosaic">
             {[
@@ -47,7 +47,7 @@ export default function MentalHealthBillingPage() {
               { icon:"📅", h:"Practice Management Solutions", t:"Simplify your practice with online appointment calendars and automatic reminder calls or text messages keeping your schedule organized and reducing no-shows." },
             ].map(({ icon, h, t }, i) => (
               <div className={`mh-svc-card mh-svc-card--${i % 2 === 0 ? 'green' : 'gold'} reveal`} key={h}>
-                <div className="mh-svc-icon" aria-hidden="true">{icon}</div>
+                <div className="reveal mh-svc-icon" aria-hidden="true">{icon}</div>
                 <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
@@ -55,7 +55,7 @@ export default function MentalHealthBillingPage() {
           </div>
 
           <div className="mh-services-cta">
-            <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Request Free Demo</Link>
+            <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Request Free Demo</Link>
           </div>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function MentalHealthBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew sp-ew--gold">Overcoming Denial Challenges</p>
           <h2 className="reveal">Helping Your Mental Health Practice Overcome Denial Challenges</h2>
-          <p className="mh-denial-intro">If your mental health practice is dealing with any of the following billing challenges, it's time to outsource your mental health billing services to Medbilling RCM. We identify and resolve the root causes that drive denials in behavioral health practices.</p>
+          <p className="reveal mh-denial-intro">If your mental health practice is dealing with any of the following billing challenges, it's time to outsource your mental health billing services to Medbilling RCM. We identify and resolve the root causes that drive denials in behavioral health practices.</p>
 
           <div className="mh-denial-grid">
             {[
@@ -96,8 +96,8 @@ export default function MentalHealthBillingPage() {
               },
             ].map(({ icon, n, h, t }) => (
               <div className="mh-denial-card reveal" key={n}>
-                <div className="mh-denial-top">
-                  <div className="mh-denial-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal mh-denial-top">
+                  <div className="reveal mh-denial-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="mh-denial-num">{n}</span>
                   <div className="mh-denial-dot" aria-hidden="true" />
                 </div>
@@ -118,7 +118,7 @@ export default function MentalHealthBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Revenue Control Framework</p>
           <h2 className="reveal">How We Engineer Your Mental Health Revenue System</h2>
-          <p className="mh-process-intro">A structured end-to-end billing infrastructure from pre-intake verification through final payment reconciliation designed for the specific complexity of behavioral health billing.</p>
+          <p className="reveal mh-process-intro">A structured end-to-end billing infrastructure from pre-intake verification through final payment reconciliation designed for the specific complexity of behavioral health billing.</p>
 
           <div className="mh-steps">
             {[
@@ -142,7 +142,7 @@ export default function MentalHealthBillingPage() {
           </div>
 
           <div className="mh-process-cta">
-            <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             <span className="mh-process-note">For mental health &amp; behavioral health providers · AAPC-certified coders · 50 states served</span>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function MentalHealthBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Why Choose Us</p>
           <h2 className="reveal">Why Choose Our Behavioral &amp; Mental Health Billing Services?</h2>
-          <p className="mh-why-sub">Our billing services for mental health providers are designed to increase revenue, streamline your revenue cycle, and reduce denials while your staff focuses on patient care.</p>
+          <p className="reveal mh-why-sub">Our billing services for mental health providers are designed to increase revenue, streamline your revenue cycle, and reduce denials while your staff focuses on patient care.</p>
 
           <div className="mh-why-grid">
             {[
@@ -172,7 +172,7 @@ export default function MentalHealthBillingPage() {
               <div className="mh-why-card reveal" key={h}>
                 <div className="mh-why-spin-border" aria-hidden="true" />
                 <div className="mh-why-inner">
-                  <div className="mh-why-icon-wrap" aria-hidden="true">{icon}</div>
+                  <div className="reveal mh-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <h3 className="reveal">{h}</h3>
                   <p>{t}</p>
                 </div>
@@ -197,7 +197,7 @@ export default function MentalHealthBillingPage() {
           <div className="mh-counter-grid">
             <div className="reveal mh-counter-card">
               <div className="mh-counter-num">50<span>%↓</span></div>
-              <div className="mh-counter-lbl">Overhead Cost Reduction</div>
+              <div className="reveal mh-counter-lbl">Overhead Cost Reduction</div>
               <div className="mh-counter-pill">
                 <span className="mh-pill--before">High</span>
                 <span className="mh-pill-arrow">→</span>
@@ -206,7 +206,7 @@ export default function MentalHealthBillingPage() {
             </div>
             <div className="reveal mh-counter-card mh-counter-card--accent">
               <div className="mh-counter-num">5–10<span>%↑</span></div>
-              <div className="mh-counter-lbl">Operational Efficiency</div>
+              <div className="reveal mh-counter-lbl">Operational Efficiency</div>
               <div className="mh-counter-pill">
                 <span className="mh-pill--before">Baseline</span>
                 <span className="mh-pill-arrow">→</span>
@@ -215,7 +215,7 @@ export default function MentalHealthBillingPage() {
             </div>
             <div className="reveal mh-counter-card">
               <div className="mh-counter-num">99<span>%</span></div>
-              <div className="mh-counter-lbl">Claim Accuracy Rate</div>
+              <div className="reveal mh-counter-lbl">Claim Accuracy Rate</div>
               <div className="mh-counter-pill">
                 <span className="mh-pill--before">Frequent errors</span>
                 <span className="mh-pill-arrow">→</span>
@@ -224,7 +224,7 @@ export default function MentalHealthBillingPage() {
             </div>
             <div className="reveal mh-counter-card mh-counter-card--accent">
               <div className="mh-counter-num">24<span>/7</span></div>
-              <div className="mh-counter-lbl">Online Data Access</div>
+              <div className="reveal mh-counter-lbl">Online Data Access</div>
               <div className="mh-counter-pill">
                 <span className="mh-pill--before">Slow</span>
                 <span className="mh-pill-arrow">→</span>
@@ -258,7 +258,7 @@ export default function MentalHealthBillingPage() {
                 ["How do 2025 CPT code updates affect mental health billing?",
                  "The latest updates include new codes for extended therapy sessions, remote behavioral health monitoring, and crisis intervention. Using outdated codes leads to claim denials and our mental health billing services ensure your billing is always aligned with the latest CPT and payer requirements, updated as changes take effect."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

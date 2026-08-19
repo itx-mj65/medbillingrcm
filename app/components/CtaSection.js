@@ -34,12 +34,12 @@ export default function CtaSection({
 
         {/* ── Left column ──────────────────────────────────── */}
         <div className="cta-sec-left">
-          <p className="cta-sec-ew">{eyebrow}</p>
-          <h2 className="cta-sec-h2" id={`${formId}-heading`}>{heading}</h2>
-          <p className="cta-sec-body">{body}</p>
+          <p className="cta-sec-ew reveal">{eyebrow}</p>
+          <h2 className="cta-sec-h2 reveal" id={`${formId}-heading`}>{heading}</h2>
+          <p className="cta-sec-body reveal">{body}</p>
 
           {checklist.length > 0 && (
-            <ul className="cta-sec-list" aria-label="What the assessment covers">
+            <ul className="cta-sec-list reveal" aria-label="What the assessment covers">
               {checklist.map((item) => (
                 <li key={item}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"

@@ -223,7 +223,7 @@ export default function LaboratoryBillingPage() {
             <h2 className="reveal">Your lab runs the tests. We collect the revenue.</h2>
             <p>The free revenue assessment covers your denial rate by root cause, coding accuracy against current CPT and PLA code sets, PAMA reporting status, and estimated recoverable revenue. You keep the findings whether or not you work with us.</p>
           </div>
-          <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
+          <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
         </div>
       </div>
 
@@ -270,7 +270,7 @@ export default function LaboratoryBillingPage() {
                 ["How do I get started?",
                  "Request a free revenue assessment. We review your current denial rate, coding accuracy, payer mix, and PAMA exposure, then deliver a written report with your findings, estimated recoverable revenue, and specific recommendations for your lab type. No obligation, no upfront cost, and you keep the report whether or not you work with us."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

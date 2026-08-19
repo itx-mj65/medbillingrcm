@@ -31,7 +31,7 @@ export default function DermatologyBillingPage() {
             <div className="derm-rcm-copy">
               <p>Medbilling RCM offers comprehensive dermatology billing services to streamline claim submissions, maximize reimbursements, and reduce administrative burdens for dermatology practices.</p>
               <p>We consistently follow up on accounts receivable and ensure regular completion of prior authorization. Our denials team works proactively shifting from denial management to prevention by enhancing administrative, operational, and financial efficiency.</p>
-              <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+              <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             </div>
 
             <div className="derm-services-panel">
@@ -65,7 +65,7 @@ export default function DermatologyBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Core Capabilities</p>
           <h2 className="reveal">Dermatology Billing Solutions We Offer</h2>
-          <p className="derm-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
+          <p className="reveal derm-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="derm-caps-grid">
             {[
@@ -77,8 +77,8 @@ export default function DermatologyBillingPage() {
               { icon:"💰", n:"06", h:"AR Follow-Up & Revenue Recovery",                 t:"Systematic follow-up on outstanding claims to resolve delayed payments, minimize AR days, and recover revenue from aged accounts." },
             ].map(({ icon, n, h, t }) => (
               <article className="derm-cap-card reveal" key={n}>
-                <div className="derm-cap-top">
-                  <div className="derm-cap-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal derm-cap-top">
+                  <div className="reveal derm-cap-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="derm-cap-num">{n}</span>
                 </div>
                 <h3 className="reveal">{h}</h3>
@@ -158,7 +158,7 @@ export default function DermatologyBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
           <h2 className="reveal">Your Dermatology Revenue Infrastructure Partner</h2>
-          <p className="derm-why-intro">From medical dermatology to cosmetic procedure billing, we handle the nuances that other billing companies miss protecting your revenue and your practice.</p>
+          <p className="reveal derm-why-intro">From medical dermatology to cosmetic procedure billing, we handle the nuances that other billing companies miss protecting your revenue and your practice.</p>
 
           <div className="derm-why-grid">
             {[
@@ -172,8 +172,8 @@ export default function DermatologyBillingPage() {
               { icon:"🔍", n:"08", h:"Transparent Fee Structure",              t:"No hidden fees. Cost-effective, results-driven solutions with full reporting visibility." },
             ].map(({ icon, n, h, t }) => (
               <div className="derm-why-card reveal" key={n}>
-                <div className="derm-why-top">
-                  <div className="derm-why-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal derm-why-top">
+                  <div className="reveal derm-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="derm-why-num">{n}</span>
                 </div>
                 <h3 className="reveal">{h}</h3>
@@ -193,7 +193,7 @@ export default function DermatologyBillingPage() {
             <p>Schedule a revenue assessment and discover how our dermatology billing specialists can streamline your claim submissions, reduce denials, and maximize your reimbursements.</p>
           </div>
           <div className="derm-mid-cta-action">
-            <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             <p className="derm-mid-note">For dermatology practices of all sizes · Medical and cosmetic billing specialists · 50 states served</p>
           </div>
         </div>
@@ -220,7 +220,7 @@ export default function DermatologyBillingPage() {
                 ["How do you manage prior authorizations for dermatology procedures?",
                  "We manage authorizations for biologic therapies, laser procedures, and other treatments requiring pre-approval. Our team tracks authorization timelines, documents medical necessity, and follows up with payers to prevent unnecessary delays."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

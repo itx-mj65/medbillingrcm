@@ -62,14 +62,14 @@ export default function MedicalCredentialingPage() {
           <div className="cred-stat-row">
             <div className="reveal cred-stat-block">
               <div className="cred-stat-num">$122,144</div>
-              <div className="cred-stat-lbl">Average revenue lost per physician over a 120-day delay</div>
+              <div className="reveal cred-stat-lbl">Average revenue lost per physician over a 120-day delay</div>
               <div className="cred-stat-src">
                 <a href="https://neolytix.com/articles/credentialing-delays-revenue-loss/" target="_blank" rel="noopener">Neolytix</a> / <a href="https://sutherlandglobal.com/insights/blog/cost-of-provider-credentialing-delays-and-revenue-loss" target="_blank" rel="noopener">Sutherland Global, 2026</a>
               </div>
             </div>
             <div className="reveal cred-stat-block cred-stat-block--accent">
               <div className="cred-stat-num">1 in 3</div>
-              <div className="cred-stat-lbl">Credentialing applications require correction or resubmission</div>
+              <div className="reveal cred-stat-lbl">Credentialing applications require correction or resubmission</div>
               <div className="cred-stat-src"><a href="https://mbwrcm.com/the-revenue-cycle-blog/provider-credentialing-timeline-and-delays" target="_blank" rel="noopener">mbwrcm.com, 2026</a></div>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function MedicalCredentialingPage() {
             <div className="cred-callout-accent" aria-hidden="true" />
             <div>
               <div className="cred-callout-stat">43% of healthcare organizations now report losing $50,000 or more per month due to credentialing delays</div>
-              <p className="cred-callout-sub">according to an <a href="https://ngahealthcare.com/blog/how-long-does-credentialing-take-detailed-guide" target="_blank" rel="noopener">Intelliworx 2026 survey cited by NGAHealthcare</a>. The single most important timing decision a practice makes is starting the credentialing process the day a new provider signs their offer letter, not their first day of work.</p>
+              <p className="reveal cred-callout-sub">according to an <a href="https://ngahealthcare.com/blog/how-long-does-credentialing-take-detailed-guide" target="_blank" rel="noopener">Intelliworx 2026 survey cited by NGAHealthcare</a>. The single most important timing decision a practice makes is starting the credentialing process the day a new provider signs their offer letter, not their first day of work.</p>
             </div>
           </div>
         </div>
@@ -310,7 +310,7 @@ export default function MedicalCredentialingPage() {
           </div>
 
           <div className="cred-cost-cta">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Credentialing Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Credentialing Assessment</Link>
           </div>
         </div>
       </section>
@@ -343,7 +343,7 @@ export default function MedicalCredentialingPage() {
                 ["How do I get started?",
                  "Request a free credentialing assessment. We review your current provider roster, open enrollments, CAQH profile status, expiring credentials, and payer mix - then deliver a written report with findings and a timeline. No obligation. You keep the report whether or not you work with us."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>
@@ -362,7 +362,7 @@ export default function MedicalCredentialingPage() {
             <p>A new provider on your payroll costs you money every day they are not credentialed. At $6,000 to $8,000 per month in lost billable revenue per provider, every week of delay is measurable. As a medical credentialing company integrated with your billing team, we start the process the day you engage us, follow up weekly, and connect billing activation to contract execution so there is no gap between credentialing completion and the first clean claim.</p>
           </div>
           <div className="cred-closing-actions">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Credentialing Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Credentialing Assessment</Link>
             <p className="cred-closing-note">1,000+ payers · 48hr follow-up · NCQA + HIPAA compliant</p>
           </div>
         </div>

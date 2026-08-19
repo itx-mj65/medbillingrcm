@@ -131,7 +131,7 @@ export default function ASCBillingPage() {
             </div>
           </div>
 
-          <p className="asc-pay-intro">Medicare reimburses ASCs based on the Ambulatory Payment Classification system. Each covered procedure is assigned to an APC group with a fixed facility payment. CMS updates rates annually.</p>
+          <p className="reveal asc-pay-intro">Medicare reimburses ASCs based on the Ambulatory Payment Classification system. Each covered procedure is assigned to an APC group with a fixed facility payment. CMS updates rates annually.</p>
 
           {/* Three payment rules — icon cards, not paragraphs */}
           <div className="asc-rules-grid">
@@ -294,7 +294,7 @@ export default function ASCBillingPage() {
           </div>
 
           <div className="asc-sys-cta">
-            <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
           </div>
         </div>
       </section>
@@ -327,7 +327,7 @@ export default function ASCBillingPage() {
                 ["How do I get started?",
                  "Request a free revenue assessment. We review your denial rate by root cause, implant charge capture accuracy, APC coding patterns, and payer contract performance. You receive a written report with findings and recommendations. No obligation, no upfront cost, and you keep the report whether or not you work with us."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

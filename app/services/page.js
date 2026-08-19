@@ -108,15 +108,15 @@ export default function ServicesIndexPage() {
           <div className="svc-idx-hero-copy">
             <p className="reveal svc-idx-ew">Revenue Cycle Management</p>
             <h1>Med Billing RCM Offers Medical Billing Services</h1>
-            <p className="svc-idx-hero-intro">Maximize your practice's revenue potential with our tailored outsourced medical billing solutions in the USA. Experience seamless financial growth and focus on patient care with our expert assistance.</p>
+            <p className="reveal svc-idx-hero-intro">Maximize your practice's revenue potential with our tailored outsourced medical billing solutions in the USA. Experience seamless financial growth and focus on patient care with our expert assistance.</p>
             <div className="svc-idx-hero-pills">
               {["97% Clean Claim Rate","AAPC Certified","All 50 States","HIPAA Compliant"].map(p => (
                 <span key={p} className="svc-idx-pill">{p}</span>
               ))}
             </div>
             <div className="svc-idx-hero-actions">
-              <Link href="/request-free-audit/" className="svc-idx-btn svc-idx-btn--primary">Get a Free Revenue Assessment</Link>
-              <Link href="#services"            className="svc-idx-btn svc-idx-btn--ghost">Explore Services</Link>
+              <Link href="/request-free-audit/" className="reveal svc-idx-btn svc-idx-btn--primary">Get a Free Revenue Assessment</Link>
+              <Link href="#services"            className="reveal svc-idx-btn svc-idx-btn--ghost">Explore Services</Link>
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default function ServicesIndexPage() {
             ].map(({ num, lbl }) => (
               <div key={lbl} className="svc-idx-hero-stat">
                 <div className="svc-idx-stat-num">{num}</div>
-                <div className="svc-idx-stat-lbl">{lbl}</div>
+                <div className="reveal svc-idx-stat-lbl">{lbl}</div>
               </div>
             ))}
           </div>
@@ -168,7 +168,7 @@ export default function ServicesIndexPage() {
         <div className="svc-idx-wrap">
           <p className="reveal svc-idx-ew">Our Services</p>
           <h2 className="reveal">Medical Billing Specialties</h2>
-          <p className="svc-idx-sec-sub">The best qualities of services for a Medical Billing Department include accuracy and efficiency in managing claims and reimbursements.</p>
+          <p className="reveal svc-idx-sec-sub">The best qualities of services for a Medical Billing Department include accuracy and efficiency in managing claims and reimbursements.</p>
 
           <div className="svc-idx-grid">
             {SERVICES.map(({ slug, label, icon, accent, tag, stat, desc, long }) => (
@@ -181,7 +181,7 @@ export default function ServicesIndexPage() {
                 {/* Animated corner badge */}
                 <div className="svc-idx-card-tag">{tag}</div>
 
-                <div className="svc-idx-card-top">
+                <div className="reveal svc-idx-card-top">
                   <div className="svc-idx-card-icon" aria-hidden="true">{icon}</div>
                   <div className="svc-idx-card-stat">
                     <strong>{stat.num}</strong>
@@ -190,10 +190,10 @@ export default function ServicesIndexPage() {
                 </div>
 
                 <h3 className="reveal">{label}</h3>
-                <p className="svc-idx-card-desc">{desc}</p>
+                <p className="reveal svc-idx-card-desc">{desc}</p>
                 <p className="svc-idx-card-long">{long}</p>
 
-                <div className="svc-idx-card-cta" aria-hidden="true">
+                <div className="reveal svc-idx-card-cta" aria-hidden="true">
                   Learn more <span className="svc-idx-arrow">→</span>
                 </div>
               </Link>

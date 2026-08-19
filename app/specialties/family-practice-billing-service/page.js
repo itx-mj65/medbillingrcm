@@ -31,7 +31,7 @@ export default function FamilyPracticeBillingPage() {
             <div className="fp-rcm-copy">
               <p>Family physicians provide comprehensive care from diagnosing illnesses to preventive services like checkups, screenings, and immunizations. Our complete billing infrastructure covers every service category your practice delivers, ensuring nothing falls through the cracks.</p>
               <p>We integrate seamlessly with your existing EHR and practice management software, providing a streamlined experience with zero workflow disruption for your team.</p>
-              <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Request free demo</Link>
+              <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Request free demo</Link>
             </div>
 
             {/* Four-category service panel — unique to FP */}
@@ -80,7 +80,7 @@ export default function FamilyPracticeBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Maximum Reimbursements</p>
           <h2 className="reveal">Family Medicine Billing Solutions for Maximum Reimbursements</h2>
-          <p className="fp-solutions-sub">Family physicians provide comprehensive care across a wide range of conditions and services. We handle billing for all of them ensuring timely and accurate reimbursement every time.</p>
+          <p className="reveal fp-solutions-sub">Family physicians provide comprehensive care across a wide range of conditions and services. We handle billing for all of them ensuring timely and accurate reimbursement every time.</p>
 
           {/* ── Code showcase row ─── */}
           <div className="fp-code-section">
@@ -168,7 +168,7 @@ export default function FamilyPracticeBillingPage() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div className="fp-ba-after">10%<span>↑</span></div>
-              <div className="fp-ba-lbl">Faster Payments</div>
+              <div className="reveal fp-ba-lbl">Faster Payments</div>
             </div>
             <div className="reveal fp-ba-card fp-ba-card--green">
               <div className="fp-ba-top">
@@ -176,7 +176,7 @@ export default function FamilyPracticeBillingPage() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div className="fp-ba-after">99<span>%</span></div>
-              <div className="fp-ba-lbl">Clean Claim Rate</div>
+              <div className="reveal fp-ba-lbl">Clean Claim Rate</div>
             </div>
             <div className="reveal fp-ba-card">
               <div className="fp-ba-top">
@@ -184,7 +184,7 @@ export default function FamilyPracticeBillingPage() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div className="fp-ba-after">24/7</div>
-              <div className="fp-ba-lbl">Reporting Access</div>
+              <div className="reveal fp-ba-lbl">Reporting Access</div>
             </div>
             <div className="reveal fp-ba-card fp-ba-card--gold">
               <div className="fp-ba-top">
@@ -192,7 +192,7 @@ export default function FamilyPracticeBillingPage() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div className="fp-ba-after">$0</div>
-              <div className="fp-ba-lbl">Software Cost</div>
+              <div className="reveal fp-ba-lbl">Software Cost</div>
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function FamilyPracticeBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew sp-ew--gold">Why Choose Us</p>
           <h2 className="reveal">Why Choose Us as Your Family Medicine Billing Company?</h2>
-          <p className="fp-why-intro">Our scalable family medicine billing services grow with your practice whether you're a solo physician or a multi-provider group across multiple states. Every feature is designed to reduce friction, increase revenue, and give you full financial visibility.</p>
+          <p className="reveal fp-why-intro">Our scalable family medicine billing services grow with your practice whether you're a solo physician or a multi-provider group across multiple states. Every feature is designed to reduce friction, increase revenue, and give you full financial visibility.</p>
 
           <div className="fp-why-grid">
             {[
@@ -215,8 +215,8 @@ export default function FamilyPracticeBillingPage() {
               { icon:"📈", n:"06", h:"Scalable — Grows With Your Practice",    t:"Our scalable family medicine billing services adjust seamlessly to your practice's growth or volume fluctuations, regardless of size or number of locations." },
             ].map(({ icon, n, h, t }) => (
               <div className="fp-why-card reveal" key={n}>
-                <div className="fp-why-top">
-                  <div className="fp-why-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal fp-why-top">
+                  <div className="reveal fp-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="fp-why-num">{n}</span>
                 </div>
                 <h3 className="reveal">{h}</h3>
@@ -236,7 +236,7 @@ export default function FamilyPracticeBillingPage() {
             <p>Schedule a free demo and discover how much revenue your family practice is leaving on the table. Our specialists identify coding gaps, optimize your billing workflow, and deploy systems not promises.</p>
           </div>
           <div className="fp-mid-cta-action">
-            <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             <p className="fp-mid-note">For family practice groups of all sizes · AAPC-certified specialists · 12+ years experience · 50 states served</p>
           </div>
         </div>
@@ -265,7 +265,7 @@ export default function FamilyPracticeBillingPage() {
                 ["What is your approach to state-specific Medicaid billing for family practices with diverse patient populations?",
                  "Our team maintains active knowledge of each state's Medicaid billing rules, fee schedules, prior authorization requirements, and covered service policies. We apply state-specific codes and procedures for every Medicaid claim, ensuring compliance and timely payment regardless of which states your patients are enrolled in including Medicaid managed care plans."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>

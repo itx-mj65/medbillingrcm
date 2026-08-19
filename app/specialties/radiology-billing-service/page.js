@@ -31,7 +31,7 @@ export default function RadiologyBillingPage() {
             <div className="rad-rcm-copy">
               <p>At Medbilling RCM, we provide flexible radiology billing services designed to fit your practice's unique needs. Our offerings include revenue cycle management, EHR/EMR technology integration, accounts receivable recovery, practice management, and patient engagement services.</p>
               <p>Our radiology billing specialists carefully review patient records to assign accurate diagnosis codes, even for claims with rule-out diagnoses, ensuring faster and more reliable reimbursements.</p>
-              <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+              <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             </div>
             <div className="rad-services-panel">
               <p className="rad-services-label">Comprehensive Services</p>
@@ -64,7 +64,7 @@ export default function RadiologyBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew">Core Capabilities</p>
           <h2 className="reveal">Radiology Billing Solutions That Address Your Challenges</h2>
-          <p className="rad-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
+          <p className="reveal rad-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="rad-caps-grid">
             {[
@@ -76,8 +76,8 @@ export default function RadiologyBillingPage() {
               { icon:"⚖️", n:"06", h:"QCDR & MIPS Reporting Support",           t:"Detailed A/R, collection, and revenue reports. Full compliance with No Surprise Act, ACR, CMS, HIPAA, OIG, ACA, and AMA standards." },
             ].map(({ icon, n, h, t }) => (
               <article className="rad-cap-card reveal" key={n}>
-                <div className="rad-cap-top">
-                  <div className="rad-cap-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal rad-cap-top">
+                  <div className="reveal rad-cap-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="rad-cap-num">{n}</span>
                 </div>
                 <h3 className="reveal">{h}</h3>
@@ -108,7 +108,7 @@ export default function RadiologyBillingPage() {
             <div className="rad-tl-before">
               <div className="rad-tl-label">Before</div>
               <div className="rad-tl-num">45<span>+ days</span></div>
-              <div className="rad-tl-desc">Average AR days</div>
+              <div className="reveal rad-tl-desc">Average AR days</div>
             </div>
             <div className="rad-tl-arrow" aria-hidden="true">
               <svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +119,7 @@ export default function RadiologyBillingPage() {
             <div className="rad-tl-after">
               <div className="rad-tl-label">After</div>
               <div className="rad-tl-num rad-tl-num--green">Under <strong>30</strong></div>
-              <div className="rad-tl-desc">days average AR</div>
+              <div className="reveal rad-tl-desc">days average AR</div>
             </div>
           </div>
 
@@ -127,17 +127,17 @@ export default function RadiologyBillingPage() {
           <div className="reveal rad-metrics-row">
             <div className="rad-metric">
               <div className="rad-metric-num">90<span>%+</span></div>
-              <div className="rad-metric-lbl">First-Pass Clean Claims</div>
+              <div className="reveal rad-metric-lbl">First-Pass Clean Claims</div>
             </div>
             <div className="rad-metric rad-metric--divider" aria-hidden="true" />
             <div className="rad-metric">
               <div className="rad-metric-num">18<span>%</span></div>
-              <div className="rad-metric-lbl">Denial Rate</div>
+              <div className="reveal rad-metric-lbl">Denial Rate</div>
             </div>
             <div className="rad-metric rad-metric--divider" aria-hidden="true" />
             <div className="rad-metric">
               <div className="rad-metric-num">+15<span>%</span></div>
-              <div className="rad-metric-lbl">Revenue Increase</div>
+              <div className="reveal rad-metric-lbl">Revenue Increase</div>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function RadiologyBillingPage() {
         <div className="sp-wrap">
           <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
           <h2 className="reveal">Your Radiology Revenue Infrastructure Partner</h2>
-          <p className="rad-why-intro">Unlike other radiology billing companies, we focus on clear communication and personalized service not just claim volume to ensure a better client experience.</p>
+          <p className="reveal rad-why-intro">Unlike other radiology billing companies, we focus on clear communication and personalized service not just claim volume to ensure a better client experience.</p>
 
           <div className="rad-why-grid">
             {[
@@ -162,8 +162,8 @@ export default function RadiologyBillingPage() {
               { icon:"🔍", n:"08", h:"Transparent Fee Structure",          t:"No hidden fees. Cost-effective, results-driven solutions with full reporting visibility." },
             ].map(({ icon, n, h, t }) => (
               <div className="rad-why-card reveal" key={n}>
-                <div className="rad-why-top">
-                  <div className="rad-why-icon-wrap" aria-hidden="true">{icon}</div>
+                <div className="reveal rad-why-top">
+                  <div className="reveal rad-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="rad-why-num">{n}</span>
                 </div>
                 <h3 className="reveal">{h}</h3>
@@ -183,7 +183,7 @@ export default function RadiologyBillingPage() {
             <p>Schedule a revenue assessment and discover how much your radiology practice can recover through accurate coding, faster authorizations, and proactive denial management.</p>
           </div>
           <div className="rad-mid-cta-action">
-            <Link href="/request-free-audit/" className="sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
+            <Link href="/request-free-audit/" className="reveal sp-btn sp-btn--primary">Schedule Revenue Assessment</Link>
             <p className="rad-mid-note">For radiology practices and imaging centers · 75,000+ claims processed daily · 50 states served</p>
           </div>
         </div>
@@ -210,7 +210,7 @@ export default function RadiologyBillingPage() {
                 ["How do you manage prior authorization for imaging procedures?",
                  "We handle pre-authorization for MRIs, CT scans, and other imaging procedures with efficient workflows, proactive insurer follow-ups, and documentation management to prevent authorization-related denials."],
               ].map(([q, a]) => (
-                <details key={q}>
+                <details className="reveal" key={q}>
                   <summary>{q}</summary>
                   <p>{a}</p>
                 </details>
