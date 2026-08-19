@@ -1,0 +1,317 @@
+/* ═══════════════════════════════════════════════════════════
+   MENTAL HEALTH BILLING — extends specialty.css
+   Design language: human, calm, structured — different from
+   other specialties. Unique animations: rotating border on
+   why-cards, alert-dot on denial cards, counter pills on stats.
+   All colors: global tokens only — zero hardcoded hex.
+═══════════════════════════════════════════════════════════ */
+
+.sp-sec--paper { background: var(--color-paper); }
+
+/* ─── RCM INTRO ──────────────────────────────────────────── */
+.mh-rcm-intro { color: var(--color-ink); margin-bottom: 1rem; max-width: 72ch; }
+
+/* ═══ SERVICES MOSAIC — 4-col, alternating accent border ════
+   Unique to mental health: alternating left-rail green/gold
+   with a subtle entry animation (slide from left on reveal).
+═══════════════════════════════════════════════════════════ */
+.mh-services-mosaic {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px; margin-top: 2rem;
+}
+.mh-svc-card {
+  position: relative; overflow: hidden;
+  background: var(--color-white);
+  border-radius: 0 14px 14px 0;
+  padding: 24px 20px 24px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+  border-top:    1px solid var(--color-line);
+  border-right:  1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  /* Left rail set per variant */
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease,
+    border-left-color .45s ease;
+}
+.mh-svc-card--green { border-left: 3px solid var(--color-secondary); }
+.mh-svc-card--gold  { border-left: 3px solid var(--color-accent); }
+
+/* Slide-in on reveal — unique animation for this page */
+body.js-ready .mh-page .mh-svc-card.reveal {
+  opacity: 0; transform: translateX(-10px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-left-color .45s ease;
+}
+body.js-ready .mh-page .mh-svc-card:nth-child(2).reveal { transition-delay: .08s; }
+body.js-ready .mh-page .mh-svc-card:nth-child(3).reveal { transition-delay: .16s; }
+body.js-ready .mh-page .mh-svc-card:nth-child(4).reveal { transition-delay: .24s; }
+body.js-ready .mh-page .mh-svc-card:nth-child(5).reveal { transition-delay: .08s; }
+body.js-ready .mh-page .mh-svc-card:nth-child(6).reveal { transition-delay: .16s; }
+body.js-ready .mh-page .mh-svc-card:nth-child(7).reveal { transition-delay: .24s; }
+body.js-ready .mh-page .mh-svc-card:nth-child(8).reveal { transition-delay: .32s; }
+.mh-page .mh-svc-card.in { opacity: 1 !important; transform: none !important; }
+
+.mh-svc-card:hover { transform: translateX(3px); box-shadow: 3px 0 18px rgba(26,33,79,.08); }
+.mh-svc-card--green:hover { border-left-color: var(--color-action); }
+.mh-svc-card--gold:hover  { border-left-color: var(--color-accent); box-shadow: 3px 0 18px rgba(212,155,40,.1); }
+
+.mh-svc-icon { font-size: 1.5rem; }
+.mh-svc-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; line-height: 1.35; }
+.mh-svc-card p  { font-size: var(--fs-sm); color: var(--color-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+.mh-services-cta { margin-top: 2rem; }
+
+/* ═══ DENIAL CHALLENGES GRID — navy, alert dot ══════════════
+   Alert dot: red at rest, pulses → green on hover.
+   Conveys "problem identified → being resolved."
+═══════════════════════════════════════════════════════════ */
+.mh-denial-intro { font-size: var(--fs-body); color: var(--text-on-dark-sub); max-width: 72ch; margin-bottom: 2rem; }
+.mh-denial-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px; margin-top: 2rem;
+}
+.mh-denial-card {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px; padding: 28px 22px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: background .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.mh-denial-card:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(82,133,50,.35);
+  transform: translateY(-4px);
+}
+
+.mh-denial-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.mh-denial-icon-wrap {
+  width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+  transition: background .45s ease, border-color .45s ease;
+}
+.mh-denial-card:hover .mh-denial-icon-wrap { background: rgba(82,133,50,.15); border-color: rgba(82,133,50,.3); }
+.mh-denial-num { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; color: var(--text-on-dark); opacity: .07; line-height: 1; margin-left: auto; }
+
+/* Alert dot — red at rest, green on hover */
+.mh-denial-dot {
+  position: absolute; top: 16px; right: 16px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(239,68,68,.7);
+  animation: mhAlertPulse 2s ease-in-out infinite;
+  will-change: transform, opacity;
+  transition: background .45s ease, box-shadow .45s ease;
+}
+.mh-denial-card:hover .mh-denial-dot {
+  background: var(--color-secondary);
+  box-shadow: 0 0 10px rgba(82,133,50,.6);
+  animation-duration: .8s;
+}
+@keyframes mhAlertPulse {
+  0%,100% { transform: scale(1);   opacity: .6; }
+  50%      { transform: scale(1.9); opacity: 1; box-shadow: 0 0 8px rgba(239,68,68,.5); }
+}
+.mh-denial-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; }
+.mh-denial-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ═══ PROCESS STEPS — paper bg, navy text ════════════════════
+   Different bg from other specialty process sections (navy).
+   Uses same step visual but on light paper background.
+═══════════════════════════════════════════════════════════ */
+.mh-process-intro { color: var(--color-muted); margin-bottom: 2rem; max-width: 68ch; }
+.mh-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.mh-step { display: grid; grid-template-columns: 80px 1fr; gap: 0; align-items: start; }
+.mh-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
+.mh-step-num {
+  font-family: var(--font-heading); font-size: clamp(2rem,3.5vw,3rem);
+  font-weight: 800; color: var(--color-secondary); line-height: .9;
+  letter-spacing: var(--ls-heading);
+}
+.mh-step-conn { flex: 1; width: 2px; background: var(--color-line); min-height: 40px; margin: 10px 0; }
+.mh-step-body {
+  background: var(--color-white); border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-secondary);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+  padding: 22px 28px; margin: 0 0 6px 16px;
+  transition: border-left-color .45s ease, box-shadow .45s ease;
+}
+.mh-step:hover .mh-step-body {
+  border-left-color: var(--color-action);
+  box-shadow: 3px 0 16px rgba(82,133,50,.1);
+}
+.mh-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); color: var(--color-primary); margin-bottom: 6px; }
+.mh-step-body p  { font-size: var(--fs-body); color: var(--color-muted); max-width: none; margin: 0; }
+.mh-process-cta { display: flex; align-items: center; gap: 20px; margin-top: 2.5rem; flex-wrap: wrap; }
+.mh-process-note { font-size: var(--fs-sm); color: var(--color-muted); }
+
+/* ═══ WHY-GRID — rotating border cards on ivory ═════════════
+   UNIQUE ANIMATION: rotating conic gradient border ring that
+   spins continuously at rest — different from orb/dot/glare.
+   GPU-only (transform on ::before pseudo-element).
+═══════════════════════════════════════════════════════════ */
+.mh-why-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+.mh-why-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 16px; margin-top: 2rem;
+}
+.mh-why-card {
+  position: relative; border-radius: 18px; padding: 2px;
+  background: var(--color-line); /* fallback border */
+  overflow: hidden;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+}
+/* Spinning conic gradient border ring — always on */
+.mh-why-spin-border {
+  position: absolute; inset: -2px;
+  border-radius: 20px;
+  background: conic-gradient(
+    from var(--mh-spin-angle, 0deg),
+    transparent 0deg,
+    var(--color-secondary) 60deg,
+    var(--color-accent) 120deg,
+    transparent 180deg
+  );
+  animation: mhSpin 6s linear infinite;
+  will-change: transform;
+  pointer-events: none; z-index: 0;
+}
+.mh-why-card:nth-child(2) .mh-why-spin-border { animation-delay: -1s; }
+.mh-why-card:nth-child(3) .mh-why-spin-border { animation-delay: -2s; }
+.mh-why-card:nth-child(4) .mh-why-spin-border { animation-delay: -3s; }
+.mh-why-card:nth-child(5) .mh-why-spin-border { animation-delay: -4s; }
+.mh-why-card:nth-child(6) .mh-why-spin-border { animation-delay: -5s; }
+@keyframes mhSpin {
+  to { transform: rotate(360deg); }
+}
+/* Inner content sits above the spinning border */
+.mh-why-inner {
+  position: relative; z-index: 1;
+  background: var(--color-white);
+  border-radius: 16px; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  height: 100%;
+  transition: background .45s ease;
+}
+.mh-why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,33,79,.12); }
+.mh-why-card:hover .mh-why-inner { background: var(--color-paper); }
+
+.mh-why-icon-wrap {
+  width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(82,133,50,.08); border: 1px solid rgba(82,133,50,.18);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+  transition: background .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.mh-why-card:hover .mh-why-icon-wrap { background: rgba(82,133,50,.14); border-color: rgba(82,133,50,.3); transform: scale(1.08); }
+.mh-why-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; line-height: 1.35; }
+.mh-why-card p  { font-size: var(--fs-sm); color: var(--color-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ═══ COUNTER STATS — navy bg, pill badges ══════════════════
+   UNIQUE: "Before → After" transformation shown as pill tags
+   below each counter — no seen before on this project.
+═══════════════════════════════════════════════════════════ */
+.mh-ba-sub { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 400; color: var(--text-on-dark-muted); margin: 0 0 2.5rem; max-width: 72ch; }
+.mh-counter-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px; background: rgba(255,255,255,.06);
+  border-radius: var(--radius-card); overflow: hidden;
+}
+.mh-counter-card {
+  background: rgba(255,255,255,.05); padding: 36px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: background .45s ease;
+}
+.mh-counter-card:hover { background: rgba(255,255,255,.08); }
+.mh-counter-card--accent { background: rgba(255,255,255,.07); border-top: 3px solid var(--color-accent); }
+.mh-counter-num {
+  font-family: var(--font-heading); font-size: clamp(2rem,4vw,3.25rem);
+  font-weight: 800; color: var(--color-accent); line-height: .85;
+  letter-spacing: var(--ls-heading);
+}
+.mh-counter-num span { font-size: 55%; color: rgba(212,155,40,.7); }
+.mh-counter-lbl { font-size: var(--fs-sm); font-weight: 700; color: var(--text-on-dark-sub); line-height: 1.35; }
+
+/* Pill badges */
+.mh-counter-pill {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px;
+}
+.mh-pill--before {
+  font-size: var(--fs-2xs); font-weight: 600;
+  background: rgba(239,68,68,.15); color: rgba(239,68,68,.85);
+  border: 1px solid rgba(239,68,68,.2);
+  border-radius: var(--radius-pill); padding: 2px 8px;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.mh-pill-arrow { font-size: var(--fs-xs); color: var(--text-on-dark-muted); }
+.mh-pill--after {
+  font-size: var(--fs-2xs); font-weight: 600;
+  background: rgba(82,133,50,.2); color: rgba(82,133,50,.95);
+  border: 1px solid rgba(82,133,50,.25);
+  border-radius: var(--radius-pill); padding: 2px 8px;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+
+/* ─── FAQ ─────────────────────────────────────────────────── */
+.mh-faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 64px; margin-top: 2rem; }
+.mh-faq-intro  { position: sticky; top: 110px; }
+.mh-faq-intro p { color: var(--color-muted); }
+.mh-faq-list details { border-bottom: 1px solid var(--color-line); }
+.mh-faq-list summary { list-style:none; position:relative; padding:20px 52px 20px 0; cursor:pointer; font-family:var(--font-heading); font-weight:600; font-size:var(--fs-body); color:var(--color-primary); transition:color .2s; }
+.mh-faq-list summary::-webkit-details-marker { display:none; }
+.mh-faq-list summary::after { content:'+'; position:absolute; right:10px; top:12px; color:var(--color-secondary); font-size:1.6rem; line-height:1; }
+.mh-faq-list details[open] summary::after { content:'−'; }
+.mh-faq-list details[open] summary { color:var(--color-action); }
+.mh-faq-list details p { padding:0 48px 20px 0; color:var(--color-muted); margin:0; font-size:var(--fs-body); line-height:var(--lh-body); max-width:none; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — 6 breakpoints
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .mh-services-mosaic  { grid-template-columns: repeat(2,1fr); }
+  .mh-denial-grid      { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mh-why-grid         { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .mh-counter-grid     { grid-template-columns: 1fr 1fr; }
+  .mh-faq-layout       { grid-template-columns: 1fr; gap: 2rem; }
+  .mh-faq-intro        { position: static; }
+  .mh-step             { grid-template-columns: 60px 1fr; }
+}
+@media (max-width: 900px) {
+  .mh-services-mosaic  { grid-template-columns: repeat(2,1fr); gap: 10px; }
+  .mh-denial-grid      { grid-template-columns: 1fr 1fr; }
+  .mh-why-grid         { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .mh-services-mosaic  { grid-template-columns: repeat(2,1fr); }
+  .mh-faq-list summary { font-size: var(--fs-sm); }
+}
+@media (max-width: 640px) {
+  .mh-services-mosaic  { grid-template-columns: 1fr; gap: 8px; }
+  .mh-denial-grid      { grid-template-columns: 1fr; gap: 8px; }
+  .mh-why-grid         { grid-template-columns: 1fr; gap: 12px; }
+  .mh-counter-grid     { grid-template-columns: 1fr 1fr; }
+  .mh-svc-card:hover   { transform: none; }
+  .mh-denial-card:hover { transform: none; }
+}
+@media (max-width: 480px) {
+  .mh-counter-grid     { grid-template-columns: 1fr 1fr; }
+  .mh-counter-card     { padding: 24px 16px; }
+  .mh-step             { grid-template-columns: 1fr; }
+  .mh-step-aside       { flex-direction: row; align-items: center; gap: 12px; padding-top: 0; margin-bottom: 8px; }
+  .mh-step-conn        { display: none; }
+  .mh-step-body        { margin-left: 0; }
+  .mh-faq-list summary { padding-right: 36px; font-size: var(--fs-sm); }
+  .mh-why-card:hover   { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-svc-card,
+  .mh-denial-card,
+  .mh-why-card { transition: none !important; }
+  .mh-svc-card:hover,
+  .mh-denial-card:hover,
+  .mh-why-card:hover { transform: none; }
+  .mh-why-spin-border   { animation: none; background: var(--color-line); }
+  .mh-denial-dot        { animation: none; }
+  body.js-ready .mh-page .mh-svc-card.reveal { opacity: 1; transform: none; transition: none; }
+  .sp-hero-stat::before { animation: none !important; opacity: 0; }
+  .sp-hero-stat-num     { animation: none !important; -webkit-text-fill-color: var(--color-accent); }
+}

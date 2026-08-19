@@ -121,6 +121,8 @@ const SPECIALTIES = [
   { label: "Rheumatology",      href: "/specialties/rheumatology-billing-services/", desc: "Biologics, DMARDs, J-codes & prior auth" },
   { label: "Internal Medicine",  href: "/specialties/internal-medicine-billing-service/", desc: "E/M coding, chronic care, MIPS reporting" },
   { label: "Radiology",          href: "/specialties/radiology-billing-service/",             desc: "Technical, professional & global billing" },
+  { label: "Dermatology",        href: "/specialties/dermatology-billing-service/",            desc: "Mohs surgery, biologics & cosmetic billing" },
+  { label: "Mental Health",      href: "/specialties/mental-health-billing-service/",          desc: "CPT, HBAI, MHPAEA & telehealth billing" },
   { label: "Dermatology",        href: "/specialties/dermatology-billing-service/",           desc: "Mohs surgery, biologic therapy, cosmetic billing" },
   { label: "Primary Care",      href: "/specialties/primary-care/",      desc: "E/M optimization for family and internal medicine" },
   { label: "Cardiology",        href: "/specialties/cardiology/",         desc: "Complex interventional and diagnostic billing" },
