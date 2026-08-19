@@ -117,19 +117,14 @@ const SERVICES = [
   },
 ];
 
+/* Specialty icon + label + desc — used in redesigned mega-menu */
 const SPECIALTIES = [
-  { label: "Rheumatology",      href: "/specialties/rheumatology-billing-services/", desc: "Biologics, DMARDs, J-codes & prior auth" },
-  { label: "Internal Medicine",  href: "/specialties/internal-medicine-billing-service/", desc: "E/M coding, chronic care, MIPS reporting" },
-  { label: "Radiology",          href: "/specialties/radiology-billing-service/",             desc: "Technical, professional & global billing" },
-  { label: "Dermatology",        href: "/specialties/dermatology-billing-service/",            desc: "Mohs surgery, biologics & cosmetic billing" },
-  { label: "Mental Health",      href: "/specialties/mental-health-billing-service/",          desc: "CPT, HBAI, MHPAEA & telehealth billing" },
-  { label: "Dermatology",        href: "/specialties/dermatology-billing-service/",           desc: "Mohs surgery, biologic therapy, cosmetic billing" },
-  { label: "Primary Care",      href: "/specialties/primary-care/",      desc: "E/M optimization for family and internal medicine" },
-  { label: "Cardiology",        href: "/specialties/cardiology/",         desc: "Complex interventional and diagnostic billing" },
-  { label: "Dermatology",       href: "/specialties/dermatology/",        desc: "Procedure coding and E/M documentation" },
-  { label: "Behavioral Health", href: "/specialties/behavioral-health/",  desc: "Telehealth, ERA, EFT enrollments" },
-  { label: "Oncology",          href: "/specialties/oncology/",           desc: "Drug administration and complex coding" },
-  { label: "Radiology",         href: "/specialties/radiology/",          desc: "Modality-specific technical and professional billing" },
+  { label: "Rheumatology",     href: "/specialties/rheumatology-billing-services/",         icon: "🧬", desc: "Biologics, DMARDs & prior auth" },
+  { label: "Internal Medicine",href: "/specialties/internal-medicine-billing-service/",      icon: "🩺", desc: "E/M coding, chronic care & MIPS" },
+  { label: "Radiology",        href: "/specialties/radiology-billing-service/",              icon: "🔬", desc: "Technical, professional & global" },
+  { label: "Dermatology",      href: "/specialties/dermatology-billing-service/",            icon: "🔭", desc: "Mohs, biologics & cosmetic billing" },
+  { label: "Family Practice",  href: "/specialties/family-practice-billing-service/",        icon: "👨‍👩‍👧", desc: "Full-spectrum primary care billing" },
+  { label: "Mental Health",    href: "/specialties/mental-health-billing-service/",          icon: "🧠", desc: "CPT, HBAI & telehealth billing" },
 ];
 
 const NAV = [
@@ -213,29 +208,44 @@ function ServicesMegaMenu({ onClose }) {
   );
 }
 
-/* ─── Specialties dropdown (simple list) ────────────────── */
+/* ─── Specialties mega-menu — redesigned themed panel ───── */
 function SpecialtiesDropdown({ onClose }) {
   return (
-    <div className="hdr-drop" role="menu">
-      <div className="hdr-drop-inner">
-        <ul className="hdr-drop-list" role="none">
-          {SPECIALTIES.map(({ label, href, desc }) => (
-            <li key={href} role="none">
-              <Link href={href} className="hdr-drop-item" role="menuitem" onClick={onClose}>
-                <span className="hdr-drop-label">{label}</span>
-                {desc && <span className="hdr-drop-desc">{desc}</span>}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="hdr-drop-feat">
-          <div className="hdr-drop-feat-tag">Explore</div>
-          <div className="hdr-drop-feat-title">All Specialties</div>
-          <p className="hdr-drop-feat-desc">Coding and billing configured for your specialty — cardiology, dermatology, oncology, and more.</p>
-          <Link href="/specialties/" className="hdr-drop-feat-cta" onClick={onClose}>
+    <div className="hdr-drop hdr-drop--spec" role="menu">
+      <div className="hdr-spec-inner">
+
+        {/* Left: eyebrow + specialty grid */}
+        <div className="hdr-spec-left">
+          <p className="hdr-spec-ew">Specialties We Serve</p>
+          <ul className="hdr-spec-grid" role="none">
+            {SPECIALTIES.map(({ label, href, icon, desc }) => (
+              <li key={href} role="none">
+                <Link href={href} className="hdr-spec-card" role="menuitem" onClick={onClose}>
+                  <span className="hdr-spec-icon" aria-hidden="true">{icon}</span>
+                  <span className="hdr-spec-body">
+                    <span className="hdr-spec-label">{label}</span>
+                    <span className="hdr-spec-desc">{desc}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right: navy accent panel */}
+        <div className="hdr-spec-right">
+          <div className="hdr-spec-badge">Specialty Billing</div>
+          <h3 className="hdr-spec-title">Revenue engineered for your specialty.</h3>
+          <p className="hdr-spec-body-txt">AAPC-certified coders. Specialty-specific workflows. Measurable results in 90 days.</p>
+          <div className="hdr-spec-stats">
+            <div className="hdr-spec-stat"><strong>97%</strong><span>Clean claim rate</span></div>
+            <div className="hdr-spec-stat"><strong>50</strong><span>States served</span></div>
+          </div>
+          <Link href="/specialties/" className="hdr-spec-cta" onClick={onClose}>
             View all specialties →
           </Link>
         </div>
+
       </div>
     </div>
   );
