@@ -1,202 +1,199 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-/* ── Reveal variant assignment rules ────────────────────────
-   Elements are assigned a reveal variant based on:
-   1. Their tag / role / className
-   2. Their index within their parent section
-   3. Whether they are inside a grid/flex container
-   This creates organic stagger and directional flow per section.
-──────────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────
+   REVEAL VARIANT RULES
+   Called once per page navigation. Assigns data-reveal + delay.
+───────────────────────────────────────────────────────────── */
 function assignRevealVariants() {
-  const reveals = document.querySelectorAll(".reveal:not([data-reveal])");
+  document.querySelectorAll(".reveal").forEach((el, globalIdx) => {
+    // Always reassign — page navigation creates fresh DOM
+    const tag       = el.tagName.toLowerCase();
+    const cls       = el.className || "";
+    const parentCls = el.parentElement?.className || "";
+    const grandCls  = el.parentElement?.parentElement?.className || "";
 
-  reveals.forEach((el, globalIdx) => {
-    const tag        = el.tagName.toLowerCase();
-    const cls        = el.className || "";
-    const parentCls  = el.parentElement?.className || "";
-    const grandCls   = el.parentElement?.parentElement?.className || "";
-
-    /* Count siblings with .reveal in the same direct parent */
-    const siblings = Array.from(el.parentElement?.querySelectorAll(
-      ":scope > .reveal, :scope > * > .reveal"
-    ) || []);
+    const siblings = Array.from(
+      el.parentElement?.querySelectorAll(":scope > .reveal, :scope > * > .reveal") || []
+    );
     const sibIdx = siblings.indexOf(el);
 
-    /* ── Rule 1: Eyebrows / labels come down ── */
-    if (cls.includes("-ew") || cls.includes("eyebrow") ||
-        cls.includes("sp-ew") || cls.includes("h-ew") ||
-        cls.includes("svc-idx-ew") || cls.includes("specs-ew")) {
+    // Eyebrows → drop from above
+    if (/\b(-ew|eyebrow|sp-ew|h-ew|svc-idx-ew|specs-ew)\b/.test(cls)) {
       el.dataset.reveal = "down";
       el.style.transitionDelay = "0s";
       return;
     }
-
-    /* ── Rule 2: Stat blocks / badges / numbers → scale ── */
-    if (cls.includes("-stat") || cls.includes("-num") ||
-        cls.includes("-counter") || cls.includes("-badge") ||
-        cls.includes("hero-stat") || cls.includes("ba-card") ||
-        cls.includes("metric") || cls.includes("-kpi")) {
+    // Stats / badges → scale in
+    if (/\b(-stat|hero-stat|ba-card|counter-card|-badge|-num|-metric|-kpi)\b/.test(cls)) {
       el.dataset.reveal = "scale";
       el.style.transitionDelay = `${sibIdx * 0.08}s`;
       return;
     }
-
-    /* ── Rule 3: Text paragraphs → blur (subtle) ── */
-    if (tag === "p" && !cls.includes("card") && !cls.includes("card")) {
+    // Body paragraphs → blur clear
+    if (tag === "p" && !/card/.test(cls)) {
       el.dataset.reveal = "blur";
-      el.style.transitionDelay = "0.1s";
+      el.style.transitionDelay = "0.08s";
       return;
     }
-
-    /* ── Rule 4: Grid children — left / up / right alternate ── */
-    const isInGrid = parentCls.includes("-grid") || parentCls.includes("-mosaic") ||
-                     parentCls.includes("-row") || grandCls.includes("-grid");
-    if (isInGrid) {
+    // Grid/mosaic children → wave: left | up | right by column
+    if (/(-grid|-mosaic|-row)/.test(parentCls) || /(-grid)/.test(grandCls)) {
       const col = sibIdx % 3;
-      if (col === 0)      el.dataset.reveal = "right"; /* leftmost → from left */
-      else if (col === 2) el.dataset.reveal = "left";  /* rightmost → from right */
-      else                el.dataset.reveal = "up";    /* middle → up */
+      el.dataset.reveal = col === 0 ? "right" : col === 2 ? "left" : "up";
       el.style.transitionDelay = `${sibIdx * 0.1}s`;
       return;
     }
-
-    /* ── Rule 5: Steps / process items → alternate sides ── */
-    if (cls.includes("-step") || cls.includes("-stage") ||
-        cls.includes("-why-card") || cls.includes("-denial-card")) {
+    // Process steps / why-cards → alternate left/right
+    if (/(-step|-stage|-why-card|-denial-card|-svc-card)/.test(cls)) {
       el.dataset.reveal = sibIdx % 2 === 0 ? "right" : "left";
-      el.style.transitionDelay = `${sibIdx * 0.12}s`;
+      el.style.transitionDelay = `${sibIdx * 0.11}s`;
       return;
     }
-
-    /* ── Rule 6: Cards in a list → staggered up ── */
-    if (cls.includes("-card") || cls.includes("-item") ||
-        cls.includes("-cap-card") || cls.includes("-svc-card") ||
-        cls.includes("svc-idx-card") || cls.includes("specs-live-card")) {
+    // Regular cards → staggered up
+    if (/(-card|-item|-cap-card|svc-idx-card|specs-live-card|specs-all-card)/.test(cls)) {
       el.dataset.reveal = "up";
       el.style.transitionDelay = `${sibIdx * 0.09}s`;
       return;
     }
-
-    /* ── Rule 7: Section-level reveals (whole sections) → up ── */
-    if (tag === "section" || tag === "article" || cls.includes("-sec")) {
+    // Sections → up, no delay
+    if (tag === "section" || tag === "article") {
       el.dataset.reveal = "up";
       el.style.transitionDelay = "0s";
       return;
     }
-
-    /* ── Default: fade up with slight global-index stagger ── */
+    // Default → fade up
     el.dataset.reveal = "up";
-    el.style.transitionDelay = `${(globalIdx % 4) * 0.06}s`;
+    el.style.transitionDelay = `${(globalIdx % 5) * 0.05}s`;
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FULL RESET — called on every route change before new setup
+   Removes ALL prior .in / .visible state and data-reveal attrs
+   so the new page starts clean.
+───────────────────────────────────────────────────────────── */
+function resetReveals() {
+  document.querySelectorAll(".reveal").forEach((el) => {
+    el.classList.remove("in", "visible");
+    delete el.dataset.reveal;
+    el.style.transitionDelay = "";
   });
 }
 
 export default function Scripts() {
   const pathname = usePathname();
+  const ioRef    = useRef(null);
+  const flowRef  = useRef(null);
 
-  /* Mark body js-ready once on mount */
+  /* ── Mark body js-ready on first mount only ── */
   useEffect(() => {
     document.body.classList.add("js-ready");
   }, []);
 
   useEffect(() => {
-    /* ── Assign reveal variants first ── */
-    assignRevealVariants();
+    /* 1. Tear down previous observers */
+    ioRef.current?.disconnect();
+    flowRef.current?.disconnect();
 
-    /* ── Show elements already in viewport ── */
-    const revealInView = () => {
-      document.querySelectorAll(".reveal:not(.in):not(.visible)").forEach((el) => {
-        if (el.getBoundingClientRect().top < window.innerHeight + 80) {
-          el.classList.add("in", "visible");
-        }
+    /* 2. Reset all reveal state from previous page */
+    resetReveals();
+
+    /* 3. Small rAF so React has committed new page DOM */
+    const setup = () => {
+      /* 4. Assign variants to fresh DOM */
+      assignRevealVariants();
+
+      /* 5. Immediately reveal anything already in viewport */
+      const vh = window.innerHeight;
+      document.querySelectorAll(".reveal").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < vh + 60) el.classList.add("in", "visible");
       });
+
+      /* 6. IntersectionObserver for below-the-fold elements */
+      if ("IntersectionObserver" in window) {
+        ioRef.current = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("in", "visible");
+                ioRef.current?.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -24px 0px", threshold: 0.04 }
+        );
+        document.querySelectorAll(".reveal:not(.in)").forEach((el) =>
+          ioRef.current.observe(el)
+        );
+      } else {
+        // Fallback: show everything
+        document.querySelectorAll(".reveal").forEach((el) =>
+          el.classList.add("in", "visible")
+        );
+      }
+
+      /* 7. Workflow SVG observer */
+      if ("IntersectionObserver" in window) {
+        flowRef.current = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("active");
+                flowRef.current?.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        document.querySelectorAll("[data-workflow]").forEach((el) =>
+          flowRef.current.observe(el)
+        );
+      }
     };
-    revealInView();
-    const raf = requestAnimationFrame(revealInView);
 
-    /* ── IntersectionObserver with rootMargin for early trigger ── */
-    let io = null;
-    if ("IntersectionObserver" in window) {
-      io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("in", "visible");
-              io.unobserve(e.target);
-            }
-          });
-        },
-        { rootMargin: "0px 0px -32px 0px", threshold: 0.04 }
-      );
-      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-    } else {
-      document.querySelectorAll(".reveal").forEach((el) =>
-        el.classList.add("in", "visible")
-      );
-    }
+    // Use double rAF — ensures browser has painted new page content
+    const r1 = requestAnimationFrame(() => {
+      const r2 = requestAnimationFrame(setup);
+      return r2;
+    });
 
-    /* ── Workflow SVG animations ── */
-    let flowIO = null;
-    if ("IntersectionObserver" in window) {
-      flowIO = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("active");
-              flowIO.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.22 }
-      );
-      document.querySelectorAll("[data-workflow]").forEach((el) =>
-        flowIO.observe(el)
-      );
-    }
-
-    /* ── Generic CTA form handler ── */
-    const ctaForms = document.querySelectorAll("form[data-cta-form]");
-    const formHandlers = [];
-    ctaForms.forEach((form) => {
+    /* 8. CTA form handler */
+    const forms = document.querySelectorAll("form[data-cta-form]");
+    const handlers = [];
+    forms.forEach((form) => {
       const onSubmit = async (e) => {
         e.preventDefault();
-        const submitBtn = form.querySelector("button[type=submit]");
-        if (submitBtn) {
-          submitBtn.disabled    = true;
-          submitBtn.textContent = "Sending…";
-        }
-        const data = Object.fromEntries(new FormData(form));
-        data.page  = window.location.pathname;
+        const btn = form.querySelector("button[type=submit]");
+        if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+        const payload = { ...Object.fromEntries(new FormData(form)), page: pathname };
         try {
           const res = await fetch("/api/assessment", {
-            method:  "POST",
+            method: "POST",
             headers: { "Content-Type": "application/json" },
-            body:    JSON.stringify(data),
+            body: JSON.stringify(payload),
           });
-          if (res.ok) {
-            const successEl = form.closest("[data-cta-section]")
-                                  ?.querySelector("[data-success]");
-            if (successEl) successEl.classList.add("show");
-            if (submitBtn) submitBtn.textContent = "Request Received ✓";
-            form.reset();
-          } else { throw new Error("server error"); }
+          const ok = res.ok;
+          const success = form.closest("[data-cta-section]")?.querySelector("[data-success]");
+          if (success) success.classList.add("show");
+          if (btn) btn.textContent = ok ? "Request Received ✓" : "Sent ✓";
+          form.reset();
         } catch {
-          const successEl = form.closest("[data-cta-section]")
-                                ?.querySelector("[data-success]");
-          if (successEl) successEl.classList.add("show");
-          if (submitBtn) submitBtn.textContent = "Request Received ✓";
+          const success = form.closest("[data-cta-section]")?.querySelector("[data-success]");
+          if (success) success.classList.add("show");
+          if (btn) btn.textContent = "Sent ✓";
         }
       };
       form.addEventListener("submit", onSubmit);
-      formHandlers.push({ form, onSubmit });
+      handlers.push({ form, onSubmit });
     });
 
     return () => {
-      cancelAnimationFrame(raf);
-      io?.disconnect();
-      flowIO?.disconnect();
-      formHandlers.forEach(({ form, onSubmit }) =>
+      cancelAnimationFrame(r1);
+      ioRef.current?.disconnect();
+      flowRef.current?.disconnect();
+      handlers.forEach(({ form, onSubmit }) =>
         form.removeEventListener("submit", onSubmit)
       );
     };

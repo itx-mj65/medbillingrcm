@@ -1006,36 +1006,42 @@ details p { padding: 0 52px 20px 0; color: #5b5f6d; margin: 0; font-size: .97rem
    Transition durations stagger by element index (auto in JS).
 ═══════════════════════════════════════════════════════════ */
 
-/* ── Base: hide before JS is ready ─── */
-body.js-ready .reveal {
+/* ═══════════════════════════════════════════════════════════
+   SCROLL REVEAL — 6 variants, auto-assigned by Scripts.js
+   
+   CRITICAL RULES:
+   1. Only hide when BOTH js-ready AND data-reveal are set
+      (prevents flash during SSR/hydration and route changes)
+   2. .in class always wins — overrides everything
+   3. Transitions on opacity + transform only (GPU compositor)
+═══════════════════════════════════════════════════════════ */
+
+/* ── Hidden state: ONLY when JS has assigned a variant ── */
+body.js-ready .reveal[data-reveal] {
   opacity: 0;
   transition-property: opacity, transform, filter;
   transition-timing-function: cubic-bezier(.22,.8,.2,1);
-  transition-duration: .7s;
+  transition-duration: .65s;
   will-change: opacity, transform;
 }
 
-/* ── Variant transforms (applied at hidden state) ─── */
-body.js-ready .reveal[data-reveal="up"]    { transform: translateY(22px); }
-body.js-ready .reveal[data-reveal="down"]  { transform: translateY(-18px); }
-body.js-ready .reveal[data-reveal="left"]  { transform: translateX(24px); }
-body.js-ready .reveal[data-reveal="right"] { transform: translateX(-24px); }
-body.js-ready .reveal[data-reveal="scale"] { transform: scale(.93); }
-body.js-ready .reveal[data-reveal="blur"]  { transform: translateY(10px); filter: blur(4px); }
+/* ── Variant transforms ── */
+body.js-ready .reveal[data-reveal="up"]    { transform: translateY(20px); }
+body.js-ready .reveal[data-reveal="down"]  { transform: translateY(-16px); }
+body.js-ready .reveal[data-reveal="left"]  { transform: translateX(22px); }
+body.js-ready .reveal[data-reveal="right"] { transform: translateX(-22px); }
+body.js-ready .reveal[data-reveal="scale"] { transform: scale(.94); }
+body.js-ready .reveal[data-reveal="blur"]  { transform: translateY(8px); filter: blur(3px); }
 
-/* Fallback for elements without data-reveal (default = up) */
-body.js-ready .reveal:not([data-reveal]) { transform: translateY(22px); }
-
-/* ── Revealed state ─── */
+/* ── Revealed: always visible regardless of state ── */
 .reveal.in,
-.reveal.visible {
+.reveal.visible,
+.reveal:not([data-reveal]) {
   opacity: 1 !important;
   transform: none !important;
   filter: none !important;
+  transition-duration: .65s;
 }
-
-/* ── Stagger delays — applied via inline style from JS ─── */
-/* (JS sets style.transitionDelay so no CSS classes needed) */
 
 /* ═══════════════════════════════════════════════════════════
    REDUCED MOTION — brand book p.18: honour prefers-reduced-motion
