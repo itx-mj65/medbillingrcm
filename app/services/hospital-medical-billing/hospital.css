@@ -82,6 +82,21 @@
 }
 .proof-item:last-child { border-right: 0; }
 
+/* ─── H-EW (eyebrow labels for new sections) ─────────────── */
+.h-ew {
+  display: flex; align-items: center; gap: 12px;
+  margin: 0 0 10px;
+  font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--color-action);
+}
+.h-ew::before {
+  content: ''; flex-shrink: 0; width: 32px;
+  border-top: 2px solid var(--color-accent);
+}
+.h-ew--gold { color: var(--color-accent); }
+.h-ew--gold::before { border-color: var(--color-accent); }
+
 /* ─── LEVEL2 SECTIONS ────────────────────────────────────── */
 .level2 {
   padding: var(--sec-desktop) 0;
@@ -100,9 +115,9 @@
   color: var(--color-primary);
   margin: 0 0 20px; max-width: 860px; text-wrap: balance;
 }
-/* Eyebrow via data-eyebrow attribute */
+/* Eyebrow via data-eyebrow attribute — disabled, using .h-ew paragraph instead */
 .level2 > h2::before {
-  content: attr(data-eyebrow);
+  content: none; /* suppressed — h-ew paragraph handles eyebrow */
   display: block; margin-bottom: 14px;
   font-family: var(--font-body);
   font-size: var(--fs-xs); font-weight: 800;
