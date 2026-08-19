@@ -24,8 +24,8 @@ export default function RadiologyBillingPage() {
       {/* ═══ FLEXIBLE SERVICES ════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="expert-rcm">
         <div className="sp-wrap">
-          <p className="sp-ew">Expert Radiology Billing</p>
-          <h2>Flexible Radiology Billing Services for Every Practice Model</h2>
+          <p className="reveal sp-ew">Expert Radiology Billing</p>
+          <h2 className="reveal">Flexible Radiology Billing Services for Every Practice Model</h2>
 
           <div className="rad-rcm-layout">
             <div className="rad-rcm-copy">
@@ -62,8 +62,8 @@ export default function RadiologyBillingPage() {
       {/* ═══ CAPABILITIES — navy cards ════════════════════════ */}
       <section className="sp-sec sp-sec--ivory reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Core Capabilities</p>
-          <h2>Radiology Billing Solutions That Address Your Challenges</h2>
+          <p className="reveal sp-ew">Core Capabilities</p>
+          <h2 className="reveal">Radiology Billing Solutions That Address Your Challenges</h2>
           <p className="rad-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="rad-caps-grid">
@@ -80,7 +80,7 @@ export default function RadiologyBillingPage() {
                   <div className="rad-cap-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="rad-cap-num">{n}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -99,9 +99,9 @@ export default function RadiologyBillingPage() {
           timeline strip showing the transformation journey visually. */}
       <section className="sp-sec sp-sec--paper reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Operational Transformation</p>
-          <h2>Before → After. The Numbers Tell the Story.</h2>
-          <h3 className="rad-ba-sub">Reducing Your Radiology Average AR Days</h3>
+          <p className="reveal sp-ew">Operational Transformation</p>
+          <h2 className="reveal">Before → After. The Numbers Tell the Story.</h2>
+          <h3 className="reveal rad-ba-sub">Reducing Your Radiology Average AR Days</h3>
 
           {/* Timeline strip — unique to radiology */}
           <div className="rad-timeline-strip">
@@ -124,7 +124,7 @@ export default function RadiologyBillingPage() {
           </div>
 
           {/* Metric cards row */}
-          <div className="rad-metrics-row">
+          <div className="reveal rad-metrics-row">
             <div className="rad-metric">
               <div className="rad-metric-num">90<span>%+</span></div>
               <div className="rad-metric-lbl">First-Pass Clean Claims</div>
@@ -146,8 +146,8 @@ export default function RadiologyBillingPage() {
       {/* ═══ WHY MEDBILLING — left-rail cards ═══════════════════ */}
       <section className="sp-sec sp-sec--navy reveal">
         <div className="sp-wrap">
-          <p className="sp-ew sp-ew--gold">Why Medbilling RCM</p>
-          <h2>Your Radiology Revenue Infrastructure Partner</h2>
+          <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
+          <h2 className="reveal">Your Radiology Revenue Infrastructure Partner</h2>
           <p className="rad-why-intro">Unlike other radiology billing companies, we focus on clear communication and personalized service not just claim volume to ensure a better client experience.</p>
 
           <div className="rad-why-grid">
@@ -166,7 +166,7 @@ export default function RadiologyBillingPage() {
                   <div className="rad-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="rad-why-num">{n}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -178,8 +178,8 @@ export default function RadiologyBillingPage() {
       <section className="sp-sec sp-sec--ivory reveal rad-mid-cta-sec">
         <div className="sp-wrap rad-mid-cta">
           <div>
-            <p className="sp-ew">Revenue Assessment</p>
-            <h2>Engineer Your Radiology Revenue System</h2>
+            <p className="reveal sp-ew">Revenue Assessment</p>
+            <h2 className="reveal">Engineer Your Radiology Revenue System</h2>
             <p>Schedule a revenue assessment and discover how much your radiology practice can recover through accurate coding, faster authorizations, and proactive denial management.</p>
           </div>
           <div className="rad-mid-cta-action">
@@ -192,8 +192,8 @@ export default function RadiologyBillingPage() {
       {/* ═══ FAQ ══════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="faq">
         <div className="sp-wrap">
-          <p className="sp-ew">Common Questions</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="reveal sp-ew">Common Questions</p>
+          <h2 className="reveal">Frequently Asked Questions</h2>
 
           <div className="rad-faq-layout">
             <div className="rad-faq-intro">

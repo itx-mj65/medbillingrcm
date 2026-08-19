@@ -1,10 +1,10 @@
 export default function Specialties() {
   return (
-    <section className="section specialties" id="specialties">
+    <section className="reveal section specialties" id="specialties">
       <div className="shell">
         <div className="section-head center reveal">
-          <p className="eyebrow">Specialty-assigned teams</p>
-          <h2>Billing Built Around Your Specialty</h2>
+          <p className="reveal eyebrow">Specialty-assigned teams</p>
+          <h2 className="reveal">Billing Built Around Your Specialty</h2>
           <p className="lead">Every specialty carries its own denial risks. Modifier rules, prior authorization triggers, documentation requirements, and payer policies all shift depending on what you practice. Coding teams are assigned by specialty at onboarding rather than pooled.</p>
         </div>
         <div className="specialties-layout">

@@ -1,13 +1,13 @@
 export default function Standard() {
   return (
-    <section className="section standard" id="standard">
+    <section className="reveal section standard" id="standard">
       <div className="shell standard-grid">
         <div className="standard-mark reveal">
           97%<small>First-pass clean claim rate<br/>measured at the payer</small>
         </div>
         <div className="standard-copy reveal">
-          <p className="eyebrow">Evidence over claims</p>
-          <h2>The Standard We Hold Ourselves To</h2>
+          <p className="reveal eyebrow">Evidence over claims</p>
+          <h2 className="reveal">The Standard We Hold Ourselves To</h2>
           <p>Ask a medical billing company how long it has been operating, and you will get a number. Ask how it measures its clean claim rate, and the answers get vague. We would rather be judged on the second question.</p>
           <p>Medbilling RCM measures its 97% first-pass clean claim rate at the payer with zero rework, not at the clearinghouse where the number always looks better. The clients above are named, and the figures are theirs.</p>
           <p>Our reporting is available to any prospective client who wants to see it before signing anything.</p>

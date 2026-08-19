@@ -1,10 +1,10 @@
 export default function Measure() {
   return (
-    <section className="section measure">
+    <section className="reveal section measure">
       <div className="shell">
         <div className="section-head reveal">
-          <p className="eyebrow">Measurement matters</p>
-          <h2>A Number Worth Checking Before You Believe It</h2>
+          <p className="reveal eyebrow">Measurement matters</p>
+          <h2 className="reveal">A Number Worth Checking Before You Believe It</h2>
           <p className="lead" style={{ color: "#d1d4dd" }}>A clean claim rate can be measured at two different points, and the two figures are not close.</p>
         </div>
         <div className="measure-grid">

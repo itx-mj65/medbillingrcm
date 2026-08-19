@@ -24,8 +24,8 @@ export default function FamilyPracticeBillingPage() {
       {/* ═══ COMPREHENSIVE FP BILLING ═════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="expert-rcm">
         <div className="sp-wrap">
-          <p className="sp-ew">Comprehensive FP Billing</p>
-          <h2>Our Comprehensive Family Practice Billing Services</h2>
+          <p className="reveal sp-ew">Comprehensive FP Billing</p>
+          <h2 className="reveal">Our Comprehensive Family Practice Billing Services</h2>
 
           <div className="fp-rcm-layout">
             <div className="fp-rcm-copy">
@@ -78,8 +78,8 @@ export default function FamilyPracticeBillingPage() {
           specialty pages which use navy orb capability cards.         */}
       <section className="sp-sec sp-sec--ivory reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Maximum Reimbursements</p>
-          <h2>Family Medicine Billing Solutions for Maximum Reimbursements</h2>
+          <p className="reveal sp-ew">Maximum Reimbursements</p>
+          <h2 className="reveal">Family Medicine Billing Solutions for Maximum Reimbursements</h2>
           <p className="fp-solutions-sub">Family physicians provide comprehensive care across a wide range of conditions and services. We handle billing for all of them ensuring timely and accurate reimbursement every time.</p>
 
           {/* ── Code showcase row ─── */}
@@ -118,7 +118,7 @@ export default function FamilyPracticeBillingPage() {
               ].map(({ t, h, d }) => (
                 <div className="fp-denial-card" key={t}>
                   <div className="fp-denial-type">{t}</div>
-                  <h3>{h}</h3>
+                  <h3 className="reveal">{h}</h3>
                   <p>{d}</p>
                 </div>
               ))}
@@ -137,7 +137,7 @@ export default function FamilyPracticeBillingPage() {
             ].map(({ icon, h, t }) => (
               <div className="fp-feature-card reveal" key={h}>
                 <div className="fp-feature-icon" aria-hidden="true">{icon}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -158,11 +158,11 @@ export default function FamilyPracticeBillingPage() {
           old-model billing to Medbilling RCM model.                  */}
       <section className="sp-sec sp-sec--paper reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Operational Transformation</p>
-          <h2>Before → After. The Numbers Tell the Story.</h2>
+          <p className="reveal sp-ew">Operational Transformation</p>
+          <h2 className="reveal">Before → After. The Numbers Tell the Story.</h2>
 
           <div className="fp-ba-grid">
-            <div className="fp-ba-card">
+            <div className="reveal fp-ba-card">
               <div className="fp-ba-top">
                 <div className="fp-ba-before">Slow</div>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -170,7 +170,7 @@ export default function FamilyPracticeBillingPage() {
               <div className="fp-ba-after">10%<span>↑</span></div>
               <div className="fp-ba-lbl">Faster Payments</div>
             </div>
-            <div className="fp-ba-card fp-ba-card--green">
+            <div className="reveal fp-ba-card fp-ba-card--green">
               <div className="fp-ba-top">
                 <div className="fp-ba-before">High</div>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -178,7 +178,7 @@ export default function FamilyPracticeBillingPage() {
               <div className="fp-ba-after">99<span>%</span></div>
               <div className="fp-ba-lbl">Clean Claim Rate</div>
             </div>
-            <div className="fp-ba-card">
+            <div className="reveal fp-ba-card">
               <div className="fp-ba-top">
                 <div className="fp-ba-before">Manual</div>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -186,7 +186,7 @@ export default function FamilyPracticeBillingPage() {
               <div className="fp-ba-after">24/7</div>
               <div className="fp-ba-lbl">Reporting Access</div>
             </div>
-            <div className="fp-ba-card fp-ba-card--gold">
+            <div className="reveal fp-ba-card fp-ba-card--gold">
               <div className="fp-ba-top">
                 <div className="fp-ba-before">In-House</div>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -201,8 +201,8 @@ export default function FamilyPracticeBillingPage() {
       {/* ═══ WHY CHOOSE US ════════════════════════════════════ */}
       <section className="sp-sec sp-sec--navy reveal">
         <div className="sp-wrap">
-          <p className="sp-ew sp-ew--gold">Why Choose Us</p>
-          <h2>Why Choose Us as Your Family Medicine Billing Company?</h2>
+          <p className="reveal sp-ew sp-ew--gold">Why Choose Us</p>
+          <h2 className="reveal">Why Choose Us as Your Family Medicine Billing Company?</h2>
           <p className="fp-why-intro">Our scalable family medicine billing services grow with your practice whether you're a solo physician or a multi-provider group across multiple states. Every feature is designed to reduce friction, increase revenue, and give you full financial visibility.</p>
 
           <div className="fp-why-grid">
@@ -219,7 +219,7 @@ export default function FamilyPracticeBillingPage() {
                   <div className="fp-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="fp-why-num">{n}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -231,8 +231,8 @@ export default function FamilyPracticeBillingPage() {
       <section className="sp-sec sp-sec--ivory reveal">
         <div className="sp-wrap fp-mid-cta">
           <div>
-            <p className="sp-ew">Revenue Assessment</p>
-            <h2>Engineer Your Family Practice Revenue System</h2>
+            <p className="reveal sp-ew">Revenue Assessment</p>
+            <h2 className="reveal">Engineer Your Family Practice Revenue System</h2>
             <p>Schedule a free demo and discover how much revenue your family practice is leaving on the table. Our specialists identify coding gaps, optimize your billing workflow, and deploy systems not promises.</p>
           </div>
           <div className="fp-mid-cta-action">
@@ -245,8 +245,8 @@ export default function FamilyPracticeBillingPage() {
       {/* ═══ FAQ ══════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="faq">
         <div className="sp-wrap">
-          <p className="sp-ew">Common Questions</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="reveal sp-ew">Common Questions</p>
+          <h2 className="reveal">Frequently Asked Questions</h2>
 
           <div className="fp-faq-layout">
             <div className="fp-faq-intro">

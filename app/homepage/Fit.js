@@ -1,15 +1,15 @@
 export default function Fit() {
   return (
-    <section className="section fit">
+    <section className="reveal section fit">
       <div className="shell">
         <div className="section-head center reveal">
-          <p className="eyebrow">Who we are built for</p>
-          <h2>Built for Practices Ready to Operate at a Higher Level</h2>
+          <p className="reveal eyebrow">Who we are built for</p>
+          <h2 className="reveal">Built for Practices Ready to Operate at a Higher Level</h2>
           <p className="lead">Our medical practice billing services are built for a specific type of organization. Understanding fit early saves everyone time.</p>
         </div>
         <div className="fit-grid">
           <article className="fit-card good reveal">
-            <h3>A strong fit if:</h3>
+            <h3 className="reveal">A strong fit if:</h3>
             <ul>
               <li>You generate $1M+ in annual collections and want to optimize</li>
               <li>Your CFO or administrator is actively engaged in the process</li>
@@ -20,7 +20,7 @@ export default function Fit() {
             </ul>
           </article>
           <article className="fit-card less reveal">
-            <h3>Less of a fit if:</h3>
+            <h3 className="reveal">Less of a fit if:</h3>
             <ul>
               <li>You are looking for the lowest-cost billing option</li>
               <li>Your practice bills under $500K in annual collections</li>

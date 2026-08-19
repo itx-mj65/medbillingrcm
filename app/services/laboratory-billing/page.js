@@ -67,8 +67,8 @@ export default function LaboratoryBillingPage() {
       {/* ═══ WHY LAB BILLING BREAKS DIFFERENTLY ════════════ */}
       <section className="lab-sec lab-sec--white reveal" id="why">
         <div className="lab-wrap">
-          <p className="lab-ew">Why laboratory billing breaks differently</p>
-          <h2>Why laboratory billing breaks differently</h2>
+          <p className="reveal lab-ew">Why laboratory billing breaks differently</p>
+          <h2 className="reveal">Why laboratory billing breaks differently</h2>
 
           {/* Two-column comparison card */}
           <div className="lab-compare">
@@ -89,8 +89,8 @@ export default function LaboratoryBillingPage() {
       {/* ═══ PAMA SECTION ════════════════════════════════════ */}
       <section className="lab-sec lab-sec--navy reveal">
         <div className="lab-wrap">
-          <p className="lab-ew lab-ew--gold">PAMA: $4 billion in cuts and counting</p>
-          <h2>PAMA: $4 billion in cuts and counting</h2>
+          <p className="reveal lab-ew lab-ew--gold">PAMA: $4 billion in cuts and counting</p>
+          <h2 className="reveal">PAMA: $4 billion in cuts and counting</h2>
 
           {/* Three stat cards */}
           <div className="lab-pama-stats">
@@ -119,8 +119,8 @@ export default function LaboratoryBillingPage() {
       {/* ═══ SCOPE — DIAGNOSTIC BILLING SERVICES ════════════ */}
       <section className="lab-sec lab-sec--ivory reveal" id="scope">
         <div className="lab-wrap">
-          <p className="lab-ew">What we cover</p>
-          <h2>What our diagnostic billing services cover</h2>
+          <p className="reveal lab-ew">What we cover</p>
+          <h2 className="reveal">What our diagnostic billing services cover</h2>
 
           {/* IMAGE PLACEHOLDER — scope section
               File:   /public/lab-scope.webp
@@ -151,7 +151,7 @@ export default function LaboratoryBillingPage() {
             ].map(({ n, h, t }) => (
               <article className="lab-scope-card reveal" key={n}>
                 <div className="lab-scope-num">{n}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -162,8 +162,8 @@ export default function LaboratoryBillingPage() {
       {/* ═══ LAB TYPES — tabbed cards ═══════════════════════ */}
       <section className="lab-sec lab-sec--white reveal">
         <div className="lab-wrap">
-          <p className="lab-ew">Built for every type of laboratory</p>
-          <h2>Built for every type of laboratory</h2>
+          <p className="reveal lab-ew">Built for every type of laboratory</p>
+          <h2 className="reveal">Built for every type of laboratory</h2>
           <div className="lab-types-grid">
             {[
               {
@@ -194,7 +194,7 @@ export default function LaboratoryBillingPage() {
             ].map(({ icon, h, t }) => (
               <article className="lab-type-card reveal" key={h}>
                 <div className="lab-type-icon">{icon}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -205,8 +205,8 @@ export default function LaboratoryBillingPage() {
       {/* ═══ LIS / EHR SYSTEMS ══════════════════════════════ */}
       <section className="lab-sec lab-sec--navy reveal">
         <div className="lab-wrap">
-          <p className="lab-ew lab-ew--gold">Works with your existing lab systems</p>
-          <h2>Works with your existing lab systems</h2>
+          <p className="reveal lab-ew lab-ew--gold">Works with your existing lab systems</p>
+          <h2 className="reveal">Works with your existing lab systems</h2>
           <p>You keep your LIS and EHR. We work inside your existing setup with integrations scoped during the free revenue assessment. See also: <Link href="/services/medical-coding/">medical coding services</Link>.</p>
           <div className="lab-ehr-strip">
             {["Orchard","Sunquest","SCC SoftLab","Epic Beaker","Athenahealth","eClinicalWorks","NextGen","Kareo","LabWare","LabVantage","MEDITECH","Cerner PathNet","30+ others"].map(s => (
@@ -220,7 +220,7 @@ export default function LaboratoryBillingPage() {
       <div className="lab-cta-band">
         <div className="lab-cta-inner">
           <div>
-            <h2>Your lab runs the tests. We collect the revenue.</h2>
+            <h2 className="reveal">Your lab runs the tests. We collect the revenue.</h2>
             <p>The free revenue assessment covers your denial rate by root cause, coding accuracy against current CPT and PLA code sets, PAMA reporting status, and estimated recoverable revenue. You keep the findings whether or not you work with us.</p>
           </div>
           <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
@@ -245,8 +245,8 @@ export default function LaboratoryBillingPage() {
       {/* ═══ FAQ ═════════════════════════════════════════════ */}
       <section className="lab-sec lab-sec--white reveal" id="faq">
         <div className="lab-wrap">
-          <p className="lab-ew">Laboratory billing questions we get asked</p>
-          <h2>Laboratory billing questions we get asked</h2>
+          <p className="reveal lab-ew">Laboratory billing questions we get asked</p>
+          <h2 className="reveal">Laboratory billing questions we get asked</h2>
           <div className="lab-faq-layout">
             <div className="lab-faq-intro">
               <p>Direct answers for labs, pathology practices, and diagnostic centers evaluating a billing partner.</p>

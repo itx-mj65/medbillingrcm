@@ -1,10 +1,10 @@
 export default function Benchmark() {
   return (
-    <section className="section benchmark">
+    <section className="reveal section benchmark">
       <div className="shell">
         <div className="section-head reveal">
-          <p className="eyebrow">Transparent comparison</p>
-          <h2>Where We Sit Against the Benchmarks</h2>
+          <p className="reveal eyebrow">Transparent comparison</p>
+          <h2 className="reveal">Where We Sit Against the Benchmarks</h2>
           <p className="lead">The industry figures below come from HFMA and Kodiak Solutions. Our figures come from our own reporting and can be produced on request.</p>
         </div>
         <div className="table-wrap reveal">

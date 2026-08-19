@@ -1,6 +1,6 @@
 export default function Trust() {
   return (
-    <section className="trust" aria-label="Trust credentials">
+    <section className="reveal trust" aria-label="Trust credentials">
       <div className="shell trust-inner">
         <div className="trust-item"><strong>HIPAA</strong>Compliant</div>
         <div className="trust-item"><strong>BAA</strong>On day one</div>

@@ -51,11 +51,11 @@ export default function Faq() {
   ];
 
   return (
-    <section className="section faq" id="faq">
+    <section className="reveal section faq" id="faq">
       <div className="shell faq-grid">
         <div className="faq-intro reveal">
-          <p className="eyebrow">Practical answers</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="reveal eyebrow">Practical answers</p>
+          <h2 className="reveal">Frequently Asked Questions</h2>
           <p className="lead">Straight answers about onboarding, pricing, compliance, clean claim measurement, and switching billing partners.</p>
         </div>
         <div className="reveal">

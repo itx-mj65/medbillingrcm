@@ -101,10 +101,10 @@ export default function SpecialtiesIndexPage() {
     <main className="specs-page" id="main">
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="specs-hero">
+      <section className="reveal specs-hero">
         <div className="specs-wrap">
           <div className="specs-hero-copy">
-            <p className="specs-hero-ew">Specialty Billing Infrastructure</p>
+            <p className="reveal specs-hero-ew">Specialty Billing Infrastructure</p>
             <h1>Our Core Specialties</h1>
             <p className="specs-hero-intro">Medbilling RCM specializes in providing comprehensive medical billing services to practices of all sizes in more than 50 specialties. Our dedicated team understands the complexities of medical billing and is committed to maximizing your revenue and minimizing administrative burdens.</p>
             <div className="specs-hero-badges">
@@ -132,15 +132,15 @@ export default function SpecialtiesIndexPage() {
       {/* ── INTRO STRIP ──────────────────────────────────── */}
       <div className="specs-intro-strip">
         <div className="specs-wrap">
-          <h2 className="specs-section-h2">Medical Billing Specialties</h2>
+          <h2 className="reveal specs-section-h2">Medical Billing Specialties</h2>
           <p className="specs-section-sub">The best qualities of services for a Medical Billing Department include accuracy and efficiency in managing claims and reimbursements. Additionally, providing excellent customer support and maintaining compliance with healthcare regulations are essential for smooth operations and financial success.</p>
         </div>
       </div>
 
       {/* ── LIVE SPECIALTY CARDS ─────────────────────────── */}
-      <section className="specs-sec specs-sec--paper" aria-label="Active specialty pages">
+      <section className="reveal specs-sec specs-sec--paper" aria-label="Active specialty pages">
         <div className="specs-wrap">
-          <p className="specs-ew">Fully Active — Click to Explore</p>
+          <p className="reveal specs-ew">Fully Active — Click to Explore</p>
 
           <div className="specs-live-grid">
             {LIVE_SPECS.map(({ slug, label, icon, badge, desc }) => (
@@ -154,7 +154,7 @@ export default function SpecialtiesIndexPage() {
                   <div className="specs-live-icon" aria-hidden="true">{icon}</div>
                   <span className="specs-live-badge">{badge}</span>
                 </div>
-                <h3>{label} Billing Services</h3>
+                <h3 className="reveal">{label} Billing Services</h3>
                 <p>{desc}</p>
                 <div className="specs-live-cta">
                   Explore services <span aria-hidden="true">→</span>
@@ -166,10 +166,10 @@ export default function SpecialtiesIndexPage() {
       </section>
 
       {/* ── ALL SPECIALTIES GRID — planned pages ─────────── */}
-      <section className="specs-sec specs-sec--ivory" aria-label="All specialties we serve">
+      <section className="reveal specs-sec specs-sec--ivory" aria-label="All specialties we serve">
         <div className="specs-wrap">
-          <p className="specs-ew">All Specialties We Serve</p>
-          <h2 className="specs-section-h2">50+ Medical Billing Specialties</h2>
+          <p className="reveal specs-ew">All Specialties We Serve</p>
+          <h2 className="reveal specs-section-h2">50+ Medical Billing Specialties</h2>
           <p className="specs-section-sub">Every specialty below receives the same AAPC-certified coding, payer-specific billing rules, and denial management. Full pages are being built — get in touch for any specialty.</p>
 
           <div className="specs-all-grid">

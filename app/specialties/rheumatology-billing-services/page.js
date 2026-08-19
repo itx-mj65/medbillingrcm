@@ -24,8 +24,8 @@ export default function RheumatologyBillingPage() {
       {/* ═══ EXPERT RCM ══════════════════════════════════════ */}
       <section className="sp-sec sp-sec--white reveal" id="expert-rcm">
         <div className="sp-wrap">
-          <p className="sp-ew">Expert Rheumatology Billing</p>
-          <h2>Expert Rheumatology Revenue Cycle Management</h2>
+          <p className="reveal sp-ew">Expert Rheumatology Billing</p>
+          <h2 className="reveal">Expert Rheumatology Revenue Cycle Management</h2>
 
           <div className="rheum-rcm-layout">
             <div className="rheum-rcm-copy">
@@ -35,7 +35,7 @@ export default function RheumatologyBillingPage() {
             </div>
 
             <div className="rheum-services-list">
-              <h3>Comprehensive Services</h3>
+              <h3 className="reveal">Comprehensive Services</h3>
               <ul className="rheum-svc-list">
                 {[
                   "Denial Resolution Services",
@@ -64,8 +64,8 @@ export default function RheumatologyBillingPage() {
       {/* ═══ CORE CAPABILITIES ═══════════════════════════════ */}
       <section className="sp-sec sp-sec--ivory reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Core Capabilities</p>
-          <h2>Comprehensive Rheumatology Billing &amp; Coding Services</h2>
+          <p className="reveal sp-ew">Core Capabilities</p>
+          <h2 className="reveal">Comprehensive Rheumatology Billing &amp; Coding Services</h2>
           <p className="rheum-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="rheum-caps-grid">
@@ -103,7 +103,7 @@ export default function RheumatologyBillingPage() {
             ].map(({ icon, h, t }) => (
               <article className="rheum-cap-card reveal" key={h}>
                 <div className="rheum-cap-icon-wrap" aria-hidden="true">{icon}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -120,26 +120,26 @@ export default function RheumatologyBillingPage() {
       {/* ═══ BEFORE / AFTER STATS ════════════════════════════ */}
       <section className="sp-sec sp-sec--white reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Operational Transformation</p>
-          <h2>Before → After. The Numbers Tell the Story.</h2>
-          <h3 className="rheum-ba-sub">Optimizing Rheumatology Accounts Receivable Performance</h3>
+          <p className="reveal sp-ew">Operational Transformation</p>
+          <h2 className="reveal">Before → After. The Numbers Tell the Story.</h2>
+          <h3 className="reveal rheum-ba-sub">Optimizing Rheumatology Accounts Receivable Performance</h3>
 
           <div className="rheum-ba-grid">
-            <div className="rheum-ba-card">
-              <div className="rheum-ba-num">30</div>
+            <div className="reveal rheum-ba-card">
+              <div className="reveal rheum-ba-num">30</div>
               <div className="rheum-ba-unit">days</div>
               <div className="rheum-ba-lbl">Average AR Days</div>
             </div>
-            <div className="rheum-ba-card rheum-ba-card--accent">
-              <div className="rheum-ba-num">72<span>%</span></div>
+            <div className="reveal rheum-ba-card rheum-ba-card--accent">
+              <div className="reveal rheum-ba-num">72<span>%</span></div>
               <div className="rheum-ba-lbl">First-Pass Clean Claims</div>
             </div>
-            <div className="rheum-ba-card">
-              <div className="rheum-ba-num">18<span>%</span></div>
+            <div className="reveal rheum-ba-card">
+              <div className="reveal rheum-ba-num">18<span>%</span></div>
               <div className="rheum-ba-lbl">Denial Rate</div>
             </div>
-            <div className="rheum-ba-card rheum-ba-card--accent">
-              <div className="rheum-ba-num">+15<span>%</span></div>
+            <div className="reveal rheum-ba-card rheum-ba-card--accent">
+              <div className="reveal rheum-ba-num">+15<span>%</span></div>
               <div className="rheum-ba-lbl">Revenue Increase</div>
             </div>
           </div>
@@ -149,8 +149,8 @@ export default function RheumatologyBillingPage() {
       {/* ═══ WHY MEDBILLING ══════════════════════════════════ */}
       <section className="sp-sec sp-sec--navy reveal">
         <div className="sp-wrap">
-          <p className="sp-ew sp-ew--gold">Why Medbilling RCM</p>
-          <h2>Your Rheumatology Billing Infrastructure Partner</h2>
+          <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
+          <h2 className="reveal">Your Rheumatology Billing Infrastructure Partner</h2>
           <p className="rheum-why-intro">Expertise in rheumatology billing including biologics, DMARDs, and complex coding driving measurable revenue improvement from day one.</p>
 
           <div className="rheum-why-grid">
@@ -166,7 +166,7 @@ export default function RheumatologyBillingPage() {
             ].map(({ icon, h, t }) => (
               <div className="rheum-why-card reveal" key={h}>
                 <div className="rheum-why-icon-wrap" aria-hidden="true">{icon}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -177,8 +177,8 @@ export default function RheumatologyBillingPage() {
       {/* ═══ FAQ ═════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--white reveal" id="faq">
         <div className="sp-wrap">
-          <p className="sp-ew">Common Questions</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="reveal sp-ew">Common Questions</p>
+          <h2 className="reveal">Frequently Asked Questions</h2>
 
           <div className="rheum-faq-layout">
             <div className="rheum-faq-intro">

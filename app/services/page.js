@@ -103,10 +103,10 @@ export default function ServicesIndexPage() {
     <main className="svc-idx-page" id="main">
 
       {/* ── HERO ──────────────────────────────────────────── */}
-      <section className="svc-idx-hero">
+      <section className="reveal svc-idx-hero">
         <div className="svc-idx-wrap">
           <div className="svc-idx-hero-copy">
-            <p className="svc-idx-ew">Revenue Cycle Management</p>
+            <p className="reveal svc-idx-ew">Revenue Cycle Management</p>
             <h1>Med Billing RCM Offers Medical Billing Services</h1>
             <p className="svc-idx-hero-intro">Maximize your practice's revenue potential with our tailored outsourced medical billing solutions in the USA. Experience seamless financial growth and focus on patient care with our expert assistance.</p>
             <div className="svc-idx-hero-pills">
@@ -138,25 +138,25 @@ export default function ServicesIndexPage() {
       </section>
 
       {/* ── WHY OUTSOURCE — 3-col with numbers ──────────── */}
-      <section className="svc-idx-sec svc-idx-sec--ivory">
+      <section className="reveal svc-idx-sec svc-idx-sec--ivory">
         <div className="svc-idx-wrap">
-          <p className="svc-idx-ew">Why Medical Billing Services</p>
-          <h2>The Reason For Using Billing Services</h2>
+          <p className="reveal svc-idx-ew">Why Medical Billing Services</p>
+          <h2 className="reveal">The Reason For Using Billing Services</h2>
 
           <div className="svc-idx-why-grid">
             <div className="svc-idx-why-card">
               <div className="svc-idx-why-num">01</div>
-              <h3>Three-Party Coordination</h3>
+              <h3 className="reveal">Three-Party Coordination</h3>
               <p>Doctor's visits involve a complex system of information and payment involving three parties — patients, healthcare providers, and insurance companies (payers). The medical biller must negotiate and pay all three parties.</p>
             </div>
             <div className="svc-idx-why-card">
               <div className="svc-idx-why-num">02</div>
-              <h3>Claims Generation &amp; Submission</h3>
+              <h3 className="reveal">Claims Generation &amp; Submission</h3>
               <p>Billers compile patient demographics, medical histories, insurance coverage, and treatment reports into insurance claims (superbills). We generate medical claims, check them for accuracy, and submit them to payers electronically.</p>
             </div>
             <div className="svc-idx-why-card">
               <div className="svc-idx-why-num">03</div>
-              <h3>Payment Reconciliation</h3>
+              <h3 className="reveal">Payment Reconciliation</h3>
               <p>Once a payer approves a claim, billers post payments and reconcile deductibles, copayments, and outstanding balances. Medical billing services in California and across the USA provide a critical link between patients and providers.</p>
             </div>
           </div>
@@ -164,10 +164,10 @@ export default function ServicesIndexPage() {
       </section>
 
       {/* ── SERVICE CARDS — data-driven 3-col grid ──────── */}
-      <section className="svc-idx-sec svc-idx-sec--white" id="services">
+      <section className="reveal svc-idx-sec svc-idx-sec--white" id="services">
         <div className="svc-idx-wrap">
-          <p className="svc-idx-ew">Our Services</p>
-          <h2>Medical Billing Specialties</h2>
+          <p className="reveal svc-idx-ew">Our Services</p>
+          <h2 className="reveal">Medical Billing Specialties</h2>
           <p className="svc-idx-sec-sub">The best qualities of services for a Medical Billing Department include accuracy and efficiency in managing claims and reimbursements.</p>
 
           <div className="svc-idx-grid">
@@ -189,7 +189,7 @@ export default function ServicesIndexPage() {
                   </div>
                 </div>
 
-                <h3>{label}</h3>
+                <h3 className="reveal">{label}</h3>
                 <p className="svc-idx-card-desc">{desc}</p>
                 <p className="svc-idx-card-long">{long}</p>
 
@@ -203,10 +203,10 @@ export default function ServicesIndexPage() {
       </section>
 
       {/* ── HOW IT WORKS — process strip ────────────────── */}
-      <section className="svc-idx-sec svc-idx-sec--navy">
+      <section className="reveal svc-idx-sec svc-idx-sec--navy">
         <div className="svc-idx-wrap">
-          <p className="svc-idx-ew svc-idx-ew--gold">Talk To Healthcare RCM And Physician Billing Expert</p>
-          <h2>Maximize your practice's revenue potential with our tailored outsourced medical billing solutions in the USA.</h2>
+          <p className="reveal svc-idx-ew svc-idx-ew--gold">Talk To Healthcare RCM And Physician Billing Expert</p>
+          <h2 className="reveal">Maximize your practice's revenue potential with our tailored outsourced medical billing solutions in the USA.</h2>
 
           <div className="svc-idx-process">
             {[
@@ -217,7 +217,7 @@ export default function ServicesIndexPage() {
               <div key={n} className="svc-idx-process-step">
                 <div className="svc-idx-process-num">{n}</div>
                 <div className="svc-idx-process-body">
-                  <h3>{h}</h3>
+                  <h3 className="reveal">{h}</h3>
                   <p>{t}</p>
                 </div>
               </div>

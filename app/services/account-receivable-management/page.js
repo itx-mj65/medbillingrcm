@@ -36,8 +36,8 @@ export default function ARManagementPage() {
       {/* ═══ WHERE AR SLIPS ═════════════════════════════════ */}
       <section className="ar-sec ar-sec--navy reveal" id="where-ar-slips">
         <div className="ar-wrap">
-          <p className="ar-ew ar-ew--gold">Where AR revenue slips</p>
-          <h2>Where AR revenue slips, and why it keeps slipping</h2>
+          <p className="reveal ar-ew ar-ew--gold">Where AR revenue slips</p>
+          <h2 className="reveal">Where AR revenue slips, and why it keeps slipping</h2>
           <p>The initial claim denial rate across all payers reached 11.8% in 2024, according to <a href="https://www.businesswire.com/news/home/20250227227547/en/Kodiak-Solutions-Revenue-Cycle-Industry-Trends-Report" target="_blank" rel="noopener">Kodiak Solutions data</a> drawn from more than 2,100 hospitals and 300,000 practice-based physicians. Most get paid eventually, but only after staff time and a cash delay that compounds when no one is running systematic follow-up.</p>
           <p>The deeper problem is the filing window. Commercial payers enforce hard deadlines: 90 days for most UnitedHealthcare and Aetna plans, 90 to 180 days for BCBS depending on state. Miss the cutoff by one day and the claim is gone permanently. No appeal. No exception. <a href="https://www.hfma.org/revenue-cycle/map-keys/" target="_blank" rel="noopener">HFMA sets the benchmark</a> at no more than 10% of total AR sitting beyond 90 days. Most billing teams are too occupied with today&apos;s claims to systematically chase last quarter&apos;s, and the aged bucket drifts past that line.</p>
           <p>Two buckets lose the most revenue: claims that aged past the filing window without a follow-up touch, and balances written off before the actual deadline expired. Both are recoverable before they are not.</p>
@@ -77,8 +77,8 @@ export default function ARManagementPage() {
       {/* ═══ SCOPE ══════════════════════════════════════════ */}
       <section className="ar-sec ar-sec--ivory reveal" id="scope">
         <div className="ar-wrap">
-          <p className="ar-ew">What we manage</p>
-          <h2>What we run across the AR recovery cycle</h2>
+          <p className="reveal ar-ew">What we manage</p>
+          <h2 className="reveal">What we run across the AR recovery cycle</h2>
           <p>Our accounts receivable management services cover the full recovery cycle end to end. This is <a href="/services/">medical AR management</a> run as one connected process, so a denial pattern changes how the next account is routed.</p>
           <div className="ar-scope-grid">
             {[
@@ -91,7 +91,7 @@ export default function ARManagementPage() {
             ].map(({ n, h, t }) => (
               <article className="ar-scope-card reveal" key={n}>
                 <div className="ar-scope-num">{n}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -103,8 +103,8 @@ export default function ARManagementPage() {
       {/* ═══ INSURANCE AR ════════════════════════════════════ */}
       <section className="ar-sec ar-sec--white reveal">
         <div className="ar-wrap">
-          <p className="ar-ew">The systematic loss most practices accept</p>
-          <h2>Insurance AR, the systematic loss most practices accept without knowing</h2>
+          <p className="reveal ar-ew">The systematic loss most practices accept</p>
+          <h2 className="reveal">Insurance AR, the systematic loss most practices accept without knowing</h2>
           {/* Top: 3 paragraphs (left) + image (right) */}
           <div className="ar-insurance-split">
             <div className="ar-split-copy">
@@ -119,7 +119,7 @@ export default function ARManagementPage() {
 
           {/* Below: H3 + denial table — full width */}
           <div className="ar-denial-full">
-            <h3>Where AR accounts get stuck, and how we clear them</h3>
+            <h3 className="reveal">Where AR accounts get stuck, and how we clear them</h3>
             <p>AR denials cluster in a short list of reason codes. We address each at the claim level and at the workflow level so the same denial does not reappear on the next submission.</p>
             <div className="ar-tbl-wrap">
               <table className="ar-tbl" aria-label="AR denial problems and solutions">
@@ -141,8 +141,8 @@ export default function ARManagementPage() {
       {/* ═══ WRITE-OFF RECOVERY ══════════════════════════════ */}
       <section className="ar-sec ar-sec--navy reveal">
         <div className="ar-wrap">
-          <p className="ar-ew ar-ew--gold">Write-off recovery</p>
-          <h2>Write-off recovery, the revenue practices leave twice</h2>
+          <p className="reveal ar-ew ar-ew--gold">Write-off recovery</p>
+          <h2 className="reveal">Write-off recovery, the revenue practices leave twice</h2>
           <div className="ar-writeoff-grid">
             <div>
               <p>Practices write off aged balances based on internal aging thresholds that are often shorter than the actual payer filing deadline. A claim written off at 90 days against a payer with a 180-day filing window is money still on the table that has been administratively closed.</p>
@@ -170,8 +170,8 @@ export default function ARManagementPage() {
       {/* ═══ PATIENT AR ══════════════════════════════════════ */}
       <section className="ar-sec ar-sec--white reveal">
         <div className="ar-wrap">
-          <p className="ar-ew">After insurance pays</p>
-          <h2>Patient AR, after insurance pays</h2>
+          <p className="reveal ar-ew">After insurance pays</p>
+          <h2 className="reveal">Patient AR, after insurance pays</h2>
           <div className="ar-split">
             <div className="ar-split-img">
               <Image src="/ar-patient.webp" alt="Patient services coordinator reviewing CMS-compliant patient statement at front desk" width={900} height={700} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover"}} />
@@ -180,7 +180,7 @@ export default function ARManagementPage() {
               <p>After insurance adjudicates, the remaining patient balance requires a different approach than payer follow-up. We generate itemized, CMS-compliant statements, verify coordination of benefits is applied correctly, and flag any No Surprises Act compliance issues before the patient is contacted.</p>
               <p>Where your practice wants us to handle direct patient inquiries, we take those calls. Where you prefer to manage patient contact internally, we prepare the documentation and hand it off. We are not a collections agency. Patient communication through Medbilling RCM is designed to protect the relationship your practice has built, while recovering the balance the visit earned.</p>
 
-              <h3>Prior authorization, the front of the AR problem</h3>
+              <h3 className="reveal">Prior authorization, the front of the AR problem</h3>
               <p>Prior authorization is where most AR problems begin, not where they show up. Physicians average <a href="https://www.ama-assn.org/practice-management/prior-authorization/prior-authorization-reform-progress-physicians-remain-burdened" target="_blank" rel="noopener">40 requests a week and 13 hours of staff time</a>. Roughly one in three are often or always denied. A missed authorization before the visit becomes a denial after it, and a denial after the visit becomes an aged AR account that is harder to recover the longer it sits.</p>
               <p>We submit and track authorizations per payer before the service is rendered, monitor status, and appeal denials that are wrong. Around four in five appealed prior-auth denials are overturned when the clinical documentation supports the original request.</p>
             </div>
@@ -191,8 +191,8 @@ export default function ARManagementPage() {
       {/* ═══ SPECIALTY AR ════════════════════════════════════ */}
       <section className="ar-sec ar-sec--ivory reveal">
         <div className="ar-wrap">
-          <p className="ar-ew">Configured per specialty</p>
-          <h2>Specialty AR recovery, configured per specialty</h2>
+          <p className="reveal ar-ew">Configured per specialty</p>
+          <h2 className="reveal">Specialty AR recovery, configured per specialty</h2>
           <p>AR recovery protocols that work for family practice do not transfer to orthopedics without modification. Each specialty has distinct denial patterns, documentation requirements, and payer behavior. Our <a href="/specialties/">medical AR management</a> workflows are built per specialty, not applied generically.</p>
                     <div className="ar-spec-grid">
             <div className="ar-spec-card reveal">
@@ -250,7 +250,7 @@ export default function ARManagementPage() {
       <div className="ar-cta-band">
         <div className="ar-cta-inner">
           <div>
-            <h2>Two buckets lose the most revenue. Let us show you exactly where yours is.</h2>
+            <h2 className="reveal">Two buckets lose the most revenue. Let us show you exactly where yours is.</h2>
             <p>The free AR analysis pulls a sample of your aging report and shows your top denial reasons by dollar, your filing window exposure by payer, and your recoverable write-off estimate.</p>
           </div>
           <Link href="#assessment" className="pg-btn pg-btn--gold">Get a Free AR Analysis</Link>
@@ -260,8 +260,8 @@ export default function ARManagementPage() {
       {/* ═══ IN-HOUSE VS OUTSOURCED ══════════════════════════ */}
       <section className="ar-sec ar-sec--navy reveal">
         <div className="ar-wrap">
-          <p className="ar-ew ar-ew--gold">Honest comparison</p>
-          <h2>In-house AR or outsourced, the honest version</h2>
+          <p className="reveal ar-ew ar-ew--gold">Honest comparison</p>
+          <h2 className="reveal">In-house AR or outsourced, the honest version</h2>
           <div className="ar-inhouse">
             <div>
               <p>Outsourcing AR recovery usually gets weighed as a cost line. For a practice with aging AR, it is closer to a capacity question. A billing team running current claims cannot simultaneously chase every 90-plus day account before filing windows close. One seat is one point of failure.</p>
@@ -287,8 +287,8 @@ export default function ARManagementPage() {
       {/* ═══ OUTCOMES ════════════════════════════════════════ */}
       <section className="ar-sec ar-sec--white reveal">
         <div className="ar-wrap">
-          <p className="ar-ew">Documented client work</p>
-          <h2>What changed for the practices we took on</h2>
+          <p className="reveal ar-ew">Documented client work</p>
+          <h2 className="reveal">What changed for the practices we took on</h2>
           <p>These are practices we bill for now. The charges did not change; the collections did. Every dollar came from collecting revenue that had already been earned.</p>
           <div className="ar-oc-grid">
             <article className="ar-oc reveal">
@@ -319,8 +319,8 @@ export default function ARManagementPage() {
       {/* ═══ 90% MEASURE ══════════════════════════════════════ */}
       <section className="ar-sec ar-sec--green reveal">
         <div className="ar-wrap">
-          <p className="ar-ew ar-ew--gold">How we measure it</p>
-          <h2>The 90% we report, and where we count it</h2>
+          <p className="reveal ar-ew ar-ew--gold">How we measure it</p>
+          <h2 className="reveal">The 90% we report, and where we count it</h2>
           <div className="ar-measure">
             <div className="ar-measure-mark">90<span>%+</span></div>
             <div>
@@ -361,8 +361,8 @@ export default function ARManagementPage() {
       {/* ═══ FAQ ═════════════════════════════════════════════ */}
       <section className="ar-sec ar-sec--white reveal" id="faq">
         <div className="ar-wrap">
-          <p className="ar-ew">Common questions</p>
-          <h2>AR recovery questions we get asked</h2>
+          <p className="reveal ar-ew">Common questions</p>
+          <h2 className="reveal">AR recovery questions we get asked</h2>
           <div className="ar-faq-layout">
             <div className="ar-faq-intro">
               <p>Direct answers for practices evaluating outside AR recovery support.</p>

@@ -27,18 +27,18 @@ export default function HospitalBillingPage() {
       {/* ═══ REVENUE GAP — stat-forward ══════════════════════ */}
       <section className="h-sec h-sec--ivory reveal" id="revenue-gap">
         <div className="h-wrap">
-          <p className="h-ew">Where hospital revenue goes missing between the bedside and the bank</p>
-          <h2>Where hospital revenue goes missing between the bedside and the bank</h2>
+          <p className="reveal h-ew">Where hospital revenue goes missing between the bedside and the bank</p>
+          <h2 className="reveal">Where hospital revenue goes missing between the bedside and the bank</h2>
 
           <p>Every claim passes through registration, coding, charge capture, and submission before a payer sees it. A mistake at any point becomes a denial, and a denial costs money to work twice.</p>
 
           <div className="h-stat-row">
-            <div className="h-stat-block">
+            <div className="reveal h-stat-block">
               <div className="h-stat-num">86<span>%</span></div>
               <div className="h-stat-lbl">of initial denials are avoidable</div>
               <div className="h-stat-src"><a href="https://www.mgma.com/data/benchmarking-data/revenue-cycle-denials-benchmarking-report" target="_blank" rel="noopener">Change Healthcare Denials Index via MGMA</a></div>
             </div>
-            <div className="h-stat-block h-stat-block--accent">
+            <div className="reveal h-stat-block h-stat-block--accent">
               <div className="h-stat-num">17<span>%</span></div>
               <div className="h-stat-lbl">Medicare Advantage initial denial rate on first submission</div>
               <div className="h-stat-src"><a href="https://www.healthaffairs.org/doi/10.1377/hlthaff.2024.01485" target="_blank" rel="noopener">Health Affairs, 2024</a></div>
@@ -57,8 +57,8 @@ export default function HospitalBillingPage() {
       {/* ═══ TWO PAYMENT SYSTEMS ═════════════════════════════ */}
       <section className="h-sec h-sec--white reveal">
         <div className="h-wrap">
-          <p className="h-ew">Two payment systems under one roof</p>
-          <h2>Two payment systems under one roof</h2>
+          <p className="reveal h-ew">Two payment systems under one roof</p>
+          <h2 className="reveal">Two payment systems under one roof</h2>
           <p>Inpatient and outpatient billing are not two versions of the same job. They use different claim forms, different code sets, and different payment systems, and they break in different places. A team that treats them the same loses money on both.</p>
 
           <div className="h-table-wrap">
@@ -92,29 +92,29 @@ export default function HospitalBillingPage() {
       {/* ═══ HOW WE HOLD THE REVENUE CYCLE TOGETHER ═════════ */}
       <section className="h-sec h-sec--navy reveal" id="how-we-hold-a-hospitals-revenue-cycle-together">
         <div className="h-wrap">
-          <p className="h-ew h-ew--gold">How we hold a hospital's revenue cycle together</p>
-          <h2>How we hold a hospital's revenue cycle together</h2>
+          <p className="reveal h-ew h-ew--gold">How we hold a hospital's revenue cycle together</p>
+          <h2 className="reveal">How we hold a hospital's revenue cycle together</h2>
           <p className="h-sec-intro">Every hospital account runs inside our Revenue Control Framework, the five-phase method behind every Medbilling RCM engagement, from the opening revenue audit through to monthly revenue intelligence. On the hospital side, our hospital revenue cycle management work falls into three stages, each built to catch revenue before it leaks rather than chase it after.</p>
 
           <div className="h-stages">
             <div className="h-stage reveal">
               <div className="h-stage-num">01</div>
               <div className="h-stage-body">
-                <h3>Before the patient is seen</h3>
+                <h3 className="reveal">Before the patient is seen</h3>
                 <p>Provider <Link href="/services/medical-credentialing/">credentialing</Link>, patient scheduling, pre-registration, <Link href="/services/coverage-discovery/">insurance verification</Link>, eligibility and benefits verification, and patient registration.</p>
               </div>
             </div>
             <div className="h-stage reveal">
               <div className="h-stage-num">02</div>
               <div className="h-stage-body">
-                <h3>While the claim is built</h3>
+                <h3 className="reveal">While the claim is built</h3>
                 <p>Charge capture, and coding and billing. This is the stage where a DRG is won or lost, so every inpatient chart is reviewed for documentation completeness before the claim goes out.</p>
               </div>
             </div>
             <div className="h-stage reveal">
               <div className="h-stage-num">03</div>
               <div className="h-stage-body">
-                <h3>Getting paid and keeping it</h3>
+                <h3 className="reveal">Getting paid and keeping it</h3>
                 <p>Claims submission, <Link href="/services/account-receivable-management/">accounts receivable management</Link>, denial management, patient collections, revenue reporting, and patient follow-up.</p>
               </div>
             </div>
@@ -125,8 +125,8 @@ export default function HospitalBillingPage() {
       {/* ═══ FACILITY TYPES ══════════════════════════════════ */}
       <section className="h-sec h-sec--ivory reveal">
         <div className="h-wrap">
-          <p className="h-ew">Every facility bills differently, and we're built for that</p>
-          <h2>Every facility bills differently, and we're built for that</h2>
+          <p className="reveal h-ew">Every facility bills differently, and we're built for that</p>
+          <h2 className="reveal">Every facility bills differently, and we're built for that</h2>
           <p>We bill for hospitals and facilities of every type. What changes from one to the next is the payment model underneath, and that is what we configure for.</p>
 
           <div className="h-facility-grid">
@@ -149,23 +149,23 @@ export default function HospitalBillingPage() {
       {/* ═══ WHERE REVENUE LEAKS ═════════════════════════════ */}
       <section className="h-sec h-sec--white reveal">
         <div className="h-wrap">
-          <p className="h-ew">The places hospital revenue quietly slips, and how we close each one</p>
-          <h2>The places hospital revenue quietly slips, and how we close each one</h2>
+          <p className="reveal h-ew">The places hospital revenue quietly slips, and how we close each one</p>
+          <h2 className="reveal">The places hospital revenue quietly slips, and how we close each one</h2>
 
           <div className="h-leaks-grid">
             <div className="h-leak-card reveal">
               <div className="h-leak-icon">📉</div>
-              <h3>DRG downgrades and missing complications</h3>
+              <h3 className="reveal">DRG downgrades and missing complications</h3>
               <p>When a chart does not document a complication or comorbidity the care actually involved, the claim drops to a lower-paying DRG. The difference is real money. A sepsis admission coded without its major complication can pay roughly $6,000 less. We review every inpatient chart for that documentation before coding, not after the payment posts short.</p>
             </div>
             <div className="h-leak-card reveal">
               <div className="h-leak-icon">🔄</div>
-              <h3>Inpatient stays that should have been outpatient</h3>
+              <h3 className="reveal">Inpatient stays that should have been outpatient</h3>
               <p>Condition Code 44 lets a hospital correct an admission to outpatient status when utilization review finds the inpatient criteria were not met. It only works before discharge and with the right approvals. Applied late, it becomes an audit flag instead of a fix. We catch status problems while the patient is still in the building.</p>
             </div>
             <div className="h-leak-card reveal">
               <div className="h-leak-icon">⏱️</div>
-              <h3>Records requests with a clock on them</h3>
+              <h3 className="reveal">Records requests with a clock on them</h3>
               <div className="h-leak-stat">
                 <span className="h-leak-stat-num">45</span>
                 <span className="h-leak-stat-unit">days</span>
@@ -174,7 +174,7 @@ export default function HospitalBillingPage() {
             </div>
             <div className="h-leak-card reveal">
               <div className="h-leak-icon">📊</div>
-              <h3>AR that ages past the benchmark</h3>
+              <h3 className="reveal">AR that ages past the benchmark</h3>
               <p>HFMA treats gross days in AR under 40 as the target and 50 or more as a sign of a structural collection problem. When accounts sit, cash sits. Our <Link href="/services/account-receivable-management/">AR team</Link> works aged inpatient accounts by payer-specific escalation rather than working the list oldest-first.</p>
             </div>
           </div>
@@ -184,8 +184,8 @@ export default function HospitalBillingPage() {
       {/* ═══ DOCUMENTATION / DRG ═════════════════════════════ */}
       <section className="h-sec h-sec--navy reveal">
         <div className="h-wrap">
-          <p className="h-ew h-ew--gold">Getting paid for the care that was actually delivered</p>
-          <h2>Getting paid for the care that was actually delivered</h2>
+          <p className="reveal h-ew h-ew--gold">Getting paid for the care that was actually delivered</p>
+          <h2 className="reveal">Getting paid for the care that was actually delivered</h2>
 
           <div className="h-drg-stat">
             <div className="h-drg-num">$6,752<span>.61</span></div>
@@ -203,8 +203,8 @@ export default function HospitalBillingPage() {
       {/* ═══ 340B ════════════════════════════════════════════ */}
       <section className="h-sec h-sec--white reveal">
         <div className="h-wrap">
-          <p className="h-ew">340B split billing without the audit exposure</p>
-          <h2>340B split billing without the audit exposure</h2>
+          <p className="reveal h-ew">340B split billing without the audit exposure</p>
+          <h2 className="reveal">340B split billing without the audit exposure</h2>
           <p>Hospitals with 340B status buy covered drugs at up to 50% below market. The rule that trips them is split billing: separating which doses came from 340B inventory and which did not, then billing each correctly.</p>
 
           <div className="h-audit-stat">
@@ -219,20 +219,20 @@ export default function HospitalBillingPage() {
       {/* ═══ TEAM MODEL ══════════════════════════════════════ */}
       <section className="h-sec h-sec--navy reveal" id="what-the-2026-team-model-changes-for-hospital-billing">
         <div className="h-wrap">
-          <p className="h-ew h-ew--gold">What the 2026 TEAM model changes for hospital billing</p>
-          <h2>What the 2026 TEAM model changes for hospital billing</h2>
+          <p className="reveal h-ew h-ew--gold">What the 2026 TEAM model changes for hospital billing</p>
+          <h2 className="reveal">What the 2026 TEAM model changes for hospital billing</h2>
           <p>On January 1, 2026, CMS replaced the voluntary bundled-payment program with the mandatory Transforming Episode Accountability Model (TEAM). If you bill for surgical episodes, it changes how you get paid.</p>
 
-          <div className="h-team-stats">
-            <div className="h-team-stat">
+          <div className="reveal h-team-stats">
+            <div className="reveal h-team-stat">
               <div className="h-team-num">741</div>
               <div className="h-team-lbl">hospitals enrolled across 188 regions</div>
             </div>
-            <div className="h-team-stat">
+            <div className="reveal h-team-stat">
               <div className="h-team-num">30</div>
               <div className="h-team-lbl">days post-discharge accountability window per episode</div>
             </div>
-            <div className="h-team-stat">
+            <div className="reveal h-team-stat">
               <div className="h-team-num">5</div>
               <div className="h-team-lbl">surgical episode types covered through 2030</div>
             </div>
@@ -252,8 +252,8 @@ export default function HospitalBillingPage() {
       {/* ═══ 97% MEASUREMENT ══════════════════════════════════*/}
       <section className="h-sec h-sec--ivory reveal" id="measurement">
         <div className="h-wrap">
-          <p className="h-ew">97%, and where we measure it</p>
-          <h2>97%, and where we measure it</h2>
+          <p className="reveal h-ew">97%, and where we measure it</p>
+          <h2 className="reveal">97%, and where we measure it</h2>
 
           <div className="h-97-pullquote">
             <div className="h-97-num">97<span>%</span></div>
@@ -267,8 +267,8 @@ export default function HospitalBillingPage() {
       {/* ═══ IN-HOUSE COST ════════════════════════════════════*/}
       <section className="h-sec h-sec--white reveal">
         <div className="h-wrap">
-          <p className="h-ew">What in-house hospital billing costs to run</p>
-          <h2>What in-house hospital billing costs to run</h2>
+          <p className="reveal h-ew">What in-house hospital billing costs to run</p>
+          <h2 className="reveal">What in-house hospital billing costs to run</h2>
 
           <div className="h-cost-stat">
             <div className="h-cost-num">$50,250</div>
@@ -286,7 +286,7 @@ export default function HospitalBillingPage() {
       <div className="h-mid-cta">
         <div className="h-mid-cta-inner">
           <div>
-            <h2>See where your hospital revenue is leaking</h2>
+            <h2 className="reveal">See where your hospital revenue is leaking</h2>
             <p>The revenue assessment is free, and it is specific. We look at your denials, your aged AR, and your DRG mix, and we show you where the money is going.</p>
           </div>
           <Link href="/request-free-audit/" className="pg-btn pg-btn--gold">Get a Free Revenue Assessment</Link>
@@ -296,16 +296,16 @@ export default function HospitalBillingPage() {
       {/* ═══ CLIENT OUTCOMES ══════════════════════════════════*/}
       <section className="h-sec h-sec--ivory reveal">
         <div className="h-wrap">
-          <p className="h-ew">What changed for the practices we took on</p>
-          <h2>What changed for the practices we took on</h2>
+          <p className="reveal h-ew">What changed for the practices we took on</p>
+          <h2 className="reveal">What changed for the practices we took on</h2>
           <p>These are revenue cycle outcomes from our own client work. They are practice-level engagements rather than hospital contracts, but the pattern is the one a hospital cares about: the charges did not change, the collections did. Across three monthly engagements we added $179,778 in collections a month, about $2.16 million a year at the current run rate, by collecting revenue that had already been earned.</p>
 
           <div className="h-outcomes-row">
-            <div className="h-outcome-stat">
+            <div className="reveal h-outcome-stat">
               <div className="h-outcome-num">$179,778<span>/mo</span></div>
               <div className="h-outcome-lbl">added in collections per month across three engagements</div>
             </div>
-            <div className="h-outcome-stat h-outcome-stat--accent">
+            <div className="reveal h-outcome-stat h-outcome-stat--accent">
               <div className="h-outcome-num">$2.16<span>M/yr</span></div>
               <div className="h-outcome-lbl">annualized at current run rate</div>
             </div>
@@ -324,8 +324,8 @@ export default function HospitalBillingPage() {
       {/* ═══ COMPLIANCE RULES ════════════════════════════════ */}
       <section className="h-sec h-sec--white reveal">
         <div className="h-wrap">
-          <p className="h-ew">The rules we build every claim around</p>
-          <h2>The rules we build every claim around</h2>
+          <p className="reveal h-ew">The rules we build every claim around</p>
+          <h2 className="reveal">The rules we build every claim around</h2>
           <p>Hospital billing lives inside a stack of federal and state rules, and a claim that ignores any one of them is a claim at risk. We build every workflow around them:</p>
 
           <div className="h-rules-grid">
@@ -354,8 +354,8 @@ export default function HospitalBillingPage() {
       {/* ═══ EHR SYSTEMS ════════════════════════════════════ */}
       <section className="h-sec h-sec--ivory reveal">
         <div className="h-wrap">
-          <p className="h-ew">The systems we already work inside</p>
-          <h2>The systems we already work inside</h2>
+          <p className="reveal h-ew">The systems we already work inside</p>
+          <h2 className="reveal">The systems we already work inside</h2>
           <p>We bill inside the platform a hospital already runs, or we move data into ours if that is easier. Our teams work day to day in Epic, Athenahealth, eClinicalWorks, NextGen, Kareo, AdvancedMD, and others.</p>
           <div className="h-ehr-strip">
             {["Epic","Athenahealth","eClinicalWorks","NextGen","Kareo","AdvancedMD","MEDITECH","Cerner","30+ others"].map(s => (
@@ -368,8 +368,8 @@ export default function HospitalBillingPage() {
       {/* ═══ ONBOARDING STEPS ════════════════════════════════ */}
       <section className="h-sec h-sec--navy reveal">
         <div className="h-wrap">
-          <p className="h-ew h-ew--gold">What happens after you request an assessment</p>
-          <h2>What happens after you request an assessment</h2>
+          <p className="reveal h-ew h-ew--gold">What happens after you request an assessment</p>
+          <h2 className="reveal">What happens after you request an assessment</h2>
           <p className="h-sec-intro">Starting with us takes four steps, not a quarter.</p>
 
           <div className="h-onboard-steps">
@@ -394,8 +394,8 @@ export default function HospitalBillingPage() {
       {/* ═══ FIT / NOT FIT ════════════════════════════════════*/}
       <section className="h-sec h-sec--white reveal">
         <div className="h-wrap">
-          <p className="h-ew">Who this is for</p>
-          <h2>Who this is for</h2>
+          <p className="reveal h-ew">Who this is for</p>
+          <h2 className="reveal">Who this is for</h2>
           <p>We are a strong fit for some hospitals and the wrong choice for others. We would rather say so up front.</p>
 
           <div className="h-fit-grid">
@@ -425,8 +425,8 @@ export default function HospitalBillingPage() {
       {/* ═══ FAQ ════════════════════════════════════════════ */}
       <section className="h-sec h-sec--ivory reveal" id="faq">
         <div className="h-wrap">
-          <p className="h-ew">Hospital billing questions we get asked</p>
-          <h2>Hospital billing questions we get asked</h2>
+          <p className="reveal h-ew">Hospital billing questions we get asked</p>
+          <h2 className="reveal">Hospital billing questions we get asked</h2>
 
           <div className="h-faq-layout">
             <div className="h-faq-intro">

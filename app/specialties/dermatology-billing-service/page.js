@@ -24,8 +24,8 @@ export default function DermatologyBillingPage() {
       {/* ═══ EXPERT RCM ═══════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="expert-rcm">
         <div className="sp-wrap">
-          <p className="sp-ew">Comprehensive Dermatology Billing</p>
-          <h2>Expert Dermatology Revenue Cycle Management</h2>
+          <p className="reveal sp-ew">Comprehensive Dermatology Billing</p>
+          <h2 className="reveal">Expert Dermatology Revenue Cycle Management</h2>
 
           <div className="derm-rcm-layout">
             <div className="derm-rcm-copy">
@@ -63,8 +63,8 @@ export default function DermatologyBillingPage() {
       {/* ═══ CAPABILITIES — 6 cards, navy with orb ════════════ */}
       <section className="sp-sec sp-sec--ivory reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Core Capabilities</p>
-          <h2>Dermatology Billing Solutions We Offer</h2>
+          <p className="reveal sp-ew">Core Capabilities</p>
+          <h2 className="reveal">Dermatology Billing Solutions We Offer</h2>
           <p className="derm-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="derm-caps-grid">
@@ -81,7 +81,7 @@ export default function DermatologyBillingPage() {
                   <div className="derm-cap-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="derm-cap-num">{n}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -105,9 +105,9 @@ export default function DermatologyBillingPage() {
       ════════════════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="operational-transformation">
         <div className="sp-wrap">
-          <p className="sp-ew">Operational Transformation</p>
-          <h2>Before → After. The Numbers Tell the Story.</h2>
-          <h3 className="derm-ba-subtitle">Reducing Average AR Days for Dermatology Practices</h3>
+          <p className="reveal sp-ew">Operational Transformation</p>
+          <h2 className="reveal">Before → After. The Numbers Tell the Story.</h2>
+          <h3 className="reveal derm-ba-subtitle">Reducing Average AR Days for Dermatology Practices</h3>
 
           <div className="derm-ba-layout">
 
@@ -156,8 +156,8 @@ export default function DermatologyBillingPage() {
       {/* ═══ WHY MEDBILLING ═══════════════════════════════════ */}
       <section className="sp-sec sp-sec--navy reveal">
         <div className="sp-wrap">
-          <p className="sp-ew sp-ew--gold">Why Medbilling RCM</p>
-          <h2>Your Dermatology Revenue Infrastructure Partner</h2>
+          <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
+          <h2 className="reveal">Your Dermatology Revenue Infrastructure Partner</h2>
           <p className="derm-why-intro">From medical dermatology to cosmetic procedure billing, we handle the nuances that other billing companies miss protecting your revenue and your practice.</p>
 
           <div className="derm-why-grid">
@@ -176,7 +176,7 @@ export default function DermatologyBillingPage() {
                   <div className="derm-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="derm-why-num">{n}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -188,8 +188,8 @@ export default function DermatologyBillingPage() {
       <section className="sp-sec sp-sec--ivory reveal">
         <div className="sp-wrap derm-mid-cta">
           <div>
-            <p className="sp-ew">Revenue Assessment</p>
-            <h2>Engineer Your Dermatology Revenue System</h2>
+            <p className="reveal sp-ew">Revenue Assessment</p>
+            <h2 className="reveal">Engineer Your Dermatology Revenue System</h2>
             <p>Schedule a revenue assessment and discover how our dermatology billing specialists can streamline your claim submissions, reduce denials, and maximize your reimbursements.</p>
           </div>
           <div className="derm-mid-cta-action">
@@ -202,8 +202,8 @@ export default function DermatologyBillingPage() {
       {/* ═══ FAQ ══════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="faq">
         <div className="sp-wrap">
-          <p className="sp-ew">Common Questions</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="reveal sp-ew">Common Questions</p>
+          <h2 className="reveal">Frequently Asked Questions</h2>
 
           <div className="derm-faq-layout">
             <div className="derm-faq-intro">

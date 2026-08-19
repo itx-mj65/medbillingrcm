@@ -30,8 +30,8 @@ export default function MentalHealthBillingPage() {
       ═════════════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--ivory reveal" id="services">
         <div className="sp-wrap">
-          <p className="sp-ew">Comprehensive MH Billing</p>
-          <h2>Our Comprehensive Mental Health Billing Services</h2>
+          <p className="reveal sp-ew">Comprehensive MH Billing</p>
+          <h2 className="reveal">Our Comprehensive Mental Health Billing Services</h2>
           <p className="mh-rcm-intro">Our team of mental health billing experts manages your medical billing end-to-end covering everything from pre-intake insurance verification to accounts receivable management, reporting, and analysis.</p>
           <p className="mh-rcm-intro">We integrate seamlessly with your existing billing software, EHR, and practice management systems, so nothing changes in your workflow only your results.</p>
 
@@ -48,7 +48,7 @@ export default function MentalHealthBillingPage() {
             ].map(({ icon, h, t }, i) => (
               <div className={`mh-svc-card mh-svc-card--${i % 2 === 0 ? 'green' : 'gold'} reveal`} key={h}>
                 <div className="mh-svc-icon" aria-hidden="true">{icon}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -68,8 +68,8 @@ export default function MentalHealthBillingPage() {
       ═════════════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--navy reveal" id="denial-challenges">
         <div className="sp-wrap">
-          <p className="sp-ew sp-ew--gold">Overcoming Denial Challenges</p>
-          <h2>Helping Your Mental Health Practice Overcome Denial Challenges</h2>
+          <p className="reveal sp-ew sp-ew--gold">Overcoming Denial Challenges</p>
+          <h2 className="reveal">Helping Your Mental Health Practice Overcome Denial Challenges</h2>
           <p className="mh-denial-intro">If your mental health practice is dealing with any of the following billing challenges, it's time to outsource your mental health billing services to Medbilling RCM. We identify and resolve the root causes that drive denials in behavioral health practices.</p>
 
           <div className="mh-denial-grid">
@@ -101,7 +101,7 @@ export default function MentalHealthBillingPage() {
                   <span className="mh-denial-num">{n}</span>
                   <div className="mh-denial-dot" aria-hidden="true" />
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -116,8 +116,8 @@ export default function MentalHealthBillingPage() {
       ═════════════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="process">
         <div className="sp-wrap">
-          <p className="sp-ew">Revenue Control Framework</p>
-          <h2>How We Engineer Your Mental Health Revenue System</h2>
+          <p className="reveal sp-ew">Revenue Control Framework</p>
+          <h2 className="reveal">How We Engineer Your Mental Health Revenue System</h2>
           <p className="mh-process-intro">A structured end-to-end billing infrastructure from pre-intake verification through final payment reconciliation designed for the specific complexity of behavioral health billing.</p>
 
           <div className="mh-steps">
@@ -134,7 +134,7 @@ export default function MentalHealthBillingPage() {
                   {i < arr.length - 1 && <div className="mh-step-conn" aria-hidden="true" />}
                 </div>
                 <div className="mh-step-body">
-                  <h3>{h}</h3>
+                  <h3 className="reveal">{h}</h3>
                   <p>{t}</p>
                 </div>
               </div>
@@ -156,8 +156,8 @@ export default function MentalHealthBillingPage() {
       ═════════════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--ivory reveal" id="why">
         <div className="sp-wrap">
-          <p className="sp-ew">Why Choose Us</p>
-          <h2>Why Choose Our Behavioral &amp; Mental Health Billing Services?</h2>
+          <p className="reveal sp-ew">Why Choose Us</p>
+          <h2 className="reveal">Why Choose Our Behavioral &amp; Mental Health Billing Services?</h2>
           <p className="mh-why-sub">Our billing services for mental health providers are designed to increase revenue, streamline your revenue cycle, and reduce denials while your staff focuses on patient care.</p>
 
           <div className="mh-why-grid">
@@ -173,7 +173,7 @@ export default function MentalHealthBillingPage() {
                 <div className="mh-why-spin-border" aria-hidden="true" />
                 <div className="mh-why-inner">
                   <div className="mh-why-icon-wrap" aria-hidden="true">{icon}</div>
-                  <h3>{h}</h3>
+                  <h3 className="reveal">{h}</h3>
                   <p>{t}</p>
                 </div>
               </div>
@@ -190,12 +190,12 @@ export default function MentalHealthBillingPage() {
       ═════════════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--navy reveal">
         <div className="sp-wrap">
-          <p className="sp-ew sp-ew--gold">Operational Transformation</p>
-          <h2>Before → After. The Numbers Tell the Story.</h2>
-          <h3 className="mh-ba-sub">Optimizing Practice Efficiency and Reducing Overhead Costs</h3>
+          <p className="reveal sp-ew sp-ew--gold">Operational Transformation</p>
+          <h2 className="reveal">Before → After. The Numbers Tell the Story.</h2>
+          <h3 className="reveal mh-ba-sub">Optimizing Practice Efficiency and Reducing Overhead Costs</h3>
 
           <div className="mh-counter-grid">
-            <div className="mh-counter-card">
+            <div className="reveal mh-counter-card">
               <div className="mh-counter-num">50<span>%↓</span></div>
               <div className="mh-counter-lbl">Overhead Cost Reduction</div>
               <div className="mh-counter-pill">
@@ -204,7 +204,7 @@ export default function MentalHealthBillingPage() {
                 <span className="mh-pill--after">50% Lower</span>
               </div>
             </div>
-            <div className="mh-counter-card mh-counter-card--accent">
+            <div className="reveal mh-counter-card mh-counter-card--accent">
               <div className="mh-counter-num">5–10<span>%↑</span></div>
               <div className="mh-counter-lbl">Operational Efficiency</div>
               <div className="mh-counter-pill">
@@ -213,7 +213,7 @@ export default function MentalHealthBillingPage() {
                 <span className="mh-pill--after">+5–10%</span>
               </div>
             </div>
-            <div className="mh-counter-card">
+            <div className="reveal mh-counter-card">
               <div className="mh-counter-num">99<span>%</span></div>
               <div className="mh-counter-lbl">Claim Accuracy Rate</div>
               <div className="mh-counter-pill">
@@ -222,7 +222,7 @@ export default function MentalHealthBillingPage() {
                 <span className="mh-pill--after">99% accurate</span>
               </div>
             </div>
-            <div className="mh-counter-card mh-counter-card--accent">
+            <div className="reveal mh-counter-card mh-counter-card--accent">
               <div className="mh-counter-num">24<span>/7</span></div>
               <div className="mh-counter-lbl">Online Data Access</div>
               <div className="mh-counter-pill">
@@ -238,8 +238,8 @@ export default function MentalHealthBillingPage() {
       {/* ═══ FAQ ══════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="faq">
         <div className="sp-wrap">
-          <p className="sp-ew">Common Questions</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="reveal sp-ew">Common Questions</p>
+          <h2 className="reveal">Frequently Asked Questions</h2>
 
           <div className="mh-faq-layout">
             <div className="mh-faq-intro">

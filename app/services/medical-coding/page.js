@@ -63,17 +63,17 @@ export default function MedicalCodingPage() {
       {/* ═══ WHY CODING ERRORS COST MORE ════════════════════ */}
       <section className="mc-sec mc-sec--white reveal" id="problem">
         <div className="mc-wrap">
-          <p className="mc-ew">Why coding errors cost more than a denied claim</p>
-          <h2>Why coding errors cost more than a denied claim</h2>
+          <p className="reveal mc-ew">Why coding errors cost more than a denied claim</p>
+          <h2 className="reveal">Why coding errors cost more than a denied claim</h2>
 
           {/* Two stat blocks — large numbers anchor each fact */}
           <div className="mc-stat-row">
-            <div className="mc-stat-block">
+            <div className="reveal mc-stat-block">
               <div className="mc-stat-num">42<span>%</span></div>
               <div className="mc-stat-lbl">of all claim denials are caused by coding errors</div>
               <div className="mc-stat-src"><a href="https://qualigenix.com/claim-denials-2026/" target="_blank" rel="noopener">Sully.ai, 2026</a></div>
             </div>
-            <div className="mc-stat-block mc-stat-block--accent">
+            <div className="reveal mc-stat-block mc-stat-block--accent">
               <div className="mc-stat-num">$6–7<span>B</span></div>
               <div className="mc-stat-lbl">annual revenue lost to coding errors across US healthcare</div>
               <div className="mc-stat-src"><a href="https://steadymedicalbilling.com/understanding-cpt-icd10-hcpcs-codes/" target="_blank" rel="noopener">steadymedicalbilling.com, 2026</a></div>
@@ -97,8 +97,8 @@ export default function MedicalCodingPage() {
       {/* ═══ SERVICES COVERED ════════════════════════════════ */}
       <section className="mc-sec mc-sec--ivory reveal" id="services">
         <div className="mc-wrap">
-          <p className="mc-ew">What our professional medical coding services cover</p>
-          <h2>What our professional medical coding services cover</h2>
+          <p className="reveal mc-ew">What our professional medical coding services cover</p>
+          <h2 className="reveal">What our professional medical coding services cover</h2>
 
           <div className="mc-services-grid">
             {[
@@ -138,7 +138,7 @@ export default function MedicalCodingPage() {
                   <span className="mc-service-num">{n}</span>
                   <span className="mc-service-icon" aria-hidden="true">{icon}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -149,8 +149,8 @@ export default function MedicalCodingPage() {
       {/* ═══ IN-HOUSE VS OUTSOURCED ══════════════════════════ */}
       <section className="mc-sec mc-sec--white reveal">
         <div className="mc-wrap">
-          <p className="mc-ew">The cost of keeping coding in-house</p>
-          <h2>The cost of keeping coding in-house</h2>
+          <p className="reveal mc-ew">The cost of keeping coding in-house</p>
+          <h2 className="reveal">The cost of keeping coding in-house</h2>
 
           <div className="mc-cost-compare">
             <div className="mc-cost-col mc-cost-col--left">
@@ -215,8 +215,8 @@ export default function MedicalCodingPage() {
       {/* ═══ SPECIALTY COMPLEXITY ════════════════════════════ */}
       <section className="mc-sec mc-sec--navy reveal">
         <div className="mc-wrap">
-          <p className="mc-ew mc-ew--gold">Specialty coding complexity we manage</p>
-          <h2>Specialty coding complexity we manage</h2>
+          <p className="reveal mc-ew mc-ew--gold">Specialty coding complexity we manage</p>
+          <h2 className="reveal">Specialty coding complexity we manage</h2>
 
           <div className="mc-spec-grid">
             {[
@@ -247,7 +247,7 @@ export default function MedicalCodingPage() {
             ].map(({ icon, sp, t }) => (
               <article className="mc-spec-card reveal" key={sp}>
                 <div className="mc-spec-icon" aria-hidden="true">{icon}</div>
-                <h3>{sp}</h3>
+                <h3 className="reveal">{sp}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -258,8 +258,8 @@ export default function MedicalCodingPage() {
       {/* ═══ EHR SYSTEMS ════════════════════════════════════ */}
       <section className="mc-sec mc-sec--ivory reveal">
         <div className="mc-wrap">
-          <p className="mc-ew">Works with your existing systems</p>
-          <h2>Works with your existing systems</h2>
+          <p className="reveal mc-ew">Works with your existing systems</p>
+          <h2 className="reveal">Works with your existing systems</h2>
           <p className="mc-sys-lead">Our healthcare coding services connect to your existing systems. No system replacement. No disruption to clinical workflows. Secure chart access, coded records returned to your EHR within the turnaround window, and coding metrics reported back to your billing team.</p>
           <div className="mc-sys-strip">
             {["Epic","Cerner","eClinicalWorks","Athenahealth","AdvancedMD","Kareo","NextGen","30+ others"].map(s => (
@@ -275,8 +275,8 @@ export default function MedicalCodingPage() {
       {/* ═══ FAQ ════════════════════════════════════════════ */}
       <section className="mc-sec mc-sec--white reveal" id="faq">
         <div className="mc-wrap">
-          <p className="mc-ew">Medical coding questions we get asked</p>
-          <h2>Medical coding questions we get asked</h2>
+          <p className="reveal mc-ew">Medical coding questions we get asked</p>
+          <h2 className="reveal">Medical coding questions we get asked</h2>
           <div className="mc-faq-layout">
             <div className="mc-faq-intro">
               <p>Direct answers for practices and billing teams evaluating medical coding outsourcing.</p>
@@ -314,8 +314,8 @@ export default function MedicalCodingPage() {
       <div className="mc-closing-band">
         <div className="mc-closing-inner">
           <div>
-            <p className="mc-ew mc-ew--gold" style={{marginBottom:"12px"}}>Coded right. Paid faster.</p>
-            <h2>Coded right. Paid faster.</h2>
+            <p className="reveal mc-ew mc-ew--gold" style={{marginBottom:"12px"}}>Coded right. Paid faster.</p>
+            <h2 className="reveal">Coded right. Paid faster.</h2>
             <p>Coding errors that prevent payment today were avoidable at the time the code was assigned. The 2026 code environment: 487 new ICD-10-CM codes, 288 new CPT codes, the largest NCCI update in seven years. It makes in-house coding accuracy harder to maintain than it was in 2025. Our healthcare coding services track those changes so your practice does not have to.</p>
           </div>
           <div className="mc-closing-actions">

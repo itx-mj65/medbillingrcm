@@ -72,8 +72,8 @@ export default function ASCBillingPage() {
       {/* ═══ WHY ASC BILLING BREAKS DIFFERENTLY ════════════ */}
       <section className="asc-sec asc-sec--white reveal">
         <div className="asc-wrap">
-          <p className="asc-ew">Why ASC billing breaks differently than physician billing</p>
-          <h2>Why ASC billing breaks differently than physician billing</h2>
+          <p className="reveal asc-ew">Why ASC billing breaks differently than physician billing</p>
+          <h2 className="reveal">Why ASC billing breaks differently than physician billing</h2>
 
           {/* Two-column comparison: physician vs ASC facility */}
           <div className="asc-compare">
@@ -109,8 +109,8 @@ export default function ASCBillingPage() {
       {/* ═══ HOW THE ASC PAYMENT SYSTEM WORKS ══════════════ */}
       <section className="asc-sec asc-sec--navy reveal" id="how-it-works">
         <div className="asc-wrap">
-          <p className="asc-ew asc-ew--gold">How the ASC payment system works</p>
-          <h2>How the ASC payment system works</h2>
+          <p className="reveal asc-ew asc-ew--gold">How the ASC payment system works</p>
+          <h2 className="reveal">How the ASC payment system works</h2>
 
           {/* Three key stats */}
           <div className="asc-pay-stats">
@@ -137,19 +137,19 @@ export default function ASCBillingPage() {
           <div className="asc-rules-grid">
             <div className="asc-rule-card reveal">
               <div className="asc-rule-icon">📐</div>
-              <h3>Multiple procedure reduction</h3>
+              <h3 className="reveal">Multiple procedure reduction</h3>
               <p>When multiple procedures are performed in the same session, the highest pays at 100%, each additional at 50%. Billing at full rate triggers recoupment.</p>
               <div className="asc-rule-consequence">⚠ Consequence: recoupment demand from payer</div>
             </div>
             <div className="asc-rule-card reveal">
               <div className="asc-rule-icon">🔩</div>
-              <h3>Pass-through versus packaged implants</h3>
+              <h3 className="reveal">Pass-through versus packaged implants</h3>
               <p>Pass-through implants bill separately using HCPCS C-codes. Packaged implants are bundled into the APC rate. Billing a packaged implant separately triggers CARC 96. Missing a pass-through implant means lost revenue.</p>
               <div className="asc-rule-consequence">⚠ Consequence: CARC 96 denial or missed revenue</div>
             </div>
             <div className="asc-rule-card reveal">
               <div className="asc-rule-icon">✅</div>
-              <h3>ASC Covered Procedures List</h3>
+              <h3 className="reveal">ASC Covered Procedures List</h3>
               <p>Medicare will not pay an ASC facility fee for a procedure not on the CPL. CMS added 573 new codes for CY 2026. An outdated charge master either bills for procedures Medicare rejects or misses newly covered procedures.</p>
               <div className="asc-rule-consequence">⚠ Consequence: zero payment on uncovered procedures</div>
             </div>
@@ -160,8 +160,8 @@ export default function ASCBillingPage() {
       {/* ═══ SERVICES COVERED ════════════════════════════════ */}
       <section className="asc-sec asc-sec--ivory reveal">
         <div className="asc-wrap">
-          <p className="asc-ew">What our surgery center billing services cover</p>
-          <h2>What our surgery center billing services cover</h2>
+          <p className="reveal asc-ew">What our surgery center billing services cover</p>
+          <h2 className="reveal">What our surgery center billing services cover</h2>
 
           {/* IMAGE PLACEHOLDER
               File: /public/asc-services.webp  |  Size: 1100 × 600 px
@@ -194,7 +194,7 @@ export default function ASCBillingPage() {
                   <span className="asc-service-num">{n}</span>
                   <span className="asc-service-icon" aria-hidden="true">{icon}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -205,8 +205,8 @@ export default function ASCBillingPage() {
       {/* ═══ IN-HOUSE VS OUTSOURCED ══════════════════════════ */}
       <section className="asc-sec asc-sec--white reveal">
         <div className="asc-wrap">
-          <p className="asc-ew">The cost of running ASC billing in-house</p>
-          <h2>The cost of running ASC billing in-house</h2>
+          <p className="reveal asc-ew">The cost of running ASC billing in-house</p>
+          <h2 className="reveal">The cost of running ASC billing in-house</h2>
 
           <div className="asc-cost-compare">
             <div className="asc-cost-col asc-cost-col--left">
@@ -259,8 +259,8 @@ export default function ASCBillingPage() {
       {/* ═══ ASC SPECIALTIES ════════════════════════════════ */}
       <section className="asc-sec asc-sec--navy reveal">
         <div className="asc-wrap">
-          <p className="asc-ew asc-ew--gold">Built for every ASC specialty</p>
-          <h2>Built for every ASC specialty</h2>
+          <p className="reveal asc-ew asc-ew--gold">Built for every ASC specialty</p>
+          <h2 className="reveal">Built for every ASC specialty</h2>
 
           <div className="asc-spec-grid">
             {[
@@ -273,7 +273,7 @@ export default function ASCBillingPage() {
             ].map(({ icon, sp, t }) => (
               <article className="asc-spec-card reveal" key={sp}>
                 <div className="asc-spec-icon" aria-hidden="true">{icon}</div>
-                <h3>{sp}</h3>
+                <h3 className="reveal">{sp}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -284,8 +284,8 @@ export default function ASCBillingPage() {
       {/* ═══ ASC SYSTEMS ════════════════════════════════════ */}
       <section className="asc-sec asc-sec--ivory reveal">
         <div className="asc-wrap">
-          <p className="asc-ew">Works with your existing ASC systems</p>
-          <h2>Works with your existing ASC systems</h2>
+          <p className="reveal asc-ew">Works with your existing ASC systems</p>
+          <h2 className="reveal">Works with your existing ASC systems</h2>
           <p className="asc-sys-lead">No system replacement. No workflow disruption. Billing connects to your existing <Link href="/services/medical-credentialing/">credentialing</Link> and <Link href="/services/account-receivable-management/">AR recovery</Link> workflows from a single team.</p>
           <div className="asc-sys-strip">
             {["HST Pathways","SIS (Surgical Information Systems)","AmkaiSolutions","AdvancedMD","30+ others"].map(s => (
@@ -302,8 +302,8 @@ export default function ASCBillingPage() {
       {/* ═══ FAQ ════════════════════════════════════════════ */}
       <section className="asc-sec asc-sec--white reveal" id="faq">
         <div className="asc-wrap">
-          <p className="asc-ew">ASC billing questions we get asked</p>
-          <h2>ASC billing questions we get asked</h2>
+          <p className="reveal asc-ew">ASC billing questions we get asked</p>
+          <h2 className="reveal">ASC billing questions we get asked</h2>
           <div className="asc-faq-layout">
             <div className="asc-faq-intro">
               <p>Direct answers for surgery center administrators and billing teams evaluating ASC billing services.</p>

@@ -1,8 +1,8 @@
 export default function Logos() {
   return (
-    <section className="logos">
+    <section className="reveal logos">
       <div className="shell">
-        <h2>Trusted by Healthcare Organizations Across the Country</h2>
+        <h2 className="reveal">Trusted by Healthcare Organizations Across the Country</h2>
         <div className="logo-row">
           <div className="client-logo">Patient First Primary Care</div>
           <div className="client-logo">Psychiatric Connections</div>

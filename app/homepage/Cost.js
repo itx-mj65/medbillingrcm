@@ -1,11 +1,11 @@
 export default function Cost() {
   return (
-    <section className="section cost">
+    <section className="reveal section cost">
       <div className="shell">
         <div className="cost-grid">
           <div className="reveal">
-            <p className="eyebrow">The continuity question</p>
-            <h2>What It Costs to Keep Billing In-House</h2>
+            <p className="reveal eyebrow">The continuity question</p>
+            <h2 className="reveal">What It Costs to Keep Billing In-House</h2>
             <p>Healthcare revenue cycle outsourcing is usually pitched as a cost comparison. It is closer to a capacity question.</p>
             <div className="cost-number">$90K–$140K<span>Loaded annual cost per biller</span></div>
           </div>

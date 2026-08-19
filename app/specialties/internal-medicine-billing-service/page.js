@@ -24,8 +24,8 @@ export default function InternalMedicineBillingPage() {
       {/* ═══ EXPERT RCM ═══════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="expert-rcm">
         <div className="sp-wrap">
-          <p className="sp-ew">Solving Every Billing Challenge</p>
-          <h2>Expert Internal Medicine Revenue Cycle Management</h2>
+          <p className="reveal sp-ew">Solving Every Billing Challenge</p>
+          <h2 className="reveal">Expert Internal Medicine Revenue Cycle Management</h2>
 
           <div className="intmed-rcm-layout">
             <div className="intmed-rcm-copy">
@@ -63,8 +63,8 @@ export default function InternalMedicineBillingPage() {
       {/* ═══ CORE CAPABILITIES ════════════════════════════════ */}
       <section className="sp-sec sp-sec--ivory reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Core Capabilities</p>
-          <h2>Internal Medicine Billing Challenges We Solve</h2>
+          <p className="reveal sp-ew">Core Capabilities</p>
+          <h2 className="reveal">Internal Medicine Billing Challenges We Solve</h2>
           <p className="intmed-caps-sub">Expert urgent care billing services designed to achieve the highest possible revenue for your practice.</p>
 
           <div className="intmed-caps-grid">
@@ -81,7 +81,7 @@ export default function InternalMedicineBillingPage() {
                   <div className="intmed-cap-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="intmed-cap-num">{n}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -98,29 +98,29 @@ export default function InternalMedicineBillingPage() {
       {/* ═══ BEFORE / AFTER STATS ═════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal">
         <div className="sp-wrap">
-          <p className="sp-ew">Operational Transformation</p>
-          <h2>Before → After. The Numbers Tell the Story.</h2>
+          <p className="reveal sp-ew">Operational Transformation</p>
+          <h2 className="reveal">Before → After. The Numbers Tell the Story.</h2>
 
           <div className="intmed-ba-grid">
-            <div className="intmed-ba-card">
+            <div className="reveal intmed-ba-card">
               <div className="intmed-ba-label">Average AR Days</div>
-              <div className="intmed-ba-num">45<span>+ days</span></div>
+              <div className="reveal intmed-ba-num">45<span>+ days</span></div>
               <div className="intmed-ba-arrow">↓</div>
               <div className="intmed-ba-after">Under <strong>30</strong></div>
             </div>
-            <div className="intmed-ba-card intmed-ba-card--green">
+            <div className="reveal intmed-ba-card intmed-ba-card--green">
               <div className="intmed-ba-label">First-Pass Clean Claims</div>
-              <div className="intmed-ba-num">72<span>%</span></div>
+              <div className="reveal intmed-ba-num">72<span>%</span></div>
               <div className="intmed-ba-sub-lbl">first-pass rate</div>
             </div>
-            <div className="intmed-ba-card">
+            <div className="reveal intmed-ba-card">
               <div className="intmed-ba-label">Denial Rate</div>
-              <div className="intmed-ba-num">18<span>%</span></div>
+              <div className="reveal intmed-ba-num">18<span>%</span></div>
               <div className="intmed-ba-sub-lbl">average denial rate</div>
             </div>
-            <div className="intmed-ba-card intmed-ba-card--gold">
+            <div className="reveal intmed-ba-card intmed-ba-card--gold">
               <div className="intmed-ba-label">Revenue Increase</div>
-              <div className="intmed-ba-num">+15<span>%</span></div>
+              <div className="reveal intmed-ba-num">+15<span>%</span></div>
               <div className="intmed-ba-sub-lbl">within first 90 days</div>
             </div>
           </div>
@@ -130,8 +130,8 @@ export default function InternalMedicineBillingPage() {
       {/* ═══ WHY MEDBILLING ═══════════════════════════════════ */}
       <section className="sp-sec sp-sec--navy reveal">
         <div className="sp-wrap">
-          <p className="sp-ew sp-ew--gold">Why Medbilling RCM</p>
-          <h2>Your Internal Medicine Revenue Infrastructure Partner</h2>
+          <p className="reveal sp-ew sp-ew--gold">Why Medbilling RCM</p>
+          <h2 className="reveal">Your Internal Medicine Revenue Infrastructure Partner</h2>
           <p className="intmed-why-intro">Over a decade of experience in internal medicine billing clients see a 15–30% revenue increase within months of switching to our services.</p>
 
           <div className="intmed-why-grid">
@@ -150,7 +150,7 @@ export default function InternalMedicineBillingPage() {
                   <div className="intmed-why-icon-wrap" aria-hidden="true">{icon}</div>
                   <span className="intmed-why-num">{n}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -162,8 +162,8 @@ export default function InternalMedicineBillingPage() {
       <section className="sp-sec sp-sec--ivory reveal intmed-mid-cta-sec">
         <div className="sp-wrap intmed-mid-cta">
           <div>
-            <p className="sp-ew">Revenue Assessment</p>
-            <h2>Engineer Your Internal Medicine Revenue System</h2>
+            <p className="reveal sp-ew">Revenue Assessment</p>
+            <h2 className="reveal">Engineer Your Internal Medicine Revenue System</h2>
             <p>Schedule a revenue assessment and discover how our internal medicine billing specialists can recover lost revenue, reduce denials, and accelerate your payment cycles.</p>
           </div>
           <div className="intmed-mid-cta-action">
@@ -176,8 +176,8 @@ export default function InternalMedicineBillingPage() {
       {/* ═══ FAQ ══════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="faq">
         <div className="sp-wrap">
-          <p className="sp-ew">Common Questions</p>
-          <h2>Frequently Asked Questions</h2>
+          <p className="reveal sp-ew">Common Questions</p>
+          <h2 className="reveal">Frequently Asked Questions</h2>
 
           <div className="intmed-faq-layout">
             <div className="intmed-faq-intro">

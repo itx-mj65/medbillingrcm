@@ -1,10 +1,10 @@
 export default function Systems() {
   return (
-    <section className="section systems" id="systems">
+    <section className="reveal section systems" id="systems">
       <div className="shell systems-grid">
         <div className="reveal">
-          <p className="eyebrow">Keep your current stack</p>
-          <h2>Works With the Systems You Already Run</h2>
+          <p className="reveal eyebrow">Keep your current stack</p>
+          <h2 className="reveal">Works With the Systems You Already Run</h2>
           <p className="lead">No forced platform migration and no proprietary software to buy. We integrate with your existing EHR and practice management setup, and custom integrations are scoped during the revenue audit at no extra charge.</p>
           <a className="text-link" href="#assessment">Check Your System Compatibility →</a>
         </div>

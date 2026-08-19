@@ -62,8 +62,8 @@ export default function HealthcareFTEPage() {
       {/* ═══ WHAT FTE OUTSOURCING ACTUALLY MEANS ═══════════ */}
       <section className="fte-sec fte-sec--white reveal" id="compare">
         <div className="fte-wrap">
-          <p className="fte-ew">What healthcare FTE outsourcing actually means</p>
-          <h2>What healthcare FTE outsourcing actually means</h2>
+          <p className="reveal fte-ew">What healthcare FTE outsourcing actually means</p>
+          <h2 className="reveal">What healthcare FTE outsourcing actually means</h2>
 
           {/* 34% stat — number-forward anchor */}
           <div className="fte-stat-callout">
@@ -144,8 +144,8 @@ export default function HealthcareFTEPage() {
       {/* ═══ SERVICES COVERED ════════════════════════════════ */}
       <section className="fte-sec fte-sec--ivory reveal">
         <div className="fte-wrap">
-          <p className="fte-ew">What our healthcare outsourcing services and staffing outsourcing covers</p>
-          <h2>What our healthcare outsourcing services and staffing outsourcing covers</h2>
+          <p className="reveal fte-ew">What our healthcare outsourcing services and staffing outsourcing covers</p>
+          <h2 className="reveal">What our healthcare outsourcing services and staffing outsourcing covers</h2>
 
           {/* IMAGE PLACEHOLDER
               File: /public/fte-services.webp  |  Size: 1100 × 580 px
@@ -170,7 +170,7 @@ export default function HealthcareFTEPage() {
             <div className="fte-pillar reveal">
               <div className="fte-pillar-head">
                 <span className="fte-pillar-icon" aria-hidden="true">💳</span>
-                <h3>Revenue cycle management FTEs</h3>
+                <h3 className="reveal">Revenue cycle management FTEs</h3>
               </div>
               <div className="fte-pillar-items">
                 <div className="fte-pillar-item">
@@ -195,7 +195,7 @@ export default function HealthcareFTEPage() {
             <div className="fte-pillar reveal">
               <div className="fte-pillar-head">
                 <span className="fte-pillar-icon" aria-hidden="true">🩺</span>
-                <h3>Healthcare virtual staff and clinical support</h3>
+                <h3 className="reveal">Healthcare virtual staff and clinical support</h3>
               </div>
               <div className="fte-pillar-items">
                 <div className="fte-pillar-item">
@@ -216,7 +216,7 @@ export default function HealthcareFTEPage() {
             <div className="fte-pillar reveal">
               <div className="fte-pillar-head">
                 <span className="fte-pillar-icon" aria-hidden="true">🏥</span>
-                <h3>Front-office and patient access outsourcing</h3>
+                <h3 className="reveal">Front-office and patient access outsourcing</h3>
               </div>
               <div className="fte-pillar-items">
                 <div className="fte-pillar-item">
@@ -237,8 +237,8 @@ export default function HealthcareFTEPage() {
       {/* ═══ COST COMPARISON ═════════════════════════════════ */}
       <section className="fte-sec fte-sec--white reveal">
         <div className="fte-wrap">
-          <p className="fte-ew">The cost of healthcare administrative outsourcing vs. in-house staffing</p>
-          <h2>The cost of healthcare administrative outsourcing vs. in-house staffing</h2>
+          <p className="reveal fte-ew">The cost of healthcare administrative outsourcing vs. in-house staffing</p>
+          <h2 className="reveal">The cost of healthcare administrative outsourcing vs. in-house staffing</h2>
 
           <div className="fte-cost-compare">
             <div className="fte-cost-col fte-cost-col--left">
@@ -307,8 +307,8 @@ export default function HealthcareFTEPage() {
       {/* ═══ SECURITY ════════════════════════════════════════ */}
       <section className="fte-sec fte-sec--navy reveal">
         <div className="fte-wrap">
-          <p className="fte-ew fte-ew--gold">Enterprise-grade security and HIPAA compliance</p>
-          <h2>Enterprise-grade security and HIPAA compliance</h2>
+          <p className="reveal fte-ew fte-ew--gold">Enterprise-grade security and HIPAA compliance</p>
+          <h2 className="reveal">Enterprise-grade security and HIPAA compliance</h2>
           <p className="fte-sec-intro">Healthcare administrative outsourcing requires a higher compliance standard than generic BPO. Every Medbilling RCM engagement operates under:</p>
 
           <div className="fte-security-grid">
@@ -321,7 +321,7 @@ export default function HealthcareFTEPage() {
             ].map(({ icon, h, t }) => (
               <div className="fte-security-card reveal" key={h}>
                 <div className="fte-security-icon" aria-hidden="true">{icon}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -332,8 +332,8 @@ export default function HealthcareFTEPage() {
       {/* ═══ EHR SYSTEMS ════════════════════════════════════ */}
       <section className="fte-sec fte-sec--ivory reveal">
         <div className="fte-wrap">
-          <p className="fte-ew">Supported EHR and practice management platforms</p>
-          <h2>Supported EHR and practice management platforms</h2>
+          <p className="reveal fte-ew">Supported EHR and practice management platforms</p>
+          <h2 className="reveal">Supported EHR and practice management platforms</h2>
 
           <div className="fte-ehr-groups">
             {[
@@ -362,8 +362,8 @@ export default function HealthcareFTEPage() {
       {/* ═══ 4-STEP PROCESS ══════════════════════════════════ */}
       <section className="fte-sec fte-sec--navy reveal" id="process">
         <div className="fte-wrap">
-          <p className="fte-ew fte-ew--gold">How we deploy a dedicated FTE: the Dedicated Staffing Engine (4 steps)</p>
-          <h2>How we deploy a dedicated FTE: the Dedicated Staffing Engine (4 steps)</h2>
+          <p className="reveal fte-ew fte-ew--gold">How we deploy a dedicated FTE: the Dedicated Staffing Engine (4 steps)</p>
+          <h2 className="reveal">How we deploy a dedicated FTE: the Dedicated Staffing Engine (4 steps)</h2>
 
           <div className="fte-steps">
             <div className="fte-step reveal">
@@ -372,7 +372,7 @@ export default function HealthcareFTEPage() {
                 <div className="fte-step-connector" aria-hidden="true" />
               </div>
               <div className="fte-step-body">
-                <h3>Workflow and needs assessment</h3>
+                <h3 className="reveal">Workflow and needs assessment</h3>
                 <p>We evaluate your volume, specialty requirements, current backlogs, and target workflows. We define roles, staffing ratios, and SOPs before anyone is placed. This is the foundation of our Dedicated Staffing Engine: a four-phase deployment model built to place healthcare professionals inside your workflow in 5 to 10 business days with zero operational disruption.</p>
               </div>
             </div>
@@ -382,7 +382,7 @@ export default function HealthcareFTEPage() {
                 <div className="fte-step-connector" aria-hidden="true" />
               </div>
               <div className="fte-step-body">
-                <h3>Candidate matching</h3>
+                <h3 className="reveal">Candidate matching</h3>
                 <p>We identify pre-vetted, certified healthcare professionals matched to your specific specialty or billing discipline. You review resumes and interview finalists.</p>
               </div>
             </div>
@@ -392,7 +392,7 @@ export default function HealthcareFTEPage() {
                 <div className="fte-step-connector" aria-hidden="true" />
               </div>
               <div className="fte-step-body">
-                <h3>Secure onboarding and systems integration</h3>
+                <h3 className="reveal">Secure onboarding and systems integration</h3>
                 <p>We provision secure virtual workspaces, establish VPN connections, and orient the dedicated team to your SOPs and communication channels. Staff requiring payer enrollment are coordinated through our <Link href="/services/medical-credentialing/">medical credentialing service</Link>.</p>
               </div>
             </div>
@@ -401,7 +401,7 @@ export default function HealthcareFTEPage() {
                 <div className="fte-step-num">04</div>
               </div>
               <div className="fte-step-body">
-                <h3>Launch and quality assurance</h3>
+                <h3 className="reveal">Launch and quality assurance</h3>
                 <p>Your FTE begins operations with daily KPI reporting, productivity monitoring, and ongoing oversight from our senior account managers. If a staff member leaves, a replacement is deployed without workflow interruption.</p>
               </div>
             </div>
@@ -412,8 +412,8 @@ export default function HealthcareFTEPage() {
       {/* ═══ FAQ ════════════════════════════════════════════ */}
       <section className="fte-sec fte-sec--white reveal" id="faq">
         <div className="fte-wrap">
-          <p className="fte-ew">Healthcare FTE outsourcing questions we get asked</p>
-          <h2>Healthcare FTE outsourcing questions we get asked</h2>
+          <p className="reveal fte-ew">Healthcare FTE outsourcing questions we get asked</p>
+          <h2 className="reveal">Healthcare FTE outsourcing questions we get asked</h2>
           <div className="fte-faq-layout">
             <div className="fte-faq-intro">
               <p>Direct answers for practices, groups, and hospital systems evaluating healthcare FTE outsourcing.</p>
@@ -443,8 +443,8 @@ export default function HealthcareFTEPage() {
       <div className="fte-closing-band">
         <div className="fte-closing-inner">
           <div>
-            <p className="fte-ew fte-ew--gold" style={{marginBottom:"12px"}}>Your practice. Fully staffed. Running.</p>
-            <h2>Your practice. Fully staffed. Running.</h2>
+            <p className="reveal fte-ew fte-ew--gold" style={{marginBottom:"12px"}}>Your practice. Fully staffed. Running.</p>
+            <h2 className="reveal">Your practice. Fully staffed. Running.</h2>
             <p><a href="https://kevinmd.com/2026/04/administrative-burden-is-driving-severe-physician-burnout" target="_blank" rel="noopener">62% of physicians report burnout, with administrative burden consistently ranking as the top cause (Medscape 2025)</a>. The answer is not hiring more in-house staff. Healthcare outsourcing services built around the dedicated FTE model solve the capacity problem without the overhead, turnover, and ramp-up time of traditional hiring. The gap is not motivation. It is capacity. We see it in every engagement. A practice running the right number of trained people on the right tasks collects more, burns out less, and scales without rebuilding the same infrastructure every time a staff member leaves.</p>
           </div>
           <div className="fte-closing-actions">

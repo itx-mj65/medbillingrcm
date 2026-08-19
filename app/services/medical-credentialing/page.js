@@ -55,19 +55,19 @@ export default function MedicalCredentialingPage() {
       {/* ═══ WHY DELAYS COST MORE ════════════════════════════ */}
       <section className="cred-sec cred-sec--white reveal" id="problem">
         <div className="cred-wrap">
-          <p className="cred-ew">Why credentialing delays cost more than most practices realize</p>
-          <h2>Why credentialing delays cost more than most practices realize</h2>
+          <p className="reveal cred-ew">Why credentialing delays cost more than most practices realize</p>
+          <h2 className="reveal">Why credentialing delays cost more than most practices realize</h2>
 
           {/* Two stat blocks — large numbers as anchors */}
           <div className="cred-stat-row">
-            <div className="cred-stat-block">
+            <div className="reveal cred-stat-block">
               <div className="cred-stat-num">$122,144</div>
               <div className="cred-stat-lbl">Average revenue lost per physician over a 120-day delay</div>
               <div className="cred-stat-src">
                 <a href="https://neolytix.com/articles/credentialing-delays-revenue-loss/" target="_blank" rel="noopener">Neolytix</a> / <a href="https://sutherlandglobal.com/insights/blog/cost-of-provider-credentialing-delays-and-revenue-loss" target="_blank" rel="noopener">Sutherland Global, 2026</a>
               </div>
             </div>
-            <div className="cred-stat-block cred-stat-block--accent">
+            <div className="reveal cred-stat-block cred-stat-block--accent">
               <div className="cred-stat-num">1 in 3</div>
               <div className="cred-stat-lbl">Credentialing applications require correction or resubmission</div>
               <div className="cred-stat-src"><a href="https://mbwrcm.com/the-revenue-cycle-blog/provider-credentialing-timeline-and-delays" target="_blank" rel="noopener">mbwrcm.com, 2026</a></div>
@@ -90,8 +90,8 @@ export default function MedicalCredentialingPage() {
       {/* ═══ PAYER TIMELINE ══════════════════════════════════ */}
       <section className="cred-sec cred-sec--ivory reveal">
         <div className="cred-wrap">
-          <p className="cred-ew">How long does credentialing take by payer?</p>
-          <h2>How long does credentialing take by payer?</h2>
+          <p className="reveal cred-ew">How long does credentialing take by payer?</p>
+          <h2 className="reveal">How long does credentialing take by payer?</h2>
 
           <div className="cred-timeline-grid">
             {[
@@ -101,7 +101,7 @@ export default function MedicalCredentialingPage() {
               { payer:"Expedited (when available)", days:"30–60", unit:"days", note:"Only with complete clean submission", color:"blue" },
             ].map(({ payer, days, unit, note, color }) => (
               <div className={`cred-timeline-card cred-timeline-card--${color}`} key={payer}>
-                <div className="cred-timeline-days">{days}</div>
+                <div className="reveal cred-timeline-days">{days}</div>
                 <div className="cred-timeline-unit">{unit}</div>
                 <div className="cred-timeline-payer">{payer}</div>
                 <div className="cred-timeline-note">{note}</div>
@@ -119,8 +119,8 @@ export default function MedicalCredentialingPage() {
       {/* ═══ SERVICES COVERED ════════════════════════════════ */}
       <section className="cred-sec cred-sec--white reveal">
         <div className="cred-wrap">
-          <p className="cred-ew">What our healthcare credentialing services cover</p>
-          <h2>What our healthcare credentialing services cover</h2>
+          <p className="reveal cred-ew">What our healthcare credentialing services cover</p>
+          <h2 className="reveal">What our healthcare credentialing services cover</h2>
 
           {/* IMAGE PLACEHOLDER
               File: /public/cred-services.webp  |  Size: 1100 × 580 px
@@ -155,7 +155,7 @@ export default function MedicalCredentialingPage() {
                   <span className="cred-service-num">{n}</span>
                   <span className="cred-service-icon" aria-hidden="true">{icon}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -166,8 +166,8 @@ export default function MedicalCredentialingPage() {
       {/* ═══ 4-STEP PROCESS ══════════════════════════════════ */}
       <section className="cred-sec cred-sec--navy reveal" id="process">
         <div className="cred-wrap">
-          <p className="cred-ew cred-ew--gold">Our physician credentialing services: four-step process</p>
-          <h2>Our physician credentialing services: four-step process</h2>
+          <p className="reveal cred-ew cred-ew--gold">Our physician credentialing services: four-step process</p>
+          <h2 className="reveal">Our physician credentialing services: four-step process</h2>
 
           <div className="cred-steps">
 
@@ -177,7 +177,7 @@ export default function MedicalCredentialingPage() {
                 <div className="cred-step-connector" aria-hidden="true" />
               </div>
               <div className="cred-step-body">
-                <h3>Application and documentation gathering</h3>
+                <h3 className="reveal">Application and documentation gathering</h3>
                 <p>We collect every required document: NPI details, active license, DEA registration, board certifications, education records, malpractice coverage, and complete work history with no unexplained gaps. We verify each document against the issuing source before the file moves forward.</p>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function MedicalCredentialingPage() {
                 <div className="cred-step-connector" aria-hidden="true" />
               </div>
               <div className="cred-step-body">
-                <h3>Primary source verification</h3>
+                <h3 className="reveal">Primary source verification</h3>
                 <p>Every credential verified directly: state medical boards, educational institutions, training programs, malpractice carriers. Discrepancies resolved before payer submission, not after a rejection.</p>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function MedicalCredentialingPage() {
                 <div className="cred-step-connector" aria-hidden="true" />
               </div>
               <div className="cred-step-body">
-                <h3>Payer submission and weekly tracking</h3>
+                <h3 className="reveal">Payer submission and weekly tracking</h3>
                 <p>Applications submitted electronically through payer portals or secure channels. We maintain weekly contact with payer credentialing committees and flag files at risk of going stale. A file nobody is watching stops moving.</p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function MedicalCredentialingPage() {
                 <div className="cred-step-num">04</div>
               </div>
               <div className="cred-step-body">
-                <h3>Contract attainment and billing activation</h3>
+                <h3 className="reveal">Contract attainment and billing activation</h3>
                 <p>Once approved, we coordinate payer contract and fee schedule review before execution. We confirm the effective date and billing start date with your <Link href="/services/physician-billing/">billing team</Link> so claims begin on day one, not weeks later.</p>
               </div>
             </div>
@@ -221,8 +221,8 @@ export default function MedicalCredentialingPage() {
       {/* ═══ PROVIDER TYPES ══════════════════════════════════ */}
       <section className="cred-sec cred-sec--ivory reveal">
         <div className="cred-wrap">
-          <p className="cred-ew">Healthcare credentialing services by provider type</p>
-          <h2>Healthcare credentialing services by provider type</h2>
+          <p className="reveal cred-ew">Healthcare credentialing services by provider type</p>
+          <h2 className="reveal">Healthcare credentialing services by provider type</h2>
 
           <div className="cred-types-grid">
             {[
@@ -245,7 +245,7 @@ export default function MedicalCredentialingPage() {
             ].map(({ icon, type, t }) => (
               <article className="cred-type-card reveal" key={type}>
                 <div className="cred-type-icon" aria-hidden="true">{icon}</div>
-                <h3>{type}</h3>
+                <h3 className="reveal">{type}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -256,8 +256,8 @@ export default function MedicalCredentialingPage() {
       {/* ═══ IN-HOUSE VS OUTSOURCED ══════════════════════════ */}
       <section className="cred-sec cred-sec--white reveal">
         <div className="cred-wrap">
-          <p className="cred-ew">The cost of managing credentialing in-house</p>
-          <h2>The cost of managing credentialing in-house</h2>
+          <p className="reveal cred-ew">The cost of managing credentialing in-house</p>
+          <h2 className="reveal">The cost of managing credentialing in-house</h2>
 
           <div className="cred-cost-compare">
             <div className="cred-cost-col cred-cost-col--left">
@@ -318,8 +318,8 @@ export default function MedicalCredentialingPage() {
       {/* ═══ FAQ ════════════════════════════════════════════ */}
       <section className="cred-sec cred-sec--ivory reveal" id="faq">
         <div className="cred-wrap">
-          <p className="cred-ew">Medical credentialing questions we get asked</p>
-          <h2>Medical credentialing questions we get asked</h2>
+          <p className="reveal cred-ew">Medical credentialing questions we get asked</p>
+          <h2 className="reveal">Medical credentialing questions we get asked</h2>
           <div className="cred-faq-layout">
             <div className="cred-faq-intro">
               <p>Direct answers for practices, groups, and hospital systems evaluating credentialing support.</p>
@@ -357,8 +357,8 @@ export default function MedicalCredentialingPage() {
       <div className="cred-closing-band">
         <div className="cred-closing-inner">
           <div>
-            <p className="cred-ew cred-ew--gold" style={{marginBottom:"12px"}}>Your providers are ready. Get them billing.</p>
-            <h2>Your providers are ready. Get them billing.</h2>
+            <p className="reveal cred-ew cred-ew--gold" style={{marginBottom:"12px"}}>Your providers are ready. Get them billing.</p>
+            <h2 className="reveal">Your providers are ready. Get them billing.</h2>
             <p>A new provider on your payroll costs you money every day they are not credentialed. At $6,000 to $8,000 per month in lost billable revenue per provider, every week of delay is measurable. As a medical credentialing company integrated with your billing team, we start the process the day you engage us, follow up weekly, and connect billing activation to contract execution so there is no gap between credentialing completion and the first clean claim.</p>
           </div>
           <div className="cred-closing-actions">

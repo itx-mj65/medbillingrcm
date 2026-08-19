@@ -43,18 +43,18 @@ export default function CoverageDiscoveryPage() {
       {/* ═══ THE REVENUE HIDING IN SELF-PAY ═════════════════ */}
       <section className="cd-sec cd-sec--white reveal" id="problem">
         <div className="cd-wrap">
-          <p className="cd-ew">The revenue hiding inside your self-pay accounts</p>
-          <h2>The revenue hiding inside your self-pay accounts</h2>
+          <p className="reveal cd-ew">The revenue hiding inside your self-pay accounts</p>
+          <h2 className="reveal">The revenue hiding inside your self-pay accounts</h2>
 
           {/* Stat-forward layout: large numbers anchor each fact */}
           <div className="cd-stats-row">
-            <div className="cd-stat-block">
+            <div className="reveal cd-stat-block">
               <div className="cd-stat-num">$745<span>B</span></div>
               <div className="cd-stat-body">
                 <p>U.S. hospitals have provided nearly <strong>$745 billion</strong> in uncompensated care over the past two decades, according to the <a href="https://www.aha.org/fact-sheets/2020-01-06-fact-sheet-uncompensated-hospital-care-cost" target="_blank" rel="noopener">American Hospital Association</a>. A significant share of that total is not truly uncompensated. It is care delivered to patients who had active insurance that was never identified.</p>
               </div>
             </div>
-            <div className="cd-stat-block">
+            <div className="reveal cd-stat-block">
               <div className="cd-stat-num">27<span>%</span></div>
               <div className="cd-stat-body">
                 <p>Registration and eligibility errors remain the single largest denial category, responsible for nearly <strong>27% of all claim denials</strong> according to <a href="https://www.ajmc.com/view/denials-management-the-financial-impact-of-claim-denials" target="_blank" rel="noopener">Change Healthcare analysis confirmed by MGMA</a>. Each denied claim costs an average of <a href="https://www.etactics.com/blog/cost-to-rework-a-claim" target="_blank" rel="noopener">$25 to rework</a>, with administrative costs per denial reaching <a href="https://aptarro.com/insights/us-healthcare-denial-rates-reimbursement-statistics" target="_blank" rel="noopener">$57 in 2023 according to Aptarro data</a>. Up to <a href="https://fuseinsight.com/blog/coordination-of-benefits-errors-denials/" target="_blank" rel="noopener">65% of denials are never resubmitted at all</a>. The claims age out, get written off, and the revenue disappears permanently.</p>
@@ -81,8 +81,8 @@ export default function CoverageDiscoveryPage() {
       {/* ═══ DISCOVERY VS ELIGIBILITY ════════════════════════ */}
       <section className="cd-sec cd-sec--ivory reveal">
         <div className="cd-wrap">
-          <p className="cd-ew">Understanding the difference</p>
-          <h2>Coverage discovery versus eligibility verification</h2>
+          <p className="reveal cd-ew">Understanding the difference</p>
+          <h2 className="reveal">Coverage discovery versus eligibility verification</h2>
           <p className="cd-intro-p">The two terms describe different operations and solve different problems.</p>
 
           <div className="cd-compare">
@@ -108,8 +108,8 @@ export default function CoverageDiscoveryPage() {
       {/* ═══ THREE DISCOVERY POINTS ══════════════════════════ */}
       <section className="cd-sec cd-sec--navy reveal" id="how-it-works">
         <div className="cd-wrap">
-          <p className="cd-ew cd-ew--gold">Where we run discovery in the revenue cycle</p>
-          <h2>Where we run discovery in the revenue cycle</h2>
+          <p className="reveal cd-ew cd-ew--gold">Where we run discovery in the revenue cycle</p>
+          <h2 className="reveal">Where we run discovery in the revenue cycle</h2>
           <p className="cd-intro-p cd-intro-p--dark">We check for undiscovered coverage at three points, not one. Each catches revenue the others miss.</p>
 
           <div className="cd-steps">
@@ -120,7 +120,7 @@ export default function CoverageDiscoveryPage() {
                 <div className="cd-step-connector" aria-hidden="true" />
               </div>
               <div className="cd-step-body">
-                <h3>Pre-service discovery</h3>
+                <h3 className="reveal">Pre-service discovery</h3>
                 <p>Before the patient is seen, we query payer databases through 270/271 eligibility transactions to confirm active coverage, benefit limits, copays, deductibles, referral requirements, and prior authorization needs. Patients with no insurance on file are flagged for a full discovery sweep, cross-checking state Medicaid systems, employer records, and commercial payer databases to surface coverage before the appointment.</p>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function CoverageDiscoveryPage() {
                 <div className="cd-step-connector" aria-hidden="true" />
               </div>
               <div className="cd-step-body">
-                <h3>Point-of-service verification</h3>
+                <h3 className="reveal">Point-of-service verification</h3>
                 <p>At registration, we verify coordination of benefits to confirm primary, secondary, and tertiary payer order. COB errors account for 15 to 17 percent of all claim denials and cause 20 to 30 percent of claim processing delays in practices with high dual-coverage volume. We catch payer sequencing problems here, before they become CO-22 denials downstream.</p>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function CoverageDiscoveryPage() {
                 <div className="cd-step-num">03</div>
               </div>
               <div className="cd-step-body">
-                <h3>Post-service recovery</h3>
+                <h3 className="reveal">Post-service recovery</h3>
                 <p>For accounts already classified as self-pay, we run batch sweeps against payer databases to find coverage that was missed at intake. Industry data shows a 10 to 30 percent hit rate on self-pay accounts, meaning one in ten to three in ten patients marked as uninsured actually have billable coverage at the time of service. We verify the match with an eligibility transaction, then route the account for claim submission, converting what was headed for write-off into a paid claim.</p>
               </div>
             </div>
@@ -162,8 +162,8 @@ export default function CoverageDiscoveryPage() {
       {/* ═══ SIX COVERAGE GAPS ═══════════════════════════════ */}
       <section className="cd-sec cd-sec--white reveal">
         <div className="cd-wrap">
-          <p className="cd-ew">Six coverage gaps we identify and close</p>
-          <h2>Six coverage gaps we identify and close</h2>
+          <p className="reveal cd-ew">Six coverage gaps we identify and close</p>
+          <h2 className="reveal">Six coverage gaps we identify and close</h2>
 
           <div className="cd-gaps-grid">
             {[
@@ -197,7 +197,7 @@ export default function CoverageDiscoveryPage() {
                   <span className="cd-gap-num">{n}</span>
                   <span className="cd-gap-tag">{tag}</span>
                 </div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </article>
             ))}
@@ -208,8 +208,8 @@ export default function CoverageDiscoveryPage() {
       {/* ═══ CONNECTED TO REST OF CYCLE ══════════════════════ */}
       <section className="cd-sec cd-sec--ivory reveal">
         <div className="cd-wrap">
-          <p className="cd-ew">Connected to the rest of your revenue cycle</p>
-          <h2>Connected to the rest of your revenue cycle</h2>
+          <p className="reveal cd-ew">Connected to the rest of your revenue cycle</p>
+          <h2 className="reveal">Connected to the rest of your revenue cycle</h2>
 
           <div className="cd-connected-layout">
             <div className="cd-connected-copy">
@@ -237,8 +237,8 @@ export default function CoverageDiscoveryPage() {
       {/* ═══ WHY MEDBILLING ══════════════════════════════════ */}
       <section className="cd-sec cd-sec--navy reveal">
         <div className="cd-wrap">
-          <p className="cd-ew cd-ew--gold">Why practices choose Medbilling RCM for coverage discovery</p>
-          <h2>Why practices choose Medbilling RCM for coverage discovery</h2>
+          <p className="reveal cd-ew cd-ew--gold">Why practices choose Medbilling RCM for coverage discovery</p>
+          <h2 className="reveal">Why practices choose Medbilling RCM for coverage discovery</h2>
 
           <div className="cd-why-grid">
             {[
@@ -249,7 +249,7 @@ export default function CoverageDiscoveryPage() {
             ].map(({ icon, h, t }) => (
               <div className="cd-why-card reveal" key={h}>
                 <div className="cd-why-icon">{icon}</div>
-                <h3>{h}</h3>
+                <h3 className="reveal">{h}</h3>
                 <p>{t}</p>
               </div>
             ))}
@@ -264,8 +264,8 @@ export default function CoverageDiscoveryPage() {
       {/* ═══ FAQ ════════════════════════════════════════════ */}
       <section className="cd-sec cd-sec--white reveal" id="faq">
         <div className="cd-wrap">
-          <p className="cd-ew">Coverage discovery questions we get asked</p>
-          <h2>Coverage discovery questions we get asked</h2>
+          <p className="reveal cd-ew">Coverage discovery questions we get asked</p>
+          <h2 className="reveal">Coverage discovery questions we get asked</h2>
           <div className="cd-faq-layout">
             <div className="cd-faq-intro">
               <p>Direct answers for practices, hospitals, and billing teams evaluating coverage discovery.</p>
