@@ -16,6 +16,7 @@ export default function sitemap() {
     { url: "/specialties/rheumatology-billing-services/",      priority: 0.8,  changeFrequency: "monthly" },
     { url: "/specialties/internal-medicine-billing-service/",  priority: 0.8,  changeFrequency: "monthly" },
     { url: "/specialties/radiology-billing-service/",          priority: 0.8,  changeFrequency: "monthly" },
+    { url: "/specialties/dermatology-billing-service/",          priority: 0.8,  changeFrequency: "monthly" },
     { url: "/services/healthcare-fte-outsourcing/",      priority: 0.85, changeFrequency: "monthly" },
   ];
 
