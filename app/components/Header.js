@@ -242,7 +242,7 @@ function SpecialtiesDropdown({ onClose }) {
             <div className="hdr-spec-stat"><strong>50</strong><span>States served</span></div>
           </div>
           <Link href="/specialties/" className="hdr-spec-cta" onClick={onClose}>
-            View all specialties →
+            View all specialties
           </Link>
         </div>
 
