@@ -1,0 +1,123 @@
+/* ═══════════════════════════════════════════════════════════
+   RHEUMATOLOGY PAGE — extends specialty.css
+   Scoped under .rheum-page — only rheumatology-specific styles here
+   Shared patterns (hero, process, testimonials) live in specialty.css
+═══════════════════════════════════════════════════════════ */
+
+/* ─── EXPERT RCM SECTION ─────────────────────────────────── */
+.rheum-rcm-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem); align-items: start; margin-top: 2rem;
+}
+.rheum-rcm-copy p { color: var(--color-ink); }
+.rheum-rcm-copy .sp-btn { margin-top: .5rem; }
+
+.rheum-services-list h3 {
+  font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600;
+  color: var(--color-primary); margin-bottom: 16px;
+}
+.rheum-svc-list {
+  list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0;
+}
+.rheum-svc-list li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: var(--fs-body); color: var(--color-ink);
+  padding: 10px 0; border-bottom: 1px solid var(--color-line);
+  line-height: 1.4;
+}
+.rheum-svc-list li:last-child { border-bottom: none; }
+.rheum-svc-list svg { flex-shrink: 0; color: var(--color-secondary); }
+
+/* ─── CORE CAPABILITIES GRID ─────────────────────────────── */
+.rheum-caps-sub { color: var(--color-muted); margin-bottom: 2rem; }
+.rheum-caps-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 2px; background: var(--color-line);
+  border-radius: var(--radius-card); overflow: hidden; margin-top: 2rem;
+}
+.rheum-cap-card {
+  background: #fff; padding: 28px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: background .18s;
+}
+.rheum-cap-card:hover { background: var(--color-ivory); }
+.rheum-cap-icon { font-size: 1.75rem; }
+.rheum-cap-card h3 { font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; }
+.rheum-cap-card p  { font-size: var(--fs-sm); color: var(--color-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── BEFORE / AFTER STATS ───────────────────────────────── */
+.rheum-ba-sub { font-size: var(--fs-h3); color: var(--color-muted); font-weight: 400; margin-bottom: 2rem; }
+.rheum-ba-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px; background: var(--color-line);
+  border-radius: var(--radius-card); overflow: hidden;
+}
+.rheum-ba-card {
+  background: var(--color-ivory); padding: 36px 24px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  position: relative;
+}
+.rheum-ba-card::after {
+  content: ''; position: absolute; bottom: 0; left: 24px; right: 24px;
+  height: 4px; background: rgba(26,33,79,.06); border-radius: 2px;
+}
+.rheum-ba-card--accent { background: rgba(26,33,79,.03); }
+.rheum-ba-card--accent::after { background: var(--color-secondary); }
+.rheum-ba-num {
+  font-family: var(--font-heading); font-size: clamp(2.5rem,4.5vw,4rem);
+  font-weight: 800; color: var(--color-primary); line-height: .85;
+  letter-spacing: var(--ls-heading);
+}
+.rheum-ba-card--accent .rheum-ba-num { color: var(--color-secondary); }
+.rheum-ba-num span { font-size: 55%; }
+.rheum-ba-unit { font-size: var(--fs-body); font-weight: 700; color: var(--color-muted); }
+.rheum-ba-lbl { font-size: var(--fs-sm); color: var(--color-muted); line-height: 1.35; font-weight: 600; }
+
+/* ─── WHY MEDBILLING ─────────────────────────────────────── */
+.rheum-why-intro { font-size: var(--fs-body); color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.rheum-why-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px; background: rgba(255,255,255,.06);
+  border-radius: var(--radius-card); overflow: hidden;
+}
+.rheum-why-card {
+  background: rgba(255,255,255,.05); padding: 24px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: background .2s;
+}
+.rheum-why-card:hover { background: rgba(255,255,255,.09); }
+.rheum-why-icon { font-size: 1.5rem; }
+.rheum-why-card h3 { font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; }
+.rheum-why-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.rheum-faq-layout { display: grid; grid-template-columns: .62fr 1.38fr; gap: 64px; margin-top: 2rem; }
+.rheum-faq-intro  { position: sticky; top: 110px; }
+.rheum-faq-intro p { color: var(--color-muted); }
+.rheum-faq-list details { border-bottom: 1px solid var(--color-line); }
+.rheum-faq-list summary { list-style: none; position: relative; padding: 20px 52px 20px 0; cursor: pointer; font-family: var(--font-heading); font-weight: 600; font-size: var(--fs-body); color: var(--color-primary); transition: color .2s; }
+.rheum-faq-list summary::-webkit-details-marker { display: none; }
+.rheum-faq-list summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
+.rheum-faq-list details[open] summary::after { content: '−'; }
+.rheum-faq-list details[open] summary { color: var(--color-action); }
+.rheum-faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); max-width: none; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .rheum-rcm-layout { grid-template-columns: 1fr; }
+  .rheum-caps-grid  { grid-template-columns: 1fr 1fr; }
+  .rheum-why-grid   { grid-template-columns: 1fr 1fr; }
+  .rheum-ba-grid    { grid-template-columns: 1fr 1fr; }
+  .rheum-faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .rheum-faq-intro  { position: static; }
+}
+@media (max-width: 768px) {
+  .rheum-caps-grid { grid-template-columns: 1fr; }
+  .rheum-why-grid  { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .rheum-ba-grid   { grid-template-columns: 1fr 1fr; }
+  .rheum-why-grid  { grid-template-columns: 1fr; }
+  .rheum-caps-grid { grid-template-columns: 1fr; }
+  .rheum-faq-list summary { padding-right: 36px; font-size: var(--fs-sm); }
+}
