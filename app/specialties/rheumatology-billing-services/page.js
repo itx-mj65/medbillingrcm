@@ -2,7 +2,6 @@ import Link from "next/link";
 import CtaSection from "@/components/CtaSection";
 import SpecialtyHero from "@/components/specialty/SpecialtyHero";
 import SpecialtyProcess from "@/components/specialty/SpecialtyProcess";
-import SpecialtyTestimonials from "@/components/specialty/SpecialtyTestimonials";
 
 export default function RheumatologyBillingPage() {
   return (
@@ -174,9 +173,6 @@ export default function RheumatologyBillingPage() {
           </div>
         </div>
       </section>
-
-      {/* ═══ TESTIMONIALS — shared component ════════════════ */}
-      <SpecialtyTestimonials />
 
       {/* ═══ FAQ ═════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--white reveal" id="faq">

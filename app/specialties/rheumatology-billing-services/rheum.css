@@ -41,7 +41,7 @@
   display:flex; flex-direction:column; gap:16px;
   border-radius:20px;
   border:1px solid rgba(255,255,255,.08);
-  transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, box-shadow .3s;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .45s ease, box-shadow .45s ease, background .45s ease;
   cursor:default;
 }
 
@@ -136,13 +136,22 @@
 .rheum-why-card {
   position:relative; overflow:hidden;
   background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.09);
-  border-left:3px solid rgba(212,155,40,.4);  /* gold left rail — always visible */
+  border-top:1px solid rgba(255,255,255,.09);
+  border-right:1px solid rgba(255,255,255,.09);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  border-left:3px solid rgba(212,155,40,.4);   /* gold rail — always visible */
   border-radius:0 14px 14px 0;
   padding:26px 20px 26px 22px;
   display:flex; flex-direction:column; gap:14px;
   cursor:default;
-  transition:background .3s, border-color .3s, transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+  transition:
+    background   .45s ease,
+    border-top-color   .45s ease,
+    border-right-color .45s ease,
+    border-bottom-color .45s ease,
+    border-left-color  .45s ease,
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease;
 }
 
 /* Pulsing dot — top-right corner, always-on subtle animation */
@@ -171,11 +180,12 @@
 /* Hover state */
 .rheum-why-card:hover {
   background:rgba(255,255,255,.1);
-  border-left-color:var(--color-accent);
-  border-color:rgba(255,255,255,.16);
-  border-left-color:var(--color-accent);
-  transform:translateX(4px);        /* slide right from left rail — directional cue */
-  box-shadow:4px 0 24px rgba(212,155,40,.08), 0 4px 20px rgba(0,0,0,.18);
+  border-top-color:rgba(255,255,255,.18);
+  border-right-color:rgba(255,255,255,.18);
+  border-bottom-color:rgba(255,255,255,.18);
+  border-left-color:var(--color-accent);       /* full gold rail on hover */
+  transform:translateX(4px);
+  box-shadow:4px 0 24px rgba(212,155,40,.1), 0 8px 28px rgba(0,0,0,.22);
 }
 .rheum-why-card:hover::before { animation-duration:1s; opacity:1; }
 
@@ -186,7 +196,7 @@
   border:1px solid rgba(212,155,40,.2);
   display:flex; align-items:center; justify-content:center;
   font-size:1.2rem;
-  transition:background .3s, border-color .3s, transform .3s;
+  transition:background .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1);
 }
 .rheum-why-card:hover .rheum-why-icon-wrap {
   background:rgba(212,155,40,.2);
@@ -251,6 +261,8 @@
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════════ */
+
+/* Tablet wide — 1080px */
 @media (max-width:1080px) {
   .rheum-rcm-layout { grid-template-columns:1fr; }
   .rheum-caps-grid  { grid-template-columns:1fr 1fr; gap:12px; }
@@ -258,26 +270,59 @@
   .rheum-ba-grid    { grid-template-columns:1fr 1fr; }
   .rheum-faq-layout { grid-template-columns:1fr; gap:2rem; }
   .rheum-faq-intro  { position:static; }
+  /* Card font sizes stay readable */
+  .rheum-cap-card   { padding:26px 22px; }
+  .rheum-why-card   { padding:22px 18px 22px 20px; }
 }
-@media (max-width:768px) {
-  .rheum-caps-grid { grid-template-columns:1fr; }
+
+/* Tablet — 900px */
+@media (max-width:900px) {
+  .rheum-caps-grid { grid-template-columns:1fr 1fr; gap:10px; }
   .rheum-why-grid  { grid-template-columns:1fr 1fr; }
-}
-@media (max-width:560px) {
   .rheum-ba-grid   { grid-template-columns:1fr 1fr; }
-  .rheum-why-grid  { grid-template-columns:1fr; }
+}
+
+/* Tablet portrait — 768px */
+@media (max-width:768px) {
+  .rheum-caps-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  .rheum-why-grid  { grid-template-columns:1fr 1fr; gap:8px; }
+  .rheum-why-card  { border-radius:0 12px 12px 0; }
+  .rheum-cap-card  { border-radius:16px; }
+  .rheum-faq-list summary { font-size:var(--fs-sm); }
+}
+
+/* Mobile large — 640px */
+@media (max-width:640px) {
   .rheum-caps-grid { grid-template-columns:1fr; gap:10px; }
+  .rheum-ba-grid   { grid-template-columns:1fr 1fr; }
+  .rheum-why-grid  { grid-template-columns:1fr; gap:8px; }
+  .rheum-cap-card  { padding:24px 20px; }
+  .rheum-why-card  { padding:20px 16px 20px 18px; }
+  /* Remove translateX on mobile — slides off-screen edge */
   .rheum-why-card:hover { transform:none; }
+  /* Keep lift for caps but reduce it */
+  .rheum-cap-card:hover { transform:translateY(-3px); }
+}
+
+/* Mobile — 480px */
+@media (max-width:480px) {
+  .rheum-caps-grid  { gap:8px; }
+  .rheum-why-grid   { gap:8px; }
+  .rheum-ba-grid    { grid-template-columns:1fr 1fr; gap:2px; }
+  .rheum-ba-card    { padding:24px 18px; }
+  .rheum-cap-card   { padding:22px 18px; gap:12px; }
+  .rheum-cap-icon-wrap { width:44px; height:44px; }
+  .rheum-why-icon-wrap { width:36px; height:36px; font-size:1rem; }
+  .rheum-faq-list summary { padding-right:36px; }
   .rheum-cap-card:hover { transform:none; }
-  .rheum-faq-list summary { padding-right:36px; font-size:var(--fs-sm); }
 }
 
 /* Accessibility — no animation */
 @media (prefers-reduced-motion:reduce) {
   .rheum-cap-card::before,
-  .rheum-why-card::before { animation:none; opacity:.4; }
+  .rheum-why-card::before { animation:none !important; opacity:.3; }
   .rheum-cap-card:hover,
   .rheum-why-card:hover { transform:none; }
-  .sp-hero-stat::before,
+  .sp-hero-stat::before  { animation:none !important; opacity:0; }
   .sp-hero-stat-num { animation:none !important; -webkit-text-fill-color:var(--color-accent); }
 }
