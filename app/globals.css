@@ -1302,12 +1302,23 @@ body.js-ready .reveal {
 }
 .hdr-spec-stat span { font-size: .75rem; color: var(--text-on-dark-sub); }
 .hdr-spec-cta {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: .82rem; font-weight: 700; color: var(--color-accent);
-  text-decoration: none; transition: color .18s;
-  margin-top: auto;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: .82rem; font-weight: 800; letter-spacing: .04em;
+  background: var(--color-accent); color: var(--color-ink) !important;
+  border-radius: var(--radius-btn); padding: 10px 18px;
+  text-decoration: none;
+  transition: background .25s ease, transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease;
+  margin-top: 8px; white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(212,155,40,.28);
 }
-.hdr-spec-cta:hover { color: var(--text-on-dark); }
+.hdr-spec-cta::after { content: '→'; font-size: .9rem; transition: transform .25s ease; }
+.hdr-spec-cta:hover {
+  background: var(--color-accent);
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(212,155,40,.38);
+}
+.hdr-spec-cta:hover::after { transform: translateX(4px); }
 
 /* ── Services mega-menu ─────────────────────────────────── */
 .hdr-drop--mega {
