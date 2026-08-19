@@ -103,7 +103,7 @@ export default function RheumatologyBillingPage() {
               },
             ].map(({ icon, h, t }) => (
               <article className="rheum-cap-card reveal" key={h}>
-                <div className="rheum-cap-icon" aria-hidden="true">{icon}</div>
+                <div className="rheum-cap-icon-wrap" aria-hidden="true">{icon}</div>
                 <h3>{h}</h3>
                 <p>{t}</p>
               </article>
@@ -166,7 +166,7 @@ export default function RheumatologyBillingPage() {
               { icon:"🔍", h:"Transparent Fee Structure",            t:"No hidden fees. Cost-effective, results-driven solutions with full reporting visibility." },
             ].map(({ icon, h, t }) => (
               <div className="rheum-why-card reveal" key={h}>
-                <div className="rheum-why-icon" aria-hidden="true">{icon}</div>
+                <div className="rheum-why-icon-wrap" aria-hidden="true">{icon}</div>
                 <h3>{h}</h3>
                 <p>{t}</p>
               </div>

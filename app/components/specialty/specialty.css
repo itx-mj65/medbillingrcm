@@ -92,24 +92,69 @@
 }
 .sp-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
-/* Hero stats panel */
+/* ── Hero stats panel — animated glare cards ── */
 .sp-hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-  background: rgba(255,255,255,.08); border-radius: var(--radius-card);
-  overflow: hidden; flex-shrink: 0; min-width: 280px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3px;
+  flex-shrink: 0; min-width: 300px;
 }
 .sp-hero-stat {
-  background: rgba(255,255,255,.05); padding: 24px 20px;
-  display: flex; flex-direction: column; gap: 6px;
-  transition: background .2s;
+  position: relative; padding: 28px 22px; overflow: hidden;
+  display: flex; flex-direction: column; gap: 8px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color .3s, transform .25s;
 }
-.sp-hero-stat:hover { background: rgba(255,255,255,.08); }
+.sp-hero-stat::before {
+  content: '';
+  position: absolute; top: -60%; left: -60%;
+  width: 220%; height: 220%;
+  background: linear-gradient(135deg, transparent 30%, rgba(212,155,40,.18) 50%, transparent 70%);
+  transform: translateX(-100%) rotate(25deg);
+  animation: statGlare 4s ease-in-out infinite;
+}
+.sp-hero-stat:nth-child(2)::before { animation-delay: 1s; }
+.sp-hero-stat:nth-child(3)::before { animation-delay: 2s; }
+.sp-hero-stat:nth-child(4)::before { animation-delay: 3s; }
+@keyframes statGlare {
+  0%,100% { transform: translateX(-100%) rotate(25deg); opacity: 0; }
+  50%      { transform: translateX(60%)  rotate(25deg); opacity: 1; }
+}
+.sp-hero-stat::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 0%, rgba(212,155,40,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.sp-hero-stat:hover {
+  border-color: rgba(212,155,40,.35);
+  transform: translateY(-2px);
+}
+.sp-hero-stat:hover::before { animation-duration: 1.2s; }
 .sp-hero-stat-num {
-  font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem);
-  font-weight: 800; color: var(--color-accent); line-height: .9;
-  letter-spacing: var(--ls-heading);
+  font-family: var(--font-heading); font-size: clamp(2rem,4vw,3.25rem);
+  font-weight: 800; line-height: .85; letter-spacing: var(--ls-heading);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #f5c85a 60%, var(--color-accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: numShimmer 3.5s linear infinite;
 }
-.sp-hero-stat-lbl { font-size: var(--fs-xs); color: rgba(255,255,255,.65); line-height: 1.35; font-weight: 600; }
+.sp-hero-stat:nth-child(2) .sp-hero-stat-num { animation-delay: .9s; }
+.sp-hero-stat:nth-child(3) .sp-hero-stat-num { animation-delay: 1.8s; }
+.sp-hero-stat:nth-child(4) .sp-hero-stat-num { animation-delay: 2.7s; }
+@keyframes numShimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+.sp-hero-stat-lbl {
+  font-size: var(--fs-xs); font-weight: 700;
+  color: rgba(255,255,255,.7); line-height: 1.35;
+  letter-spacing: .03em;
+}
 
 /* ─── PROCESS (Revenue Control Framework) ────────────────── */
 .sp-process { padding: var(--sec-desktop) 0; background: var(--color-navy-deep); }
@@ -145,7 +190,7 @@ body.js-ready .sp-page .reveal { opacity: 0; transform: translateY(16px); transi
 ═══════════════════════════════════════════════════════════ */
 @media (max-width: 1080px) {
   .sp-hero-wrap   { grid-template-columns: 1fr; }
-  .sp-hero-stats  { display: grid; grid-template-columns: repeat(4,1fr); min-width: 0; }
+  .sp-hero-stats  { grid-template-columns: repeat(4,1fr); min-width: 0; gap: 3px; }
   .sp-reviews-grid { grid-template-columns: 1fr; }
   .sp-step        { grid-template-columns: 60px 1fr; }
 }

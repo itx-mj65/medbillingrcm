@@ -28,21 +28,72 @@
 .rheum-svc-list li:last-child { border-bottom: none; }
 .rheum-svc-list svg { flex-shrink: 0; color: var(--color-secondary); }
 
-/* ─── CORE CAPABILITIES GRID ─────────────────────────────── */
+/* ─── CORE CAPABILITIES GRID — spotlight hover cards ────── */
 .rheum-caps-sub { color: var(--color-muted); margin-bottom: 2rem; }
 .rheum-caps-grid {
   display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 2px; background: var(--color-line);
-  border-radius: var(--radius-card); overflow: hidden; margin-top: 2rem;
+  gap: 16px; margin-top: 2rem;
 }
 .rheum-cap-card {
-  background: #fff; padding: 28px;
-  display: flex; flex-direction: column; gap: 10px;
-  transition: background .18s;
+  position: relative; overflow: hidden;
+  background: #fff; padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--color-line);
+  border-top: 3px solid transparent;
+  transition: border-color .3s, box-shadow .3s, transform .25s;
 }
-.rheum-cap-card:hover { background: var(--color-ivory); }
-.rheum-cap-icon { font-size: 1.75rem; }
-.rheum-cap-card h3 { font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; }
+/* Gradient border-top reveal on hover */
+.rheum-cap-card::before {
+  content: '';
+  position: absolute; top: -1px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-accent), var(--color-secondary));
+  background-size: 200% auto;
+  opacity: 0;
+  transition: opacity .3s;
+  animation: capGradShift 3s linear infinite paused;
+}
+.rheum-cap-card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+@keyframes capGradShift {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+/* Glare sweep on hover */
+.rheum-cap-card::after {
+  content: '';
+  position: absolute; top: -80%; left: -60%;
+  width: 50%; height: 250%;
+  background: linear-gradient(100deg, transparent 30%, rgba(82,133,50,.06) 50%, transparent 70%);
+  transform: skewX(-20deg);
+  opacity: 0; transition: opacity .25s;
+  pointer-events: none;
+}
+.rheum-cap-card:hover {
+  border-color: rgba(82,133,50,.25);
+  box-shadow: 0 8px 32px rgba(82,133,50,.1), 0 2px 8px rgba(26,33,79,.06);
+  transform: translateY(-4px);
+}
+.rheum-cap-card:hover::after {
+  opacity: 1;
+  animation: capGlare .6s ease forwards;
+}
+@keyframes capGlare {
+  0%   { left: -60%; opacity: 0; }
+  30%  { opacity: 1; }
+  100% { left: 120%; opacity: 0; }
+}
+.rheum-cap-icon-wrap {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, rgba(82,133,50,.1), rgba(82,133,50,.05));
+  border-radius: 12px; border: 1px solid rgba(82,133,50,.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.rheum-cap-card h3 { font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; line-height: 1.35; }
 .rheum-cap-card p  { font-size: var(--fs-sm); color: var(--color-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
 
 /* ─── BEFORE / AFTER STATS ───────────────────────────────── */
@@ -73,21 +124,53 @@
 .rheum-ba-unit { font-size: var(--fs-body); font-weight: 700; color: var(--color-muted); }
 .rheum-ba-lbl { font-size: var(--fs-sm); color: var(--color-muted); line-height: 1.35; font-weight: 600; }
 
-/* ─── WHY MEDBILLING ─────────────────────────────────────── */
+/* ─── WHY MEDBILLING — glass glow cards on navy ──────────── */
 .rheum-why-intro { font-size: var(--fs-body); color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
 .rheum-why-grid {
   display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 2px; background: rgba(255,255,255,.06);
-  border-radius: var(--radius-card); overflow: hidden;
+  gap: 12px; margin-top: 2rem;
 }
 .rheum-why-card {
-  background: rgba(255,255,255,.05); padding: 24px;
-  display: flex; flex-direction: column; gap: 10px;
-  transition: background .2s;
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 16px; padding: 26px 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: border-color .3s, background .3s, transform .25s;
+  cursor: default;
 }
-.rheum-why-card:hover { background: rgba(255,255,255,.09); }
-.rheum-why-icon { font-size: 1.5rem; }
-.rheum-why-card h3 { font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; }
+/* Pulsing radial glow at top */
+.rheum-why-card::before {
+  content: '';
+  position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+  width: 140%; height: 140%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(212,155,40,.12) 0%, transparent 60%);
+  opacity: 0; transition: opacity .4s;
+  pointer-events: none;
+}
+/* Sweep shimmer on hover */
+.rheum-why-card::after {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,.06) 50%, transparent 100%);
+  transition: left .5s ease;
+  pointer-events: none;
+}
+.rheum-why-card:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(212,155,40,.3);
+  transform: translateY(-3px);
+}
+.rheum-why-card:hover::before { opacity: 1; }
+.rheum-why-card:hover::after  { left: 140%; }
+.rheum-why-icon-wrap {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: rgba(212,155,40,.12);
+  border: 1px solid rgba(212,155,40,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; flex-shrink: 0;
+}
+.rheum-why-card h3 { font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; }
 .rheum-why-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
 
 /* ─── FAQ ────────────────────────────────────────────────── */
@@ -105,8 +188,8 @@
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 1080px) {
   .rheum-rcm-layout { grid-template-columns: 1fr; }
-  .rheum-caps-grid  { grid-template-columns: 1fr 1fr; }
-  .rheum-why-grid   { grid-template-columns: 1fr 1fr; }
+  .rheum-caps-grid  { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .rheum-why-grid   { grid-template-columns: 1fr 1fr; gap: 10px; }
   .rheum-ba-grid    { grid-template-columns: 1fr 1fr; }
   .rheum-faq-layout { grid-template-columns: 1fr; gap: 2rem; }
   .rheum-faq-intro  { position: static; }
@@ -118,6 +201,17 @@
 @media (max-width: 560px) {
   .rheum-ba-grid   { grid-template-columns: 1fr 1fr; }
   .rheum-why-grid  { grid-template-columns: 1fr; }
-  .rheum-caps-grid { grid-template-columns: 1fr; }
+  .rheum-caps-grid { grid-template-columns: 1fr; gap: 10px; }
+  .rheum-why-card, .rheum-cap-card { transform: none !important; }
   .rheum-faq-list summary { padding-right: 36px; font-size: var(--fs-sm); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rheum-cap-card::before,
+  .rheum-cap-card::after,
+  .rheum-why-card::after,
+  .rheum-why-card::before,
+  .sp-hero-stat::before,
+  .sp-hero-stat-num { animation: none !important; -webkit-text-fill-color: var(--color-accent); }
+  .rheum-cap-card:hover,
+  .rheum-why-card:hover { transform: none; }
 }
