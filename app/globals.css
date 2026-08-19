@@ -986,14 +986,56 @@ details p { padding: 0 52px 20px 0; color: #5b5f6d; margin: 0; font-size: .97rem
 /* ═══════════════════════════════════════════════════════════
    REVEAL — brand book p.18: opacity + 8-16px movement
 ═══════════════════════════════════════════════════════════ */
-/* Reveal: only hidden when JS has marked body.js-ready.
-   Prevents invisible content during SSR, hydration, and client nav. */
+/* ═══════════════════════════════════════════════════════════
+   SCROLL REVEAL SYSTEM — multi-variant, auto-assigned
+   
+   How it works:
+   - Scripts.js detects element index + parent section type
+   - Assigns one of 6 reveal classes via data-reveal attribute
+   - CSS transitions fire when .in is added by IntersectionObserver
+   
+   Variants:
+   reveal-up     → fade + translateY (default, sections/cards)
+   reveal-down   → fade + translateY negative (hero eyebrows)
+   reveal-left   → fade + translateX from right (right-side content)
+   reveal-right  → fade + translateX from left (left-side content)
+   reveal-scale  → fade + scale from 0.92 (stat blocks, badges)
+   reveal-blur   → fade + blur + tiny Y (body text, paragraphs)
+   
+   All hidden state uses opacity only — no layout shift.
+   Transition durations stagger by element index (auto in JS).
+═══════════════════════════════════════════════════════════ */
+
+/* ── Base: hide before JS is ready ─── */
 body.js-ready .reveal {
-  opacity: 0; transform: translateY(14px);
-  transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
+  opacity: 0;
+  transition-property: opacity, transform, filter;
+  transition-timing-function: cubic-bezier(.22,.8,.2,1);
+  transition-duration: .7s;
+  will-change: opacity, transform;
 }
+
+/* ── Variant transforms (applied at hidden state) ─── */
+body.js-ready .reveal[data-reveal="up"]    { transform: translateY(22px); }
+body.js-ready .reveal[data-reveal="down"]  { transform: translateY(-18px); }
+body.js-ready .reveal[data-reveal="left"]  { transform: translateX(24px); }
+body.js-ready .reveal[data-reveal="right"] { transform: translateX(-24px); }
+body.js-ready .reveal[data-reveal="scale"] { transform: scale(.93); }
+body.js-ready .reveal[data-reveal="blur"]  { transform: translateY(10px); filter: blur(4px); }
+
+/* Fallback for elements without data-reveal (default = up) */
+body.js-ready .reveal:not([data-reveal]) { transform: translateY(22px); }
+
+/* ── Revealed state ─── */
 .reveal.in,
-.reveal.visible { opacity: 1 !important; transform: none !important; }
+.reveal.visible {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* ── Stagger delays — applied via inline style from JS ─── */
+/* (JS sets style.transitionDelay so no CSS classes needed) */
 
 /* ═══════════════════════════════════════════════════════════
    REDUCED MOTION — brand book p.18: honour prefers-reduced-motion
@@ -1022,7 +1064,17 @@ body.js-ready .reveal {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  body.js-ready .reveal { opacity: 1; transform: none; transition: none; }
+  /* Disable ALL reveal variants */
+  body.js-ready .reveal,
+  body.js-ready .reveal[data-reveal="up"],
+  body.js-ready .reveal[data-reveal="down"],
+  body.js-ready .reveal[data-reveal="left"],
+  body.js-ready .reveal[data-reveal="right"],
+  body.js-ready .reveal[data-reveal="scale"],
+  body.js-ready .reveal[data-reveal="blur"] {
+    opacity: 1; transform: none; filter: none; transition: none;
+  }
+  .reveal, .reveal.in, .reveal.visible { opacity: 1 !important; transform: none !important; filter: none !important; }
   .btn    { transition: none; }
   .workflow-visual.active:after,
   .workflow-visual.active .flow-path,
