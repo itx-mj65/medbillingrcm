@@ -102,7 +102,10 @@
   padding: var(--sec-desktop) 0;
   position: relative;
 }
-.level2 > * { width: min(calc(100% - 48px), 1180px); margin-left: auto; margin-right: auto; }
+.level2 > .h-wrap,
+.level2 > .h-97-pullquote,
+.level2 > .h-cost-stat,
+.level2 > .h-mid-cta { width: min(calc(100% - 48px), 1180px); margin-left: auto; margin-right: auto; }
 .level2 > h2 { max-width: 860px; }
 .level2:nth-of-type(even) { background: #fff; }
 
@@ -323,13 +326,13 @@ blockquote p {
 }
 .pair-card section a { font-weight: 700; }
 
-#b-split-billing-without-the-audit-exposure { background: var(--color-ivory); padding: 64px 56px; }
+#b-split-billing-without-the-audit-exposure { background: var(--color-ivory); }
 #b-split-billing-without-the-audit-exposure h2 { color: var(--color-primary); }
 #b-split-billing-without-the-audit-exposure p  { color: var(--color-ink); }
 #b-split-billing-without-the-audit-exposure h2::before { color: var(--color-action); }
 #b-split-billing-without-the-audit-exposure a { color: var(--color-action); }
 
-#what-the-2026-team-model-changes-for-hospital-billing { background: var(--color-primary); padding: 64px 56px; color: var(--text-on-dark); }
+#what-the-2026-team-model-changes-for-hospital-billing { background: var(--color-primary); color: var(--text-on-dark); }
 #what-the-2026-team-model-changes-for-hospital-billing h2       { color: var(--text-on-dark); }
 #what-the-2026-team-model-changes-for-hospital-billing h2::before { color: rgba(212,235,183,.85); }
 #what-the-2026-team-model-changes-for-hospital-billing > p      { color: var(--text-on-dark-sub); }
@@ -569,6 +572,28 @@ details[open] summary::after { content: '−'; }
   color: var(--color-accent) !important;   /* gold — always visible on dark bg */
 }
 
+/* ─── H-SEC — base section spacing matching all service pages ─ */
+.h-sec {
+  padding: var(--sec-desktop) 0;
+  position: relative;
+}
+.h-sec--white { background: var(--color-white); }
+.h-sec--ivory { background: var(--color-ivory); }
+.h-sec--navy  { background: var(--color-navy-deep); color: var(--text-on-dark); }
+.h-sec--navy h2  { color: var(--text-on-dark); }
+.h-sec--navy h3  { color: var(--text-on-dark); }
+.h-sec--navy p   { color: var(--text-on-dark-sub); }
+.h-sec--navy a   { color: rgba(255,255,255,.75); text-decoration: underline; text-underline-offset: 3px; }
+
+/* h-wrap — identical to every other service page centered wrapper */
+.h-wrap {
+  width: min(calc(100% - 48px), 1180px);
+  margin-left: auto;
+  margin-right: auto;
+}
+.h-sec--navy .h-ew   { color: var(--color-accent); }
+.h-sec--navy .h-ew::before { border-color: var(--color-accent); }
+
 /* ─── NEW PAGE COMPONENT STYLES ──────────────────────────── */
 
 /* Stat row */
@@ -731,7 +756,8 @@ details[open] summary::after { content: '−'; }
 
 /* ─── NEW RESPONSIVE ──────────────────────────────────────── */
 @media (max-width: 900px) {
-  .h-stat-row     { grid-template-columns: 1fr; }
+  .h-sec           { padding: var(--sec-tablet) 0; }
+  .h-stat-row      { grid-template-columns: 1fr; }
   .h-team-stats   { grid-template-columns: 1fr; }
   .h-leaks-grid   { grid-template-columns: 1fr; }
   .h-facility-grid { grid-template-columns: 1fr; }
