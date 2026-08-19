@@ -20,7 +20,13 @@
 
 /* ─── Layout helper ──────────────────────────────────────── */
 /* --h-gap is scoped to .hospital-page to avoid global :root pollution */
-.hospital-page { --h-gap: max(24px, calc((100vw - 1180px) / 2)); }
+.hospital-page { --h-gap: clamp(24px, 4vw, 48px); }
+/* Inner content wrapper — matches all other service pages */
+.hospital-page .h-wrap {
+  width: min(calc(100% - 48px), 1180px);
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ─── HERO ───────────────────────────────────────────────── */
 /* Hero: now uses shared PageHero component → .pg-hero in globals.css */
@@ -78,9 +84,11 @@
 
 /* ─── LEVEL2 SECTIONS ────────────────────────────────────── */
 .level2 {
-  padding: var(--sec-desktop) var(--h-gap);
+  padding: var(--sec-desktop) 0;
   position: relative;
 }
+.level2 > * { width: min(calc(100% - 48px), 1180px); margin-left: auto; margin-right: auto; }
+.level2 > h2 { max-width: 860px; }
 .level2:nth-of-type(even) { background: #fff; }
 
 /* H2 — global font tokens */
@@ -283,7 +291,8 @@ blockquote p {
 .section-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ─── PAIR SECTION (340B + TEAM) ────────────────────────── */
-.pair-section { padding: var(--sec-desktop) var(--h-gap); position: relative; background: var(--color-ivory); }
+.pair-section-inner { width: min(calc(100% - 48px), 1180px); margin: 0 auto; }
+.pair-section { padding: var(--sec-desktop) 0; position: relative; background: var(--color-ivory); }
 .pair-card { display: grid; grid-template-columns: 1fr 1fr; min-height: 680px; border-radius: 24px; overflow: hidden; box-shadow: 0 26px 72px rgba(26,33,79,.14); }
 .pair-card section h2 {
   font-family: var(--font-heading);
@@ -314,7 +323,7 @@ blockquote p {
 #what-the-2026-team-model-changes-for-hospital-billing blockquote p { background: rgba(255,255,255,.08); border:0; border-left:3px solid var(--color-accent); border-radius:0 4px 4px 0; padding:12px 16px; color:#eef0f5; font-size:var(--fs-body); margin:0; }
 
 /* ─── 97% SECTION ───────────────────────────────────────── */
-#and-where-we-measure-it { background: var(--color-secondary); color: var(--text-on-dark); padding-left: max(var(--h-gap), calc(var(--h-gap) + 340px)); }
+#and-where-we-measure-it { background: var(--color-secondary); color: var(--text-on-dark); padding: var(--sec-desktop) 0; position: relative; }
 #and-where-we-measure-it h2 { color: var(--text-on-dark); }
 #and-where-we-measure-it h2::before { color: var(--color-accent); }  /* gold on green — visible */
 #and-where-we-measure-it > p { color: rgba(255,255,255,.85); }
@@ -349,7 +358,7 @@ blockquote p {
 }
 
 /* ─── COMPLIANCE ────────────────────────────────────────── */
-#the-rules-we-build-every-claim-around { background: var(--color-ivory); padding-left: max(var(--h-gap), calc(var(--h-gap) + 280px)); }
+#the-rules-we-build-every-claim-around { background: var(--color-ivory); padding: var(--sec-desktop) 0; position: relative; }
 #the-rules-we-build-every-claim-around::before {
   content: '8+'; position: absolute; left: var(--h-gap); top: 130px;
   font-family: var(--font-heading);

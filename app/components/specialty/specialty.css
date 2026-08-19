@@ -7,7 +7,7 @@
 /* ─── LAYOUT ─────────────────────────────────────────────── */
 .sp-wrap { width: min(calc(100% - 48px), 1180px); margin: 0 auto; }
 .sp-sec  { padding: var(--sec-desktop) 0; }
-.sp-sec--white { background: #fff; }
+.sp-sec--white { background: var(--color-white); }
 .sp-sec--ivory { background: var(--color-ivory); }
 .sp-sec--navy  { background: var(--color-navy-deep); color: var(--text-on-dark); }
 
@@ -45,14 +45,14 @@
   text-decoration: none; transition: background .2s, transform .18s, box-shadow .18s;
   cursor: pointer; white-space: nowrap;
 }
-.sp-btn--primary { background: var(--color-secondary); color: #fff; }
+.sp-btn--primary { background: var(--color-secondary); color: var(--text-on-dark); }
 .sp-btn--primary:hover { background: var(--color-action); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(63,110,36,.3); }
-.sp-btn--ghost { background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.25); }
+.sp-btn--ghost { background: rgba(255,255,255,.12); color: var(--text-on-dark); border: 1px solid rgba(255,255,255,.25); }
 .sp-btn--ghost:hover { background: rgba(255,255,255,.2); }
 .sp-btn--gold { background: var(--color-accent); color: var(--color-ink); }
 .sp-btn--gold:hover { background: var(--color-accent); filter: brightness(1.08); transform: translateY(-2px); }
 .sp-btn--outline { background: transparent; color: var(--color-primary); border: 2px solid var(--color-secondary); }
-.sp-btn--outline:hover { background: var(--color-secondary); color: #fff; }
+.sp-btn--outline:hover { background: var(--color-secondary); color: var(--text-on-dark); }
 
 /* ─── HERO ───────────────────────────────────────────────── */
 .sp-hero {
@@ -83,7 +83,7 @@
 }
 .sp-hero-h1 {
   font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 700; color: #fff; line-height: 1.15;
+  font-weight: 700; color: var(--text-on-dark); line-height: 1.15;
   letter-spacing: var(--ls-heading); margin: 0 0 20px; text-wrap: balance;
 }
 .sp-hero-intro {
@@ -173,11 +173,11 @@
 /* ─── TESTIMONIALS ───────────────────────────────────────── */
 .sp-testimonials-sub { color: var(--color-muted); margin-bottom: 2rem; }
 .sp-reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 2rem; }
-.sp-review-card { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 28px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+.sp-review-card { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 28px; display: flex; flex-direction: column; gap: 14px; position: relative; }
 .sp-review-quote { font-family: Georgia, serif; font-size: 3.5rem; color: var(--color-accent); line-height: .5; opacity: .4; margin-bottom: -4px; }
 .sp-review-text { font-size: var(--fs-body); color: var(--color-ink); line-height: var(--lh-lead); margin: 0; font-style: italic; flex: 1; }
 .sp-review-author { display: flex; align-items: center; gap: 12px; margin-top: auto; }
-.sp-review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: #fff; font-size: var(--fs-body); flex-shrink: 0; }
+.sp-review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--text-on-dark); font-size: var(--fs-body); flex-shrink: 0; }
 .sp-review-name { font-family: var(--font-heading); font-weight: 700; font-size: var(--fs-body); color: var(--color-primary); }
 .sp-review-practice { font-size: var(--fs-xs); color: var(--color-muted); }
 

@@ -1,0 +1,303 @@
+/* ═══════════════════════════════════════════════════════════
+   INTERNAL MEDICINE BILLING — extends specialty.css
+   All colors strictly from globals.css :root tokens only.
+   No hardcoded hex allowed.
+═══════════════════════════════════════════════════════════ */
+
+/* ─── sp-sec--paper override (brand book bg) ─────────────── */
+.sp-sec--paper { background: var(--color-paper); }
+
+/* ─── EXPERT RCM LAYOUT ──────────────────────────────────── */
+.intmed-rcm-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem,5vw,4rem); align-items: start; margin-top: 2rem;
+}
+.intmed-rcm-copy p { color: var(--color-ink); margin-bottom: 1rem; }
+.intmed-rcm-copy .sp-btn { margin-top: .5rem; }
+.intmed-services-label {
+  font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--color-action); margin-bottom: 14px;
+}
+.intmed-svc-list { list-style: none; padding: 0; display: flex; flex-direction: column; }
+.intmed-svc-list li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: var(--fs-body); color: var(--color-ink);
+  padding: 10px 0; border-bottom: 1px solid var(--color-line); line-height: 1.4;
+}
+.intmed-svc-list li:last-child { border-bottom: none; }
+.intmed-svc-list svg { flex-shrink: 0; color: var(--color-secondary); }
+
+/* ─── CAPABILITIES GRID — navy cards, breathing orb ─────── */
+.intmed-caps-sub { color: var(--color-muted); margin-bottom: 2rem; }
+.intmed-caps-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 14px; margin-top: 2rem;
+}
+.intmed-cap-card {
+  position: relative; overflow: hidden;
+  background: var(--color-primary);
+  padding: 30px 26px;
+  display: flex; flex-direction: column; gap: 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.08);
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    border-color .45s ease,
+    box-shadow .45s ease;
+  cursor: default;
+}
+/* Ambient orb — always on, GPU-only */
+.intmed-cap-card::before {
+  content: ''; position: absolute;
+  width: 160px; height: 160px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,133,50,.2) 0%, rgba(82,133,50,.04) 55%, transparent 72%);
+  top: -30px; right: -30px;
+  animation: intmedOrb 5.5s ease-in-out infinite;
+  pointer-events: none; will-change: transform, opacity;
+}
+.intmed-cap-card:nth-child(2)::before { animation-delay: -1.8s; background: radial-gradient(circle, rgba(212,155,40,.15) 0%, transparent 70%); }
+.intmed-cap-card:nth-child(3)::before { animation-delay: -3.5s; }
+.intmed-cap-card:nth-child(4)::before { animation-delay: -.9s;  top: auto; bottom: -30px; right: auto; left: -30px; }
+.intmed-cap-card:nth-child(5)::before { animation-delay: -2.6s; top: auto; bottom: -30px; background: radial-gradient(circle, rgba(212,155,40,.18) 0%, transparent 70%); }
+.intmed-cap-card:nth-child(6)::before { animation-delay: -4.3s; top: auto; bottom: -30px; right: -30px; }
+@keyframes intmedOrb {
+  0%,100% { transform: scale(1)   translateY(0);    opacity: .65; }
+  50%      { transform: scale(1.3) translateY(-8px); opacity: 1;   }
+}
+/* Gold corner accent — always visible */
+.intmed-cap-card::after {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 44px; height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  opacity: .75;
+  transition: width .45s cubic-bezier(.2,.8,.2,1), opacity .45s ease;
+}
+.intmed-cap-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212,155,40,.28);
+  box-shadow: 0 20px 48px rgba(0,0,0,.28), 0 4px 14px rgba(212,155,40,.1);
+}
+.intmed-cap-card:hover::after { width: 70px; opacity: 1; }
+
+.intmed-cap-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
+.intmed-cap-icon-wrap {
+  width: 50px; height: 50px; border-radius: 14px; flex-shrink: 0;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  transition: background .45s ease, border-color .45s ease;
+}
+.intmed-cap-card:hover .intmed-cap-icon-wrap {
+  background: rgba(212,155,40,.14);
+  border-color: rgba(212,155,40,.28);
+}
+.intmed-cap-num {
+  font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800;
+  color: var(--text-on-dark); opacity: .08; line-height: 1;
+  letter-spacing: var(--ls-heading); flex-shrink: 0;
+}
+.intmed-cap-card h3 {
+  font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700;
+  color: var(--text-on-dark); margin: 0; line-height: 1.35;
+}
+.intmed-cap-card p {
+  font-size: var(--fs-sm); color: var(--text-on-dark-muted);
+  line-height: var(--lh-lead); max-width: none; margin: 0;
+  transition: color .45s ease;
+}
+.intmed-cap-card:hover p { color: var(--text-on-dark-sub); }
+
+/* ─── BEFORE / AFTER STATS ───────────────────────────────── */
+.intmed-ba-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px; margin-top: 2rem;
+}
+.intmed-ba-card {
+  position: relative; overflow: hidden;
+  background: var(--color-ivory);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  padding: 32px 24px;
+  display: flex; flex-direction: column; gap: 8px;
+  border-top: 3px solid var(--color-line);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+}
+.intmed-ba-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,33,79,.1); }
+.intmed-ba-card--green { background: rgba(82,133,50,.05); border-top-color: var(--color-secondary); }
+.intmed-ba-card--gold  { background: rgba(212,155,40,.05); border-top-color: var(--color-accent); }
+.intmed-ba-label { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-muted); }
+.intmed-ba-num {
+  font-family: var(--font-heading); font-size: clamp(2.25rem,4vw,3.5rem);
+  font-weight: 800; color: var(--color-primary); line-height: .9;
+  letter-spacing: var(--ls-heading);
+}
+.intmed-ba-card--green .intmed-ba-num { color: var(--color-secondary); }
+.intmed-ba-card--gold  .intmed-ba-num { color: var(--color-accent); }
+.intmed-ba-num span { font-size: 55%; font-weight: 700; }
+.intmed-ba-arrow { font-size: 1.75rem; color: var(--color-secondary); line-height: 1; }
+.intmed-ba-after { font-size: var(--fs-sm); color: var(--color-muted); }
+.intmed-ba-after strong { color: var(--color-secondary); font-weight: 800; }
+.intmed-ba-sub-lbl { font-size: var(--fs-sm); color: var(--color-muted); line-height: 1.4; }
+
+/* ─── WHY MEDBILLING GRID — left-rail cards, pulse dot ───── */
+.intmed-why-intro { font-size: var(--fs-body); color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.intmed-why-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px; margin-top: 2rem;
+}
+.intmed-why-card {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.05);
+  border-top:    1px solid rgba(255,255,255,.08);
+  border-right:  1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-left:   3px solid rgba(212,155,40,.4);
+  border-radius: 0 14px 14px 0;
+  padding: 24px 18px 24px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  cursor: default;
+  transition:
+    background .45s ease,
+    border-top-color    .45s ease,
+    border-right-color  .45s ease,
+    border-bottom-color .45s ease,
+    border-left-color   .45s ease,
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease;
+}
+/* Pulsing dot — always on */
+.intmed-why-card::before {
+  content: ''; position: absolute;
+  top: 16px; right: 16px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-accent); opacity: .5;
+  animation: intmedDot 3s ease-in-out infinite;
+  pointer-events: none; will-change: transform, opacity;
+}
+.intmed-why-card:nth-child(2)::before { animation-delay: -.75s; }
+.intmed-why-card:nth-child(3)::before { animation-delay: -1.5s; }
+.intmed-why-card:nth-child(4)::before { animation-delay: -2.25s; }
+.intmed-why-card:nth-child(5)::before { animation-delay: -.38s; }
+.intmed-why-card:nth-child(6)::before { animation-delay: -1.13s; }
+.intmed-why-card:nth-child(7)::before { animation-delay: -1.88s; }
+.intmed-why-card:nth-child(8)::before { animation-delay: -2.63s; }
+@keyframes intmedDot {
+  0%,100% { transform: scale(1);   opacity: .4; }
+  50%      { transform: scale(2.2); opacity: .9; box-shadow: 0 0 8px rgba(212,155,40,.55); }
+}
+.intmed-why-card:hover {
+  background: rgba(255,255,255,.09);
+  border-top-color:    rgba(255,255,255,.16);
+  border-right-color:  rgba(255,255,255,.16);
+  border-bottom-color: rgba(255,255,255,.16);
+  border-left-color:   var(--color-accent);
+  transform: translateX(4px);
+  box-shadow: 4px 0 20px rgba(212,155,40,.09), 0 6px 24px rgba(0,0,0,.18);
+}
+.intmed-why-card:hover::before { animation-duration: 1s; opacity: 1; }
+.intmed-why-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
+.intmed-why-icon-wrap {
+  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+  background: rgba(212,155,40,.1);
+  border: 1px solid rgba(212,155,40,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.15rem;
+  transition: background .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.intmed-why-card:hover .intmed-why-icon-wrap {
+  background: rgba(212,155,40,.2);
+  border-color: rgba(212,155,40,.4);
+  transform: scale(1.1);
+}
+.intmed-why-num {
+  font-family: var(--font-heading); font-size: 2rem; font-weight: 800;
+  color: var(--text-on-dark); opacity: .07; line-height: 1;
+}
+.intmed-why-card h3 {
+  font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700;
+  color: var(--text-on-dark); margin: 0; line-height: 1.35;
+}
+.intmed-why-card p {
+  font-size: var(--fs-sm); color: var(--text-on-dark-muted);
+  line-height: var(--lh-lead); max-width: none; margin: 0;
+}
+
+/* ─── MID CTA ─────────────────────────────────────────────── */
+.intmed-mid-cta {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 3rem; align-items: center;
+}
+.intmed-mid-cta h2 { margin-bottom: 12px; }
+.intmed-mid-cta p  { color: var(--color-muted); max-width: 60ch; }
+.intmed-mid-cta-action { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; flex-shrink: 0; }
+.intmed-mid-note { font-size: var(--fs-xs); color: var(--color-muted); max-width: 28ch; line-height: 1.55; margin: 0; }
+
+/* ─── FAQ ─────────────────────────────────────────────────── */
+.intmed-faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 64px; margin-top: 2rem; }
+.intmed-faq-intro  { position: sticky; top: 110px; }
+.intmed-faq-intro p { color: var(--color-muted); }
+.intmed-faq-list details { border-bottom: 1px solid var(--color-line); }
+.intmed-faq-list summary {
+  list-style: none; position: relative; padding: 20px 52px 20px 0;
+  cursor: pointer; font-family: var(--font-heading); font-weight: 600;
+  font-size: var(--fs-body); color: var(--color-primary); transition: color .2s;
+}
+.intmed-faq-list summary::-webkit-details-marker { display: none; }
+.intmed-faq-list summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
+.intmed-faq-list details[open] summary::after { content: '−'; }
+.intmed-faq-list details[open] summary { color: var(--color-action); }
+.intmed-faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); max-width: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — covers every screen size
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .intmed-rcm-layout  { grid-template-columns: 1fr; }
+  .intmed-caps-grid   { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .intmed-why-grid    { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .intmed-ba-grid     { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .intmed-mid-cta     { grid-template-columns: 1fr; }
+  .intmed-faq-layout  { grid-template-columns: 1fr; gap: 2rem; }
+  .intmed-faq-intro   { position: static; }
+  .intmed-cap-card    { padding: 26px 22px; }
+  .intmed-why-card    { padding: 20px 16px 20px 18px; }
+}
+@media (max-width: 900px) {
+  .intmed-caps-grid   { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .intmed-why-grid    { grid-template-columns: 1fr 1fr; }
+  .intmed-ba-grid     { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .intmed-caps-grid   { grid-template-columns: 1fr 1fr; }
+  .intmed-faq-list summary { font-size: var(--fs-sm); }
+}
+@media (max-width: 640px) {
+  .intmed-caps-grid   { grid-template-columns: 1fr; gap: 10px; }
+  .intmed-why-grid    { grid-template-columns: 1fr; gap: 8px; }
+  .intmed-ba-grid     { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .intmed-cap-card:hover { transform: translateY(-3px); }
+  .intmed-why-card:hover { transform: none; }
+}
+@media (max-width: 480px) {
+  .intmed-caps-grid   { gap: 8px; }
+  .intmed-ba-grid     { grid-template-columns: 1fr 1fr; }
+  .intmed-ba-card     { padding: 24px 18px; }
+  .intmed-cap-card    { padding: 22px 18px; gap: 12px; }
+  .intmed-cap-card:hover { transform: none; }
+  .intmed-why-card:hover { transform: none; }
+  .intmed-faq-list summary { padding-right: 36px; font-size: var(--fs-sm); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intmed-cap-card::before,
+  .intmed-why-card::before { animation: none !important; opacity: .3; }
+  .intmed-cap-card:hover,
+  .intmed-why-card:hover    { transform: none; }
+  .sp-hero-stat::before     { animation: none !important; opacity: 0; }
+  .sp-hero-stat-num         { animation: none !important; -webkit-text-fill-color: var(--color-accent); }
+}

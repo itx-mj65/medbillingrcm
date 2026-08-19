@@ -102,14 +102,14 @@
 /* Text */
 .rheum-cap-card h3 {
   font-family:var(--font-heading); font-size:var(--fs-body); font-weight:700;
-  color:#fff; margin:0; line-height:1.35;
+  color:var(--text-on-dark); margin:0; line-height:1.35;
 }
 .rheum-cap-card p {
-  font-size:var(--fs-sm); color:rgba(255,255,255,.55);
+  font-size:var(--fs-sm); color:var(--text-on-dark-muted);
   line-height:var(--lh-lead); max-width:none; margin:0;
   transition:color .3s;
 }
-.rheum-cap-card:hover p { color:rgba(255,255,255,.75); }
+.rheum-cap-card:hover p { color:var(--text-on-dark-sub); }
 
 /* Card-specific orb hue variation for visual interest */
 .rheum-cap-card:nth-child(2)::before {

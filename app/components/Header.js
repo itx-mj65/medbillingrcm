@@ -119,6 +119,7 @@ const SERVICES = [
 
 const SPECIALTIES = [
   { label: "Rheumatology",      href: "/specialties/rheumatology-billing-services/", desc: "Biologics, DMARDs, J-codes & prior auth" },
+  { label: "Internal Medicine",  href: "/specialties/internal-medicine-billing-service/", desc: "E/M coding, chronic care, MIPS reporting" },
   { label: "Primary Care",      href: "/specialties/primary-care/",      desc: "E/M optimization for family and internal medicine" },
   { label: "Cardiology",        href: "/specialties/cardiology/",         desc: "Complex interventional and diagnostic billing" },
   { label: "Dermatology",       href: "/specialties/dermatology/",        desc: "Procedure coding and E/M documentation" },
