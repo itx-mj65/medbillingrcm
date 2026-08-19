@@ -119,12 +119,12 @@ const SERVICES = [
 
 /* Specialty icon + label + desc — used in redesigned mega-menu */
 const SPECIALTIES = [
-  { label: "Rheumatology",     href: "/specialties/rheumatology-billing-services/",         icon: "🧬", desc: "Biologics, DMARDs & prior auth" },
-  { label: "Internal Medicine",href: "/specialties/internal-medicine-billing-service/",      icon: "🩺", desc: "E/M coding, chronic care & MIPS" },
-  { label: "Radiology",        href: "/specialties/radiology-billing-service/",              icon: "🔬", desc: "Technical, professional & global" },
-  { label: "Dermatology",      href: "/specialties/dermatology-billing-service/",            icon: "🔭", desc: "Mohs, biologics & cosmetic billing" },
-  { label: "Family Practice",  href: "/specialties/family-practice-billing-service/",        icon: "👨‍👩‍👧", desc: "Full-spectrum primary care billing" },
-  { label: "Mental Health",    href: "/specialties/mental-health-billing-service/",          icon: "🧠", desc: "CPT, HBAI & telehealth billing" },
+  { label: "Rheumatology",     href: "/specialties/rheumatology-billing-services/",        icon: "🧬", desc: "Biologics, DMARDs & prior auth" },
+  { label: "Internal Medicine",href: "/specialties/internal-medicine-billing-service/",    icon: "🩺", desc: "E/M coding, chronic care & MIPS" },
+  { label: "Radiology",        href: "/specialties/radiology-billing-service/",            icon: "🔬", desc: "Technical, professional & global" },
+  { label: "Dermatology",      href: "/specialties/dermatology-billing-service/",          icon: "💊", desc: "Mohs, biologics & cosmetic billing" },
+  { label: "Mental Health",    href: "/specialties/mental-health-billing-service/",        icon: "🧠", desc: "CPT, HBAI & telehealth billing" },
+  { label: "Family Practice",  href: "/specialties/family-practice-billing-service/",      icon: "👨‍👩‍👧", desc: "Full-spectrum primary care billing" },
 ];
 
 const NAV = [
