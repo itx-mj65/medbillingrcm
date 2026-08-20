@@ -27,11 +27,10 @@ export default function HealthcareFTEPage() {
         ctaAlt="See our process"
         ctaAltHref="#process"
         badge="HIPAA · BAA · AAPC · AHIMA"
-        heroPlaceholder={{
-          title:  "Hero Image — Healthcare FTE Virtual Staff",
-          spec:   "1536 × 900 px  ·  /public/fte-hero.webp",
-          prompt: "Dedicated healthcare virtual staff member working at professional medical billing workstation, EHR system visible on dual monitors, clean organized office environment, navy and green tones, photorealistic, no text overlay, wide format",
-        }}
+        image="/fte-hero.webp"
+        imageAlt="Healthcare virtual staff member managing medical billing on dual-monitor workstation"
+        imageW={1536}
+        imageH={900}
       />
 
       {/* Second hero paragraph — per design notes: 2-paragraph hero */}
@@ -147,22 +146,16 @@ export default function HealthcareFTEPage() {
           <p className="reveal fte-ew">What our healthcare outsourcing services and staffing outsourcing covers</p>
           <h2 className="reveal">What our healthcare outsourcing services and staffing outsourcing covers</h2>
 
-          {/* IMAGE PLACEHOLDER
-              File: /public/fte-services.webp  |  Size: 1100 × 580 px
-              Subject: Healthcare virtual team at workstations — billing
-                       specialists, scribes, front-office staff in modern
-                       medical billing office environment.
-              AI prompt: "Healthcare virtual staff team working in modern
-                         medical billing office, multiple specialists at
-                         individual workstations reviewing EHR systems,
-                         professional collaborative environment, photorealistic" */}
-          <div className="fte-services-img fte-img-placeholder" aria-label="Image placeholder">
-            <div className="fte-ph-inner">
-              <span className="fte-ph-icon">📷</span>
-              <strong>Services Team Image</strong>
-              <span>1100 × 580 px · /public/fte-services.webp</span>
-              <em>AI prompt: "Healthcare virtual staff team working in modern medical billing office, multiple specialists at individual workstations reviewing EHR systems, professional collaborative environment, photorealistic"</em>
-            </div>
+          <div className="fte-services-img">
+            <img
+              src="/fte-services.webp"
+              alt="Healthcare billing team at workstations with medical billing dashboard on wall screen"
+              width={1100}
+              height={580}
+              loading="lazy"
+              decoding="async"
+              style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"var(--radius-card)"}}
+            />
           </div>
 
           <div className="fte-pillars">
