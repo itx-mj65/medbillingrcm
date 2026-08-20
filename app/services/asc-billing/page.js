@@ -27,11 +27,10 @@ export default function ASCBillingPage() {
         ctaAlt="See how it works"
         ctaAltHref="#how-it-works"
         badge="APC · NCCI · HIPAA"
-        heroPlaceholder={{
-          title:  "Hero Image — Ambulatory Surgery Center",
-          spec:   "1536 × 900 px  ·  /public/asc-hero.webp",
-          prompt: "Modern ambulatory surgery center operating room, surgical team preparing for procedure, sterile clinical environment, professional healthcare setting, navy and green tones, photorealistic, no text overlay, wide format",
-        }}
+        image="/asc-hero.webp"
+        imageAlt="Surgical team performing a procedure in an ambulatory surgery center operating room"
+        imageW={1536}
+        imageH={900}
       />
 
       {/* ═══ FEATURE STRIP ══════════════════════════════════ */}
@@ -163,21 +162,16 @@ export default function ASCBillingPage() {
           <p className="reveal asc-ew">What our surgery center billing services cover</p>
           <h2 className="reveal">What our surgery center billing services cover</h2>
 
-          {/* IMAGE PLACEHOLDER
-              File: /public/asc-services.webp  |  Size: 1100 × 600 px
-              Subject: ASC billing team reviewing operative reports and
-                       claim submissions, professional medical billing office.
-              AI prompt: "ASC billing team reviewing operative reports and
-                         claim submissions in professional medical billing
-                         office, dual monitors showing billing data,
-                         healthcare RCM environment, photorealistic" */}
-          <div className="asc-services-img asc-img-placeholder" aria-label="Image placeholder">
-            <div className="asc-ph-inner">
-              <span className="asc-ph-icon">📷</span>
-              <strong>Services Section Image</strong>
-              <span>1100 × 600 px · /public/asc-services.webp</span>
-              <em>AI prompt: "ASC billing team reviewing operative reports and claim submissions in professional medical billing office, dual monitors showing billing data, healthcare RCM environment, photorealistic"</em>
-            </div>
+          <div className="asc-services-img">
+            <img
+              src="/asc-services.webp"
+              alt="ASC billing specialists reviewing operative reports and claims at dual-monitor workstations"
+              width={1100}
+              height={600}
+              loading="lazy"
+              decoding="async"
+              style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"var(--radius-card)"}}
+            />
           </div>
 
           <div className="asc-services-grid">
