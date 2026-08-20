@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════════
+   PSYCHIATRIC BILLING — extends specialty.css
+   Unique animations: shimmer border grow on challenge cards,
+   floating pip dots on why-benefit cards.
+   All colors: global tokens only. Zero hardcoded hex.
+═══════════════════════════════════════════════════════════ */
+
+.sp-sec--paper { background: var(--color-paper); }
+
+/* ─── HOW WE HELP — two-col intro + challenge cards ─────── */
+.psych-intro-layout {
+  display: grid; grid-template-columns: .45fr .55fr;
+  gap: clamp(2rem,5vw,4rem); align-items: start; margin-top: 2rem;
+}
+.psych-intro-copy p { color: var(--color-ink); margin-bottom: 1rem; max-width: 52ch; }
+
+/* Tall challenge cards — stacked in right column */
+.psych-challenges-col { display: flex; flex-direction: column; gap: 10px; }
+
+.psych-challenge-card {
+  position: relative; overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-top: 3px solid transparent;
+  border-radius: 0 14px 14px 14px;
+  padding: 22px 20px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-top-color .45s ease;
+}
+/* Growing shimmer top border — always starts narrow, blooms on hover */
+.psych-challenge-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 0%; height: 3px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+  transition: width .6s cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
+}
+/* Ambient warm glow */
+.psych-challenge-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 0% 0%, rgba(82,133,50,.04) 0%, transparent 60%);
+  opacity: 0; transition: opacity .45s ease; pointer-events: none;
+}
+.psych-challenge-card:hover {
+  transform: translateX(4px);
+  box-shadow: 4px 0 20px rgba(82,133,50,.1);
+  border-top-color: var(--color-secondary);
+}
+.psych-challenge-card:hover::before { width: 100%; }
+.psych-challenge-card:hover::after  { opacity: 1; }
+
+.psych-challenge-icon { font-size: 1.5rem; }
+.psych-challenge-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; line-height: 1.35; }
+.psych-challenge-card p  { font-size: var(--fs-sm); color: var(--color-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── SERVICES GRID — pill-style 2-col tags ──────────────── */
+.psych-svc-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+.psych-svc-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin-top: 2rem;
+}
+.psych-svc-item {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-secondary);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 16px;
+  transition: background .3s ease, transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+}
+.psych-svc-item:hover {
+  background: rgba(82,133,50,.04);
+  transform: translateX(3px);
+  box-shadow: 3px 0 12px rgba(82,133,50,.08);
+}
+.psych-svc-icon  { font-size: 1.2rem; flex-shrink: 0; }
+.psych-svc-label { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 600; color: var(--color-primary); line-height: 1.3; }
+.psych-svc-cta   { margin-top: 2rem; }
+
+/* ─── PROCESS STEPS ──────────────────────────────────────── */
+.psych-process-intro { color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.psych-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.psych-step  { display: grid; grid-template-columns: 80px 1fr; align-items: start; }
+.psych-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
+.psych-step-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-accent); line-height: .9; letter-spacing: var(--ls-heading); }
+.psych-step-conn { flex: 1; width: 2px; background: rgba(255,255,255,.1); min-height: 40px; margin: 10px 0; }
+.psych-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .3s; }
+.psych-step:hover .psych-step-body { background: rgba(255,255,255,.09); }
+.psych-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; color: var(--text-on-dark); margin-bottom: 6px; }
+.psych-step-body p  { font-size: var(--fs-body); color: var(--text-on-dark-muted); max-width: none; margin: 0; }
+.psych-process-cta  { display: flex; align-items: center; gap: 20px; margin-top: 2.5rem; flex-wrap: wrap; }
+.psych-process-note { font-size: var(--fs-sm); color: rgba(255,255,255,.45); }
+
+/* ─── WHY CHOOSE — 3+4 benefit card grid ────────────────── */
+.psych-why-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+.psych-why-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px; margin-top: 2rem;
+}
+/* 7 items: 4-col → last 3 centered — handled by auto-fill */
+
+.psych-why-card {
+  position: relative; overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 16px; padding: 24px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease;
+}
+/* Floating pip dot — top right, always-on pulse */
+.psych-why-card::before {
+  content: ''; position: absolute; top: 16px; right: 16px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-secondary); opacity: .4;
+  animation: psychPip 3s ease-in-out infinite;
+  pointer-events: none; will-change: transform, opacity;
+}
+.psych-why-card:nth-child(2)::before { animation-delay: -.43s; }
+.psych-why-card:nth-child(3)::before { animation-delay: -.86s; }
+.psych-why-card:nth-child(4)::before { animation-delay: -1.29s; }
+.psych-why-card:nth-child(5)::before { animation-delay: -1.71s; }
+.psych-why-card:nth-child(6)::before { animation-delay: -2.14s; }
+.psych-why-card:nth-child(7)::before { animation-delay: -2.57s; }
+@keyframes psychPip {
+  0%,100% { transform: scale(1);   opacity: .35; }
+  50%      { transform: scale(2.2); opacity: .85; box-shadow: 0 0 8px rgba(82,133,50,.45); }
+}
+.psych-why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26,33,79,.1);
+  border-color: rgba(82,133,50,.3);
+}
+.psych-why-card:hover::before { animation-duration: .9s; }
+
+.psych-why-icon-wrap {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(82,133,50,.08); border: 1px solid rgba(82,133,50,.18);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+  transition: background .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.psych-why-card:hover .psych-why-icon-wrap { background: rgba(82,133,50,.14); border-color: rgba(82,133,50,.3); transform: scale(1.08); }
+.psych-why-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; line-height: 1.35; }
+.psych-why-card p  { font-size: var(--fs-sm); color: var(--color-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.psych-faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 64px; margin-top: 2rem; }
+.psych-faq-intro  { position: sticky; top: 110px; }
+.psych-faq-intro p { color: var(--color-muted); }
+.psych-faq-list details { border-bottom: 1px solid var(--color-line); }
+.psych-faq-list summary { list-style: none; position: relative; padding: 20px 52px 20px 0; cursor: pointer; font-family: var(--font-heading); font-weight: 600; font-size: var(--fs-body); color: var(--color-primary); transition: color .2s; }
+.psych-faq-list summary::-webkit-details-marker { display: none; }
+.psych-faq-list summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
+.psych-faq-list details[open] summary::after { content: '−'; }
+.psych-faq-list details[open] summary { color: var(--color-action); }
+.psych-faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); max-width: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .psych-intro-layout { grid-template-columns: 1fr; }
+  .psych-why-grid     { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .psych-svc-grid     { grid-template-columns: 1fr 1fr; }
+  .psych-faq-layout   { grid-template-columns: 1fr; gap: 2rem; }
+  .psych-faq-intro    { position: static; }
+  .psych-step         { grid-template-columns: 60px 1fr; }
+}
+@media (max-width: 768px) {
+  .psych-why-grid { grid-template-columns: 1fr 1fr; }
+  .psych-faq-list summary { font-size: var(--fs-sm); }
+}
+@media (max-width: 640px) {
+  .psych-svc-grid { grid-template-columns: 1fr; gap: 6px; }
+  .psych-why-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .psych-challenge-card:hover { transform: none; }
+  .psych-why-card:hover { transform: none; }
+}
+@media (max-width: 480px) {
+  .psych-why-grid { grid-template-columns: 1fr; }
+  .psych-step     { grid-template-columns: 1fr; }
+  .psych-step-aside { flex-direction: row; align-items: center; gap: 10px; padding-top: 0; margin-bottom: 8px; }
+  .psych-step-conn  { display: none; }
+  .psych-step-body  { margin-left: 0; }
+  .psych-faq-list summary { padding-right: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .psych-why-card::before    { animation: none; opacity: 0; }
+  .psych-challenge-card::before { width: 100%; }
+  .psych-challenge-card:hover,
+  .psych-why-card:hover,
+  .psych-svc-item:hover { transform: none; }
+}
