@@ -6,17 +6,6 @@ export default function OphthalmologyBillingPage() {
   return (
     <main className="sp-page ophtho-page" id="main">
 
-      {/* ── Breadcrumb ──────────────────────────────────── */}
-      <nav className="sp-breadcrumb" aria-label="Breadcrumb">
-        <div className="sp-wrap">
-          <ol>
-            <li><a href="/">Home</a></li>
-            <li><a href="/specialties/">Specialties</a></li>
-            <li aria-current="page">Ophthalmology Billing Services</li>
-          </ol>
-        </div>
-      </nav>
-
       {/* ═══ HERO ════════════════════════════════════════════ */}
       <SpecialtyHero
         eyebrow="Precision Ophthalmology Billing"

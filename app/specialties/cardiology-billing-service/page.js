@@ -6,17 +6,6 @@ export default function CardiologyBillingPage() {
   return (
     <main className="sp-page cardio-page" id="main">
 
-      {/* ── Breadcrumb ────────────────────────────────────── */}
-      <nav className="sp-breadcrumb" aria-label="Breadcrumb">
-        <div className="sp-wrap">
-          <ol>
-            <li><a href="/">Home</a></li>
-            <li><a href="/specialties/">Specialties</a></li>
-            <li aria-current="page">Cardiology Billing Services</li>
-          </ol>
-        </div>
-      </nav>
-
       {/* ═══ HERO ════════════════════════════════════════════ */}
       <SpecialtyHero
         eyebrow="Cardiovascular Revenue Infrastructure"
