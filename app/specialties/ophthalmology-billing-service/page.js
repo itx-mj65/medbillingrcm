@@ -207,38 +207,6 @@ export default function OphthalmologyBillingPage() {
         </div>
       </section>
 
-      {/* ═══ TESTIMONIALS ════════════════════════════════════ */}
-      <section className="sp-sec sp-sec--ivory reveal">
-        <div className="sp-wrap">
-          <p className="sp-ew reveal">Client Outcomes</p>
-          <h2 className="reveal">What Healthcare Leaders Say</h2>
-          <p className="ophtho-testimonials-sub reveal">Feedback that reflects our commitment to delivering measurable, transparent results.</p>
-
-          <div className="ophtho-reviews-grid">
-            {[
-              { q:"Med Billing RCM has been a game changer for my practice! Before switching, we had constant issues with our previous billing company, but since teaming up with Med Billing, we've seen a significant improvement in collections and a smoother overall process.", name:"Dr. Sarah Kin", practice:"Family Medicine Practice" },
-              { q:"Med Billing RCM has been a breath of fresh air for our practice. They handle everything from AR management to claims submissions with professionalism and efficiency. Their commitment to HIPAA compliance gives us great confidence.", name:"Dr. Nick Toriani", practice:"Specialty Practice" },
-              { q:"We switched to Med Billing RCM after facing consistent delays in payments from insurance companies. The difference has been incredible — their team is diligent and ensures every claim is followed up on promptly. Our clinic's cash flow has greatly improved.", name:"Dr. Hamid", practice:"NJ Clinic" },
-              { q:"I've been extremely satisfied with the services provided by Med Billing RCM. Their team is highly responsive and has resolved many billing issues that were causing headaches for our practice. Their ability to handle the intricacies of dermatology billing has saved us time and money.", name:"Dr. Jennifer Lee", practice:"Dermatology Practice" },
-            ].map(({ q, name, practice }) => (
-              <div className="ophtho-review-card reveal" key={name}>
-                <div className="ophtho-review-quote" aria-hidden="true">&ldquo;</div>
-                <p className="ophtho-review-text">{q}</p>
-                <div className="ophtho-review-author">
-                  <div className="ophtho-review-avatar" aria-hidden="true">
-                    {name.split(" ").pop()[0]}
-                  </div>
-                  <div>
-                    <div className="ophtho-review-name">{name}</div>
-                    <div className="ophtho-review-practice">{practice}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══ FAQ ══════════════════════════════════════════════ */}
       <section className="sp-sec sp-sec--paper reveal" id="faq">
         <div className="sp-wrap">
