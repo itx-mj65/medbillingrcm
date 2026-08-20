@@ -124,6 +124,7 @@ const SPECIALTIES = [
   { label: "Mental Health",    href: "/specialties/mental-health-billing-service/",        icon: "🧠", desc: "CPT, HBAI & telehealth billing" },
   { label: "Family Practice",  href: "/specialties/family-practice-billing-service/",      icon: "👨‍👩‍👧", desc: "Full-spectrum primary care billing" },
   { label: "Ophthalmology",    href: "/specialties/ophthalmology-billing-service/",           icon: "👁️", desc: "Cataract, retinal & glaucoma billing" },
+  { label: "Cardiology",      href: "/specialties/cardiology-billing-service/",             icon: "❤️", desc: "Cath, PCI, device & MACRA billing" },
 ];
 
 const NAV = [
