@@ -64,14 +64,14 @@ const SPECIALTIES = [
   { slug:"urgent-care-billing-service",         label:"Urgent Care",       icon:"🚑", badge:"High Volume",      desc:"Fast-turnaround urgent care billing with E/M coding and same-day claim submission.",                                   status:"planned" },
   { slug:"general-surgery-billing-service",     label:"General Surgery",   icon:"🏥", badge:"Procedure Coding", desc:"Surgical CPT coding, global surgery periods, assistant surgeon billing, and modifiers.",                            status:"planned" },
   { slug:"cardiology-billing-service",          label:"Cardiology",        icon:"❤️", badge:"Interventional",   desc:"Complex interventional and diagnostic billing, device coding, and cardiac catheterization claims.",                  status:"live" },
-  { slug:"gastroenterology-billing-service",    label:"Gastroenterology",  icon:"🔭", badge:"Procedural",       desc:"Endoscopy and colonoscopy billing, polyp coding, anesthesia coordination, and payer compliance.",                   status:"live" },
-  { slug:"ob-gyn-billing-service",              label:"OB-GYN",            icon:"🤱", badge:"Global Package",   desc:"OB global package billing, delivery coding, maternity care, and gynecological procedure claims.",                    status:"planned" },
+  { slug:"gastroenterology-billing-service",    label:"Gastroenterology",  icon:"🔭", badge:"Procedural",       desc:"Endoscopy and colonoscopy billing, polyp coding, anesthesia coordination, and payer compliance.",                   status:"live",  featured:false },
+  { slug:"ob-gyn-billing-service",              label:"OB-GYN",            icon:"🤱", badge:"Global Package",   desc:"OB global package billing, delivery coding, maternity care, and gynecological procedure claims.",                    status:"live",  featured:false },
   { slug:"neurosurgery-billing-service",        label:"Neurosurgery",      icon:"🧪", badge:"Complex Coding",   desc:"Neurosurgical CPT coding, spinal procedures, add-on codes, and intraoperative monitoring billing.",                  status:"planned" },
-  { slug:"ophthalmology-billing-service",       label:"Ophthalmology",     icon:"👁️", badge:"Vision & Surgery", desc:"Ophthalmic surgical and diagnostic coding, cataract billing, vision therapy, and E/M integration.",                 status:"live" },
+  { slug:"ophthalmology-billing-service",       label:"Ophthalmology",     icon:"👁️", badge:"Vision & Surgery", desc:"Ophthalmic surgical and diagnostic coding, cataract billing, vision therapy, and E/M integration.",                 status:"live",  featured:false },
   { slug:"pain-management-billing-services",    label:"Pain Management",   icon:"💉", badge:"Interventional",   desc:"Interventional pain coding, fluoroscopy billing, drug testing claims, and prior authorization management.",         status:"planned" },
   { slug:"physical-therapy-billing-services",   label:"Physical Therapy",  icon:"🏋️", badge:"Functional Coding","desc":"Time-based PT coding, functional limitation reporting, Medicare therapy cap compliance, and PQRS.",               status:"planned" },
   { slug:"oncology-billing-service",            label:"Oncology",          icon:"🎗️", badge:"Drug Admin",       desc:"Chemotherapy and infusion billing, J-code accuracy, prior auth, and MIPS quality reporting.",                      status:"planned" },
-  { slug:"psychiatric-billing-service",         label:"Psychiatry",        icon:"🧘", badge:"Behavioral Health", desc:"Psychiatric E/M coding, therapy add-ons, MHPAEA compliance, and collaborative care billing.",                      status:"live" },
+  { slug:"psychiatric-billing-service",         label:"Psychiatry",        icon:"🧘", badge:"Behavioral Health", desc:"Psychiatric E/M coding, therapy add-ons, MHPAEA compliance, and collaborative care billing.",                      status:"live",  featured:false },
   { slug:"urology-billing-services",            label:"Urology",           icon:"⚕️", badge:"Surgical & E/M",   desc:"Urological surgical coding, cystoscopy billing, robotic procedure modifiers, and E/M optimization.",               status:"planned" },
   { slug:"endocrinology-billing-services",      label:"Endocrinology",     icon:"🔬", badge:"Chronic Care",     desc:"Diabetes management billing, thyroid and endocrine procedure coding, and CCM reimbursement.",                       status:"planned" },
   { slug:"pathology-billing-services",          label:"Pathology",         icon:"🔭", badge:"Lab & Tissue",     desc:"Technical and professional pathology billing, tissue examination codes, and molecular lab claims.",                  status:"planned" },
@@ -93,7 +93,7 @@ const SPECIALTIES = [
 ];
 
 // Split into live and planned
-const LIVE_SPECS    = SPECIALTIES.filter(s => s.status === "live");
+const LIVE_SPECS    = SPECIALTIES.filter(s => s.status === "live" && s.featured !== false);
 const PLANNED_SPECS = SPECIALTIES.filter(s => s.status === "planned");
 
 export default function SpecialtiesIndexPage() {
