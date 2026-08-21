@@ -1038,9 +1038,8 @@ body.js-ready .reveal[data-reveal="blur"]  { transform: translateY(8px); filter:
 .reveal.visible,
 .reveal:not([data-reveal]) {
   opacity: 1 !important;
-  transform: none !important;
+  transform: none;
   filter: none !important;
-  transition-duration: .65s;
 }
 
 /* ═══════════════════════════════════════════════════════════
