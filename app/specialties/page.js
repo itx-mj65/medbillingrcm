@@ -61,7 +61,7 @@ const SPECIALTIES = [
     status: "live",
   },
   // ── COMING SOON — pages being built ───────────────────────
-  { slug:"urgent-care-billing-service",         label:"Urgent Care",       icon:"🚑", badge:"High Volume",      desc:"Fast-turnaround urgent care billing with E/M coding and same-day claim submission.",                                   status:"planned" },
+  { slug:"urgent-care-billing-service",         label:"Urgent Care",       icon:"🚑", badge:"High Volume",      desc:"Fast-turnaround urgent care billing with E/M coding and same-day claim submission.",                                   status:"live",  featured:false },
   { slug:"general-surgery-billing-service",     label:"General Surgery",   icon:"🏥", badge:"Procedure Coding", desc:"Surgical CPT coding, global surgery periods, assistant surgeon billing, and modifiers.",                            status:"planned" },
   { slug:"cardiology-billing-service",          label:"Cardiology",        icon:"❤️", badge:"Interventional",   desc:"Complex interventional and diagnostic billing, device coding, and cardiac catheterization claims.",                  status:"live" },
   { slug:"gastroenterology-billing-service",    label:"Gastroenterology",  icon:"🔭", badge:"Procedural",       desc:"Endoscopy and colonoscopy billing, polyp coding, anesthesia coordination, and payer compliance.",                   status:"live",  featured:false },
