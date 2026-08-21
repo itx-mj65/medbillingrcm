@@ -117,7 +117,7 @@
 .snf-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
 .snf-step-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-accent); line-height: .9; }
 .snf-step-conn { flex: 1; width: 2px; background: rgba(255,255,255,.1); min-height: 40px; margin: 10px 0; }
-.snf-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .3s; }
+.snf-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .35s ease; }
 .snf-step:hover .snf-step-body { background: rgba(255,255,255,.09); }
 .snf-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; color: var(--text-on-dark); margin-bottom: 6px; }
 .snf-step-body p  { font-size: var(--fs-body); color: var(--text-on-dark-muted); max-width: none; margin: 0; }

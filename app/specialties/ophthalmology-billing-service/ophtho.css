@@ -127,7 +127,7 @@
 .ophtho-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
 .ophtho-step-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-accent); line-height: .9; letter-spacing: var(--ls-heading); }
 .ophtho-step-conn { flex: 1; width: 2px; background: rgba(255,255,255,.1); min-height: 40px; margin: 10px 0; }
-.ophtho-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .3s; }
+.ophtho-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .35s ease; }
 .ophtho-step:hover .ophtho-step-body { background: rgba(255,255,255,.09); }
 .ophtho-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; color: var(--text-on-dark); margin-bottom: 6px; }
 .ophtho-step-body p  { font-size: var(--fs-body); color: var(--text-on-dark-muted); max-width: none; margin: 0; }
@@ -136,7 +136,7 @@
 
 /* ─── BEFORE / AFTER ─────────────────────────────────────── */
 .ophtho-ba-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 2rem; }
-.ophtho-ba-card { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 32px 22px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--color-line); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
+.ophtho-ba-card { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 32px 22px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--color-line); transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease; }
 .ophtho-ba-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,33,79,.1); }
 .ophtho-ba-card--green { border-top-color: var(--color-secondary); background: rgba(82,133,50,.03); }
 .ophtho-ba-label { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-muted); }

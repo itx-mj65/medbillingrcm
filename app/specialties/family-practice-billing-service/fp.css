@@ -68,7 +68,7 @@
   border-radius: 12px; padding: 20px 16px;
   display: flex; flex-direction: column; gap: 8px;
   border: 1px solid rgba(255,255,255,.08);
-  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
 }
 .fp-code-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.22); }
 .fp-code-value {
@@ -139,7 +139,7 @@
   padding: 28px 22px;
   display: flex; flex-direction: column; gap: 8px;
   border-top: 3px solid var(--color-line);
-  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
 }
 .fp-ba-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(26,33,79,.12); }
 .fp-ba-card--green { background: rgba(82,133,50,.04); border-top-color: var(--color-secondary); }

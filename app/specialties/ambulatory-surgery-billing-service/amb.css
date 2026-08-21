@@ -98,7 +98,7 @@
 .amb-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
 .amb-step-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-accent); line-height: .9; letter-spacing: var(--ls-heading); }
 .amb-step-conn { flex: 1; width: 2px; background: rgba(255,255,255,.1); min-height: 40px; margin: 10px 0; }
-.amb-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .3s; }
+.amb-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .35s ease; }
 .amb-step:hover .amb-step-body { background: rgba(255,255,255,.09); }
 .amb-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; color: var(--text-on-dark); margin-bottom: 6px; }
 .amb-step-body p  { font-size: var(--fs-body); color: var(--text-on-dark-muted); max-width: none; margin: 0; }
@@ -114,7 +114,7 @@
   background: var(--color-white); border: 1px solid var(--color-line);
   border-radius: var(--radius-card); padding: 24px 22px;
   border-left: 4px solid var(--color-line);
-  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-left-color .35s ease;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
 }
 .amb-compare-card--green { border-left-color: var(--color-secondary); }
 .amb-compare-card--gold  { border-left-color: var(--color-accent); }

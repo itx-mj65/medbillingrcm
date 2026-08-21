@@ -124,7 +124,7 @@
   padding: 32px 24px;
   display: flex; flex-direction: column; gap: 8px;
   border-top: 3px solid var(--color-line);
-  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
 }
 .intmed-ba-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,33,79,.1); }
 .intmed-ba-card--green { background: rgba(82,133,50,.05); border-top-color: var(--color-secondary); }
