@@ -84,7 +84,7 @@
 
 /* Hero stat panel — 2×2 grid, different from specialties */
 .svc-idx-hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
   flex-shrink: 0;
 }
 .svc-idx-hero-stat {

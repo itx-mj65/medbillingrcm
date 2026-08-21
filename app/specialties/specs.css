@@ -37,10 +37,10 @@
 }
 .specs-hero-intro {
   font-size: var(--fs-lead); color: var(--text-on-dark-sub);
-  line-height: var(--lh-lead); max-width: 58ch; margin: 0 0 24px;
+  line-height: var(--lh-lead); max-width: 58ch; margin: 0 0 20px;
 }
 .specs-hero-badges {
-  display: flex; flex-wrap: wrap; gap: 8px;
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
 }
 .specs-hero-badge {
   font-size: var(--fs-xs); font-weight: 700;
@@ -51,7 +51,7 @@
 
 /* Hero stat panel */
 .specs-hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3px; flex-shrink: 0; min-width: 260px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex-shrink: 0; min-width: 280px;
 }
 .specs-hero-stat {
   background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
