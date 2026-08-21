@@ -108,7 +108,11 @@ export default function Scripts() {
       const vh = window.innerHeight;
       document.querySelectorAll(".reveal").forEach((el) => {
         const r = el.getBoundingClientRect();
-        if (r.top < vh + 60) el.classList.add("in", "visible");
+        if (r.top < vh + 60) {
+          el.classList.add("in", "visible");
+          // Remove data-reveal so CSS hidden-state no longer applies — enables hover transitions
+          delete el.dataset.reveal;
+        }
       });
 
       /* 6. IntersectionObserver for below-the-fold elements */
@@ -118,6 +122,8 @@ export default function Scripts() {
             entries.forEach((e) => {
               if (e.isIntersecting) {
                 e.target.classList.add("in", "visible");
+                // Remove data-reveal after reveal — clears CSS hidden state, enables hover
+                delete e.target.dataset.reveal;
                 ioRef.current?.unobserve(e.target);
               }
             });
