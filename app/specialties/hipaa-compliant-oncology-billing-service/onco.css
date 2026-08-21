@@ -1,0 +1,232 @@
+/* ═══════════════════════════════════════════════════════════
+   ONCOLOGY BILLING — extends specialty.css
+   NEW animations (none reused):
+   oncoCell   — cell division flash on cap cards
+   oncoInfuse — IV drip drop animation on infusion sequence
+   oncoDot    — gold pulse dot on why cards
+   All colors: global tokens only.
+═══════════════════════════════════════════════════════════ */
+.sp-sec--paper { background: var(--color-paper); }
+
+/* ─── INFUSION SEQUENCE SECTION ──────────────────────────── */
+.onco-inf-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+
+.onco-inf-sequence {
+  display: flex; flex-direction: column; gap: 0;
+  margin-top: 2rem; position: relative;
+}
+
+.onco-inf-step {
+  display: grid; grid-template-columns: 60px 1fr;
+  align-items: start; gap: 0;
+}
+
+.onco-inf-connector {
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 14px;
+}
+.onco-inf-dot { font-size: 1.2rem; flex-shrink: 0; }
+.onco-inf-line {
+  width: 2px; flex: 1; min-height: 24px;
+  background: linear-gradient(180deg, var(--color-line), transparent);
+  margin: 4px 0;
+}
+
+.onco-inf-card {
+  background: var(--color-white); border: 1px solid var(--color-line);
+  border-radius: 12px; padding: 16px 20px; margin: 0 0 8px 8px;
+  display: flex; flex-direction: column; gap: 6px;
+  position: relative; overflow: hidden;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease;
+}
+/* IV drip animation — drop falls from top of card */
+.onco-inf-card::before {
+  content: ''; position: absolute;
+  top: -8px; left: 50%; width: 6px; height: 6px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: rgba(26,33,79,.15);
+  animation: oncoInfuse 2.5s ease-in infinite;
+  pointer-events: none; transform: translateX(-50%);
+}
+.onco-inf-step:nth-child(2) .onco-inf-card::before { animation-delay: -.5s; background: rgba(82,133,50,.2); }
+.onco-inf-step:nth-child(3) .onco-inf-card::before { animation-delay: -1s; background: rgba(82,133,50,.2); }
+.onco-inf-step:nth-child(4) .onco-inf-card::before { animation-delay: -1.5s; background: rgba(212,155,40,.2); }
+.onco-inf-step:nth-child(5) .onco-inf-card::before { animation-delay: -2s; background: rgba(212,155,40,.2); }
+@keyframes oncoInfuse {
+  0%   { top: -8px;  opacity: 0; transform: translateX(-50%) scale(.5); }
+  10%  { opacity: 1; transform: translateX(-50%) scale(1); }
+  70%  { top: 110%;  opacity: .8; }
+  100% { top: 120%;  opacity: 0; transform: translateX(-50%) scale(.3); }
+}
+.onco-inf-card:hover { transform: translateX(4px); box-shadow: 4px 0 16px rgba(26,33,79,.08); border-color: var(--color-secondary); }
+
+.onco-inf-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.onco-inf-cpt {
+  font-family: monospace; font-size: .8rem; font-weight: 900;
+  color: var(--color-white); background: var(--color-primary);
+  border-radius: 6px; padding: 3px 8px;
+}
+.onco-inf-time {
+  font-size: var(--fs-xs); font-weight: 700; color: var(--color-muted);
+  background: var(--color-ivory); border-radius: 20px; padding: 2px 8px;
+}
+.onco-inf-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; }
+.onco-inf-card p  { font-size: var(--fs-sm); color: var(--color-muted); margin: 0; line-height: 1.45; }
+
+/* JW Wastage Callout */
+.onco-jw-callout {
+  background: var(--color-primary); border-radius: 16px;
+  padding: 24px 28px; margin-top: 2rem;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.onco-jw-badge {
+  font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 800;
+  color: var(--color-ink); background: var(--color-accent);
+  border-radius: var(--radius-pill); padding: 8px 16px; white-space: nowrap; flex-shrink: 0;
+}
+.onco-jw-callout p { font-size: var(--fs-sm); color: var(--text-on-dark-sub); flex: 1; margin: 0; }
+
+/* ─── CAPABILITY CARDS — cell division flash ─────────────── */
+.onco-caps-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+.onco-caps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 2rem; }
+.onco-cap-card {
+  position: relative; overflow: hidden; background: var(--color-primary);
+  padding: 28px 24px; border-radius: 20px; border: 1px solid rgba(255,255,255,.08);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .45s ease, box-shadow .45s ease;
+}
+/* Cell division — diagonal flash from center out */
+.onco-cap-card::before {
+  content: ''; position: absolute;
+  top: 50%; left: 50%; width: 0%; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(82,133,50,.25), transparent);
+  transform: translate(-50%,-50%) rotate(var(--onco-angle, 45deg));
+  animation: oncoCell 5s ease-in-out infinite;
+  pointer-events: none; will-change: width, opacity;
+}
+.onco-cap-card:nth-child(2)::before { animation-delay: -.83s; --onco-angle: -45deg; background: linear-gradient(90deg, transparent, rgba(212,155,40,.2), transparent); }
+.onco-cap-card:nth-child(3)::before { animation-delay: -1.66s; --onco-angle: 90deg; }
+.onco-cap-card:nth-child(4)::before { animation-delay: -2.5s; --onco-angle: 135deg; background: linear-gradient(90deg, transparent, rgba(212,155,40,.2), transparent); }
+.onco-cap-card:nth-child(5)::before { animation-delay: -3.33s; --onco-angle: 0deg; }
+.onco-cap-card:nth-child(6)::before { animation-delay: -4.16s; --onco-angle: -90deg; background: linear-gradient(90deg, transparent, rgba(212,155,40,.2), transparent); }
+@keyframes oncoCell {
+  0%,100% { width: 0%;    opacity: 0; }
+  30%      { width: 200%;  opacity: 1; }
+  60%      { width: 200%;  opacity: 0; }
+}
+.onco-cap-card:hover { transform: translateY(-5px); border-color: rgba(212,155,40,.28); box-shadow: 0 20px 48px rgba(0,0,0,.28); }
+.onco-cap-top { display: flex; align-items: flex-start; justify-content: space-between; position: relative; z-index: 1; }
+.onco-cap-icon-wrap { width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: background .45s ease, border-color .45s ease; }
+.onco-cap-card:hover .onco-cap-icon-wrap { background: rgba(212,155,40,.14); border-color: rgba(212,155,40,.28); }
+.onco-cap-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-on-dark); opacity: .08; line-height: 1; }
+.onco-cap-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; position: relative; z-index: 1; }
+.onco-cap-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; position: relative; z-index: 1; transition: color .45s ease; }
+.onco-cap-card:hover p { color: var(--text-on-dark-sub); }
+
+/* ─── PROCESS ────────────────────────────────────────────── */
+.onco-process-intro { color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.onco-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.onco-step  { display: grid; grid-template-columns: 80px 1fr; }
+.onco-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
+.onco-step-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-accent); line-height: .9; }
+.onco-step-conn { flex: 1; width: 2px; background: rgba(255,255,255,.1); min-height: 40px; margin: 10px 0; }
+.onco-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .35s ease; }
+.onco-step:hover .onco-step-body { background: rgba(255,255,255,.09); }
+.onco-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; color: var(--text-on-dark); margin-bottom: 6px; }
+.onco-step-body p  { font-size: var(--fs-body); color: var(--text-on-dark-muted); max-width: none; margin: 0; }
+.onco-process-cta  { display: flex; align-items: center; gap: 20px; margin-top: 2.5rem; flex-wrap: wrap; }
+.onco-process-note { font-size: var(--fs-sm); color: rgba(255,255,255,.45); }
+
+/* ─── BEFORE / AFTER ─────────────────────────────────────── */
+.onco-ba-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 2rem; }
+.onco-ba-card { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 32px 22px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--color-line); transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease; }
+.onco-ba-card--green { border-top-color: var(--color-secondary); background: rgba(82,133,50,.03); }
+.onco-ba-card:hover  { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(26,33,79,.1); }
+.onco-ba-label { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-muted); }
+.onco-ba-num { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 800; color: var(--color-primary); line-height: .9; }
+.onco-ba-card--green .onco-ba-num { color: var(--color-secondary); }
+.onco-ba-num span { font-size: 55%; color: var(--color-muted); font-weight: 700; }
+.onco-ba-desc { font-size: var(--fs-sm); color: var(--color-muted); }
+
+/* ─── WHY MEDBILLING ─────────────────────────────────────── */
+.onco-why-intro { color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.onco-why-grid  { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 2rem; }
+.onco-why-card {
+  position: relative; overflow: hidden; background: rgba(255,255,255,.05);
+  border-right: 1px solid rgba(255,255,255,.08); border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08); border-left: 3px solid rgba(212,155,40,.4);
+  border-radius: 0 14px 14px 0; padding: 24px 18px 24px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background .45s ease, border-top-color .45s ease, border-right-color .45s ease, border-bottom-color .45s ease, border-left-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+}
+.onco-why-card::before {
+  content: ''; position: absolute; top: 14px; right: 14px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-accent); opacity: .5;
+  animation: oncoDot 2.8s ease-in-out infinite; pointer-events: none;
+}
+.onco-why-card:nth-child(2)::before { animation-delay: -.35s; }
+.onco-why-card:nth-child(3)::before { animation-delay: -.7s; }
+.onco-why-card:nth-child(4)::before { animation-delay: -1.05s; }
+.onco-why-card:nth-child(5)::before { animation-delay: -1.4s; }
+.onco-why-card:nth-child(6)::before { animation-delay: -1.75s; }
+.onco-why-card:nth-child(7)::before { animation-delay: -2.1s; }
+.onco-why-card:nth-child(8)::before { animation-delay: -2.45s; }
+@keyframes oncoDot {
+  0%,100% { transform: scale(1);   opacity: .4; }
+  50%      { transform: scale(2.2); opacity: .9; box-shadow: 0 0 8px rgba(212,155,40,.55); }
+}
+.onco-why-card:hover { background: rgba(255,255,255,.09); border-top-color: rgba(255,255,255,.16); border-right-color: rgba(255,255,255,.16); border-bottom-color: rgba(255,255,255,.16); border-left-color: var(--color-accent); transform: translateX(4px); box-shadow: 4px 0 20px rgba(212,155,40,.09); }
+.onco-why-top { display: flex; align-items: flex-start; justify-content: space-between; }
+.onco-why-icon-wrap { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; background: rgba(212,155,40,.1); border: 1px solid rgba(212,155,40,.2); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; transition: background .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1); }
+.onco-why-card:hover .onco-why-icon-wrap { background: rgba(212,155,40,.2); border-color: rgba(212,155,40,.4); transform: scale(1.1); }
+.onco-why-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--text-on-dark); opacity: .07; line-height: 1; }
+.onco-why-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; }
+.onco-why-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.onco-faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 64px; margin-top: 2rem; }
+.onco-faq-intro  { position: sticky; top: 110px; }
+.onco-faq-intro p { color: var(--color-muted); }
+.onco-faq-link   { color: var(--color-action); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.onco-faq-list details { border-bottom: 1px solid var(--color-line); }
+.onco-faq-list summary { list-style: none; position: relative; padding: 20px 52px 20px 0; cursor: pointer; font-family: var(--font-heading); font-weight: 600; font-size: var(--fs-body); color: var(--color-primary); transition: color .35s ease; }
+.onco-faq-list summary::-webkit-details-marker { display: none; }
+.onco-faq-list summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
+.onco-faq-list details[open] summary::after { content: '−'; }
+.onco-faq-list details[open] summary { color: var(--color-action); }
+.onco-faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); max-width: none; }
+
+/* ═══ RESPONSIVE ═══════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .onco-inf-sequence  { max-width: 100%; }
+  .onco-caps-grid     { grid-template-columns: 1fr 1fr; }
+  .onco-why-grid      { grid-template-columns: 1fr 1fr; }
+  .onco-ba-grid       { grid-template-columns: 1fr 1fr; }
+  .onco-faq-layout    { grid-template-columns: 1fr; gap: 2rem; }
+  .onco-faq-intro     { position: static; }
+  .onco-step          { grid-template-columns: 60px 1fr; }
+  .onco-jw-callout    { flex-direction: column; }
+}
+@media (max-width: 768px) {
+  .onco-caps-grid  { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .onco-caps-grid  { grid-template-columns: 1fr; }
+  .onco-why-grid   { grid-template-columns: 1fr 1fr; }
+  .onco-ba-grid    { grid-template-columns: 1fr 1fr; }
+  .onco-cap-card:hover, .onco-why-card:hover, .onco-ba-card:hover, .onco-inf-card:hover { transform: none; }
+}
+@media (max-width: 480px) {
+  .onco-why-grid  { grid-template-columns: 1fr; }
+  .onco-step      { grid-template-columns: 1fr; }
+  .onco-step-aside { flex-direction: row; align-items: center; gap: 10px; padding-top: 0; margin-bottom: 8px; }
+  .onco-step-conn  { display: none; }
+  .onco-step-body  { margin-left: 0; }
+  .onco-inf-step  { grid-template-columns: 40px 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .onco-inf-card::before, .onco-cap-card::before, .onco-why-card::before { animation: none !important; opacity: 0; }
+  .onco-cap-card:hover, .onco-why-card:hover, .onco-ba-card:hover { transform: none; }
+}
