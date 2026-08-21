@@ -1038,13 +1038,9 @@ body.js-ready .reveal[data-reveal="blur"]  { transform: translateY(8px); filter:
 .reveal.visible,
 .reveal:not([data-reveal]) {
   opacity: 1 !important;
+  transform: none !important;
   filter: none !important;
-}
-
-/* Restore transform to none after reveal — but allow hover to override */
-.reveal.in,
-.reveal.visible {
-  transform: none;
+  transition-duration: .65s;
 }
 
 /* ═══════════════════════════════════════════════════════════
