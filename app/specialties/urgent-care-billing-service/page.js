@@ -42,30 +42,38 @@ export default function UrgentCareBillingPage() {
             ── END DESIGN BLOCK ─────────────────────────── */}
           </div>
 
-          <div className="uc-hero-image" aria-hidden="true">
-            {/* ── IMAGE PLACEHOLDER ─────────────────────────
-                Size: 580×460px (2×: 1160×920 for retina)
-                Subject: Urgent care reception — professional
-                  healthcare administrator at front desk,
-                  computer screen visible, warm but clinical
-                  lighting, real EHR interface on screen.
-                Style: Photorealistic, documentary style.
-                No staged handshakes or smiling stock doctors.
-                AI prompt: "Healthcare administrator at urgent
-                  care reception desk, reviewing patient intake
-                  on computer screen, clinical setting with
-                  warm overhead lighting, professional and calm
-                  atmosphere, photorealistic documentary style,
-                  slight cool-to-warm color grade"
-                Alt text: "MedBilling RCM urgent care billing
-                  specialists processing walk-in patient claims"
-            ── END PLACEHOLDER ──────────────────────────── */}
-            <div className="uc-hero-img-placeholder">
-              <div className="uc-placeholder-inner">
-                <div className="uc-placeholder-icon" aria-hidden="true">🏥</div>
-                <p>Hero Image</p>
-                <span>580 × 460 px</span>
-                <span className="uc-placeholder-note">Urgent care reception desk — real clinical setting</span>
+          <div className="uc-hero-image">
+            <div className="uc-img-placeholder uc-img-placeholder--hero">
+              <div className="uc-img-placeholder-icon">🏥</div>
+              <div className="uc-img-placeholder-label">IMAGE PLACEHOLDER — HERO</div>
+
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Size</span>
+                <span className="uc-img-spec-val">580 × 460 px &nbsp;(retina: 1160 × 920 px)</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Format</span>
+                <span className="uc-img-spec-val">WebP / AVIF with JPG fallback</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Subject</span>
+                <span className="uc-img-spec-val">Healthcare administrator at urgent care reception desk — computer screen showing EHR interface, warm clinical lighting, busy waiting-room background softly blurred. No staged handshakes or smiling stock doctors.</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Style</span>
+                <span className="uc-img-spec-val">Photorealistic · Documentary photography · Cool-to-warm color grade · Depth of field on subject</span>
+              </div>
+              <div className="uc-img-spec-row uc-img-spec-row--prompt">
+                <span className="uc-img-spec-key">AI Prompt</span>
+                <span className="uc-img-spec-val uc-img-prompt">"Healthcare administrator at urgent care reception desk, reviewing patient intake on computer screen showing real EHR software interface, clinical setting with warm overhead lighting, professional and calm atmosphere, waiting room visible in background shallow depth of field, photorealistic documentary style, slight cool-to-warm color grade, Canon 5D Mark IV quality"</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Alt text</span>
+                <span className="uc-img-spec-val">"MedBilling RCM urgent care billing specialists processing walk-in patient claims"</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Placement</span>
+                <span className="uc-img-spec-val">Hero section · right column · rounded-20px corners · slight drop shadow</span>
               </div>
             </div>
           </div>
@@ -401,27 +409,38 @@ export default function UrgentCareBillingPage() {
             </p>
             <Link href="/request-free-audit/" className="uc-btn uc-btn--gold">Get a Free Revenue Assessment →</Link>
           </div>
-          <div className="uc-closing-image" aria-hidden="true">
-            {/* ── IMAGE PLACEHOLDER ─────────────────────────
-                Size: 480×380px
-                Subject: Urgent care billing specialist at desk,
-                  dual monitor setup showing billing software,
-                  focused professional environment, warm light.
-                Style: Photorealistic, operational/expertise.
-                AI prompt: "Medical billing specialist at desk
-                  with two monitors showing billing dashboard,
-                  professional office environment, focused
-                  expression, warm directional lighting,
-                  clean modern office, photorealistic"
-                Alt text: "MedBilling RCM billing team managing
-                  urgent care revenue cycle"
-            ── END PLACEHOLDER ──────────────────────────── */}
-            <div className="uc-closing-img-placeholder">
-              <div className="uc-placeholder-inner">
-                <div className="uc-placeholder-icon">📊</div>
-                <p>Closing Image</p>
-                <span>480 × 380 px</span>
-                <span className="uc-placeholder-note">Billing specialist — dual monitor dashboard</span>
+          <div className="uc-closing-image">
+            <div className="uc-img-placeholder uc-img-placeholder--closing">
+              <div className="uc-img-placeholder-icon">📊</div>
+              <div className="uc-img-placeholder-label">IMAGE PLACEHOLDER — CLOSING SECTION</div>
+
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Size</span>
+                <span className="uc-img-spec-val">480 × 380 px &nbsp;(retina: 960 × 760 px)</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Format</span>
+                <span className="uc-img-spec-val">WebP / AVIF with JPG fallback</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Subject</span>
+                <span className="uc-img-spec-val">Medical billing specialist at desk with two monitors displaying a billing revenue dashboard — charts, AR aging columns, denial rate graphs visible on screen. Focused expression, clean modern office environment, warm directional lighting from the side.</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Style</span>
+                <span className="uc-img-spec-val">Photorealistic · Operational / expertise feel · Warm side lighting · Slightly elevated angle</span>
+              </div>
+              <div className="uc-img-spec-row uc-img-spec-row--prompt">
+                <span className="uc-img-spec-key">AI Prompt</span>
+                <span className="uc-img-spec-val uc-img-prompt">"Medical billing specialist seated at a modern desk with two large monitors displaying revenue cycle management dashboard — colorful charts, denial rate metrics, AR aging columns visible on screens, professional focused expression, clean bright office, warm directional side lighting, slightly elevated camera angle, photorealistic documentary style, sharp focus on subject"</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Alt text</span>
+                <span className="uc-img-spec-val">"MedBilling RCM billing team managing urgent care revenue cycle"</span>
+              </div>
+              <div className="uc-img-spec-row">
+                <span className="uc-img-spec-key">Placement</span>
+                <span className="uc-img-spec-val">Closing CTA section · right column on navy background · rounded-18px corners</span>
               </div>
             </div>
           </div>

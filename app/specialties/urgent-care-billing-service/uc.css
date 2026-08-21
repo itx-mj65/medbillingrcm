@@ -384,3 +384,97 @@
   .uc-problem-card:hover, .uc-stat-card:hover,
   .uc-phase-body, .uc-ehr-tag:hover { transform: none !important; transition: none !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   IMAGE PLACEHOLDER SPEC CARDS
+   Visible on screen so designers / photographers can read
+   all specs, prompts, and placement instructions directly.
+   Remove each placeholder div once the real image is placed.
+═══════════════════════════════════════════════════════════ */
+
+/* Base placeholder card */
+.uc-img-placeholder {
+  width: 100%;
+  border-radius: 16px;
+  padding: 22px;
+  display: flex; flex-direction: column; gap: 10px;
+  font-size: .82rem;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+/* Hero placeholder — on dark navy background */
+.uc-img-placeholder--hero {
+  background: rgba(255,255,255,.06);
+  border: 2px dashed rgba(212,155,40,.5);
+  color: rgba(255,255,255,.85);
+  min-height: 320px;
+}
+
+/* Closing placeholder — also on dark navy */
+.uc-img-placeholder--closing {
+  background: rgba(255,255,255,.06);
+  border: 2px dashed rgba(212,155,40,.5);
+  color: rgba(255,255,255,.85);
+  min-height: 260px;
+}
+
+/* Icon */
+.uc-img-placeholder-icon {
+  font-size: 2rem; line-height: 1;
+}
+
+/* Section label */
+.uc-img-placeholder-label {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: .72rem; font-weight: 900;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--uc-gold);
+  background: rgba(212,155,40,.12);
+  border: 1px solid rgba(212,155,40,.25);
+  border-radius: 6px; padding: 4px 10px;
+  align-self: flex-start;
+  margin-bottom: 4px;
+}
+
+/* Spec rows */
+.uc-img-spec-row {
+  display: grid; grid-template-columns: 90px 1fr;
+  gap: 8px; align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.uc-img-spec-row:last-child { border-bottom: none; }
+.uc-img-spec-row--prompt { align-items: flex-start; margin-top: 4px; }
+
+.uc-img-spec-key {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: .7rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--uc-gold);
+  flex-shrink: 0;
+}
+
+.uc-img-spec-val {
+  font-size: .82rem; color: rgba(255,255,255,.75);
+  line-height: 1.55;
+}
+
+/* AI prompt gets a distinct treatment */
+.uc-img-prompt {
+  display: block;
+  background: rgba(0,0,0,.25);
+  border-left: 3px solid var(--uc-green);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  font-family: monospace;
+  font-size: .78rem !important;
+  color: rgba(255,255,255,.9) !important;
+  line-height: 1.6;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* On small screens stack the grid */
+@media (max-width: 480px) {
+  .uc-img-spec-row { grid-template-columns: 1fr; gap: 3px; }
+  .uc-img-spec-key::after { content: ':'; }
+}
