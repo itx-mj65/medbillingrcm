@@ -1,0 +1,238 @@
+/* ═══════════════════════════════════════════════════════════
+   WOUND CARE BILLING — extends specialty.css
+   NEW animations (none reused from previous pages):
+   woundScan  — healing light scans across stage cards top→bottom
+   woundHeal  — progress fill animates from left (tissue repair metaphor)
+   woundDot   — left-rail pulse dot on why cards
+   All colors: global tokens only.
+═══════════════════════════════════════════════════════════ */
+.sp-sec--paper { background: var(--color-paper); }
+
+/* ─── WOUND HEALING TIMELINE ─────────────────────────────── */
+.wound-journey-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+
+.wound-healing-timeline {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 14px; margin-top: 2rem; position: relative;
+}
+
+/* Connector line behind the timeline */
+.wound-healing-timeline::before {
+  content: ''; position: absolute; display: none;
+}
+
+.wound-stage {
+  position: relative; overflow: hidden;
+  border-radius: 18px; padding: 22px 18px;
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--color-white); border: 1px solid var(--color-line);
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+}
+.wound-stage--blue  { border-top: 3px solid var(--color-primary); }
+.wound-stage--green { border-top: 3px solid var(--color-secondary); }
+.wound-stage--navy  { border-top: 3px solid var(--color-primary); background: rgba(26,33,79,.03); }
+.wound-stage--gold  { border-top: 3px solid var(--color-accent); }
+
+/* Healing scan — light sweeps top→bottom like a scanner */
+.wound-stage::before {
+  content: ''; position: absolute;
+  top: -100%; left: 0; width: 100%; height: 40%;
+  background: linear-gradient(180deg, transparent 0%, rgba(82,133,50,.06) 50%, transparent 100%);
+  animation: woundScan 6s ease-in-out infinite;
+  pointer-events: none;
+}
+.wound-stage:nth-child(2)::before { animation-delay: -1s; }
+.wound-stage:nth-child(3)::before { animation-delay: -2s; }
+.wound-stage:nth-child(4)::before { animation-delay: -3s; }
+.wound-stage:nth-child(5)::before { animation-delay: -4s; background: linear-gradient(180deg, transparent 0%, rgba(212,155,40,.06) 50%, transparent 100%); }
+.wound-stage:nth-child(6)::before { animation-delay: -5s; }
+@keyframes woundScan {
+  0%    { top: -100%; opacity: 0; }
+  10%   { opacity: 1; }
+  70%   { top: 120%;  opacity: 1; }
+  80%   { opacity: 0; }
+  100%  { top: 150%;  opacity: 0; }
+}
+
+/* Healing progress bar at bottom — fills from left like tissue regenerating */
+.wound-stage::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; height: 2px;
+  background: var(--color-secondary);
+  animation: woundHeal 6s ease-in-out infinite;
+  pointer-events: none;
+}
+.wound-stage--gold::after { background: var(--color-accent); }
+.wound-stage:nth-child(2)::after { animation-delay: -1s; }
+.wound-stage:nth-child(3)::after { animation-delay: -2s; }
+.wound-stage:nth-child(4)::after { animation-delay: -3s; }
+.wound-stage:nth-child(5)::after { animation-delay: -4s; }
+.wound-stage:nth-child(6)::after { animation-delay: -5s; }
+@keyframes woundHeal {
+  0%    { width: 0%;    opacity: 0; }
+  15%   { opacity: 1; }
+  65%   { width: 100%;  opacity: 1; }
+  80%   { width: 100%;  opacity: 0; }
+  81%   { width: 0%; }
+  100%  { width: 0%;    opacity: 0; }
+}
+
+.wound-stage:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(26,33,79,.1);
+  animation-play-state: paused;
+}
+.wound-stage:hover::before, .wound-stage:hover::after { animation-play-state: paused; }
+
+.wound-stage-num {
+  font-family: var(--font-heading); font-size: 2.5rem; font-weight: 900;
+  color: var(--color-primary); opacity: .08; line-height: .9;
+  flex-shrink: 0; letter-spacing: var(--ls-heading);
+}
+.wound-stage-body { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.wound-stage-icon { font-size: 1.4rem; }
+.wound-stage-body h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0; line-height: 1.3; }
+.wound-stage-codes { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.wound-stage-codes li { font-family: monospace; font-size: .7rem; color: var(--color-muted); line-height: 1.4; }
+.wound-stage-note { font-size: var(--fs-xs); color: var(--color-action); font-weight: 600; border-top: 1px solid var(--color-line); padding-top: 8px; margin-top: 4px; }
+
+.wound-journey-cta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 2rem; }
+.wound-journey-note { font-size: var(--fs-sm); color: var(--color-muted); }
+
+/* ─── CAPABILITY CARDS — navy + scanning beam ────────────── */
+.wound-caps-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+.wound-caps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 2rem; }
+.wound-cap-card {
+  position: relative; overflow: hidden; background: var(--color-primary);
+  padding: 28px 24px; border-radius: 20px; border: 1px solid rgba(255,255,255,.08);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .45s, box-shadow .45s;
+}
+/* Same woundScan effect on navy cards — diagnostic scanner metaphor */
+.wound-cap-card::before {
+  content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 35%;
+  background: linear-gradient(180deg, transparent 0%, rgba(82,133,50,.12) 50%, transparent 100%);
+  animation: woundScan 7s ease-in-out infinite; pointer-events: none;
+}
+.wound-cap-card:nth-child(2)::before { animation-delay: -1.16s; background: linear-gradient(180deg, transparent, rgba(212,155,40,.1), transparent); }
+.wound-cap-card:nth-child(3)::before { animation-delay: -2.33s; }
+.wound-cap-card:nth-child(4)::before { animation-delay: -3.5s; background: linear-gradient(180deg, transparent, rgba(212,155,40,.1), transparent); }
+.wound-cap-card:nth-child(5)::before { animation-delay: -4.66s; }
+.wound-cap-card:nth-child(6)::before { animation-delay: -5.83s; background: linear-gradient(180deg, transparent, rgba(212,155,40,.1), transparent); }
+.wound-cap-card:hover { transform: translateY(-5px); border-color: rgba(212,155,40,.28); box-shadow: 0 20px 48px rgba(0,0,0,.28); }
+.wound-cap-card:hover::before { animation-play-state: paused; }
+.wound-cap-top { display: flex; align-items: flex-start; justify-content: space-between; position: relative; z-index: 1; }
+.wound-cap-icon-wrap { width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: background .45s, border-color .45s; }
+.wound-cap-card:hover .wound-cap-icon-wrap { background: rgba(212,155,40,.14); border-color: rgba(212,155,40,.28); }
+.wound-cap-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-on-dark); opacity: .08; line-height: 1; }
+.wound-cap-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; position: relative; z-index: 1; }
+.wound-cap-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; position: relative; z-index: 1; transition: color .45s; }
+.wound-cap-card:hover p { color: var(--text-on-dark-sub); }
+
+/* ─── PROCESS ────────────────────────────────────────────── */
+.wound-process-intro { color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.wound-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.wound-step  { display: grid; grid-template-columns: 80px 1fr; }
+.wound-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
+.wound-step-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-accent); line-height: .9; }
+.wound-step-conn { flex: 1; width: 2px; background: rgba(255,255,255,.1); min-height: 40px; margin: 10px 0; }
+.wound-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .3s; }
+.wound-step:hover .wound-step-body { background: rgba(255,255,255,.09); }
+.wound-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; color: var(--text-on-dark); margin-bottom: 6px; }
+.wound-step-body p  { font-size: var(--fs-body); color: var(--text-on-dark-muted); max-width: none; margin: 0; }
+.wound-process-cta  { display: flex; align-items: center; gap: 20px; margin-top: 2.5rem; flex-wrap: wrap; }
+.wound-process-note { font-size: var(--fs-sm); color: rgba(255,255,255,.45); }
+
+/* ─── BEFORE / AFTER ─────────────────────────────────────── */
+.wound-ba-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 2rem; }
+.wound-ba-card { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 32px 22px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--color-line); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+.wound-ba-card--green { border-top-color: var(--color-secondary); background: rgba(82,133,50,.03); }
+.wound-ba-card:hover  { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(26,33,79,.1); }
+.wound-ba-label { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-muted); }
+.wound-ba-num { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 800; color: var(--color-primary); line-height: .9; }
+.wound-ba-card--green .wound-ba-num { color: var(--color-secondary); }
+.wound-ba-num span { font-size: 55%; color: var(--color-muted); font-weight: 700; }
+.wound-ba-desc { font-size: var(--fs-sm); color: var(--color-muted); }
+
+/* ─── WHY MEDBILLING ─────────────────────────────────────── */
+.wound-why-intro { color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.wound-why-grid  { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 2rem; }
+.wound-why-card {
+  position: relative; overflow: hidden; background: rgba(255,255,255,.05);
+  border-right: 1px solid rgba(255,255,255,.08); border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08); border-left: 3px solid rgba(212,155,40,.4);
+  border-radius: 0 14px 14px 0; padding: 24px 18px 24px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background .45s, border-top-color .45s, border-right-color .45s, border-bottom-color .45s, border-left-color .45s, transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s;
+}
+.wound-why-card::before {
+  content: ''; position: absolute; top: 14px; right: 14px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-accent); opacity: .5;
+  animation: woundDot 2.8s ease-in-out infinite; pointer-events: none;
+}
+.wound-why-card:nth-child(2)::before { animation-delay: -.35s; }
+.wound-why-card:nth-child(3)::before { animation-delay: -.7s; }
+.wound-why-card:nth-child(4)::before { animation-delay: -1.05s; }
+.wound-why-card:nth-child(5)::before { animation-delay: -1.4s; }
+.wound-why-card:nth-child(6)::before { animation-delay: -1.75s; }
+.wound-why-card:nth-child(7)::before { animation-delay: -2.1s; }
+.wound-why-card:nth-child(8)::before { animation-delay: -2.45s; }
+@keyframes woundDot {
+  0%,100% { transform: scale(1);   opacity: .4; }
+  50%      { transform: scale(2.2); opacity: .9; box-shadow: 0 0 8px rgba(212,155,40,.55); }
+}
+.wound-why-card:hover { background: rgba(255,255,255,.09); border-top-color: rgba(255,255,255,.16); border-right-color: rgba(255,255,255,.16); border-bottom-color: rgba(255,255,255,.16); border-left-color: var(--color-accent); transform: translateX(4px); box-shadow: 4px 0 20px rgba(212,155,40,.09); }
+.wound-why-top { display: flex; align-items: flex-start; justify-content: space-between; }
+.wound-why-icon-wrap { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; background: rgba(212,155,40,.1); border: 1px solid rgba(212,155,40,.2); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; transition: background .45s, border-color .45s, transform .45s; }
+.wound-why-card:hover .wound-why-icon-wrap { background: rgba(212,155,40,.2); border-color: rgba(212,155,40,.4); transform: scale(1.1); }
+.wound-why-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--text-on-dark); opacity: .07; line-height: 1; }
+.wound-why-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; }
+.wound-why-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.wound-faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 64px; margin-top: 2rem; }
+.wound-faq-intro  { position: sticky; top: 110px; }
+.wound-faq-intro p { color: var(--color-muted); }
+.wound-faq-link   { color: var(--color-action); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.wound-faq-list details { border-bottom: 1px solid var(--color-line); }
+.wound-faq-list summary { list-style: none; position: relative; padding: 20px 52px 20px 0; cursor: pointer; font-family: var(--font-heading); font-weight: 600; font-size: var(--fs-body); color: var(--color-primary); transition: color .2s; }
+.wound-faq-list summary::-webkit-details-marker { display: none; }
+.wound-faq-list summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
+.wound-faq-list details[open] summary::after { content: '−'; }
+.wound-faq-list details[open] summary { color: var(--color-action); }
+.wound-faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); max-width: none; }
+
+/* ═══ RESPONSIVE ═══════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .wound-healing-timeline { grid-template-columns: 1fr 1fr; }
+  .wound-caps-grid { grid-template-columns: 1fr 1fr; }
+  .wound-why-grid  { grid-template-columns: 1fr 1fr; }
+  .wound-ba-grid   { grid-template-columns: 1fr 1fr; }
+  .wound-faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .wound-faq-intro  { position: static; }
+  .wound-step       { grid-template-columns: 60px 1fr; }
+}
+@media (max-width: 768px) {
+  .wound-healing-timeline { grid-template-columns: 1fr 1fr; }
+  .wound-caps-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .wound-healing-timeline { grid-template-columns: 1fr; gap: 10px; }
+  .wound-caps-grid { grid-template-columns: 1fr; }
+  .wound-why-grid  { grid-template-columns: 1fr 1fr; }
+  .wound-stage, .wound-cap-card:hover, .wound-why-card:hover, .wound-ba-card:hover { transform: none; }
+}
+@media (max-width: 480px) {
+  .wound-why-grid { grid-template-columns: 1fr; }
+  .wound-step     { grid-template-columns: 1fr; }
+  .wound-step-aside { flex-direction: row; align-items: center; gap: 10px; padding-top: 0; margin-bottom: 8px; }
+  .wound-step-conn  { display: none; }
+  .wound-step-body  { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wound-stage::before, .wound-stage::after,
+  .wound-cap-card::before, .wound-why-card::before { animation: none !important; opacity: 0; }
+  .wound-stage::after { width: 100%; opacity: .3; }
+  .wound-stage:hover, .wound-cap-card:hover, .wound-why-card:hover { transform: none; }
+}
