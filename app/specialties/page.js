@@ -70,7 +70,7 @@ const SPECIALTIES = [
   { slug:"ophthalmology-billing-service",       label:"Ophthalmology",     icon:"👁️", badge:"Vision & Surgery", desc:"Ophthalmic surgical and diagnostic coding, cataract billing, vision therapy, and E/M integration.",                 status:"live" },
   { slug:"pain-management-billing-services",    label:"Pain Management",   icon:"💉", badge:"Interventional",   desc:"Interventional pain coding, fluoroscopy billing, drug testing claims, and prior authorization management.",         status:"live",  featured:false },
   { slug:"physical-therapy-billing-services",   label:"Physical Therapy",  icon:"🏋️", badge:"Functional Coding","desc":"Time-based PT coding, functional limitation reporting, Medicare therapy cap compliance, and PQRS.",               status:"live",  featured:false },
-  { slug:"oncology-billing-service",            label:"Oncology",          icon:"🎗️", badge:"Drug Admin",       desc:"Chemotherapy and infusion billing, J-code accuracy, prior auth, and MIPS quality reporting.",                      status:"planned" },
+
   { slug:"psychiatric-billing-service",         label:"Psychiatry",        icon:"🧘", badge:"Behavioral Health", desc:"Psychiatric E/M coding, therapy add-ons, MHPAEA compliance, and collaborative care billing.",                      status:"live",  featured:false },
   { slug:"urology-billing-services",            label:"Urology",           icon:"⚕️", badge:"Surgical & E/M",   desc:"Urological surgical coding, cystoscopy billing, robotic procedure modifiers, and E/M optimization.",               status:"live",  featured:false },
   { slug:"endocrinology-billing-services",      label:"Endocrinology",     icon:"🔬", badge:"Chronic Care",     desc:"Diabetes management billing, thyroid and endocrine procedure coding, and CCM reimbursement.",                       status:"live",  featured:false },
@@ -88,8 +88,8 @@ const SPECIALTIES = [
   { slug:"molecular-lab-biliing-services",      label:"Molecular Lab",     icon:"🧬", badge:"NGS & PCR",        desc:"NGS, PCR, and molecular diagnostic billing with PAMA compliance and Medicare LCD coverage mapping.",                  status:"live",  featured:false },
   { slug:"gynecology-billing-services",         label:"Gynecology",        icon:"🩺", badge:"Surgical & E/M",   desc:"Gynecological surgical coding, hysteroscopy billing, and women's health E/M optimization.",                          status:"live",  featured:false },
   { slug:"medical-clinics-billing-services",    label:"Medical Clinics",   icon:"🏥", badge:"Multi-Specialty",  desc:"Multi-specialty clinic billing, provider enrollment, and EHR-integrated revenue cycle management.",                  status:"live",  featured:false },
-  { slug:"tailored-fqhc-billing-service",       label:"FQHC",             icon:"🏛️", badge:"Prospective PPS",  desc:"FQHC prospective payment, encounter-based billing, sliding fee compliance, and UDS reporting.",                    status:"planned" },
-  { slug:"rcm",                                 label:"Healthcare RCM",    icon:"📊", badge:"Full-Service RCM",  desc:"End-to-end revenue cycle management from eligibility through payment reconciliation for any specialty.",              status:"planned" },
+  { slug:"tailored-fqhc-billing-service",       label:"FQHC",             icon:"🏛️", badge:"Prospective PPS",  desc:"FQHC prospective payment, encounter-based billing, sliding fee compliance, and UDS reporting.",                    status:"live",  featured:false },
+  { slug:"rcm",                                 label:"Healthcare RCM",    icon:"📊", badge:"Full-Service RCM",  desc:"End-to-end revenue cycle management from eligibility through payment reconciliation for any specialty.",              status:"live",  featured:false },
 ];
 
 // Split into live and planned
