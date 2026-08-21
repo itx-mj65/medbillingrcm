@@ -80,7 +80,7 @@
   background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
   color: rgba(255,255,255,.85); border-radius: var(--radius-pill); padding: 5px 14px;
 }
-.svc-idx-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.svc-idx-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
 
 /* Hero stat panel — 2×2 grid, different from specialties */
 .svc-idx-hero-stats {
@@ -89,9 +89,9 @@
 }
 .svc-idx-hero-stat {
   background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
-  border-radius: 14px; padding: 24px 20px;
-  display: flex; flex-direction: column; gap: 6px;
-  position: relative; overflow: hidden;
+  border-radius: 14px; padding: 28px 22px;
+  display: flex; flex-direction: column; gap: 8px;
+  position: relative; overflow: hidden; min-height: 100px;
   transition: border-color .3s ease, transform .3s ease;
 }
 /* Vertical scan line — different from glare sweep on specialties */
@@ -106,9 +106,10 @@
 .svc-idx-hero-stat:nth-child(3)::before { animation-delay: -2s; }
 .svc-idx-hero-stat:nth-child(4)::before { animation-delay: -3s; }
 @keyframes svcScan {
-  0%,100% { left: -100%; opacity: 0; }
-  40%      { left: 50%; opacity: 1; }
-  60%      { left: 110%; opacity: 0; }
+  0%     { left: -8px; opacity: 0; }
+  5%     { opacity: 1; }
+  60%    { left: calc(100% + 8px); opacity: 0; }
+  100%   { left: calc(100% + 8px); opacity: 0; }
 }
 .svc-idx-hero-stat:hover { border-color: rgba(212,155,40,.35); transform: translateY(-2px); }
 .svc-idx-stat-num {
