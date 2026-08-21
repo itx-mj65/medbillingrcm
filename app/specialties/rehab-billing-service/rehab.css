@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════════
+   REHAB BILLING — extends specialty.css
+   NEW animations:
+   rehabFlow  — patient journey nodes pulse in sequence left→right
+   rehabDot   — gold pulse dot on why cards
+   All colors: global tokens only.
+═══════════════════════════════════════════════════════════ */
+.sp-sec--paper { background: var(--color-paper); }
+
+/* ─── CARE CONTINUUM ─────────────────────────────────────── */
+.rehab-cont-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+.rehab-continuum {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 14px; margin-top: 2rem; position: relative;
+}
+
+/* Animated left border — node lighting up in sequence (rehabFlow) */
+.rehab-cont-card {
+  background: var(--color-white); border: 1px solid var(--color-line);
+  border-radius: 16px; padding: 22px 18px;
+  display: flex; flex-direction: column; gap: 14px;
+  border-left: 4px solid var(--color-line);
+  position: relative; overflow: hidden;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+  animation: rehabFlow 4.5s ease-in-out infinite;
+}
+.rehab-cont-card--blue  { border-left-color: var(--color-primary); }
+.rehab-cont-card--green { border-left-color: var(--color-secondary); animation-delay: -1.5s; }
+.rehab-cont-card--gold  { border-left-color: var(--color-accent);    animation-delay: -3s; }
+@keyframes rehabFlow {
+  0%,60%,100% { box-shadow: 0 2px 8px rgba(26,33,79,.04); }
+  20%,40%     { box-shadow: 0 0 0 3px rgba(82,133,50,.15), 0 4px 16px rgba(82,133,50,.1); }
+}
+.rehab-cont-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(26,33,79,.1) !important; animation-play-state: paused; }
+
+.rehab-cont-header { display: flex; align-items: flex-start; gap: 12px; }
+.rehab-cont-icon { font-size: 1.6rem; flex-shrink: 0; }
+.rehab-cont-header h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--color-primary); margin: 0 0 4px; line-height: 1.3; }
+.rehab-cont-payment { font-size: var(--fs-xs); font-weight: 700; color: var(--color-action); background: rgba(82,133,50,.08); border: 1px solid rgba(82,133,50,.14); border-radius: 20px; padding: 2px 8px; }
+.rehab-cont-card--gold .rehab-cont-payment { background: rgba(212,155,40,.08); border-color: rgba(212,155,40,.2); color: #8a6200; }
+
+.rehab-cont-rules { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.rehab-cont-rules li { font-size: var(--fs-sm); color: var(--color-muted); padding-left: 14px; position: relative; line-height: 1.4; }
+.rehab-cont-rules li::before { content: '✓'; position: absolute; left: 0; color: var(--color-secondary); font-size: .75rem; font-weight: 800; top: .1em; }
+
+/* 60% Rule callout */
+.rehab-irf-callout {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  background: var(--color-primary); border-radius: 14px; padding: 20px 24px;
+  margin-top: 2rem; border: 1px solid rgba(255,255,255,.1);
+}
+.rehab-irf-badge { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; color: var(--color-ink); background: var(--color-accent); border-radius: 8px; padding: 6px 14px; white-space: nowrap; flex-shrink: 0; }
+.rehab-irf-callout p { font-size: var(--fs-sm); color: var(--text-on-dark-sub); flex: 1; margin: 0; }
+
+/* ─── CAPABILITY CARDS ───────────────────────────────────── */
+.rehab-caps-sub { color: var(--color-muted); margin-bottom: 2rem; max-width: 72ch; }
+.rehab-caps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 2rem; }
+.rehab-cap-card {
+  position: relative; overflow: hidden; background: var(--color-primary);
+  padding: 28px 24px; border-radius: 20px; border: 1px solid rgba(255,255,255,.08);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .45s ease, box-shadow .45s ease;
+}
+/* Subtle rehabFlow glow on cap cards too */
+.rehab-cap-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(82,133,50,.3), rgba(212,155,40,.3), transparent);
+  animation: rehabFlow 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.rehab-cap-card:nth-child(2)::before { animation-delay: -.75s; }
+.rehab-cap-card:nth-child(3)::before { animation-delay: -1.5s; }
+.rehab-cap-card:nth-child(4)::before { animation-delay: -2.25s; }
+.rehab-cap-card:nth-child(5)::before { animation-delay: -3s; }
+.rehab-cap-card:nth-child(6)::before { animation-delay: -3.75s; }
+.rehab-cap-card:hover { transform: translateY(-5px); border-color: rgba(212,155,40,.28); box-shadow: 0 20px 48px rgba(0,0,0,.28); }
+.rehab-cap-top { display: flex; align-items: flex-start; justify-content: space-between; position: relative; z-index: 1; }
+.rehab-cap-icon-wrap { width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: background .45s ease, border-color .45s ease; }
+.rehab-cap-card:hover .rehab-cap-icon-wrap { background: rgba(212,155,40,.14); border-color: rgba(212,155,40,.28); }
+.rehab-cap-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-on-dark); opacity: .08; line-height: 1; }
+.rehab-cap-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; position: relative; z-index: 1; }
+.rehab-cap-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; position: relative; z-index: 1; transition: color .45s ease; }
+.rehab-cap-card:hover p { color: var(--text-on-dark-sub); }
+
+/* ─── PROCESS ────────────────────────────────────────────── */
+.rehab-process-intro { color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.rehab-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.rehab-step  { display: grid; grid-template-columns: 80px 1fr; }
+.rehab-step-aside { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
+.rehab-step-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-accent); line-height: .9; }
+.rehab-step-conn { flex: 1; width: 2px; background: rgba(255,255,255,.1); min-height: 40px; margin: 10px 0; }
+.rehab-step-body { background: rgba(255,255,255,.05); border-radius: var(--radius-card); padding: 20px 26px; margin: 0 0 6px 16px; transition: background .35s ease; }
+.rehab-step:hover .rehab-step-body { background: rgba(255,255,255,.09); }
+.rehab-step-body h3 { font-family: var(--font-heading); font-size: var(--fs-h3); font-weight: 600; color: var(--text-on-dark); margin-bottom: 6px; }
+.rehab-step-body p  { font-size: var(--fs-body); color: var(--text-on-dark-muted); max-width: none; margin: 0; }
+.rehab-process-cta  { display: flex; align-items: center; gap: 20px; margin-top: 2.5rem; flex-wrap: wrap; }
+.rehab-process-note { font-size: var(--fs-sm); color: rgba(255,255,255,.45); }
+
+/* ─── BEFORE / AFTER ─────────────────────────────────────── */
+.rehab-ba-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 2rem; }
+.rehab-ba-card { background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 32px 22px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--color-line); transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease; }
+.rehab-ba-card--green { border-top-color: var(--color-secondary); background: rgba(82,133,50,.03); }
+.rehab-ba-card:hover  { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(26,33,79,.1); }
+.rehab-ba-label { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-muted); }
+.rehab-ba-num { font-family: var(--font-heading); font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 800; color: var(--color-primary); line-height: .9; }
+.rehab-ba-card--green .rehab-ba-num { color: var(--color-secondary); }
+.rehab-ba-num span { font-size: 55%; color: var(--color-muted); font-weight: 700; }
+.rehab-ba-desc { font-size: var(--fs-sm); color: var(--color-muted); }
+
+/* ─── WHY MEDBILLING ─────────────────────────────────────── */
+.rehab-why-intro { color: var(--text-on-dark-sub); margin-bottom: 2rem; max-width: 68ch; }
+.rehab-why-grid  { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 2rem; }
+.rehab-why-card {
+  position: relative; overflow: hidden; background: rgba(255,255,255,.05);
+  border-right: 1px solid rgba(255,255,255,.08); border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08); border-left: 3px solid rgba(212,155,40,.4);
+  border-radius: 0 14px 14px 0; padding: 24px 18px 24px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background .45s ease, border-top-color .45s ease, border-right-color .45s ease, border-bottom-color .45s ease, border-left-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+}
+.rehab-why-card::before {
+  content: ''; position: absolute; top: 14px; right: 14px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-accent); opacity: .5;
+  animation: rehabDot 2.8s ease-in-out infinite; pointer-events: none;
+}
+.rehab-why-card:nth-child(2)::before { animation-delay: -.35s; }
+.rehab-why-card:nth-child(3)::before { animation-delay: -.7s; }
+.rehab-why-card:nth-child(4)::before { animation-delay: -1.05s; }
+.rehab-why-card:nth-child(5)::before { animation-delay: -1.4s; }
+.rehab-why-card:nth-child(6)::before { animation-delay: -1.75s; }
+.rehab-why-card:nth-child(7)::before { animation-delay: -2.1s; }
+.rehab-why-card:nth-child(8)::before { animation-delay: -2.45s; }
+@keyframes rehabDot {
+  0%,100% { transform: scale(1);   opacity: .4; }
+  50%      { transform: scale(2.2); opacity: .9; box-shadow: 0 0 8px rgba(212,155,40,.55); }
+}
+.rehab-why-card:hover { background: rgba(255,255,255,.09); border-top-color: rgba(255,255,255,.16); border-right-color: rgba(255,255,255,.16); border-bottom-color: rgba(255,255,255,.16); border-left-color: var(--color-accent); transform: translateX(4px); box-shadow: 4px 0 20px rgba(212,155,40,.09); }
+.rehab-why-top { display: flex; align-items: flex-start; justify-content: space-between; }
+.rehab-why-icon-wrap { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; background: rgba(212,155,40,.1); border: 1px solid rgba(212,155,40,.2); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; transition: background .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.8,.2,1); }
+.rehab-why-card:hover .rehab-why-icon-wrap { background: rgba(212,155,40,.2); border-color: rgba(212,155,40,.4); transform: scale(1.1); }
+.rehab-why-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--text-on-dark); opacity: .07; line-height: 1; }
+.rehab-why-card h3 { font-family: var(--font-heading); font-size: var(--fs-body); font-weight: 700; color: var(--text-on-dark); margin: 0; line-height: 1.35; }
+.rehab-why-card p  { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: var(--lh-lead); max-width: none; margin: 0; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.rehab-faq-layout { display: grid; grid-template-columns: .6fr 1.4fr; gap: 64px; margin-top: 2rem; }
+.rehab-faq-intro  { position: sticky; top: 110px; }
+.rehab-faq-intro p { color: var(--color-muted); }
+.rehab-faq-link   { color: var(--color-action); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.rehab-faq-list details { border-bottom: 1px solid var(--color-line); }
+.rehab-faq-list summary { list-style: none; position: relative; padding: 20px 52px 20px 0; cursor: pointer; font-family: var(--font-heading); font-weight: 600; font-size: var(--fs-body); color: var(--color-primary); transition: color .35s ease; }
+.rehab-faq-list summary::-webkit-details-marker { display: none; }
+.rehab-faq-list summary::after { content: '+'; position: absolute; right: 10px; top: 12px; color: var(--color-secondary); font-size: 1.6rem; line-height: 1; }
+.rehab-faq-list details[open] summary::after { content: '−'; }
+.rehab-faq-list details[open] summary { color: var(--color-action); }
+.rehab-faq-list details p { padding: 0 48px 20px 0; color: var(--color-muted); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); max-width: none; }
+
+/* ═══ RESPONSIVE ═══════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .rehab-continuum  { grid-template-columns: 1fr 1fr; }
+  .rehab-caps-grid  { grid-template-columns: 1fr 1fr; }
+  .rehab-why-grid   { grid-template-columns: 1fr 1fr; }
+  .rehab-ba-grid    { grid-template-columns: 1fr 1fr; }
+  .rehab-faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .rehab-faq-intro  { position: static; }
+  .rehab-step       { grid-template-columns: 60px 1fr; }
+  .rehab-irf-callout { flex-direction: column; }
+}
+@media (max-width: 768px) {
+  .rehab-continuum { grid-template-columns: 1fr; }
+  .rehab-caps-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .rehab-caps-grid { grid-template-columns: 1fr; }
+  .rehab-why-grid  { grid-template-columns: 1fr 1fr; }
+  .rehab-ba-grid   { grid-template-columns: 1fr 1fr; }
+  .rehab-cont-card:hover, .rehab-cap-card:hover, .rehab-why-card:hover, .rehab-ba-card:hover { transform: none; }
+  .rehab-cont-card { animation-play-state: paused; }
+}
+@media (max-width: 480px) {
+  .rehab-why-grid { grid-template-columns: 1fr; }
+  .rehab-step     { grid-template-columns: 1fr; }
+  .rehab-step-aside { flex-direction: row; align-items: center; gap: 10px; padding-top: 0; margin-bottom: 8px; }
+  .rehab-step-conn  { display: none; }
+  .rehab-step-body  { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rehab-cont-card, .rehab-cap-card::before, .rehab-why-card::before { animation: none !important; }
+  .rehab-cont-card { box-shadow: 0 2px 8px rgba(26,33,79,.05); }
+  .rehab-cont-card:hover, .rehab-cap-card:hover, .rehab-why-card:hover { transform: none; }
+}
